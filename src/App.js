@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from 'react'
+import Home from './Components/Home'
+import About from './Components/About'
+import Project from './Components/Project'
+import Skills from './Components/Skills'
+
 
 function App() {
+  const about = useRef(null)
+  const project = useRef(null)
+  const skills = useRef(null)
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+      <div><h3>Martin Stojmenovski</h3></div>
+      <div>
+        <ul className='navigation-list'>
+          <li onClick={() => scrollToSection(about)} >About</li>
+          <li onClick={() => scrollToSection(project)}>Project</li>
+          <li onClick={() => scrollToSection(skills)}>Skills</li>
+        </ul>
+        </div>
+        </nav>
+      <Home />
+      <About about={about} />
+      <Project project={project} />
+      <Skills skills={skills} />
+
     </div>
   );
 }

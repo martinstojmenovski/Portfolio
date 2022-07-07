@@ -1,0 +1,27 @@
+
+nav{
+    background: transparent;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 999;
+    color: white;
+  
+  }
+  /* .navbar{
+    display: flex;
+     flex-direction: row; 
+     justify-content: space-between; 
+    
+  }
+  
+  .navigation-list{
+   list-style-type: none;
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+  }
+  li{
+    padding-left: 20px;
+  } */
