@@ -9,6 +9,7 @@ function App() {
   const about = useRef(null)
   const project = useRef(null)
   const skills = useRef(null)
+  const home = useRef(null)
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-      <div><h3>Martin Stojmenovski</h3></div>
+      <div><h3 onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3></div>
       <div>
         <ul className='navigation-list'>
           <li onClick={() => scrollToSection(about)} >About</li>
@@ -28,7 +29,7 @@ function App() {
         </ul>
         </div>
         </nav>
-      <Home />
+      <Home home={home} />
       <About about={about} />
       <Project project={project} />
       <Skills skills={skills} />
