@@ -1,6 +1,6 @@
-function Home({home}) {
+function Home({ home }) {
     return (
-      <div ref={home} className="Home">
+      <div ref={home} className="home">
             <h1 className="brand">DEVELOPER<span>&</span><br/>DESIGNER</h1>
       </div>
     );

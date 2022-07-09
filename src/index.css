@@ -4,21 +4,21 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-.Home {
+.home {
   height: 100vh;
   background-color: black;
 }
-.About {
+.about {
   height: 100vh;
   background-color: purple;
 }
-.Project {
+.project {
   height: 100vh;
   background-color: orange;
 }
-.Skills {
+.skills {
   height: 100vh;
-  background-color: greenyellow;
+  background-color: rgb(8, 89, 114);
 }
 
 .brand{

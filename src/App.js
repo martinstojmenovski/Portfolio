@@ -1,38 +1,13 @@
-import { useRef } from 'react'
-import Home from './Components/Home'
-import About from './Components/About'
-import Project from './Components/Project'
-import Skills from './Components/Skills'
+
+import Navbar from './Components/Navbar'
 
 
 function App() {
-  const about = useRef(null)
-  const project = useRef(null)
-  const skills = useRef(null)
-  const home = useRef(null)
-
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth'
-    })
-  }
+  
   return (
     <div className="App">
-      <nav>
-      <div><h3 onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3></div>
-      <div>
-        <ul className='navigation-list'>
-          <li onClick={() => scrollToSection(about)} >About</li>
-          <li onClick={() => scrollToSection(project)}>Project</li>
-          <li onClick={() => scrollToSection(skills)}>Skills</li>
-        </ul>
-        </div>
-        </nav>
-      <Home home={home} />
-      <About about={about} />
-      <Project project={project} />
-      <Skills skills={skills} />
+      <Navbar />
+    
 
     </div>
   );
