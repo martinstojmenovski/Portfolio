@@ -23,10 +23,16 @@ function Navbar() {
 
     //Page navigation function
     const scrollToSection = (elementRef) => {
+        console.log(elementRef.current.__reactProps$ogc56t32jzn.className)
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
+        if (elementRef.current.__reactProps$ogc56t32jzn.className === "home") {
+            setHamburger(hamburger)
+        } else {
+            setHamburger(!hamburger)
+        }
     }
 
     const blurNavbar = () => {
@@ -38,8 +44,9 @@ function Navbar() {
     }
     window.addEventListener('scroll', blurNavbar)
 
-    const showHamburger = () => setHamburger(!hamburger)
-
+    const showHamburger = () => {
+        setHamburger(!hamburger)
+    }
 
     return (
         <div>
@@ -53,13 +60,13 @@ function Navbar() {
                 <div>
 
 
-                    <div  id="toggle" onClick={ showHamburger }>
-                        { hamburger ? <FaIcons.FaBars />  :  <AiIcons.AiOutlineClose /> }
+                    <div id="toggle" onClick={showHamburger}>
+                        {hamburger ? <FaIcons.FaBars /> : <AiIcons.AiOutlineClose />}
                     </div>
 
 
-                    <div className={ hamburger ? "sidebar" : "sidebar-active"} >
-                        
+                    <div className={hamburger ? "sidebar" : "sidebar-active"} >
+
                         <ul>
                             <li onClick={() => scrollToSection(about)} >About</li>
                             <li onClick={() => scrollToSection(project)}>Projects</li>

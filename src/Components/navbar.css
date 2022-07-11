@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 1;
   color: white;
+  white-space: nowrap;
 
 }
 .navbar.active {
@@ -14,17 +15,18 @@
 
 
 .sidebar {
-  height: 1px;
+  display: flex;
+  text-align: end;
+  width: 0;
   overflow: hidden;
-  transition: ease height 0.7s;
+  transition: ease width 0.7s;
+  
 }
 .sidebar-active {
   display: flex;
   text-align: end;
-  /* backdrop-filter: blur(3px); */
-  background-color: brown;
-  height: 120px;
-  transition: ease height 0.3s;
+  width: 103px;
+  transition: ease width 0.7s;
 }
 
 
