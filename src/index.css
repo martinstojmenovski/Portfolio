@@ -6,6 +6,7 @@
 }
 .home {
   height: 100vh;
+  width: 100%;
   background-color: black;
 }
 .about {
@@ -21,8 +22,12 @@
   background-color: rgb(8, 89, 114);
 }
 
-.brand{
+/* .brand{
   position:absolute;
   top:80px;
+  padding-left:20px;
+  padding-right: 20px;
   color: white;
-}
+  
+  
+} */

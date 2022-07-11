@@ -30,9 +30,9 @@ function Navbar() {
     }
 
     const blurNavbar = () => {
-        if(window.scrollY >= 80){
+        if (window.scrollY >= 80) {
             setBlur(true)
-        }else {
+        } else {
             setBlur(false)
         }
     }
@@ -47,21 +47,32 @@ function Navbar() {
                 <div>
                     <h3 className='brand-name' onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3>
                 </div>
+
+
+
                 <div>
-                    {hamburger && <div className='hamburger'>
-                    <FaIcons.FaBars onClick={showHamburger}/>
-                    </div>}
-                    {!hamburger && <div className='sidebar'>
-                    <AiIcons.AiOutlineClose onClick={showHamburger} />
-                    <ul className='navigation-list'>
-                        <li onClick={() => scrollToSection(about)} >About</li>
-                        <li onClick={() => scrollToSection(project)}>Project</li>
-                        <li onClick={() => scrollToSection(skills)}>Skills</li>
-                    </ul>
-                    
-                    </div> }
-                    
+
+
+                    <div  id="toggle" onClick={ showHamburger }>
+                        { hamburger ? <FaIcons.FaBars />  :  <AiIcons.AiOutlineClose /> }
+                    </div>
+
+
+                    <div className={ hamburger ? "sidebar" : "sidebar-active"} >
+                        
+                        <ul>
+                            <li onClick={() => scrollToSection(about)} >About</li>
+                            <li onClick={() => scrollToSection(project)}>Projects</li>
+                            <li onClick={() => scrollToSection(skills)}>Skills</li>
+                        </ul>
+                    </div>
+
+
                 </div>
+
+
+
+
             </nav>
             <Home home={home} />
             <About about={about} />

@@ -4,21 +4,45 @@
   position: fixed;
   justify-content: space-between;
   width: 100%;
-  z-index: 999;
+  z-index: 1;
   color: white;
 
 }
 .navbar.active {
   backdrop-filter: blur(3px);
 }
-.navigation-list {
-  list-style-type: none;
+
+
+.sidebar {
+  height: 1px;
+  overflow: hidden;
+  transition: ease height 0.7s;
+}
+.sidebar-active {
   display: flex;
+  text-align: end;
+  /* backdrop-filter: blur(3px); */
+  background-color: brown;
+  height: 120px;
+  transition: ease height 0.3s;
 }
 
-li{
-    padding: 20px;
-  } 
+
+.sidebar-active ul {
+  list-style: none;
+}
+li {
+  padding: 8px;
+}
+  #toggle{
+    padding-top: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: end;
+  }
+
+
 .brand-name {
-  padding: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
 }
