@@ -23,12 +23,11 @@ function Navbar() {
 
     //Page navigation function
     const scrollToSection = (elementRef) => {
-        console.log(elementRef.current.__reactProps$ogc56t32jzn.className)
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-        if (elementRef.current.__reactProps$ogc56t32jzn.className === "home") {
+        if (elementRef.current.className === "home") {
             setHamburger(hamburger)
         } else {
             setHamburger(!hamburger)
