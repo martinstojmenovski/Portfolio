@@ -60,7 +60,12 @@ function Navbar() {
 
 
                     <div id="toggle" onClick={showHamburger}>
-                        {hamburger ? <FaIcons.FaBars /> : <AiIcons.AiOutlineClose />}
+                    <div className={ hamburger ? 'hamburger active': 'hamburger' } >
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        
                     </div>
 
 

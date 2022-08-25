@@ -18,27 +18,24 @@
 .sidebar {
   display: flex;
   text-align: end;
-  width: 8px;
+  height: 10px;
   overflow: hidden;
-  transition: ease width 1s;
+  transition: ease height 1s;
   
 }
 .sidebar-active {
   display: flex;
   text-align: end;
-  width: 83px;
-  transition: ease width 0.7s; 
-  /* background-color: brown; */
- 
-  
-   
+  height: 83px;
+  transition: ease height 0.7s;  
 }
 
 .sidebar-active ul {
   list-style: none;
 }
 li {
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 #toggle{
   padding-top: 15px;
@@ -52,4 +49,28 @@ li {
   font-size: 1.5em;
   padding-top: 15px;
   padding-left: 15px;
+}
+
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+.hamburger.active .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
+.bar{
+  display: block;
+  width:25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color:white;
 }
