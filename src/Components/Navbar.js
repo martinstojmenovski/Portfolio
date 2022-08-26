@@ -60,7 +60,7 @@ function Navbar() {
 
 
                     <div id="toggle" onClick={showHamburger}>
-                    <div className={ hamburger ? 'hamburger active': 'hamburger' } >
+                    <div className={ hamburger ? 'hamburger': 'hamburger active' } >
                                 <span class="bar"></span>
                                 <span class="bar"></span>
                                 <span class="bar"></span>
