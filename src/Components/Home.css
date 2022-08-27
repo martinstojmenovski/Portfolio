@@ -8,19 +8,27 @@
 
  .creative {
   position: absolute;
-  top: 6vh;
+  top: 4vh;
 } 
 
  .developer{
   position: absolute;
-  top: 1vh;
-  -webkit-transform: scale(1, 4);
+  top: -4vh;
+  font-size: 2.5em;
+  -webkit-transform: scale(1, 5);
+  -moz-transform: scale(1, 5);
+  -o-transform: scale(1, 5);
+  transform: scale(1, 5);
 } 
 
 .designer{
   position: absolute;
-  top: 25vh;
-  -webkit-transform: scale(1, 4);
+  top: 32vh;
+  -webkit-transform: scale(1, 5);
+  -moz-transform: scale(1, 5);
+  -o-transform: scale(1, 5);
+  transform: scale(1, 5);
+  font-size: 2.5em;
 }
 
 .and {
@@ -30,10 +38,13 @@ font-size: 0.5em;
  .contact{
   position: absolute;
   top: 80vh; 
-  left:25ch
+  right:2ch;
+  font-size: 2em;
 }
 
 .statement{
   position: absolute;
   top: 50vh;
+  font-size: 1.5em;
+  right: 2ch;
 }   
