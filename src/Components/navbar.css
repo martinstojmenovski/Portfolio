@@ -55,7 +55,6 @@ li {
 .hamburger {
   display: block;
   cursor: pointer;
-  padding-right: 15px;
 }
 .hamburger.active .bar:nth-child(2){
   opacity: 0;

@@ -1,29 +1,33 @@
 
 .home{
   position: relative;
-  top: 4vh;
-  left: 15px;
+  /* top: 4vh;
+  left: 15px; */
 }
 
 
  .creative {
   position: absolute;
-  top: 4vh;
+  top: 8vh;
+  left: 15px;
 } 
 
  .developer{
   position: absolute;
-  top: -4vh;
+  top: 0vh;
+  left: 15px;
   font-size: 2.5em;
   -webkit-transform: scale(1, 5);
   -moz-transform: scale(1, 5);
   -o-transform: scale(1, 5);
   transform: scale(1, 5);
+  
 } 
 
 .designer{
   position: absolute;
-  top: 32vh;
+  top: 35vh;
+  left: 15px;
   -webkit-transform: scale(1, 5);
   -moz-transform: scale(1, 5);
   -o-transform: scale(1, 5);
@@ -45,6 +49,8 @@ font-size: 0.5em;
 .statement{
   position: absolute;
   top: 50vh;
-  font-size: 1.5em;
+  left: 15px;
   right: 2ch;
-}   
+  font-size: 1.5em;
+  
+} 

@@ -1,4 +1,4 @@
-import './Home.css'
+import './home.css'
 function Home({ home }) {
     return (
       <div ref={home} className="home">

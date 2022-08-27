@@ -3,8 +3,6 @@ import Home from './Home'
 import About from './About'
 import Project from './Project'
 import Skills from './Skills'
-import * as FaIcons from 'react-icons/fa'
-import * as AiIcons from 'react-icons/ai'
 
 function Navbar() {
 

@@ -1,0 +1,20 @@
+.about{
+position: relative;
+}
+.hello{
+    position: absolute;
+    top: 20vh;
+    left: 7ch;
+    font-size: 1.5em;
+    -webkit-transform: scale(1, 3);
+    -moz-transform: scale(1, 3);
+    -o-transform: scale(1, 3);
+    transform: scale(1, 3);
+}
+.aboutme{
+    position: absolute;
+    top: 30vh;
+    left: 15px;
+    right: 2ch;
+    font-size: 1.5em;
+}
