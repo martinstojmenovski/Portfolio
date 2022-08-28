@@ -24,6 +24,8 @@
   
 }
 .sidebar-active {
+  position: absolute;
+  right: 15px;
   display: flex;
   text-align: end;
   height: 83px;
