@@ -6,14 +6,14 @@
 
  .developer{
   position: absolute;
-  top: 0vh;
+  top: 17vh;
   left: 0.7ch;
   font-size: 2.5em;
   -webkit-transform: scale(1, 5);
   -moz-transform: scale(1, 5);
   -o-transform: scale(1, 5);
   transform: scale(1, 5);
-  
+ 
 } 
 
 .designer{
@@ -25,6 +25,7 @@
   -o-transform: scale(1, 5);
   transform: scale(1, 5);
   font-size: 2.5em;
+  /* height: 50px; */
 }
 
 .and {

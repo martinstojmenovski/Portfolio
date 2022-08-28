@@ -46,6 +46,7 @@ function Navbar() {
 
     // dropdown menu function
     const showHamburger = () => {
+        console.log("clicked")
         setHamburger(!hamburger)
     }
 
@@ -56,12 +57,10 @@ function Navbar() {
                     <h3 className='brand-name' onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3>
                 </div>
                 <div>
-                    <div id="toggle" onClick={showHamburger}>
-                        <div className={hamburger ? 'hamburger' : 'hamburger active'} >
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </div>
+                    <div className={hamburger ? 'hamburger' : 'hamburger active'} onClick={showHamburger} >
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
                     </div>
                     <div className={hamburger ? "sidebar" : "sidebar-active"} >
                         <ul>

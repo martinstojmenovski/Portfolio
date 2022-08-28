@@ -1,24 +1,27 @@
 .navbar {
   background: transparent;
-  display: flex;
   position: fixed;
+  display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 375px; 
   z-index: 999;
-  /* color: white; */
   white-space: nowrap;
-  height: 45px;
+  height: 45px;  
 
 }
 .navbar.active {
   backdrop-filter: blur(3px);
 }
+.brand-name {
+  font-size: 1.5em;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
 
 
 .sidebar {
-  display: flex;
-  text-align: end;
-  height: 10px;
+  height: 0px;
   overflow: hidden;
   transition: ease height 1s;
   
@@ -28,35 +31,29 @@
   right: 15px;
   display: flex;
   text-align: end;
-  height: 83px;
+  /* height: 83px; */
   transition: ease height 0.7s;  
 }
 
 .sidebar-active ul {
   list-style: none;
+  position: absolute;
+  top:45px;
+  right: 5px;
 }
 li {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-#toggle{
-  padding-top: 15px;
-  padding-right: 15px;
-  display: flex;
-  justify-content: end;
-  font-size: 1.5em;
-}
-
-.brand-name {
-  font-size: 1.5em;
-  padding-top: 15px;
-  padding-left: 15px;
 }
 
 
 .hamburger {
   display: block;
   cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+ 
 }
 .hamburger.active .bar:nth-child(2){
   opacity: 0;
