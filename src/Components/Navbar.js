@@ -35,6 +35,7 @@ function Navbar() {
 
     // blur navigation menu when scroll
     const blurNavbar = () => {
+        // console.log(window.scrollY)
         if (window.scrollY >= 80) {
             setBlur(true)
         } else {
@@ -46,7 +47,6 @@ function Navbar() {
 
     // dropdown menu function
     const showHamburger = () => {
-        console.log("clicked")
         setHamburger(!hamburger)
     }
 

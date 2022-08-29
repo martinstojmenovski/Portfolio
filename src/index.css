@@ -16,9 +16,12 @@
 .project {
   height: 100vh;
   background-color: orange;
+  /* margin: 10% 20%; */
 }
 .skills {
   height: 100vh;
   background-color: rgb(8, 89, 114);
 }
+
+
 

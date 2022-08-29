@@ -3,11 +3,8 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
-  width: 375px; 
+  width: 100%; 
   z-index: 999;
-  white-space: nowrap;
-  height: 45px;  
-
 }
 .navbar.active {
   backdrop-filter: blur(3px);
@@ -24,14 +21,12 @@
   height: 0px;
   overflow: hidden;
   transition: ease height 1s;
-  
 }
 .sidebar-active {
   position: absolute;
   right: 15px;
   display: flex;
   text-align: end;
-  /* height: 83px; */
   transition: ease height 0.7s;  
 }
 
