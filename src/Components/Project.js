@@ -1,17 +1,28 @@
 import { motion } from "framer-motion";
-import { useRef, UseEffect, useState } from "react"
+import { useRef, UseEffect, useState, useEffect } from "react"
 import images from "./images";
 import  "./project.css"
 
 function Project({ project }) {
-  // console.log(images)
+  const [ width, setWidth] = useState(0)
+  const carousel = useRef()
+
+  useEffect(() => {
+    // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth)
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+  }, [])
+
+  
   return (
     <div ref={project} className="project" id="project">
-      <motion.div className="carousel">
-        <motion.div drag='x' className="inner-carousel">
+      <motion.div ref={carousel} className="carousel" whileTap={{ coursor: "grabbing" }}>
+        <motion.div 
+        drag='x'
+        dragConstraints={{ right: 0, left: -width }} 
+         className="inner-carousel">
           {images.map((image) => {
             return (
-            <motion.div className="item">
+            <motion.div className="item" key={image}>
               <img src={image} alt="" />
             </motion.div>
             )
