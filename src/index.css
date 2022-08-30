@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  font-family: 'Allerta Stencil', sans-serif;
+  color: orange;
+  background: rgb(44, 44, 44);
 }
 .home {
   height: 100vh;
@@ -16,7 +19,6 @@
 .project {
   height: 100vh;
   background-color: orange;
-  /* margin: 10% 20%; */
 }
 .skills {
   height: 100vh;
