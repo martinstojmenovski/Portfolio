@@ -1,31 +1,37 @@
 .creative {
-  position: absolute;
+  /* position: absolute;
   top: 8vh;
-  left: 2ch;
+  left: 2ch; */
 } 
-
- .developer{
-  position: absolute;
-  top: 17vh;
+.logo{
+  position: relative;
+  top:8vh;
   left: 0.7ch;
+  
+}
+ .developer{
+ position: relative;
+ top:5vh;
+  white-space: nowrap;
   font-size: 2.5em;
-  -webkit-transform: scale(1, 5);
-  -moz-transform: scale(1, 5);
-  -o-transform: scale(1, 5);
-  transform: scale(1, 5);
+  -webkit-transform: scale(1, 4);
+  -moz-transform: scale(1, 4);
+  -o-transform: scale(1, 4);
+  transform: scale(1, 4);
+  /* height: 25px; */
  
 } 
 
 .designer{
-  position: absolute;
-  top: 35vh;
-  left: 0.7ch;
-  -webkit-transform: scale(1, 5);
-  -moz-transform: scale(1, 5);
-  -o-transform: scale(1, 5);
-  transform: scale(1, 5);
+  position: relative;
+  top: 15vh; 
+  
+  -webkit-transform: scale(1, 4);
+  -moz-transform: scale(1, 4);
+  -o-transform: scale(1, 4);
+  transform: scale(1, 4);
   font-size: 2.5em;
-  /* height: 50px; */
+  /* height: 25px; */
 }
 
 .and {
