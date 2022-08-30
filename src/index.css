@@ -5,11 +5,12 @@
   font-family: sans-serif;
   font-family: 'Allerta Stencil', sans-serif;
   color: orange;
-  background: rgb(44, 44, 44);
+  
 }
 .home {
   height: 100vh;
-  width: 90%;
+  width: 100%;
+  background-color: rgb(44, 44, 44);
 }
 .about {
   height: 100vh;

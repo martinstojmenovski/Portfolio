@@ -1,11 +1,12 @@
 .navbar {
-  background: transparent;
+  
   position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%; 
   z-index: 998;
   height: 6.9vh;
+  background: transparent;
 }
 .navbar.active {
   backdrop-filter: blur(3px);
