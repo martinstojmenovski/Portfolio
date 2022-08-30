@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Home from './Home'
 import About from './About'
 import Project from './Project'
@@ -15,8 +15,29 @@ function Navbar() {
     //useState to blur navbar
     const [blur, setBlur] = useState(false)
 
+    //useState progressBar
+    const [progressBar, setProgresBar] = useState(0)
+
     // useState to dropdown menu
     const [hamburger, setHamburger] = useState(true)
+
+
+
+    // ProgresBar function
+    const scrollProgress = () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = ( winScroll / height) * 100;
+        // console.log(scrolled)
+        setProgresBar(scrolled)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', scrollProgress)
+
+        return () => window.removeEventListener('scroll', scrollProgress)
+    }, [])
+    
+
 
 
 
@@ -56,7 +77,8 @@ function Navbar() {
                 <div>
                     <h3 className='brand-name' onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3>
                 </div>
-                <div>
+                <div className='progress-bar' style={{ width: `${progressBar}%`}}></div>
+                <div className='dropmenu'>
                     <div className={hamburger ? 'hamburger' : 'hamburger active'} onClick={showHamburger} >
                         <span className="bar"></span>
                         <span className="bar"></span>

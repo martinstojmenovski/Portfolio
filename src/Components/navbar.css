@@ -4,15 +4,25 @@
   display: flex;
   justify-content: space-between;
   width: 100%; 
-  z-index: 999;
+  z-index: 998;
+  height: 6.9vh;
 }
 .navbar.active {
   backdrop-filter: blur(3px);
 }
+.progress-bar{
+  position: fixed;
+  top: 7vh;
+  left: 0; 
+  height: 1.5px;
+  background:linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+  z-index: 999;
+}
+
+
 .brand-name {
   font-size: 1.5em;
-  padding-top: 15px;
-  padding-left: 20px;
+  padding: 15px;
 }
 
 
@@ -23,8 +33,8 @@
   transition: ease height 1s;
 }
 .sidebar-active {
-  position: absolute;
-  right: 15px;
+  position: relative;
+  right: 20px;
   display: flex;
   text-align: end;
   transition: ease height 0.7s;  
@@ -32,8 +42,8 @@
 
 .sidebar-active ul {
   list-style: none;
-  position: absolute;
-  top:45px;
+  position: relative;
+  top:15px;
   right: 5px;
 }
 li {
@@ -45,20 +55,17 @@ li {
 .hamburger {
   display: block;
   cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
- 
+  padding: 15px;
 }
 .hamburger.active .bar:nth-child(2){
   opacity: 0;
-}
+} 
 .hamburger.active .bar:nth-child(1){
   transform: translateY(8px) rotate(45deg);
 }
 .hamburger.active .bar:nth-child(3){
   transform: translateY(-8px) rotate(-45deg);
-}
+} 
 .bar{
   display: block;
   width:25px;

@@ -15,7 +15,9 @@ function Project({ project }) {
   
   return (
     <div ref={project} className="project" id="project">
-      <motion.div ref={carousel} className="carousel" whileTap={{ coursor: "grabbing" }}>
+      <motion.div ref={carousel} className="carousel"
+      //  whileTap={{ coursor: "grabbing" }} not sure if it works
+      >
         <motion.div 
         drag='x'
         dragConstraints={{ right: 0, left: -width }} 
