@@ -1,0 +1,11 @@
+.skills{
+    background-color: blueviolet;
+    display: grid;
+    grid-template-rows:20% 60% 20%;
+}
+main{
+    grid-row: 2 / 3;
+}
+footer{
+    grid-row: 3 / 4;
+}
