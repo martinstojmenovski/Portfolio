@@ -10,7 +10,7 @@ function Home({ home }) {
       <p className='statement'>&emsp;Passionate about simple and robust design.
         I love coffee, architecture, golf.</p>
       <a href="mailto:martinstojmenovskim@gmail.com">
-        <p class="email"><button className='contact'>Contact me</button></p>
+        <p className="email"><button className='contact'>Contact me</button></p>
       </a>
     </div>
   );

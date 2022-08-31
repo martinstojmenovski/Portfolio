@@ -11,7 +11,7 @@
   }
   .inner-carousel{
     display: flex;
-    /* background: lightblue; */
+    background: lightblue;
   }
   .carousel{
     cursor: grab;

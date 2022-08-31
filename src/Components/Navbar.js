@@ -95,7 +95,8 @@ function Navbar() {
             </nav>
             <Home home={home} />
             <About about={about} />
-            <Project project={project} />
+
+            <div className='project'><Project project={project} /></div>
             <Skills skills={skills} />
         </div>
     );
