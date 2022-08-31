@@ -86,9 +86,9 @@ function Navbar() {
                     </div>
                     <div className={hamburger ? "sidebar" : "sidebar-active"} >
                         <ul>
-                            <li onClick={() => scrollToSection(about)} >About</li>
-                            <li onClick={() => scrollToSection(project)}>Projects</li>
-                            <li onClick={() => scrollToSection(skills)}>Skills</li>
+                            <li onClick={() => scrollToSection(about)} >about</li>
+                            <li onClick={() => scrollToSection(project)}>projects</li>
+                            <li onClick={() => scrollToSection(skills)}>contact</li>
                         </ul>
                     </div>
                 </div>

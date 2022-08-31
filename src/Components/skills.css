@@ -1,11 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .skills{
-    background-color: blueviolet;
     display: grid;
-    grid-template-rows:20% 60% 20%;
+    grid-template-rows:20% 59% 1% 20%;
 }
 main{
     grid-row: 2 / 3;
+    padding: 20px;
+    font-size: 1.5em;
 }
+
 footer{
+    grid-row: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 1.3em;
+    margin: auto;
+    width:100%;
+    
+}
+footer a{
+    text-decoration: none;
+    transition:3s;
+
+    
+
+
+
+}
+footer a:hover{
+   text-decoration: underline;
+    
+}
+._8icz {
     grid-row: 3 / 4;
+    align-items: center;
+    border-bottom: 1px solid #dadde1;
+    display: flex;
+    margin: 20px 16px;
+    text-align: center;
 }
