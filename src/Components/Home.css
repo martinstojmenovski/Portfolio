@@ -7,15 +7,15 @@
 } 
 
 .logo{
-  position: relative;
+  position: absolute;
   top:11vh;
   left: 20px;
   
 }
  .developer{
-  position: relative; 
+  position: absolute; 
  
- top:3vh;
+ top:6vh;
   font-size: 2.8em;
   -webkit-transform: scale(1, 3);
   -moz-transform: scale(1, 3);
@@ -30,10 +30,10 @@
 } 
 
 .designer{
-   position: relative;
+   position: absolute;
   
   
-  top: 9vh; 
+  top: 22vh; 
   -webkit-transform: scale(1, 3);
   -moz-transform: scale(1, 3);
   -o-transform: scale(1, 3);
