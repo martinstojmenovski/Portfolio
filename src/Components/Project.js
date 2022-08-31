@@ -28,7 +28,7 @@ function Project({ project }) {
 
   }
 
-  const leftArrowStyles ={
+  const leftArrowStyles = {
     position: 'absolute',
     top: '50%',
     transform: 'translate(0, -50)',
@@ -38,7 +38,7 @@ function Project({ project }) {
     zIndex: 1,
     cursor: "pointer",
   }
-  const rightArrowStyles ={
+  const rightArrowStyles = {
     position: 'absolute',
     top: '50%',
     transform: 'translate(0, -50)',
@@ -49,17 +49,39 @@ function Project({ project }) {
     cursor: "pointer",
   }
 
+  const dotsContainerStyles = {
+    display: 'flex',
+    justifyContent:'center',
+    
+  }
+  const dotStyles = {
+    margin: '0 3px',
+    cursor: 'pointer',
+    fontSize: '20px'
+  }
+  const dots = images.map((image, slideIndex) => {
+    return (
+    <div 
+    key ={slideIndex} 
+    style={dotStyles}
+    onClick={() => goToSlide(slideIndex)} >O
+    </div>
+    )
+  } )
+
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1 ;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex)
-  } 
+  }
   const goToNext = () => {
     const isLastSlide = currentIndex === images.length - 1
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex)
   }
-
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex)
+  }
 
 
   return (
@@ -68,8 +90,10 @@ function Project({ project }) {
       <div style={sliderStyles} >
         <div style={leftArrowStyles} onClick={goToPrevious} > L </div>
         <div style={rightArrowStyles} onClick={goToNext} > R </div>
-
         <div style={slideStyles}></div>
+        <div style={dotsContainerStyles}>
+          {dots}
+        </div>
       </div>
     </div>
   );
