@@ -12,8 +12,9 @@ function Home({ home }) {
             <h1 className="developer" >DEVELOPER<span style={{ fontSize: '1rem' }}>&</span></h1>
             <h1 className='designer'>DESIGNER</h1>
             <div className='front-layout'>
-              <p className='statement'>&emsp;Passionate about simple and robust design.
-                I love coffee, architecture, golf.</p>
+              <p className='statement'>&emsp;I am a developer and UX/UI
+                designer based in Denver. Passionate about simple and robust design.
+                I love photography, architecture and coffee.</p>
 
             </div>
           </div>
