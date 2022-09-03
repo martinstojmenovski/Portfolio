@@ -1,9 +1,9 @@
-.creative {
+/* .creative {
   position: relative;
   z-index: 997;
   /* position: absolute;
   top: 8vh;
-  left: 2ch; */
+  left: 2ch; 
 } 
 
 .logo{
@@ -85,4 +85,56 @@ font-size: 0.4em;
   right: 2ch;
   font-size: 1.5em;
   
-} 
+}  */
+
+/* .homepage{
+  height: 100vh;
+  width: 100ch;
+} ---------------------------------------------------------------------------------*/
+.background{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  top: 60px;
+   background-image: url('./images/barcelona.jpg');
+   background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+ }
+ .spine{
+  position: relative;
+  width: 20%;
+  height: 130%;
+  background:palevioletred ;
+  left: 40%;
+  top: 15%;
+}
+.brand-statement{
+  position: relative;
+  background: azure;
+  width: 150%; 
+  height: 45%;  
+  top: 10vh;
+  right: 100%;
+  
+  padding: 50px;
+}
+.dot{
+  position: relative;
+  background:palevioletred ;
+  
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.front-layout{
+  position: relative;
+  width: 180%;
+  height: 150%;
+  background:rgb(49, 45, 46) ;
+  left: 90%;
+  padding: 50px;
+}
+.front-layout .statement{
+  color: aliceblue;
+}

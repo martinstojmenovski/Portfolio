@@ -74,7 +74,7 @@ function Navbar() {
     return (
         <div>
             <nav className={blur ? 'navbar active' : 'navbar'} >
-                <div>
+                <div className='logo'>
                     <h3 className='brand-name' onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3>
                 </div>
                 <div className='progress-bar' style={{ width: `${progressBar}%`}}></div>
@@ -93,7 +93,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <Home home={home} />
+            <div className='home'><Home home={home} /></div>
             <About about={about} />
 
             <div className='project'><Project project={project} /></div>

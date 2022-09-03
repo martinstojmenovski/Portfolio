@@ -1,8 +1,29 @@
 import './home.css'
+import image1 from './images/barcelona.jpg'
 function Home({ home }) {
   return (
-    <div ref={home} className="home">
-      <div className='logo'>
+    <div ref={home} className="homepage">
+      <div className='background'>
+        <div className='spine'>
+        <div className='brand-statement'>
+        <div className='dot'></div>
+          <p className='creative'>&nbsp;creative</p>
+          <h1 className="developer" >DEVELOPER<span className='and'>&</span></h1>
+          <h1 className='designer'>DESIGNER</h1>
+          <div className='front-layout'>
+          <p className='statement'>&emsp;Passionate about simple and robust design.
+        I love coffee, architecture, golf.</p>
+
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      {/* <div className='logo'>
         <p className='creative'>&nbsp;creative</p>
         <h1 className="developer" >DEVELOPER<span className='and'>&</span></h1>
         <h1 className='designer'>DESIGNER</h1>
@@ -11,7 +32,7 @@ function Home({ home }) {
         I love coffee, architecture, golf.</p>
       <a href="mailto:martinstojmenovskim@gmail.com">
         <p className="email"><button className='contact'>Contact me</button></p>
-      </a>
+      </a> */}
     </div>
   );
 }
