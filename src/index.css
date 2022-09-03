@@ -8,16 +8,17 @@
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   
 }
-.home {
-  height: 100vh;
+.homepage {
+  height: 150vh;
   width: 100%;
+  background-color: rgb(242, 241, 241);
   
   
 }
 .about {
   height: 100vh;
   width: 100%;
-  /* background-color: purple; */
+  background-color: rgb(242, 241, 241);
 }
 .project {
   height: 100vh;

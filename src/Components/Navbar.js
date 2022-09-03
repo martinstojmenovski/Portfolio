@@ -93,7 +93,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <div className='home'><Home home={home} /></div>
+            <Home home={home} />
             <About about={about} />
 
             <div className='project'><Project project={project} /></div>
