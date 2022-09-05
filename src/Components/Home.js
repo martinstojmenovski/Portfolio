@@ -8,7 +8,7 @@ function Home({ home }) {
         <div className='spine'>
           <div className='brand-statement'>
             <div className='dot'></div>
-            <p style={{ fontSize: '1rem' }}>&nbsp;creative</p>
+            <p style={{ fontSize: '1rem', paddingTop: '20px' }}>&nbsp;creative</p>
             <h1 className="developer" >DEVELOPER<span style={{ fontSize: '1rem' }}>&</span></h1>
             <h1 className='designer'>DESIGNER</h1>
             <div className='front-layout'>

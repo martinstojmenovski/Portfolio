@@ -110,7 +110,7 @@ font-size: 0.4em;
 }
 .brand-statement{
   position: relative;
-  background: azure;
+  background: white;
   width: 150%; 
   height: 45%;  
   top: 10vh;
@@ -135,13 +135,14 @@ font-size: 0.4em;
 .front-layout .statement{
   color: aliceblue;
   font-size: 1.2rem;
+  line-height: 35px ;
 }
 .brand-statement h1{
   -webkit-transform: scale(1, 2);
   -moz-transform: scale(1, 2);
   -o-transform: scale(1, 2);
   transform: scale(1, 2);
-  font-size: 2em;
-  padding: 10px 0;
+  font-size: 3em;
+  padding: 20px 0;
 }
 

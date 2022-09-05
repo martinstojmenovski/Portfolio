@@ -16,14 +16,11 @@
   
 }
 .about {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-color: rgb(242, 241, 241);
 }
-.project {
-  height: 100vh;
 
-}
 .skills {
   height: 100vh;
   background-color: rgb(8, 89, 114);
