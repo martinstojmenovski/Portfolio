@@ -6,7 +6,7 @@ top: auto;
 }
 .about h1{
     flex: 1;
-    font-size: 3em;
+    font-size: 3rem;
     -webkit-transform: scale(1, 3);
     -moz-transform: scale(1, 3);
     -o-transform: scale(1, 3);
@@ -30,6 +30,8 @@ top: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 1.1rem;
+    
 }
 .about p{
  line-height: 40px ;

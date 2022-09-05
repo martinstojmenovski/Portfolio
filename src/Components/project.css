@@ -25,48 +25,87 @@ background-color: rgb(49, 45, 46);
 }
 /* projects --------------------------- */
 .project1, .project2, .project3, .project4{
-  
   width: 300px;
   height: 420px;
   position: relative;
   margin: auto 25px;
   background: rgb(240, 240, 240);
   cursor: pointer;
+  padding: 30px;
+  text-align: center;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
 }
-.project1{
-  position: relative;
-  top: 20vh;
-
-}
-.project1:hover {
-  background-image: url('./images/friends.png');
+.container{
+  width: 300px;
+  height: 420px;
+  position: absolute;
+  top:10%;
+  left: 10%;
   
 }
+img{
+  height: 100%;
+  width: 100%;
+}
+.overlay{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom:0;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  background: black;
+  cursor: pointer;
+}
+
+
+.project1-content, .project1-content p{
+  /* top: 20vh; */
+  font-size: large;
+  width: 300px;
+  height: 420px;
+  color: white;
+  text-align: center;
+  
+}
+
+.container:hover .overlay{
+  opacity: 1;
+}
+
+
+
+
+/* .project1:hover {
+  background-image: url('./images/friends.png');
+  
+} */
 
 
 .project2{
-  position: relative;
   top: 13vh;
-  
+
 }
 .project2:hover{
   background-image: url('./images/ventilation.png');
 }
 
 .project3{
-  position: relative;
   top: 20vh;
-  
+
 }
 
 .project3:hover{
   background-image: url('./images/marvel.png');
-  cursor: pointer;
+  
 }
 .project4{
-  position: relative;
   top: 13vh;
-
 }
 .project4:hover{
   background-image: url('./images/portfolio.png');
@@ -75,6 +114,7 @@ background-color: rgb(49, 45, 46);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 200px;
 }
 
 .descriptions h1{
@@ -87,6 +127,7 @@ background-color: rgb(49, 45, 46);
 .descriptions p {
   color: white;
   flex:1;
+  font-size: 1.2rem;
 }
 
 

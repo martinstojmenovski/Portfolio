@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
-  font-family: 'Allerta Stencil', sans-serif;
+  /* font-family: 'Mukta', sans-serif; */
+  font-family: 'Oswald', sans-serif;
+  font-size: larger;
   color: rgb(35, 35, 35);
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   
 }
 .homepage {
