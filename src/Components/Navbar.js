@@ -57,7 +57,7 @@ function Navbar() {
     // blur navigation menu when scroll
     const blurNavbar = () => {
         // console.log(window.scrollY)
-        if (window.scrollY >= 80) {
+        if (window.scrollY >= 1) {
             setBlur(true)
         } else {
             setBlur(false)

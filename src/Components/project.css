@@ -11,7 +11,6 @@
   flex: 1;
  background-color: palevioletred;
  z-index: 2;
- /* padding: 0 17%; */
  display: flex;
  flex-direction: row;
  justify-content: center;
@@ -27,8 +26,6 @@ background-color: rgb(49, 45, 46);
 .project1, .project2, .project3, .project4{
   width: 300px;
   height: 420px;
-  position: relative;
-  margin: auto 25px;
   background: rgb(240, 240, 240);
   cursor: pointer;
   padding: 30px;
@@ -37,89 +34,66 @@ background-color: rgb(49, 45, 46);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  box-shadow: 0 10px 20px rgb(40, 40, 40);
-}
-.container{
-  width: 300px;
-  height: 420px;
-  position: absolute;
-  top:10%;
-  left: 10%;
-  
-}
-img{
-  height: 100%;
-  width: 100%;
-}
-.overlay{
-  position: absolute;
-  top:0;
-  left:0;
-  right: 0;
-  bottom:0;
-  opacity: 0;
   transition: opacity 0.4s ease-in-out;
-  background: black;
-  cursor: pointer;
 }
-
-
-.project1-content, .project1-content p{
-  /* top: 20vh; */
-  font-size: large;
+.container1, .container2, .container3, .container4{
+  margin: auto 25px;
   width: 300px;
   height: 420px;
-  color: white;
-  text-align: center;
-  
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+}
+.container1{
+  background-image: url("./images/friends.png");
+  top:13vh;
 }
 
-.container:hover .overlay{
-  opacity: 1;
+.container1:hover .project1{
+  opacity: 0;
+}
+
+.container2{
+  background-image: url("./images/ventilation.png");
+  top: 20vh; 
+}
+
+.container2:hover .project2{
+  opacity: 0;
+}
+
+.container3{
+  background-image: url("./images/marvel.png");
+  top:13vh;
+}
+
+.container3:hover .project3{
+  opacity: 0;
+}
+
+.container4{
+  background-image: url("./images/portfolio.png");
+  top: 20vh; 
+}
+.container4:hover .project4{
+  opacity: 0;
 }
 
 
 
 
-/* .project1:hover {
-  background-image: url('./images/friends.png');
-  
-} */
-
-
-.project2{
-  top: 13vh;
-
-}
-.project2:hover{
-  background-image: url('./images/ventilation.png');
-}
-
-.project3{
-  top: 20vh;
-
-}
-
-.project3:hover{
-  background-image: url('./images/marvel.png');
-  
-}
-.project4{
-  top: 13vh;
-}
-.project4:hover{
-  background-image: url('./images/portfolio.png');
-}
 .descriptions{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px;
+  padding: 250px;
 }
 
 .descriptions h1{
   color: white;
-  padding: 50px;
+  padding: 0 50px;
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -128,6 +102,7 @@ img{
   color: white;
   flex:1;
   font-size: 1.2rem;
+  padding: 0 50px;
 }
 
 

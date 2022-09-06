@@ -28,7 +28,7 @@ function Project({ project }) {
     height: '500px',
     margin: '0 auto',
     /// display when mobile size -------
-    display:'none'
+    display: 'none'
 
   }
 
@@ -95,7 +95,7 @@ function Project({ project }) {
           <div className="projects" style={sliderStyles} >
             <div style={leftArrowStyles} onClick={goToPrevious} > L </div>
             <div style={rightArrowStyles} onClick={goToNext} > R </div>
-            <div className="icon" style={ slideStyles }></div>
+            <div className="icon" style={slideStyles}></div>
             <div style={dotsContainerStyles}>
               {dots}
             </div>
@@ -103,38 +103,42 @@ function Project({ project }) {
         </div>
 
 
-      <div className="container">
-      <img src={friends}/>
-        <div className="overlay">
-        <div className="project1-content">
-          <h3>Friends</h3>
-          <p style={{lineHeight:'28px'}}>User authentication application built into React and Django
-            allows you to create an account and login with user verification.</p>
-          <p style={{ textDecoration: 'underline' }}>MORE</p>
-         
-        </div>
-        </div>
+        <div className="container1">
+          <div className="project1">
+            <h3>Friends</h3>
+            <p style={{ lineHeight: '28px' }}>User authentication application built into React and Django
+              allows you to create an account and login with user verification.</p>
+            <p style={{ textDecoration: 'underline' }}>MORE</p>
+          </div>
         </div>
 
+        <div className="container2">
+          <div className="project2">
+            <h3>Ventilation</h3>
+            <p style={{ lineHeight: '28px' }}>The intent of this website is to be a social
+              media page that allows users to post their grievances. It is team project built in React and Express.js.</p>
+            <p style={{ textDecoration: 'underline' }}>MORE</p>
+          </div>
+        </div>
 
-        <div className="project2">
-          <h3>Ventilation</h3>
-          <p style={{lineHeight:'28px'}}>The intent of this website is to be a social 
-          media page that allows users to post their grievances. It is team project built in React and Express.js.</p>
-          <p style={{ textDecoration: 'underline' }}>MORE</p>
+        <div className="container3">
+          <div className="project3">
+            <h3>Marvel</h3>
+            <p style={{ lineHeight: '28px' }}>Interactive application allows you to read the description
+              of the given character by selecting it. Built into React using third-party APIs.</p>
+            <p style={{ textDecoration: 'underline' }}>MORE</p>
+          </div>
         </div>
-        <div className="project3">
-          <h3>Marvel</h3>
-          <p style={{lineHeight:'28px'}}>Interactive application allows you to read the description 
-          of the given character by selecting it. Built into React using third-party APIs.</p>
-          <p style={{ textDecoration: 'underline' }}>MORE</p>
+
+        <div className="container4">
+          <div className="project4">
+            <h3>Portfolio</h3>
+            <p style={{ lineHeight: '28px' }}>The portfolio website is my first project created
+              to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
+            <p style={{ textDecoration: 'underline' }}>MORE</p>
+          </div>
         </div>
-        <div className="project4">
-          <h3>Portfolio</h3>
-          <p style={{lineHeight:'28px'}}>The portfolio website is my first project created 
-          to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
-          <p style={{ textDecoration: 'underline' }}>MORE</p>
-        </div>
+
       </div>
       <div className="descriptions">
         <h1>Previous work</h1>

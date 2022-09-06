@@ -93,8 +93,9 @@ font-size: 0.4em;
 } ---------------------------------------------------------------------------------*/
 .background{
   position: relative;
+  top:10vh;
   width: 100%;
-  height: 90vh;
+  height: 80vh;
    background-image: url('./images/denver-colorado-copy.jpg');
    background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -106,7 +107,7 @@ font-size: 0.4em;
   height: 130%;
   background:palevioletred ;
   left: 40%;
-  top: 20%;
+  top: 10%;
 }
 .brand-statement{
   position: relative;
@@ -142,7 +143,7 @@ font-size: 0.4em;
   -moz-transform: scale(1, 2);
   -o-transform: scale(1, 2);
   transform: scale(1, 2);
-  font-size: 3.5rem;
+  font-size: 3rem;
   padding: 20px 0;
 }
 
