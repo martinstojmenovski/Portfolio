@@ -1,8 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+/* 
 .skills{
     display: grid;
     grid-template-rows:20% 59% 1% 20%;
@@ -11,45 +7,97 @@ main{
     grid-row: 2 / 3;
     padding: 20px;
     font-size: 1.5em;
-}
+} */
 
-footer{
-    grid-row: 4 / 5;
+
+
+main {
+
+    position: relative;
+    top: 10vh;
+    width: 100%;
+    height: 70vh;
+    background-image: url('./images/skopje-city-center1-lg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+}
+.beam{
+    height: 100vh;
+    width: 300px;
+    background:palevioletred;
+    position: absolute;
+    z-index: -1;
+    top:-10vh;
+    left: 50%;
+}
+.information-card{
+    height: 450px;
+    width: 650px;
+    background: rgb(63, 53, 55);
+    position: relative;
+    margin: auto;
+    top: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    font-size: 1.3em;
+    font-size: 0.5em;
     margin: auto;
-    width:100%;
-    
+
 }
-footer a{
+
+footer {
+    position: relative;
+    top: 30vh;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(49, 45, 46);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 0.5em;
+    margin: auto;
+}
+
+
+
+.information-card a {
     text-decoration: none;
-    transition:3s;
+    transition: 3s;
+
 }
-footer a::after{
-    content:'';
+
+.information-card p {
+    color: rgb(240, 240, 240);
+}
+
+.information-card a::after {
+    content: '';
     height: 2px;
     width: 0%;
     background-color: orange;
     display: block;
     transition: 0.4s ease-in-out;
 }
-footer a:hover::after{
-    content:'';
+
+.information-card a:hover::after {
+    content: '';
     height: 2px;
     width: 100%;
     background-color: #fab330;
     display: block;
     transition: 0.4s ease-in-out;
+    color: palevioletred;
 }
 
-._8icz {
+/* ._8icz {
     grid-row: 3 / 4;
     align-items: center;
     border-bottom: 1px solid orange;
     display: flex;
     margin: 20px 16px;
     text-align: center;
-}
+} */

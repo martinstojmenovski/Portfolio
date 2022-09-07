@@ -1,7 +1,7 @@
 .project-page{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 140vh;
   width: 100%;
   
 
@@ -88,7 +88,7 @@ background-color: rgb(49, 45, 46);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 250px;
+  /* padding: 250px; */
 }
 
 .descriptions h1{

@@ -115,7 +115,7 @@ function Project({ project }) {
         <div className="container2">
           <div className="project2">
             <h3>Ventilation</h3>
-            <p style={{ lineHeight: '28px' }}>The intent of this website is to be a social
+            <p style={{ lineHeight: '28px', fontStyle: 'italic' }}>The intent of this website is to be a social
               media page that allows users to post their grievances. It is team project built in React and Express.js.</p>
             <p style={{ textDecoration: 'underline' }}>MORE</p>
           </div>
@@ -124,7 +124,7 @@ function Project({ project }) {
         <div className="container3">
           <div className="project3">
             <h3>Marvel</h3>
-            <p style={{ lineHeight: '28px' }}>Interactive application allows you to read the description
+            <p style={{ lineHeight: '28px', fontStyle: 'italic'  }} >Interactive application allows you to read the description
               of the given character by selecting it. Built into React using third-party APIs.</p>
             <p style={{ textDecoration: 'underline' }}>MORE</p>
           </div>
@@ -133,7 +133,7 @@ function Project({ project }) {
         <div className="container4">
           <div className="project4">
             <h3>Portfolio</h3>
-            <p style={{ lineHeight: '28px' }}>The portfolio website is my first project created
+            <p style={{ lineHeight: '28px', fontStyle: 'italic'  }}>The portfolio website is my first project created
               to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
             <p style={{ textDecoration: 'underline' }}>MORE</p>
           </div>
