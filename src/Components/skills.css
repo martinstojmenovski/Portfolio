@@ -14,46 +14,43 @@ main{
 main {
 
     position: relative;
-    top: 10vh;
-    width: 100%;
-    height: 70vh;
-    background-image: url('./images/skopje-city-center1-lg.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-
-}
-.beam{
-    height: 100vh;
-    width: 300px;
-    background:palevioletred;
-    position: absolute;
-    z-index: -1;
-    top:-10vh;
-    left: 50%;
-}
-.information-card{
-    height: 450px;
-    width: 650px;
-    background: rgb(63, 53, 55);
-    position: relative;
-    margin: auto;
-    top: 40vh;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    font-size: 0.5em;
-    margin: auto;
-
+    padding: 440px 300px 0 300px ;
+    top: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(49, 45, 46)
+}
+main h1{
+    flex: 1;
+    font-size: 5rem;
+    /* -webkit-transform: scale(1, 3);
+    -moz-transform: scale(1, 3);
+    -o-transform: scale(1, 3);
+    transform: scale(1, 3);  */
+    color: palevioletred;
+}
+main p{
+    flex: 1;
+    padding: 100px 50px;
+    height: fit-content;
+    background-color: white;
+    position: relative;
+    top: -30%;
+    left: -10%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.1rem;
 }
 
 footer {
     position: relative;
-    top: 30vh;
+    top: 0vh;
     height: 10vh;
     width: 100%;
-    background-color: rgb(49, 45, 46);
+    background-color: rgb(62, 40, 46);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -62,19 +59,25 @@ footer {
     margin: auto;
 }
 
-
-
-.information-card a {
-    text-decoration: none;
-    transition: 3s;
-
-}
-
-.information-card p {
+main ul li{
+    list-style: none;
+    /* padding: 20px 0; */
+    /* font-size: 0.5rem; */
     color: rgb(240, 240, 240);
 }
 
-.information-card a::after {
+main a {
+    text-decoration: none;
+    transition: 3s;
+    
+
+}
+
+main p {
+   
+}
+
+main a::after {
     content: '';
     height: 2px;
     width: 0%;
@@ -83,7 +86,7 @@ footer {
     transition: 0.4s ease-in-out;
 }
 
-.information-card a:hover::after {
+main a:hover::after {
     content: '';
     height: 2px;
     width: 100%;
@@ -93,11 +96,3 @@ footer {
     color: palevioletred;
 }
 
-/* ._8icz {
-    grid-row: 3 / 4;
-    align-items: center;
-    border-bottom: 1px solid orange;
-    display: flex;
-    margin: 20px 16px;
-    text-align: center;
-} */
