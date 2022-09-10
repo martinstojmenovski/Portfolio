@@ -1,7 +1,7 @@
 .project-page{
   display: flex;
   flex-direction: column;
-  height: 140vh;
+  height: 110vh;
   width: 100%;
   
 
@@ -85,24 +85,26 @@ background-color: rgb(49, 45, 46);
 
 
 .descriptions{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 250px; */
+  display: flex; 
+  justify-content: center; 
 }
 
 .descriptions h1{
+  position: relative;
+  top:20vh;
   color: white;
   padding: 0 50px;
-  flex: 1;
   display: flex;
   justify-content: flex-end;
+  width: 720px;
 }
-.descriptions p {
+.descriptions .describing-work {
+  position: relative;
+  top:20vh;
   color: white;
-  flex:1;
   font-size: 1.2rem;
   padding: 0 50px;
+  width: 720px;
 }
 
 

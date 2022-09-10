@@ -1,40 +1,45 @@
+
 .about{
 position: relative;
 display: flex;
-padding: 440px 300px 0 300px ;
-top: auto;
+flex-direction: row;
+ justify-content: center;
 }
 .about h1{
     flex: 1;
-    font-size: 3rem;
-    -webkit-transform: scale(1, 3);
-    -moz-transform: scale(1, 3);
-    -o-transform: scale(1, 3);
-    transform: scale(1, 2); 
+    font-size: 5rem;
+    position: relative;
+    top:10vh;
+    text-align: left;
     color: palevioletred;
 }
 .about ul {
-    flex: 1;
     position: relative;
-    top: -15%;
+    top:35vh;
+    text-align: center;
+    padding: 0 40px 0 0;
+
 }
 .about .aboutme{
-    flex: 1;
-    padding: 100px 50px;
-    height: fit-content;
+    padding: 70px 50px 50px 50px;
     background-color: white;
     position: relative;
-    top: -30%;
-    left: -10%;
-    height: 60vh;
+    width: 450px;
+    height: 600px;
+    top: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 1.1rem;
-    
+}
+.about .dot{
+    display: flex;
+    align-items: flex-end;
+    margin: auto 0 0 auto;
 }
 .about p{
  line-height: 40px ;
+ font-size: 1.1rem;
+ font-style: italic;
 }
 .about ul li{
     list-style: none;

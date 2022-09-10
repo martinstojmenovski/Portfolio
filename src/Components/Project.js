@@ -141,13 +141,13 @@ function Project({ project }) {
 
       </div>
       <div className="descriptions">
-        <h1>Previous work</h1>
-        <p>All the projects above are mainly created for educational purpose,
+        <div><h1>Previous work</h1></div>
+        <div> <p className="describing-work">All the projects above are mainly created for educational purpose,
           and are built from scratch exclusively by me or team projects where
           I have participated. The idea is to show my previous experience as well as
-          my capabilities.
+          my capabilities.</p></div>
 
-        </p>
+        
       </div>
     </div>
   );
