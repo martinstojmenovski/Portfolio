@@ -6,8 +6,8 @@ function Home({ home }) {
         <div className='spine'>
           <div className='brand-statement'>
             <div className='dot'></div>
-            {/* <p style={{ fontSize: '1rem', paddingTop: '20px' }}>&nbsp;creative</p> */}
-            <h1 className="developer" >DEVELOPER    <span style={{ fontSize: '1rem' }}>&</span>      <br/>DESIGNER</h1>
+            <p style={{ fontSize: '1rem', fontWeight:'600px' }}>&nbsp;creative</p>
+            <h1 className="developer" >DEVELOPER<span style={{ fontSize: '1rem' }}>&</span><br/>DESIGNER</h1>
             {/* <h1 className='designer'></h1> */}
            
           </div>

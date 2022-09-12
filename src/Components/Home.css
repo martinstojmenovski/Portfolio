@@ -16,14 +16,14 @@
   width: 230px;
   height: 130%;
   background:#d2668d ;
-   top: 20%; 
+   top: 25%; 
 }
 .brand-statement{
   position: relative;
   background: white;
   width: 450px; 
-  height: 350px;  
-  top: 20vh;
+  height: 400px;  
+  top: 10vh;
   right: 150%;
   padding: 30px;
 }
@@ -41,6 +41,7 @@
   background:#292d33 ;
   left: 20%;
   padding: 30px;
+  top:-10%;
 }
 .front-layout .statement{
   color: white;
@@ -52,7 +53,7 @@
   -moz-transform: scale(1, 2);
   -o-transform: scale(1, 2);
   transform: scale(1, 2); */
-  font-size: 2em;
-  font-weight: 200;
+  font-size: 4em;
+  font-weight: 800;
 }
 

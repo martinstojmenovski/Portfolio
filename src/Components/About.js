@@ -2,6 +2,7 @@ import './about.css'
 function About({ about }) {
   
     return (
+      <div className='about-page'>
       <div ref={about} className="about">
         
         <div><h1 className='hello'>HELLO, <br/> I AM MARTIN</h1></div>
@@ -18,8 +19,10 @@ function About({ about }) {
               A strong communication and time management skills 
               cultivated through a background in customer service.</p></div>
               <div className='dot'></div>
-              
               </div>
+             
+      </div>
+      <footer></footer> 
       </div>
     );
   }
