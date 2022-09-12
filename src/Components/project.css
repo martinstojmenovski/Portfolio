@@ -3,8 +3,6 @@
   flex-direction: column;
   height: 140vh;
   width: 100%;
-  
-
 }
 .project-page .image-slider{
   position: relative;
@@ -90,7 +88,7 @@ background-color: #292d33;
 
 .descriptions h1{
   position: relative;
-  top:30vh;
+  top:24vh;
   color: white;
   padding: 0 50px;
   display: flex;
@@ -100,16 +98,12 @@ background-color: #292d33;
 }
 .descriptions .describing-work {
   position: relative;
-  top:30vh;
+  top:24vh;
   color: white;
   font-size: 1.2rem;
   padding: 0 50px;
   width: 720px;
 }
-
-
-
-
 
 
 /* image slider -------------------------------------- */

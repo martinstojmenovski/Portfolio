@@ -1,57 +1,59 @@
-
-.about{
-position: relative;
-display: flex;
-flex-direction: row;
- justify-content: center;
-
+.about {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-.about h1{
+
+.about h1 {
     flex: 1;
     font-size: 5rem;
     position: relative;
-    top:10vh;
+    top: 10vh;
     text-align: left;
     color: palevioletred;
 }
+
 .about ul {
     position: relative;
-    top:40vh;
+    top: 40vh;
     text-align: center;
     padding: 0 40px 0 10px;
-
 }
-.about .aboutme{
+
+.about .aboutme {
     padding: 70px 40px 40px 40px;
     background-color: white;
     position: relative;
     width: 450px;
-    height: 500px;
+    height: 60%;
     top: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.about .dot{
+
+.about .dot {
     display: flex;
     align-items: flex-end;
     margin: auto 0 0 auto;
 }
-.about p{
- line-height: 40px ;
- font-size: 1rem;
- font-style: italic;
+
+.about p {
+    line-height: 40px;
+    font-size: 1rem;
+    font-style: italic;
 }
-.about ul li{
+
+.about ul li {
     list-style: none;
     padding: 15px 0;
     font-size: 1.7rem;
     font-weight: 700;
 }
-.about-page footer{
+
+.about-page footer {
     height: 30vh;
     width: 100%;
     background-color: #d2668d;
 }
-
-

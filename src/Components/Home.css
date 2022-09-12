@@ -1,5 +1,4 @@
-
-.background{
+.background {
   position: relative;
   width: 100%;
   height: 80vh;
@@ -8,52 +7,52 @@
   background-position: 50% 50%;
   background-size: cover;
   display: flex;
- justify-content: center;
- 
- }
- .spine{
+  justify-content: center;
+}
+
+.spine {
   position: relative;
   width: 230px;
   height: 130%;
-  background:#d2668d ;
-   top: 25%; 
+  background: #d2668d;
+  top: 25%;
 }
-.brand-statement{
+
+.brand-statement {
   position: relative;
   background: white;
-  width: 450px; 
-  height: 400px;  
+  width: 200%;
+  height: 45%;
   top: 10vh;
   right: 150%;
   padding: 30px;
 }
-.dot{
+
+.dot {
   position: relative;
-  background:#d2668d ;
+  background: #d2668d;
   width: 60px;
   height: 60px;
   border-radius: 100%;
 }
-.front-layout{
+
+.front-layout {
   position: relative;
-  width: 500px;
-  height: 300px;
-  background:#292d33 ;
+  width: 220%;
+  height: 30%;
+  background: #292d33;
   left: 20%;
   padding: 30px;
-  top:-10%;
+  top: -10%;
 }
-.front-layout .statement{
+
+.front-layout .statement {
   color: white;
   font-size: 1.1rem;
-  line-height: 45px ;
+  line-height: 45px;
 }
-.brand-statement h1{
-  /* -webkit-transform: scale(1, 2);
-  -moz-transform: scale(1, 2);
-  -o-transform: scale(1, 2);
-  transform: scale(1, 2); */
+
+.brand-statement h1 {
   font-size: 4em;
   font-weight: 800;
 }
-

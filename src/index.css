@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Mukta', sans-serif; */
   font-family: 'Oswald', sans-serif;
   font-size: large;
   color: rgb(35, 35, 35);
@@ -14,8 +13,6 @@
   height: 140vh;
   width: 100%;
   background-color: #f2f2f2;
-  
-  
 }
 .about {
   height: 95vh;
@@ -24,7 +21,6 @@
 }
 #f2f2f2
 .skills {
-  /* height: 100vh; */
   width: 100%;
 }
 
