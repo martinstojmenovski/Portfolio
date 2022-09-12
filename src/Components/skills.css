@@ -6,7 +6,7 @@ main {
     flex-direction: row;
     justify-content: center;
  
-    background-color: rgb(49, 45, 46);
+    background-color: #292d33;
     
 
 
@@ -15,7 +15,7 @@ main h1{
     font-size: 7rem;
     color: palevioletred;
     position: relative;
-    top:20vh;
+    top:10vh;
     text-align: left;
 }
 
@@ -26,7 +26,7 @@ main .last-words{
     position: relative;
     width: 450px;
     height: 550px;
-    top: 40vh;
+    top: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,11 +38,11 @@ main .dot{
 }
 .big-dot{
     position: relative;
-    background:palevioletred ;
+    background:#555c66 ;
     width: 550px;
     height: 550px;
     border-radius: 100%;
-    top:20vh; 
+    top:10vh; 
     margin: auto 0 0 auto;
     
 
@@ -58,12 +58,12 @@ main ul li{
     list-style: none;
     color: rgb(240, 240, 240);
     padding: 20px 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 main div ul {
     position: relative;
-    top:45vh;
-    left: -2ch;
+    top:35vh;
+    left: -10ch;
     text-align: center;
 
 }
@@ -91,13 +91,14 @@ footer {
     top: 0vh;
     height: 10vh;
     width: 100%;
-    background-color: rgb(62, 40, 46);
+    background-color: #333333;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    font-size: 0.5em;
+    font-size: 0.3em;
     margin: auto;
+    
 }
 
 

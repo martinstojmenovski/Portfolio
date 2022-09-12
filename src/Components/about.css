@@ -4,6 +4,7 @@ position: relative;
 display: flex;
 flex-direction: row;
  justify-content: center;
+
 }
 .about h1{
     flex: 1;
@@ -15,18 +16,18 @@ flex-direction: row;
 }
 .about ul {
     position: relative;
-    top:35vh;
+    top:40vh;
     text-align: center;
-    padding: 0 40px 0 0;
+    padding: 0 40px 0 10px;
 
 }
 .about .aboutme{
-    padding: 70px 50px 50px 50px;
+    padding: 70px 40px 40px 40px;
     background-color: white;
     position: relative;
     width: 450px;
-    height: 600px;
-    top: 30vh;
+    height: 500px;
+    top: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,13 +39,14 @@ flex-direction: row;
 }
 .about p{
  line-height: 40px ;
- font-size: 1.1rem;
+ font-size: 1rem;
  font-style: italic;
 }
 .about ul li{
     list-style: none;
-    padding: 20px 0;
+    padding: 15px 0;
     font-size: 1.7rem;
+    font-weight: 700;
 }
 
 

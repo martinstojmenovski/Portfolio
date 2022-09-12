@@ -9,7 +9,7 @@
 .project-page .image-slider{
   position: relative;
   flex: 1;
- background-color: palevioletred;
+ background-color: #d2668d;
  z-index: 2;
  display: flex;
  flex-direction: row;
@@ -20,7 +20,7 @@
   position: relative;
   flex: 2;
   z-index: 1;
-background-color: rgb(49, 45, 46);
+background-color: #292d33;
 }
 /* projects --------------------------- */
 .project1, .project2, .project3, .project4{
@@ -30,7 +30,6 @@ background-color: rgb(49, 45, 46);
   cursor: pointer;
   padding: 30px;
   text-align: center;
-  font-size: large;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -91,16 +90,17 @@ background-color: rgb(49, 45, 46);
 
 .descriptions h1{
   position: relative;
-  top:20vh;
+  top:30vh;
   color: white;
   padding: 0 50px;
   display: flex;
   justify-content: flex-end;
   width: 720px;
+  font-size: 4rem;
 }
 .descriptions .describing-work {
   position: relative;
-  top:20vh;
+  top:30vh;
   color: white;
   font-size: 1.2rem;
   padding: 0 50px;

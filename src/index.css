@@ -4,23 +4,25 @@
   box-sizing: border-box;
   /* font-family: 'Mukta', sans-serif; */
   font-family: 'Oswald', sans-serif;
-  font-size: larger;
+  font-size: large;
   color: rgb(35, 35, 35);
   
 }
 .homepage {
-  height: 150vh;
+  position: relative;
+  top:10vh;
+  height: 140vh;
   width: 100%;
-  background-color: rgb(242, 241, 241);
+  background-color: #f2f2f2;
   
   
 }
 .about {
   height: 95vh;
   width: 100%;
-  background-color: rgb(242, 241, 241);
+  background-color: #f2f2f2;
 }
-
+#f2f2f2
 .skills {
   /* height: 100vh; */
   width: 100%;
