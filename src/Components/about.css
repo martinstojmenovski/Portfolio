@@ -57,3 +57,32 @@
     width: 100%;
     background-color: #d2668d;
 }
+/* @media screen and (max-width: 933px) {
+    .about ul {
+        top: 30vh;
+        padding: 0 20px 0 10px;
+    }
+    
+    .about .aboutme {
+        padding: 50px 40px 40px 30px;
+        width: 350px;
+        top: 25vh;
+    }
+    .about ul li {
+        font-size: 1.3rem;
+    }
+    .about h1 {
+        font-size: 3rem;
+    }
+  } */
+  @media screen and (min-width: 1201px) {}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 320px) {}

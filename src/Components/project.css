@@ -4,7 +4,7 @@
   height: 140vh;
   width: 100%;
 }
-.project-page .image-slider{
+.image-slider{
   position: relative;
   flex: 1;
  background-color: #d2668d;
@@ -14,7 +14,7 @@
  justify-content: center;
  
 }
-.project-page .descriptions{
+.descriptions{
   position: relative;
   flex: 2;
   z-index: 1;
@@ -104,25 +104,51 @@ background-color: #292d33;
   padding: 0 50px;
   width: 720px;
 }
+.screen-768{
+  display: none;
+}
 
 
-/* image slider -------------------------------------- */
-.item{
-    min-height: 30rem;
-    min-width: 30rem;
-    padding-top: 20%;
-    
+
+
+  @media screen and (min-width: 1201px) {
+    .container1, .container2, .container3, .container4,.project1, .project2, .project3, .project4{
+      width: 250px;
+      height: 350px;
+    }
+    .descriptions h1, .descriptions .describing-work{
+      width: 600px;
+    }
+  
   }
-  .item img {
-    width: 60%;
-    height: 100%;
-    border-radius: 1.5rem;
-  }
-  .inner-carousel{
-    display: flex;
-    background: lightblue;
-  }
-  .carousel{
-    cursor: grab;
-    overflow: hidden;
+  @media screen and (max-width: 1200px) {
+    .container1, .container2, .container3, .container4,.project1, .project2, .project3, .project4{
+      width: 230px;
+      height: 330px;
+      margin: auto;
+    }
+  
+    .descriptions h1, .descriptions .describing-work{
+      width: 400px;
+    }
+    @media screen and (min-width: 1024px) {
+
+    }
+    @media screen and (min-width: 768px) {
+      .screen-768{
+        display: block;
+      }
+      .image-slider{
+        display: none;
+      }
+      
+    }
+    @media screen and (min-width: 480px) {
+
+    }
+    @media screen and (min-width: 320px) {
+
+    }
+  
+  
   }
