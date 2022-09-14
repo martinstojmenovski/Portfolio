@@ -8,23 +8,25 @@ main {
 }
 
 main h1 {
-    font-size: 7rem;
+    font-size: 6rem;
     color: palevioletred;
     position: relative;
-    top: 15vh;
+    top: 10vh;
     text-align: left;
+    left: 30px;
 }
 
 main .last-words {
     padding: 70px 50px 50px 50px;
     background-color: white;
     position: relative;
-    width: 23%;
-    height: 60%;
+    width: 350px;
+    height: 500px;
     top: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    right: 30px;
 }
 
 main .dot {
@@ -36,11 +38,12 @@ main .dot {
 .big-dot {
     position: relative;
     background: #555c66;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius: 100%;
-    top: 20vh;
+    top: 10vh;
     margin: auto 0 0 auto;
+    left: 30px;
 }
 
 .last-words p {
@@ -99,29 +102,63 @@ main a:hover::after {
     display: block;
     transition: 0.4s ease-in-out;
 }
-/* @media screen and (min-width: 1355px) {
+
+
+@media screen and (max-width: 1200px) {
     main h1 {
-        font-size: 4rem;
-    }
-    main ul li {
-        padding: 10px 0;
-        font-size: 1.8rem;
+        font-size: 5rem;
     }
     main .last-words {
-        padding: 50px 20px 20px 20px;
-        width: 30%;
-        height: 400px;
-        top: 30vh;
+        width: 35%;
+
     }
-  } */
 
-  @media screen and (min-width: 1201px) {}
+}
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {
+    main h1 {
+        font-size: 4rem;
+        top:15vh;
+    }
+    
+    main .last-words {
+        padding: 50px 30px 30px 30px;
 
-@media screen and (max-width: 1024px) {}
+        width: 400px;
+        height: 400px;
+    }
+    
+.big-dot {
+    width: 400px;
+    height: 400px;
+    top:20vh;
+}
+    
+    .last-words p {
+        font-size: 1rem;
 
-@media screen and (max-width: 768px) {}
+    }
+    main ul li {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        display: block;
+    }
+    .big-dot {
+        margin:1px;
+        width: 300px;
+        height: 300px;
+        left: 0;
+    }
+    main h1 {
+        font-size: 3rem;
+        left: 0;
+    }
+    
+}
 
 @media screen and (max-width: 480px) {}
 

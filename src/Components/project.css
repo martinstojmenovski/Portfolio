@@ -1,27 +1,26 @@
-.project-page{
+.project-page {
   display: flex;
   flex-direction: column;
-  height: 140vh;
+  height: 100vh;
   width: 100%;
 }
-.image-slider{
+
+.image-slider {
   position: relative;
   flex: 1;
- background-color: #d2668d;
- z-index: 2;
- display: flex;
- flex-direction: row;
- justify-content: center;
- 
+  background-color: #d2668d;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
-.descriptions{
-  position: relative;
-  flex: 2;
-  z-index: 1;
-background-color: #292d33;
-}
+
 /* projects --------------------------- */
-.project1, .project2, .project3, .project4{
+.project1,
+.project2,
+.project3,
+.project4 {
   width: 300px;
   height: 420px;
   background: rgb(240, 240, 240);
@@ -33,7 +32,11 @@ background-color: #292d33;
   justify-content: space-around;
   transition: opacity 0.4s ease-in-out;
 }
-.container1, .container2, .container3, .container4{
+
+.container1,
+.container2,
+.container3,
+.container4 {
   margin: auto 25px;
   width: 300px;
   height: 420px;
@@ -43,52 +46,58 @@ background-color: #292d33;
   background-size: cover;
   position: relative;
 }
-.container1{
+
+.container1 {
   background-image: url("./images/friends.png");
-  top:13vh;
+  top: 13vh;
 }
 
-.container1:hover .project1{
+.container1:hover .project1 {
   opacity: 0;
 }
 
-.container2{
+.container2 {
   background-image: url("./images/ventilation.png");
-  top: 20vh; 
+  top: 20vh;
 }
 
-.container2:hover .project2{
+.container2:hover .project2 {
   opacity: 0;
 }
 
-.container3{
+.container3 {
   background-image: url("./images/marvel.png");
-  top:13vh;
+  top: 13vh;
 }
 
-.container3:hover .project3{
+.container3:hover .project3 {
   opacity: 0;
 }
 
-.container4{
+.container4 {
   background-image: url("./images/portfolio.png");
-  top: 20vh; 
+  top: 20vh;
 }
-.container4:hover .project4{
+
+.container4:hover .project4 {
   opacity: 0;
 }
 
 
 
 
-.descriptions{
-  display: flex; 
-  justify-content: center; 
+.descriptions {
+  flex: 2;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  background-color: #292d33;
+  justify-content: center;
 }
 
-.descriptions h1{
+.descriptions h1 {
   position: relative;
-  top:24vh;
+  top: 24vh;
   color: white;
   padding: 0 50px;
   display: flex;
@@ -96,59 +105,133 @@ background-color: #292d33;
   width: 720px;
   font-size: 4rem;
 }
+
 .descriptions .describing-work {
   position: relative;
-  top:24vh;
+  top: 24vh;
   color: white;
   font-size: 1.2rem;
   padding: 0 50px;
   width: 720px;
 }
-.screen-768{
+
+.screen-768 {
   display: none;
 }
 
 
 
+@media screen and (max-width: 1450px) {
 
-  @media screen and (min-width: 1201px) {
-    .container1, .container2, .container3, .container4,.project1, .project2, .project3, .project4{
-      width: 250px;
-      height: 350px;
-    }
-    .descriptions h1, .descriptions .describing-work{
-      width: 600px;
-    }
-  
+  .container1,
+  .container2,
+  .container3,
+  .container4,
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    width: 250px;
+    height: 350px;
   }
-  @media screen and (max-width: 1200px) {
-    .container1, .container2, .container3, .container4,.project1, .project2, .project3, .project4{
-      width: 230px;
-      height: 330px;
-      margin: auto;
-    }
-  
-    .descriptions h1, .descriptions .describing-work{
-      width: 400px;
-    }
-    @media screen and (min-width: 1024px) {
 
-    }
-    @media screen and (min-width: 768px) {
-      .screen-768{
-        display: block;
-      }
-      .image-slider{
-        display: none;
-      }
-      
-    }
-    @media screen and (min-width: 480px) {
-
-    }
-    @media screen and (min-width: 320px) {
-
-    }
-  
-  
+  .descriptions h1,
+  .descriptions .describing-work {
+    width: 600px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .container1,
+  .container2,
+  .container3,
+  .container4,
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    width: 230px;
+    height: 330px;
+    margin: auto;
+  }
+
+  .descriptions h1,
+  .descriptions .describing-work {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .container1,
+  .container2,
+  .container3,
+  .container4,
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    width: 330px;
+    height: 270px;
+    margin: auto;
+    top: 12vh;
+  }
+
+  .image-slider {
+    position: relative;
+    flex: 1;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
+  }
+
+  .descriptions h1 {
+    top: 14vh;
+    flex: 1;
+    padding: 0 20px;
+    width: 220px;
+    font-size: 2rem;
+  }
+
+  .descriptions .describing-work {
+    flex: 1;
+    top: 14vh;
+    font-size: 1rem;
+    padding: 0 20px;
+    width: 500px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .screen-768 {
+    display: block;
+  }
+
+  .image-slider {
+    display: none;
+  }
+
+  .descriptions {
+    display: block;
+  }
+
+   .descriptions h1 {
+
+    width: 200px;
+
+  } 
+
+  .descriptions .describing-work {
+
+    width: 400px;
+  } 
+
+}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 320px) {}

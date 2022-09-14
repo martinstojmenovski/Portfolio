@@ -21,8 +21,7 @@
 .brand-statement {
   position: relative;
   background: white;
-  width: 200%;
-  height: 45%;
+  width: 500px;
   top: 10vh;
   right: 150%;
   padding: 30px;
@@ -39,7 +38,7 @@
 
 .front-layout {
   position: relative;
-  width: 220%;
+  width: 500px;
   height: 30%;
   background: #292d33;
   left: 20%;
@@ -59,22 +58,36 @@
 }
 
 
-@media screen and (min-width: 1201px) {}
+@media screen and (max-width: 1200px) {}
 
-@media screen and (min-width: 1200px) {}
-
-@media screen and (min-width: 1024px) {}
-
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
   .brand-statement {
     width: 400px;
     right: 100%;
+  
   }
   .front-layout {
-    width: 180%;
+    width: 150%;
+    height: 40%;
+    left: 50%;
+    top: -20%;
   }
 }
 
-@media screen and (min-width: 480px) {}
+@media screen and (max-width: 768px) {
+  .brand-statement {
+    width: 200px;
+    right: 100%;
+  
+  }
+  .front-layout {
+    width: 50%;
+    height: 40%;
+    left: 50%;
+    top: -20%;
+  }
+}
 
-@media screen and (min-width: 320px) {}
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 320px) {}

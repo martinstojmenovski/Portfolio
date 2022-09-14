@@ -12,13 +12,14 @@
     top: 10vh;
     text-align: left;
     color: palevioletred;
+    left:30px;
 }
 
 .about ul {
     position: relative;
     top: 40vh;
     text-align: center;
-    padding: 0 40px 0 10px;
+    padding: 0 80px 0 10px;
 }
 
 .about .aboutme {
@@ -31,6 +32,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    right: 30px;
 }
 
 .about .dot {
@@ -57,9 +59,32 @@
     width: 100%;
     background-color: #d2668d;
 }
-/* @media screen and (max-width: 933px) {
+
+
+@media screen and (max-width: 1200px) {
     .about ul {
-        top: 30vh;
+        top: 40vh;
+        right: 50%;
+        padding: 0 20px 0 10px;
+    }
+    
+    .about .aboutme {
+        padding: 50px 40px 40px 30px;
+        top: 25vh;
+    }
+    .about ul li {
+        font-size: 1.3rem;
+    }
+    .about h1 {
+        font-size: 4rem;
+        top:15vh
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .about ul {
+        top: 35vh;
+        right: 50%;
         padding: 0 20px 0 10px;
     }
     
@@ -73,13 +98,9 @@
     }
     .about h1 {
         font-size: 3rem;
+        top:15vh
     }
-  } */
-  @media screen and (min-width: 1201px) {}
-
-@media screen and (max-width: 1200px) {}
-
-@media screen and (max-width: 1024px) {}
+}
 
 @media screen and (max-width: 768px) {}
 
