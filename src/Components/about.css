@@ -12,7 +12,7 @@
     top: 10vh;
     text-align: left;
     color: palevioletred;
-    left:30px;
+    /* left:30px; */
 }
 
 .about ul {
@@ -59,6 +59,9 @@
     width: 100%;
     background-color: #d2668d;
 }
+.container10{ 
+    display: none;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -102,7 +105,56 @@
     }
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .container10{
+        display: block;
+        grid-column: 1 / span 4;
+        grid-row: 1 / 2;
+    }
+    .container20{
+        display: grid;
+        grid-column: 1 / 2;
+        grid-row: 2 / span 4; 
+    }
+    .aboutme{
+        grid-column: 2 / span 4;
+        grid-row: 2 / span 4;
+    } 
+
+    .about .hello {
+        display: none;
+    }
+    .container10 h1{
+        top:10vh;
+        text-align: center;
+    }
+    .about ul {
+        top:0;
+        right: 0;
+        padding: 0 40px 0 10px;
+    }
+    
+    .about .aboutme {
+        padding: 40px 20px 20px 20px;
+        width: 320px;
+        height: 450px;
+        top: -5vh;
+    }
+    .about ul li {
+        font-size: 1rem;
+        padding: 20px 0;
+    } 
+    .about p {
+        line-height: 30px;
+        font-size: 0.9rem;
+    }
+  
+}
 
 @media screen and (max-width: 480px) {}
 

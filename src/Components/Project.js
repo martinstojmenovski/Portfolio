@@ -13,43 +13,43 @@ function Project({ project }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const project1 = (<div className="container1">
-          <div className="project1">
-            <h3>Friends</h3>
-            <p style={{ lineHeight: '28px' }}>User authentication application built into React and Django
-              allows you to create an account and login with user verification.</p>
-            <p style={{ textDecoration: 'underline' }}>MORE</p>
-          </div>
-        </div>)
-         const project2 = (<div className="container2">
-         <div className="project2">
-           <h3>Ventilation</h3>
-           <p style={{ lineHeight: '28px', fontStyle: 'italic' }}>The intent of this website is to be a social
-             media page that allows users to post their grievances. It is team project built in React and Express.js.</p>
-           <p style={{ textDecoration: 'underline' }}>MORE</p>
-         </div>
-       </div>)
+    <div className="project1">
+      <h3>Friends</h3>
+      <p style={{ lineHeight: '28px' }}>User authentication application built into React and Django
+        allows you to create an account and login with user verification.</p>
+      <p style={{ textDecoration: 'underline' }}>MORE</p>
+    </div>
+  </div>)
+  const project2 = (<div className="container2">
+    <div className="project2">
+      <h3>Ventilation</h3>
+      <p style={{ lineHeight: '28px', fontStyle: 'italic' }}>The intent of this website is to be a social
+        media page that allows users to post their grievances. It is team project built in React and Express.js.</p>
+      <p style={{ textDecoration: 'underline' }}>MORE</p>
+    </div>
+  </div>)
 
-const project3 = (<div className="container3">
-         <div className="project3">
-           <h3>Marvel</h3>
-           <p style={{ lineHeight: '28px', fontStyle: 'italic'  }} >Interactive application allows you to read the description
-             of the given character by selecting it. Built into React using third-party APIs.</p>
-           <p style={{ textDecoration: 'underline' }}>MORE</p>
-         </div>
-       </div>)
+  const project3 = (<div className="container3">
+    <div className="project3">
+      <h3>Marvel</h3>
+      <p style={{ lineHeight: '28px', fontStyle: 'italic' }} >Interactive application allows you to read the description
+        of the given character by selecting it. Built into React using third-party APIs.</p>
+      <p style={{ textDecoration: 'underline' }}>MORE</p>
+    </div>
+  </div>)
 
-const project4 = (<div className="container4">
-         <div className="project4">
-           <h3>Portfolio</h3>
-           <p style={{ lineHeight: '28px', fontStyle: 'italic'  }}>The portfolio website is my first project created
-             to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
-           <p style={{ textDecoration: 'underline' }}>MORE</p>
-         </div>
-       </div>)
+  const project4 = (<div className="container4">
+    <div className="project4">
+      <h3>Portfolio</h3>
+      <p style={{ lineHeight: '28px', fontStyle: 'italic' }}>The portfolio website is my first project created
+        to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
+      <p style={{ textDecoration: 'underline' }}>MORE</p>
+    </div>
+  </div>)
 
   const images = [project1, project2, project3, project4]
-    // image1, image2, image3, image4, 
-    
+  // image1, image2, image3, image4, 
+
 
   const sliderStyles = {
     height: "100%",
@@ -73,7 +73,7 @@ const project4 = (<div className="container4">
     margin: '0 auto',
     /// display when mobile size -------
     display: 'block'
-    
+
 
 
   }
@@ -136,7 +136,7 @@ const project4 = (<div className="container4">
 
   return (
     <div ref={project} className='project-page'>
-      
+
 
 
       <div className="screen-768">
@@ -154,16 +154,16 @@ const project4 = (<div className="container4">
             </div>
           </div>
         </div>
-        </div>
-
-      
-        <div className='image-slider'>
-      {project1}
-      {project2}
-      {project3}
-      {project4}
       </div>
-      
+
+
+      <div className='image-slider'>
+        {project1}
+        {project2}
+        {project3}
+        {project4}
+      </div>
+
 
 
       <div className="descriptions">

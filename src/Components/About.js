@@ -6,7 +6,8 @@ function About({ about }) {
       <div ref={about} className="about">
         
         <div><h1 className='hello'>HELLO, <br/> I AM MARTIN</h1></div>
-            <div><ul>
+        <div className='container10'><h1>HELLO, I AM MARTIN</h1></div>
+            <div className='container20'><ul>
               <li>Premium Desigh</li>
               <li>Amazing Photo</li>
               <li>Creative Ideas</li>

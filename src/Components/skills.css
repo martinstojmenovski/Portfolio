@@ -13,7 +13,7 @@ main h1 {
     position: relative;
     top: 10vh;
     text-align: left;
-    left: 30px;
+    padding: 30px;
 }
 
 main .last-words {
@@ -123,7 +123,6 @@ main a:hover::after {
     
     main .last-words {
         padding: 50px 30px 30px 30px;
-
         width: 400px;
         height: 400px;
     }
@@ -147,15 +146,41 @@ main a:hover::after {
     main {
         display: block;
     }
+    main h1 {
+        top:4vh;
+        font-size: 4rem;
+    }
     .big-dot {
         margin:1px;
-        width: 300px;
-        height: 300px;
-        left: 0;
+        width: 350px;
+        height: 350px;
+        left: 30px;
+        top:0;
     }
-    main h1 {
-        font-size: 3rem;
+    main div ul {
+        top: -40vh;
+        text-align: right;
+    
+        
+    }
+    main .last-words {
+        top: -28vh;
         left: 0;
+        padding: 50px 30px 30px 30px;
+        width: 400px;
+        height: 300px;
+        margin: auto;
+        background-color: transparent;
+    }
+    main ul li {
+        padding: 10px 0;
+        font-size: 1.5rem;
+    }
+    .last-words p {
+        line-height: 40px;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: rgb(230, 230, 230);
     }
     
 }
