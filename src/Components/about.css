@@ -156,6 +156,18 @@
   
 }
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+    .container10{
+        width: fit-content;
+    }
+    .about .aboutme {
+        width: 280px;
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 
 @media screen and (max-width: 320px) {}
