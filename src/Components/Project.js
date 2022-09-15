@@ -11,6 +11,7 @@ import image4 from './images/ventilation.png'
 
 function Project({ project }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [dotColor, setDotColor] = useState('white')
 
   const project1 = (<div className="container1">
     <div className="project1">
@@ -68,11 +69,10 @@ function Project({ project }) {
 
   const containerStyles = {
     position: 'relative',
-    width: '280px',
-    height: '500px',
+    width: '100%',
+    height: '100%',
     margin: '0 auto',
-    /// display when mobile size -------
-    display: 'block'
+    zIndex: '2',
 
 
 
@@ -87,6 +87,7 @@ function Project({ project }) {
     color: '#fff',
     zIndex: 1,
     cursor: "pointer",
+    padding: "20px",
   }
   const rightArrowStyles = {
     position: 'absolute',
@@ -97,28 +98,40 @@ function Project({ project }) {
     color: '#fff',
     zIndex: 1,
     cursor: "pointer",
+    padding: "20px",
   }
 
   const dotsContainerStyles = {
     display: 'flex',
     justifyContent: 'center',
+    position: 'relative',
+    bottom:'-13vh',
+
+    
 
   }
-  const dotStyles = {
-    margin: '0 3px',
+
+  let dotStyles = {
+    margin: '10px 5px',
     cursor: 'pointer',
-    fontSize: '20px',
+    height: '17px',
+    width: '17px',
+    backgroundColor: 'white',
+    borderRadius: '100%',
+    zIndex:"3",
   }
+  // console.log(dotColor)
   const dots = images.map((image, slideIndex) => {
+   
     return (
       <div
         key={slideIndex}
         style={dotStyles}
-        onClick={() => goToSlide(slideIndex)} >O
+        onClick={() => goToSlide(slideIndex)} >
       </div>
     )
   })
-
+  
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
@@ -129,24 +142,31 @@ function Project({ project }) {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex)
   }
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex)
+
+  const changeDotColor = (index) =>{
+    dots[currentIndex].props.style.backgroundColor = 'black'
+    
   }
 
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex)
+    changeDotColor(slideIndex)
+  }
+ 
 
   return (
     <div ref={project} className='project-page'>
 
 
 
-      <div className="screen-768">
-        <div className="screen-769" style={containerStyles} >
-          <div className="projects" style={sliderStyles} >
+      <div >
+        <div className="screen-768" style={containerStyles} >
+          <div style={sliderStyles} >
             <div style={leftArrowStyles} onClick={goToPrevious} > L </div>
             <div style={rightArrowStyles} onClick={goToNext} > R </div>
 
             {images[currentIndex]}
-            {/* <div style={slideStyles}></div> */}
 
 
             <div style={dotsContainerStyles}>

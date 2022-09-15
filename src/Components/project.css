@@ -248,8 +248,21 @@
   .project4 {
     width: 300px;
     height: 450px;
-
   }
+  .descriptions {
+    display: block;
+  }
+
+   .descriptions h1 {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+
+  } 
+
+  .descriptions .describing-work {
+    width: fit-content;
+  } 
 }
 
 @media screen and (max-width: 320px) {}

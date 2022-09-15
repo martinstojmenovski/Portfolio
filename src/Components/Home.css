@@ -103,25 +103,29 @@
 
 @media screen and (max-width: 480px) {
   .brand-statement {
-    width: 200px;
+    width: 220px;
+    z-index: 2;
   }
   .front-layout {
-    width: 100%;
-    height: 35%;
+    width: 110%;
+    height: 40%;
     left: 0;
     top:0;
     padding: 10px;
+    z-index: 1;
+    padding: 70px 10px 0 15px ;
   }
   .spine {
-    width: 200px;
+    width: 220px;
   }
   .brand-statement h1 {
     font-size: 2.5em;
+    
   }
   .front-layout .statement {
     line-height: 30px;
-    
   }
+
 }
 
 @media screen and (max-width: 320px) {}

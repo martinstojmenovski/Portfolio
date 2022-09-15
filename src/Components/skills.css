@@ -159,9 +159,7 @@ main a:hover::after {
     }
     main div ul {
         top: -40vh;
-        text-align: right;
-    
-        
+        text-align: right;  
     }
     main .last-words {
         top: -28vh;
@@ -186,15 +184,30 @@ main a:hover::after {
 }
 
 @media screen and (max-width: 480px) {
-    main .last-words {
-        padding: 30px 10px 10px 10px;
-        width: fit-content;
+    main h1 {
+        top:5vh;
+        font-size: 3rem;
     }
+
     .big-dot {
-        margin:0;
-        width: 300px;
-        height: 300px;
+        margin:auto;
+        width: 280px;
+        height: 280px;
+        top: 3vh;
         left: 0;
+    }
+    main div ul {
+        top: -27vh;
+        margin: auto;
+        text-align: center;
+        left: 0; 
+    }
+    main .last-words {
+        top: -23vh;
+        padding: 50px 30px 30px 30px;
+        width: fit-content;
+        height: 350px; 
+        margin: auto;
     }
 }
 
