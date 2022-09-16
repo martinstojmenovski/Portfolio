@@ -1,11 +1,20 @@
 .project-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
+  background-color: #292d33;
 }
 
 .image-slider {
+  display: none;
+  background-color: #d2668d;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+
+}
+
+.projects {
   position: relative;
   flex: 1;
   background-color: #d2668d;
@@ -13,10 +22,32 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
 
-/* projects --------------------------- */
+.descriptions {
+  display: flex;
+  position: relative;
+  top: 25vh;
+  width: 80%;
+  margin:  0 auto;
+  /* padding: 25vh 50px 0 50px ; */
+  /* z-index: 1; */
+  /* justify-content: center; */
+}
+/* description------------------------------------------------------- */
+.descriptions .project-header {
+  flex: 1;
+  text-align: end;
+  color: white;
+  padding-right: 30px;
+  font-size: 3rem;
+}
+
+.descriptions .description-article {
+  flex: 1;
+  color: white;
+}
+/* projects container --------------------------- */
 .project1,
 .project2,
 .project3,
@@ -31,6 +62,21 @@
   flex-direction: column;
   justify-content: space-around;
   transition: opacity 0.4s ease-in-out;
+}
+
+.project1 p,
+.project2 p,
+.project3 p,
+.project4 p {
+  line-height: 28px;
+  font-style: italic;
+}
+
+.project1 span,
+.project2 span,
+.project3 span,
+.project4 span {
+  text-decoration: underline;
 }
 
 .container1,
@@ -86,37 +132,52 @@
 
 
 
-.descriptions {
-  flex: 2;
-  display: flex;
-  position: relative;
+
+/* image-slider display media-query max 768px  -----------------------------------------------------------*/
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50);
+  left: 32px;
+  font-size: 45px;
+  color: #fff;
   z-index: 1;
-  background-color: #292d33;
-  justify-content: center;
+  cursor: pointer;
+  padding: 20px;
 }
 
-.descriptions h1 {
-  position: relative;
-  top: 24vh;
-  color: white;
-  padding: 0 50px;
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50);
+  right: 32px;
+  font-size: 45px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.dot-container {
   display: flex;
-  justify-content: flex-end;
-  width: 720px;
-  font-size: 4rem;
-}
-
-.descriptions .describing-work {
+  justify-content: center;
   position: relative;
-  top: 24vh;
-  color: white;
-  font-size: 1.2rem;
-  padding: 0 50px;
-  width: 720px;
+  bottom: -13vh;
 }
 
-.screen-768 {
-  display: none;
+.dots {
+  margin: 10px 5px;
+  cursor: pointer;
+  height: 17px;
+  width: 17px;
+  background: rgb(243, 243, 243);
+  border-radius: 100%;
+  z-index: 4;
+  transition: background-color 0.7s ease-out;
+}
+
+.dots.active {
+  background: rgb(194, 194, 194);
 }
 
 
@@ -133,11 +194,6 @@
   .project4 {
     width: 250px;
     height: 350px;
-  }
-
-  .descriptions h1,
-  .descriptions .describing-work {
-    width: 600px;
   }
 }
 
@@ -156,14 +212,16 @@
     margin: auto;
   }
 
-  .descriptions h1,
-  .descriptions .describing-work {
-    width: 400px;
+  .descriptions {
+    width: 95%;
   }
 }
 
 @media screen and (max-width: 1024px) {
+  .project-page {
+    height: 140vh;
 
+  }
   .container1,
   .container2,
   .container3,
@@ -178,7 +236,7 @@
     top: 12vh;
   }
 
-  .image-slider {
+  .projects {
     position: relative;
     flex: 1;
     z-index: 2;
@@ -187,8 +245,10 @@
     grid-template-rows: 1fr 1fr;
     row-gap: 20px;
   }
-
-  .descriptions h1 {
+  .descriptions{
+    top:20vh;
+  }
+  /* .descriptions h1 {
     top: 14vh;
     flex: 1;
     padding: 0 20px;
@@ -202,42 +262,41 @@
     font-size: 1rem;
     padding: 0 20px;
     width: 500px;
-  }
+  } */
 
 }
 
 @media screen and (max-width: 768px) {
-  .screen-768 {
+  .image-slider{
     display: block;
-    background-color: #d2668d;
   }
-
-  .image-slider {
+  .projects {
     display: none;
   }
-
+  .container1,
+  .container2,
+  .container3,
+  .container4,
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    width: 440px;
+    height: 340px;
+  }
   .descriptions {
     display: block;
+    top:12vh;
   }
 
-   .descriptions h1 {
-    width: 200px;
+  .descriptions .project-header {
+    text-align: center;
 
-  } 
-
-  .descriptions .describing-work {
-
-    width: 400px;
-  } 
+  }
 
 }
 
 @media screen and (max-width: 480px) {
-  
-  .descriptions .describing-work {
-    width: fit-content;
-  } 
-
   .container1,
   .container2,
   .container3,
@@ -249,20 +308,21 @@
     width: 300px;
     height: 450px;
   }
+
   .descriptions {
     display: block;
   }
 
-   .descriptions h1 {
+  .descriptions h1 {
     width: fit-content;
     text-align: center;
     margin: 0 auto;
 
-  } 
+  }
 
   .descriptions .describing-work {
     width: fit-content;
-  } 
+  }
 }
 
 @media screen and (max-width: 320px) {}
