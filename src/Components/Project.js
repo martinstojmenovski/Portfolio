@@ -2,6 +2,7 @@
 import { useState } from "react"
 import "./project.css"
 import images from "./projectsText"
+import { FaBeer } from 'react-icons/fa';
 
 function Project({ project }) {
   // useState declared to change index of an array slider.
@@ -42,8 +43,8 @@ function Project({ project }) {
     <div ref={project} className='project-page'>
 
       <div className="image-slider">
-        <div className="left-arrow" onClick={goToPrevious} > L </div>
-        <div className="right-arrow" onClick={goToNext} > R </div>
+        <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
+        <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
         {images[currentIndex]}
         <div className="dot-container">
           {dots}

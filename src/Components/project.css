@@ -30,9 +30,7 @@
   top: 25vh;
   width: 80%;
   margin:  0 auto;
-  /* padding: 25vh 50px 0 50px ; */
-  /* z-index: 1; */
-  /* justify-content: center; */
+
 }
 /* description------------------------------------------------------- */
 .descriptions .project-header {
@@ -84,8 +82,8 @@
 .container3,
 .container4 {
   margin: auto 25px;
-  width: 300px;
-  height: 420px;
+  /* width: 300px;
+  height: 420px; */
   box-shadow: 0 10px 20px rgb(40, 40, 40);
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -137,25 +135,43 @@
 .left-arrow {
   position: absolute;
   top: 50%;
-  transform: translate(0, -50);
-  left: 32px;
-  font-size: 45px;
-  color: #fff;
+  left: 0; 
   z-index: 1;
   cursor: pointer;
-  padding: 20px;
+  padding: 25px;
+ 
+}
+.left-arrow span,
+.right-arrow span{
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 5px auto;
+  background-color: white;
+}
+.left-arrow span:nth-child(1) {
+  transform: translateY(16px) rotate(55deg);
+}
+
+.left-arrow span:nth-child(2) {
+  transform: translateY(-16px) rotate(-55deg);
 }
 
 .right-arrow {
   position: absolute;
   top: 50%;
-  transform: translate(0, -50);
-  right: 32px;
-  font-size: 45px;
-  color: #fff;
+  right: 1%;
   z-index: 1;
   cursor: pointer;
-  padding: 20px;
+  padding: 25px;
+}
+
+.right-arrow span:nth-child(1) {
+  transform: translateY(16px) rotate(-55deg);
+}
+
+.right-arrow span:nth-child(2) {
+  transform: translateY(-16px) rotate(55deg);
 }
 
 .dot-container {
@@ -183,11 +199,6 @@
 
 
 @media screen and (max-width: 1450px) {
-
-  .container1,
-  .container2,
-  .container3,
-  .container4,
   .project1,
   .project2,
   .project3,
@@ -231,7 +242,7 @@
   .project3,
   .project4 {
     width: 330px;
-    height: 270px;
+    height: 250px;
     margin: auto;
     top: 12vh;
   }
@@ -246,24 +257,9 @@
     row-gap: 20px;
   }
   .descriptions{
-    top:20vh;
+    top:17vh;
   }
-  /* .descriptions h1 {
-    top: 14vh;
-    flex: 1;
-    padding: 0 20px;
-    width: 220px;
-    font-size: 2rem;
-  }
-
-  .descriptions .describing-work {
-    flex: 1;
-    top: 14vh;
-    font-size: 1rem;
-    padding: 0 20px;
-    width: 500px;
-  } */
-
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -307,21 +303,6 @@
   .project4 {
     width: 300px;
     height: 450px;
-  }
-
-  .descriptions {
-    display: block;
-  }
-
-  .descriptions h1 {
-    width: fit-content;
-    text-align: center;
-    margin: 0 auto;
-
-  }
-
-  .descriptions .describing-work {
-    width: fit-content;
   }
 }
 
