@@ -47,8 +47,8 @@ function Navbar() {
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-        if (elementRef.current.className === "home") {
-            setHamburger(hamburger)
+        if (elementRef.current.className === "homepage") {
+            return null
         } else {
             setHamburger(!hamburger)
         }
@@ -68,7 +68,9 @@ function Navbar() {
 
     // dropdown menu function
     const showHamburger = () => {
+        console.log("hello")
         setHamburger(!hamburger)
+
     }
 
     return (

@@ -2,10 +2,8 @@
 import { useState } from "react"
 import "./project.css"
 import images from "./projectsText"
-import projectsText from "./projectsText"
 
 function Project({ project, projectsText }) {
-  console.log(projectsText)
   // useState declared to change index of an array slider.
   const [currentIndex, setCurrentIndex] = useState(0)
   

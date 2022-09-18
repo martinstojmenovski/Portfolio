@@ -68,7 +68,6 @@ main div ul {
 
 footer {
     position: relative;
-    top: 0vh;
     height: 10vh;
     width: 100%;
     background-color: #333333;
@@ -104,44 +103,6 @@ main a:hover::after {
 }
 
 
-/* @media screen and (max-width: 1200px) {
-    main h1 {
-        font-size: 5rem;
-    }
-    main .last-words {
-        width: 35%;
-
-    }
-
-} */
-
-/* @media screen and (max-width: 1024px) {
-    main h1 {
-        font-size: 4rem;
-        top:15vh;
-    }
-    
-    main .last-words {
-        padding: 50px 30px 30px 30px;
-        width: 400px;
-        height: 400px;
-    }
-    
-.big-dot {
-    width: 400px;
-    height: 400px;
-    top:20vh;
-}
-    
-    .last-words p {
-        font-size: 1rem;
-
-    }
-    main ul li {
-        font-size: 1.5rem;
-    }
-} */
-
 @media screen and (max-width: 768px) {
     main {
         display: block;
@@ -159,11 +120,11 @@ main a:hover::after {
         left: 0; 
     }
     main .last-words {
-        top: -40vh;
+        top: -30vh;
         left: 0;
-        padding: 70px 30px 20px 30px;
+        padding: 0 30px 20px 30px;
         width: 350px;
-        height: 320px;
+        height: 250px;
         margin: auto;
         background-color: transparent;
     }
