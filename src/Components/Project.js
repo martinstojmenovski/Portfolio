@@ -2,11 +2,13 @@
 import { useState } from "react"
 import "./project.css"
 import images from "./projectsText"
-import { FaBeer } from 'react-icons/fa';
+import projectsText from "./projectsText"
 
-function Project({ project }) {
+function Project({ project, projectsText }) {
+  console.log(projectsText)
   // useState declared to change index of an array slider.
   const [currentIndex, setCurrentIndex] = useState(0)
+  
 
   // function to change previous index of the slider.
   const goToPrevious = () => {
