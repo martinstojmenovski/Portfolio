@@ -26,7 +26,7 @@
     background-color: white;
     position: relative;
     width: 400px;
-    height: 430px;
+    height: 40px;
     top: 23vh;
     display: flex;
     flex-direction: column;
@@ -129,7 +129,7 @@
         display: none;
     }
     .container10 h1{
-        top:10vh;
+        /* top:10vh; */
         text-align: center;
     }
     .about ul {
@@ -156,33 +156,29 @@
 }
 
 @media screen and (max-width: 480px) {
-    .about .aboutme {
-        width: 280px;
-    }
     .about {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     .about .aboutme {
-        width: 290px;
+        width: 330px;
         height: 350px;
         left: 0;
-        top:6vh;
-        margin: auto;
-        text-align: center;
+        top:4vh;
+        margin:  0 auto;
     }
     .container10 h1{
-        top:12vh;
+        top:2vh;
         font-size: 2rem;
     }
     .about ul {
-        top:15vh;
+        top:2vh;
         padding: 0;
     }
     .about ul li {
         font-size: 1rem;
-        padding: 10px 0;
+        padding: 6px 0;
     }
 }
 
