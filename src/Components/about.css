@@ -51,6 +51,7 @@
     padding: 15px 0;
     font-size: 1.3rem;
     font-weight: 700;
+    color: #292d33;
 }
 
 .about-page footer {
@@ -154,7 +155,7 @@
         justify-content: center;
     }
     .about .aboutme {
-        width: 330px;
+        width: 320px;
         height: 350px;
         left: 0;
         top:4vh;

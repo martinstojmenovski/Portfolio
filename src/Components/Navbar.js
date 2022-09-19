@@ -41,18 +41,14 @@ function Navbar() {
 
 
 
-    //Page navigation function
+    //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
         setHamburger(!hamburger)
-        // if (elementRef.current.className === "homepage") {
-        //     return null
-        // } else {
-        //     setHamburger(!hamburger)
-        // }
+        document.body.style.overflow = ""
     }
 
     // blur navigation menu when scroll
@@ -67,21 +63,20 @@ function Navbar() {
     window.addEventListener('scroll', blurNavbar)
 
 
-    // dropdown menu function
+    // dropdown menu function - overflow hidden to stop page from scrolling
     const showHamburger = (index) => {
         if(hamburger){
-            console.log("is hamburger")
             document.body.style.overflow = "hidden"
             setHamburger(!hamburger)
         } else  {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
-            console.log("is not hamburger")
         }   
     }
     const closeHamburger = () =>{
         if(!hamburger){
             setHamburger(!hamburger)
+            document.body.style.overflow = ""
         }
     }
 

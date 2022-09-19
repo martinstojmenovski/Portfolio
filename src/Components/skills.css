@@ -147,10 +147,15 @@ main a:hover::after {
         top: -15vh;
     }
     main .last-words {
-        top: -20vh;
+        top: -15vh;
         width: fit-content;
-        height: 320px; 
+        height: 300px; 
+        flex-direction: column-reverse;
     }
+    main .dot {
+        margin: 0 0 auto auto;
+    }
+    
 }
 
 @media screen and (max-width: 320px) {}
