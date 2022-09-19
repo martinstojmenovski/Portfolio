@@ -12,18 +12,28 @@
 }
 .dropmenu{
   display: flex;
+  transition: all 0.2s linear;
+ 
  
 }
 .dropmenu.active{
   background-color: rgba(0, 0, 0, 0.6);
   height: 100vh;
   z-index: 4;
-  
+
+ 
 }
+
+
+
 
 .logo {
   flex: 2.5;
   padding: 20px;
+
+}
+.brand-name{
+  word-break: keep-all;
 }
 .hamburger{
   flex: 1;
@@ -35,8 +45,18 @@
 .hamburger.active{
   background-color: rgba(0, 0, 0, 0.9);
   align-items: flex-start;
+  animation: fadeInRight 0.7s ease-in-out;
 }
 
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  to {
+    opacity: 1;
+  }
+}
 .sidebar {
   height: 0;
   overflow: hidden;
@@ -106,6 +126,7 @@ li {
 @media screen and (max-width: 480px) {
   .logo {
     flex: 0.4;
+    white-space: nowrap;
+    padding-right: 0;
   }
-
 }
