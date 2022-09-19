@@ -45,13 +45,13 @@
 .hamburger.active{
   background-color: rgba(0, 0, 0, 0.9);
   align-items: flex-start;
-  animation: fadeInRight 0.7s ease-in-out;
+  animation: fadeInRight 0.7s linear;
 }
 
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(500px);
+    transform: translateX(300px);
   }
   to {
     opacity: 1;
