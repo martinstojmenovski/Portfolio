@@ -1,3 +1,6 @@
+/* body{
+  overflow: hidden;
+} */
 .navbar {
   position: fixed;
   width: 100%;
@@ -12,22 +15,25 @@
 }
 .dropmenu{
   display: flex;
+ 
 }
 .dropmenu.active{
   background-color: rgba(0, 0, 0, 0.6);
   height: 100vh;
+  z-index: 4;
+  
 }
 
 .logo {
   flex: 2.5;
   padding: 20px;
-  cursor:pointer;
 }
 .hamburger{
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  z-index: 5;
 }
 .hamburger.active{
   background-color: rgba(0, 0, 0, 0.9);
@@ -37,7 +43,6 @@
 .sidebar {
   height: 0;
   overflow: hidden;
-
 }
 
 .sidebar.active {
@@ -95,5 +100,5 @@ li {
   left: 0;
   height: 1.5px;
   background: linear-gradient(to right, #ffffff 50%, #ffffff 50%, rgb(0, 0, 0));
-  z-index: 999;
+  z-index: 3;
 }

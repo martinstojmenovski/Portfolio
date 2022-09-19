@@ -47,11 +47,12 @@ function Navbar() {
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-        if (elementRef.current.className === "homepage") {
-            return null
-        } else {
-            setHamburger(!hamburger)
-        }
+        setHamburger(!hamburger)
+        // if (elementRef.current.className === "homepage") {
+        //     return null
+        // } else {
+        //     setHamburger(!hamburger)
+        // }
     }
 
     // blur navigation menu when scroll
@@ -67,9 +68,21 @@ function Navbar() {
 
 
     // dropdown menu function
-    const showHamburger = () => {
-        setHamburger(!hamburger)
-
+    const showHamburger = (index) => {
+        if(hamburger){
+            console.log("is hamburger")
+            document.body.style.overflow = "hidden"
+            setHamburger(!hamburger)
+        } else  {
+            setHamburger(!hamburger)
+            document.body.style.overflow = ""
+            console.log("is not hamburger")
+        }   
+    }
+    const closeHamburger = () =>{
+        if(!hamburger){
+            setHamburger(!hamburger)
+        }
     }
 
     return (
@@ -81,18 +94,14 @@ function Navbar() {
 
 
 
-                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} onClick={showHamburger} >
-
-
-
-                    <div className='logo'>
+                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
+                <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+                    <div className='logo'  onClick={closeHamburger}>
                         <h3 className='brand-name' >Martin Stojmenovski</h3>
                     </div>
 
-
-
-                    <div className={hamburger ? "hamburger" : "hamburger active" } >
-                        <div className="bars" >
+                    <div className={hamburger ? "hamburger" : "hamburger active"}  >
+                        <div className="bars" onClick={showHamburger}>
                             <span className="bar"></span>
                             <span className="bar"></span>
                             <span className="bar"></span>
@@ -107,16 +116,11 @@ function Navbar() {
                         </div>
                     </div>
 
-
-
-
-
-
                 </div>
 
 
 
-                <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+              
 
             </nav>
             <Home home={home} />
