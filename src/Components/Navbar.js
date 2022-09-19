@@ -27,7 +27,7 @@ function Navbar() {
     const scrollProgress = () => {
         const winScroll = document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = ( winScroll / height) * 100;
+        const scrolled = (winScroll / height) * 100;
         // console.log(scrolled)
         setProgresBar(scrolled)
     }
@@ -36,7 +36,7 @@ function Navbar() {
 
         return () => window.removeEventListener('scroll', scrollProgress)
     }, [])
-    
+
 
 
 
@@ -68,32 +68,56 @@ function Navbar() {
 
     // dropdown menu function
     const showHamburger = () => {
-        console.log("hello")
         setHamburger(!hamburger)
 
     }
 
     return (
         <div>
+
             <nav className={blur ? 'navbar active' : 'navbar'} >
-                <div className='logo'>
-                    <h3 className='brand-name' onClick={() => scrollToSection(home)} >Martin Stojmenovski</h3>
-                </div>
-                <div className='progress-bar' style={{ width: `${progressBar}%`}}></div>
-                <div className='dropmenu'>
-                    <div className={hamburger ? 'hamburger' : 'hamburger active'} onClick={showHamburger} >
-                        <span className="bar"></span>
-                        <span className="bar"></span>
-                        <span className="bar"></span>
+
+
+
+
+
+                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} onClick={showHamburger} >
+
+
+
+                    <div className='logo'>
+                        <h3 className='brand-name' >Martin Stojmenovski</h3>
                     </div>
-                    <div className={hamburger ? "sidebar" : "sidebar-active"} >
-                        <ul>
-                            <li onClick={() => scrollToSection(about)} >about</li>
-                            <li onClick={() => scrollToSection(project)}>projects</li>
-                            <li onClick={() => scrollToSection(skills)}>contact</li>
-                        </ul>
+
+
+
+                    <div className={hamburger ? "hamburger" : "hamburger active" } >
+                        <div className="bars" >
+                            <span className="bar"></span>
+                            <span className="bar"></span>
+                            <span className="bar"></span>
+                        </div>
+                        <div className={hamburger ? "sidebar" : "sidebar active"} >
+                            <ul>
+                                <li onClick={() => scrollToSection(home)} >Home</li>
+                                <li onClick={() => scrollToSection(about)} >About</li>
+                                <li onClick={() => scrollToSection(project)} >Projects</li>
+                                <li onClick={() => scrollToSection(skills)} >Contact</li>
+                            </ul>
+                        </div>
                     </div>
+
+
+
+
+
+
                 </div>
+
+
+
+                <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+
             </nav>
             <Home home={home} />
             <About about={about} />

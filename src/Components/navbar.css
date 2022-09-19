@@ -1,97 +1,77 @@
 .navbar {
   position: fixed;
-  display: flex;
   width: 100%;
   margin: auto;
   z-index: 998;
   height: 10vh;
-  /* padding: 20px; */
-  margin: auto;
 }
 
 .navbar.active {
   background: transparent;
   backdrop-filter: blur(3px);
 }
+.dropmenu{
+  display: flex;
+}
+.dropmenu.active{
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+}
 
 .logo {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  /* font-size: large; */
+  flex: 2.5;
   padding: 20px;
   cursor:pointer;
-
 }
-
-.dropmenu {
- 
-  /* display: flex;
+.hamburger{
   flex: 1;
-  justify-content: flex-end; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
-
-.progress-bar {
-  position: fixed;
-  top: 9.8vh;
-  left: 0;
-  height: 1.5px;
-  background: linear-gradient(to right, #ffffff 50%, #ffffff 50%, rgb(0, 0, 0));
-  z-index: 999;
+.hamburger.active{
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: flex-start;
 }
 
 .sidebar {
-  height: 0px;
+  height: 0;
   overflow: hidden;
-  transition: ease height 1s;
- 
+
 }
 
-.sidebar-active {
-  position: relative;
-  background-color: blueviolet;
-  /* right: 20px; */
-  /* display: flex; */
-  /* text-align: end; */
-  /* transition: ease height 0.7s; */
-}
-
-.sidebar-active ul {
-  
-  position: relative;
+.sidebar.active {
   height: 100vh;
-  /* top: 15px;
-  right: 5px; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 li {
-  position: relative;
-  width: 100px;
   list-style: none;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 10px;
   cursor:pointer;
+  font-size: larger;
+  font-weight: 500;
+  color: white;
+  text-align: center;
 }
 
 
-.hamburger {
 
-  display: block;
-  cursor: pointer;
-  padding: 20px;
 
-}
-
-.hamburger.active .bar:nth-child(2) {
+.dropmenu.active .bar:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.active .bar:nth-child(1) {
+.dropmenu.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
+  background-color: #ffffff;
 }
 
-.hamburger.active .bar:nth-child(3) {
+.dropmenu.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+  background-color: #ffffff;
 }
 
 .bar {
@@ -99,12 +79,21 @@ li {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  /* -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; */
   background-color: black;
   cursor: pointer;
 }
 
-.bar:hover {
-  background-position: 100% 0%;
+.bars {
+  cursor: pointer;
+  padding: 20px;
+}
+.progress-bar {
+  position: fixed;
+  top: 9.8vh;
+  left: 0;
+  height: 1.5px;
+  background: linear-gradient(to right, #ffffff 50%, #ffffff 50%, rgb(0, 0, 0));
+  z-index: 999;
 }
