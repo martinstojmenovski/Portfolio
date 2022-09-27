@@ -46,6 +46,9 @@
   color: white;
 }
 /* projects container --------------------------- */
+.project-page a{
+  text-decoration: none;
+}
 .project1,
 .project2,
 .project3,
