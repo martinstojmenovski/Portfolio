@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react-portfolio-site/static/css/main.312dbf7a.css",
-    "main.js": "/react-portfolio-site/static/js/main.50e78491.js",
+    "main.css": "/react-portfolio-site/static/css/main.734267e9.css",
+    "main.js": "/react-portfolio-site/static/js/main.25f8a2fa.js",
     "static/js/787.749b4a44.chunk.js": "/react-portfolio-site/static/js/787.749b4a44.chunk.js",
     "static/media/denver-colorado-copy.jpg": "/react-portfolio-site/static/media/denver-colorado-copy.5b5a01f2da7f75edcb1a.jpg",
     "static/media/portfolio.png": "/react-portfolio-site/static/media/portfolio.ca250eedf63be767e9cf.png",
     "static/media/marvel.png": "/react-portfolio-site/static/media/marvel.45dc6ac84bf30b1ecd72.png",
     "static/media/friends.png": "/react-portfolio-site/static/media/friends.4086fbb18bc04018f591.png",
     "index.html": "/react-portfolio-site/index.html",
-    "main.312dbf7a.css.map": "/react-portfolio-site/static/css/main.312dbf7a.css.map",
-    "main.50e78491.js.map": "/react-portfolio-site/static/js/main.50e78491.js.map",
+    "main.734267e9.css.map": "/react-portfolio-site/static/css/main.734267e9.css.map",
+    "main.25f8a2fa.js.map": "/react-portfolio-site/static/js/main.25f8a2fa.js.map",
     "787.749b4a44.chunk.js.map": "/react-portfolio-site/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.312dbf7a.css",
-    "static/js/main.50e78491.js"
+    "static/css/main.734267e9.css",
+    "static/js/main.25f8a2fa.js"
   ]
 }
