@@ -84,11 +84,6 @@ function Navbar() {
         <div>
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
-
-
-
-
-
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
                 <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
                     <div className='logo'  onClick={closeHamburger}>
@@ -110,17 +105,10 @@ function Navbar() {
                             </ul>
                         </div>
                     </div>
-
                 </div>
-
-
-
-              
-
             </nav>
             <Home home={home} />
             <About about={about} />
-
             <div className='project'><Project project={project} /></div>
             <Skills skills={skills} />
         </div>

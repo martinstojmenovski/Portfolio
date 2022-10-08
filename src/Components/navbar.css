@@ -28,24 +28,28 @@
 
 
 .logo {
-  flex: 2.5;
+  flex: 1;
   padding: 20px;
+  text-align: center;
 
 }
 .brand-name{
   word-break: keep-all;
+  color: #ececec;
 }
 .hamburger{
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   z-index: 5;
+  
 }
 .hamburger.active{
   background-color: rgba(0, 0, 0, 0.9);
   align-items: flex-start;
   animation: fadeInRight 0.7s linear;
+  flex: 0.3;
 }
 
 @keyframes fadeInRight {
@@ -100,7 +104,7 @@ li {
   margin: 5px auto;
   /* -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; */
-  background-color: black;
+  background-color:#ececec;
   cursor: pointer;
 }
 

@@ -2,14 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Oswald', sans-serif;
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   font-size: large;
   color: rgb(35, 35, 35);
   
 }
 .homepage {
   position: relative;
-  top:10vh;
+  /* top:10vh; */
   height: 140vh;
   width: 100%;
   background-color: #f2f2f2;
