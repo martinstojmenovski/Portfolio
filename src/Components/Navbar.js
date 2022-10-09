@@ -87,21 +87,21 @@ function Navbar() {
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
                 <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
                     <div className='logo'  onClick={closeHamburger}>
-                        <h3 className='brand-name' >Martin Stojmenovski</h3>
+                        <h3 className={blur ? 'brand active' : 'brand'} >Martin Stojmenovski</h3>
                     </div>
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
-                        <div className="bars" onClick={showHamburger}>
-                            <span className="bar"></span>
-                            <span className="bar"></span>
-                            <span className="bar"></span>
+                        <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
                             <ul>
-                                <li onClick={() => scrollToSection(home)} >Home</li>
-                                <li onClick={() => scrollToSection(about)} >About</li>
-                                <li onClick={() => scrollToSection(project)} >Projects</li>
-                                <li onClick={() => scrollToSection(skills)} >Contact</li>
+                                <li onClick={() => scrollToSection(home)} >HOME</li>
+                                <li onClick={() => scrollToSection(about)} >ABOUT</li>
+                                <li onClick={() => scrollToSection(project)} >PROJECTS</li>
+                                <li onClick={() => scrollToSection(skills)} >CONTACT</li>
                             </ul>
                         </div>
                     </div>

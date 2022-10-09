@@ -3,13 +3,17 @@
   width: 100%;
   margin: auto;
   z-index: 998;
-  height: 10vh;
+  height: 15vh;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar.active {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(3px);
+  height: 8vh;
+  
 }
+
 .dropmenu{
   display: flex;
   transition: all 0.2s linear;
@@ -20,28 +24,29 @@
   background-color: rgba(0, 0, 0, 0.6);
   height: 100vh;
   z-index: 4;
-
- 
 }
 
-
-
-
 .logo {
-  flex: 1;
-  padding: 20px;
+  flex: 2;
+  /* padding: 20px; */
   text-align: center;
 
 }
-.brand-name{
+.brand{
   word-break: keep-all;
   color: #ececec;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+.brand.active{
+  color: #1b1b1b;
+  padding: 10px 20px 20px 20px;
 }
 .hamburger{
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   z-index: 5;
   
 }
@@ -49,7 +54,6 @@
   background-color: rgba(0, 0, 0, 0.9);
   align-items: flex-start;
   animation: fadeInRight 0.7s linear;
-  flex: 0.3;
 }
 
 @keyframes fadeInRight {
@@ -90,11 +94,13 @@ li {
 .dropmenu.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
   background-color: #ffffff;
+  /* transition: all 0.9s ease-in-out; */
 }
 
 .dropmenu.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
   background-color: #ffffff;
+  /* transition: all 0.9s ease-in-out; */
 }
 
 .bar {
@@ -102,15 +108,22 @@ li {
   width: 25px;
   height: 3px;
   margin: 5px auto;
+  transition: all 0.3s ease-in-out;
   /* -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; */
   background-color:#ececec;
   cursor: pointer;
 }
+.bar.active{
+  background-color:#1b1b1b;
+}
 
 .bars {
   cursor: pointer;
   padding: 20px;
+}
+.bars.active{
+  padding: 10px 20px 20px 20px;
 }
 .progress-bar {
   position: fixed;
