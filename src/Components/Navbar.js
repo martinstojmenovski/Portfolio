@@ -65,16 +65,16 @@ function Navbar() {
 
     // dropdown menu function - overflow hidden to stop page from scrolling
     const showHamburger = (index) => {
-        if(hamburger){
+        if (hamburger) {
             document.body.style.overflow = "hidden"
             setHamburger(!hamburger)
-        } else  {
+        } else {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
-        }   
+        }
     }
-    const closeHamburger = () =>{
-        if(!hamburger){
+    const closeHamburger = () => {
+        if (!hamburger) {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
         }
@@ -84,11 +84,19 @@ function Navbar() {
         <div>
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
+                <div className={blur ? 'min-768 active' : 'min-768'}>
+                    <ul>
+                        <li  className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
+                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
+                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>
+                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+                    </ul>
+                </div>
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
-                    
-                <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
-               
-                    <div className='logo'  onClick={closeHamburger}>
+
+                    <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+
+                    <div className='logo' onClick={closeHamburger}>
                         <h3 className={blur ? 'brand active' : 'brand'} >Martin Stojmenovski</h3>
                     </div>
 
@@ -106,7 +114,7 @@ function Navbar() {
                                 <li onClick={() => scrollToSection(skills)} >CONTACT</li>
                             </ul>
                         </div>
-                   
+
                     </div>
                 </div>
             </nav>
