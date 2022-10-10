@@ -4,7 +4,16 @@ function Home({ home }) {
   return (
     <div ref={home} className="homepage">
       <div className='background'>
-        <div className='overlay'></div>
+        <div className='overlay'>
+          <div className='text'><h1 style={{fontWeight: '900', fontSize: '45px'}}>Martin Stojmenovski 
+          <span style={{fontWeight: '500', fontSize: '20px', wordBreak: 'keep-all'}}> Software Engineer</span></h1>
+          <br/> 
+            <p style={{fontWeight: '500', fontSize: '20px'}}> I am a Python and Javasript developer based in Denver.
+                Passionate about simple and robust code.
+                I love photography, architecture and coffee.
+                 </p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -85,7 +85,9 @@ function Navbar() {
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
+                    
                 <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+               
                     <div className='logo'  onClick={closeHamburger}>
                         <h3 className={blur ? 'brand active' : 'brand'} >Martin Stojmenovski</h3>
                     </div>
@@ -104,6 +106,7 @@ function Navbar() {
                                 <li onClick={() => scrollToSection(skills)} >CONTACT</li>
                             </ul>
                         </div>
+                   
                     </div>
                 </div>
             </nav>

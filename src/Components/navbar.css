@@ -3,7 +3,7 @@
   width: 100%;
   margin: auto;
   z-index: 998;
-  height: 15vh;
+  height: 10vh;
   transition: all 0.3s ease-in-out;
 }
 
@@ -16,6 +16,8 @@
 
 .dropmenu{
   display: flex;
+  justify-content: center;
+  /* max-width: 80%; */
   transition: all 0.2s linear;
  
  
@@ -27,7 +29,7 @@
 }
 
 .logo {
-  flex: 2;
+  flex: 1;
   /* padding: 20px; */
   text-align: center;
 
@@ -46,7 +48,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
   z-index: 5;
   
 }
@@ -108,7 +110,7 @@ li {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
   /* -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; */
   background-color:#ececec;
@@ -116,6 +118,7 @@ li {
 }
 .bar.active{
   background-color:#1b1b1b;
+   transition: all 0.3s ease-in-out;
 }
 
 .bars {
@@ -127,10 +130,10 @@ li {
 }
 .progress-bar {
   position: fixed;
-  top: 9.8vh;
+  top: 7.8vh;
   left: 0;
   height: 1.5px;
-  background: linear-gradient(to right, #ffffff 50%, #ffffff 50%, rgb(0, 0, 0));
+  background: #1b1b1b;
   z-index: 3;
 }
 
