@@ -11,7 +11,7 @@ function Navbar() {
     const project = useRef(null)
     const skills = useRef(null)
     const home = useRef(null)
-
+    const navigate = [home, about, project, skills]
     //useState to blur navbar
     const [blur, setBlur] = useState(false)
 
@@ -22,9 +22,15 @@ function Navbar() {
     const [hamburger, setHamburger] = useState(true)
 
     // useState to border the nav list
-    const [border, setBorder] = useState('')
+    const [border, setBorder] = useState(2)
+    // console.log(border)
 
+    const employes = ['Mirko', 'Johny', 'Jane', 'Hristo']
+    
+    const clas = employes.map((employe, index) =>{
 
+        return <li key={index}  style={{ border: index === border ? '2px solid' : 'none' }} className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(navigate[index])}>{employe}</li>
+    })
 
     // ProgresBar function
     const scrollProgress = () => {
@@ -46,24 +52,32 @@ function Navbar() {
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
-        // console.log(elementRef.current.offsetTop)
+        console.log(elementRef.current.offsetTop)
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
+        
+        
         setHamburger(!hamburger)
         document.body.style.overflow = ""
     }
+   
 
-
-    //     // Function to set a border to the selected page
+        // Function to set a border to the selected page
     const makeBorderbox = () => {
         console.log(window.scrollY)
-        if(window.scrollY == 0){
-            setBorder('2px solid')
-        }else{
-            setBorder('')
-        }
+            if(window.scrollY === 0){
+                setBorder(0)
+            }else if(window.scrollY > 363 || window.scrollY < 1363 ){
+                setBorder(1)
+            }else if(window.scrollY > 1363 || window.scrollY < 2657){
+                setBorder(2)
+            }else if(window.scrollY > 2657){
+                setBorder(3)
+            }else{
+                setBorder(NaN)
+            }
     }
     window.addEventListener('scroll', makeBorderbox)
 
@@ -112,6 +126,7 @@ function Navbar() {
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+                        {clas}
                     </ul>
                 </div>
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
