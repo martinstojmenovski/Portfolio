@@ -24,3 +24,25 @@
     color: rgb(232, 232, 232);
     text-align: center;
   }
+  .background .text p{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .background .text h1{
+    font-weight: 900;
+    font-size: 45px;
+  }
+  @media screen and (max-width: 768px) {
+    .background .text h1{
+        font-size: 30px;
+      }
+  }
+  @media screen and (max-width: 480px) {
+    .background .text h1{
+        font-size: 25px;
+      }
+      .background .text{
+        max-width: 80%;
+        top:25%;
+      }
+  }

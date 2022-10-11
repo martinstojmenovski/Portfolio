@@ -21,6 +21,9 @@ function Navbar() {
     // useState to dropdown menu
     const [hamburger, setHamburger] = useState(true)
 
+    // useState to border the nav list
+    const [border, setBorder] = useState('')
+
 
 
     // ProgresBar function
@@ -43,6 +46,7 @@ function Navbar() {
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
+        // console.log(elementRef.current.offsetTop)
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
@@ -50,6 +54,22 @@ function Navbar() {
         setHamburger(!hamburger)
         document.body.style.overflow = ""
     }
+
+
+    //     // Function to set a border to the selected page
+    const makeBorderbox = () => {
+        console.log(window.scrollY)
+        if(window.scrollY == 0){
+            setBorder('2px solid')
+        }else{
+            setBorder('')
+        }
+    }
+    window.addEventListener('scroll', makeBorderbox)
+
+
+
+
 
     // blur navigation menu when scroll
     const blurNavbar = () => {
@@ -86,7 +106,9 @@ function Navbar() {
             <nav className={blur ? 'navbar active' : 'navbar'} >
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     <ul>
-                        <li  className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
+                        <li
+                            style={{ border: border }}
+                            className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li>
