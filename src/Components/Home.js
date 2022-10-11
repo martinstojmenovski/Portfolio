@@ -2,7 +2,7 @@
 import './home-model2.css'
 function Home({ home }) {
   return (
-    <div ref={home} className="homepage">
+    <section ref={home} className="homepage">
       <div className='background'>
         <div className='overlay'>
           <div className='text'>
@@ -18,7 +18,7 @@ function Home({ home }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

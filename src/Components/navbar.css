@@ -78,6 +78,7 @@ li {
   padding: 10px;
   margin: 10px;
   text-align: center;
+
 }
 
 .dropmenu.active .bar:nth-child(2) {
@@ -134,17 +135,18 @@ li {
   font-size: 12px;
   
  }
- .min-768.active{
-  color: #1b1b1b;
-}
  .min-768 ul{
   display: flex;
   justify-content: space-evenly;
  }
+
  .li-768.active{
   color: #1b1b1b;
-  padding: 5px 10px 5px 10px;
-  margin: 5px 10px 5px 10px;
+  padding: 5px 10px;
+  margin: 5px 10px;
+ }
+ li.active{
+  border: 2px solid;
  }
 
 }

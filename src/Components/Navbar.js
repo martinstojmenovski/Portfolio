@@ -3,14 +3,17 @@ import Home from './Home'
 import About from './About'
 import Project from './Project'
 import Skills from './Skills'
+import { NavLink } from 'react-router-dom'
 
 function Navbar() {
+
 
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
     const skills = useRef(null)
     const home = useRef(null)
+    // console.log(home.current)
     const navigate = [home, about, project, skills]
     //useState to blur navbar
     const [blur, setBlur] = useState(false)
@@ -22,15 +25,62 @@ function Navbar() {
     const [hamburger, setHamburger] = useState(true)
 
     // useState to border the nav list
-    const [border, setBorder] = useState(2)
+    const [border, setBorder] = useState(0)
     // console.log(border)
 
-    const employes = ['Mirko', 'Johny', 'Jane', 'Hristo']
-    
-    const clas = employes.map((employe, index) =>{
+    const theEmployees = ['homepage', 'about-page', 'project-page', 'skills']
 
-        return <li key={index}  style={{ border: index === border ? '2px solid' : 'none' }} className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(navigate[index])}>{employe}</li>
+
+
+
+    const clas = theEmployees.map((employee, index) => {
+        // console.log(employee)
+        return <li key={index}  className={employee} onClick={() => scrollToSection(navigate[index])}>{employee}</li>
+        // blur ? 'li-768 active' : 'li-768'
     })
+
+
+
+    // Function to set a border to the selected page
+    const sections = document.querySelectorAll('section')
+    const navLi = document.querySelectorAll('nav .min-768 ul li')
+    // console.log(document.querySelectorAll('nav .min-768 ul li'))
+    const makeBorderbox = (section) => {
+
+        let current = '';
+        sections.forEach(section => {
+            // console.log(window.scrollY)
+            // console.log(section.getAttribute('class'))
+            const sectionTop = section.offsetTop
+            const sectionHeight = section.clientHeight
+
+            if (window.scrollY > sectionTop) {
+                current = section.getAttribute('class')
+            }
+
+        })
+        // console.log(current)
+        navLi.forEach(li => {
+            console.log(li.classList)
+            console.log(current)
+            li.classList.remove('active')
+            if(li.classList.contains(current)){
+                li.classList.add('active')
+                console.log("Print: contains!~")
+            }
+
+        })
+
+    }
+    window.addEventListener('scroll', makeBorderbox)
+
+
+
+
+
+
+
+
 
     // ProgresBar function
     const scrollProgress = () => {
@@ -52,38 +102,16 @@ function Navbar() {
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
-        console.log(elementRef.current.offsetTop)
+        // console.log(elementRef.current.offsetTop)
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-        
-        
+
+
         setHamburger(!hamburger)
         document.body.style.overflow = ""
     }
-   
-
-        // Function to set a border to the selected page
-    const makeBorderbox = () => {
-        console.log(window.scrollY)
-            if(window.scrollY === 0){
-                setBorder(0)
-            }else if(window.scrollY > 363 || window.scrollY < 1363 ){
-                setBorder(1)
-            }else if(window.scrollY > 1363 || window.scrollY < 2657){
-                setBorder(2)
-            }else if(window.scrollY > 2657){
-                setBorder(3)
-            }else{
-                setBorder(NaN)
-            }
-    }
-    window.addEventListener('scroll', makeBorderbox)
-
-
-
-
 
     // blur navigation menu when scroll
     const blurNavbar = () => {
@@ -121,7 +149,7 @@ function Navbar() {
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     <ul>
                         <li
-                            style={{ border: border }}
+                            // style={{ border: border }}
                             className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>

@@ -40,7 +40,7 @@ function Project({ project, projectsText }) {
 
 
   return (
-    <div ref={project} className='project-page'>
+    <section ref={project} className='project-page'>
 
       <div className="image-slider">
         <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
@@ -66,7 +66,7 @@ function Project({ project, projectsText }) {
           my capabilities.</div> */}
       </div>
 
-    </div>
+    </section>
   );
 }
 
