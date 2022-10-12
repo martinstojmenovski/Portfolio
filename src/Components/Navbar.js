@@ -15,7 +15,7 @@ function Navbar() {
     const skills = useRef(null)
     const home = useRef(null)
     // console.log(home.current)
-    const navigate = [home, about, project, skills]
+    // const navigate = [home, about, project, skills]
     //useState to blur navbar
     const [blur, setBlur] = useState(false)
 
@@ -25,36 +25,26 @@ function Navbar() {
     // useState to dropdown menu
     const [hamburger, setHamburger] = useState(true)
 
-    // useState to border the nav list
-    const [border, setBorder] = useState(0)
-    // console.log(border)
 
-    const theEmployees = ['HOME', 'ABOUT', 'PROJECT', 'CONTACT']
+    // const theEmployees = ['HOME', 'ABOUT', 'PROJECT', 'CONTACT']
     
     
-    const clas = theEmployees.map((employee, index) => {
+    // const clas = theEmployees.map((employee, index) => {
         
-        return <li 
-        key={index}    
-        className={ classNames(blur ? 'li-768 active' : 'li-768', employee ) }
-        onClick={() => scrollToSection(navigate[index])}>{employee}</li>
-    })
-
-
+    //     return <li 
+    //     key={index}    
+    //     className={ classNames(blur ? 'li-768 active' : 'li-768', employee ) }
+    //     onClick={() => scrollToSection(navigate[index])}>{employee}</li>
+    // })
 
     // Function to set a border to the selected page
     const sections = document.querySelectorAll('section')
-    const navLi = document.querySelectorAll('nav .min-768 ul li')
-    // console.log(document.querySelectorAll('nav .min-768 ul li'))
+    const navLi = document.querySelectorAll('nav ul li')
     const makeBorderbox = () => {
-        
         let current = '';
         sections.forEach(section => {
-            // console.log('scrollY: ' + window.scrollY)
-            // console.log(section.getAttribute('class'))
             const sectionTop = section.offsetTop
             const sectionHeight = section.clientHeight
-            // console.log('sectionTop: ' + sectionTop)
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('class')
             }
@@ -64,9 +54,7 @@ function Navbar() {
             if(li.classList.contains(current)){
                 li.classList.add('border')
             }
-
         })
-
     }
     window.addEventListener('scroll', makeBorderbox)
 
@@ -85,9 +73,6 @@ function Navbar() {
 
         return () => window.removeEventListener('scroll', scrollProgress)
     }, [])
-
-
-
 
 
     //Page navigation function - overflow hidden to stop page from scrolling
@@ -132,20 +117,21 @@ function Navbar() {
         }
     }
 
+    const ulHolder = ( <ul>
+        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'HOME border' ) } onClick={() => scrollToSection(home)} >HOME</li>
+        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'ABOUT' ) } onClick={() => scrollToSection(about)} >ABOUT</li>
+        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'PROJECT' ) } onClick={() => scrollToSection(project)} >PROJECTS</li>
+        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'CONTACT' ) } onClick={() => scrollToSection(skills)} >CONTACT</li>
+    </ul>)
+
+
+
     return (
         <div>
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
-                <div className={blur ? 'min-768 active' : 'min-768'}>
-                    <ul>
-                        {/* <li
-                            // style={{ border: border }}
-                            className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
-                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
-                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>
-                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li> */}
-                        {clas}
-                    </ul>
+                <div id='min-768' className={blur ? 'min-768 active' : 'min-768'}>
+                   {ulHolder}
                 </div>
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
 
@@ -162,12 +148,7 @@ function Navbar() {
                             <span className={blur ? 'bar active' : 'bar'}></span>
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
-                            <ul>
-                                <li onClick={() => scrollToSection(home)} >HOME</li>
-                                <li onClick={() => scrollToSection(about)} >ABOUT</li>
-                                <li onClick={() => scrollToSection(project)} >PROJECTS</li>
-                                <li onClick={() => scrollToSection(skills)} >CONTACT</li>
-                            </ul>
+                           {ulHolder}
                         </div>
 
                     </div>
