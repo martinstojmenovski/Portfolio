@@ -40,8 +40,8 @@ function Project({ project, projectsText }) {
 
 
   return (
-    <section ref={project} className='project-page'>
-
+    <section ref={project} className='PROJECT'>
+      <div id="project-page">
       <div className="image-slider">
         <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
         <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
@@ -64,6 +64,7 @@ function Project({ project, projectsText }) {
           and are built from scratch exclusively by me or team projects where
           I have participated. The idea is to show my previous experience as well as
           my capabilities.</div> */}
+      </div>
       </div>
 
     </section>

@@ -1,7 +1,7 @@
 import "./skills.css"
 function Skills({ skills }) {
   return (
-    <section ref={skills} className="skills">
+    <section ref={skills} className="CONTACT">
       <main>
         <div>
           <h1 >Let's connect</h1>

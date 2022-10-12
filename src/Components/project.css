@@ -1,8 +1,3 @@
-.project-page {
-  /* height: 120vh; */
-  width: 100%;
-  /* background-color: #292d33; */
-}
 
 .image-slider {
   display: none;
@@ -230,7 +225,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .project-page {
+  #project-page {
     height: 140vh;
 
   }

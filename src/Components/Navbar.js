@@ -4,6 +4,7 @@ import About from './About'
 import Project from './Project'
 import Skills from './Skills'
 import { NavLink } from 'react-router-dom'
+import classNames from 'classnames'
 
 function Navbar() {
 
@@ -28,15 +29,15 @@ function Navbar() {
     const [border, setBorder] = useState(0)
     // console.log(border)
 
-    const theEmployees = ['homepage', 'about-page', 'project-page', 'skills']
-
-
-
-
+    const theEmployees = ['HOME', 'ABOUT', 'PROJECT', 'CONTACT']
+    
+    
     const clas = theEmployees.map((employee, index) => {
-        // console.log(employee)
-        return <li key={index}  className={employee} onClick={() => scrollToSection(navigate[index])}>{employee}</li>
-        // blur ? 'li-768 active' : 'li-768'
+        
+        return <li 
+        key={index}    
+        className={ classNames(blur ? 'li-768 active' : 'li-768', employee ) }
+        onClick={() => scrollToSection(navigate[index])}>{employee}</li>
     })
 
 
@@ -45,40 +46,29 @@ function Navbar() {
     const sections = document.querySelectorAll('section')
     const navLi = document.querySelectorAll('nav .min-768 ul li')
     // console.log(document.querySelectorAll('nav .min-768 ul li'))
-    const makeBorderbox = (section) => {
-
+    const makeBorderbox = () => {
+        
         let current = '';
         sections.forEach(section => {
-            // console.log(window.scrollY)
+            // console.log('scrollY: ' + window.scrollY)
             // console.log(section.getAttribute('class'))
             const sectionTop = section.offsetTop
             const sectionHeight = section.clientHeight
-
-            if (window.scrollY > sectionTop) {
+            // console.log('sectionTop: ' + sectionTop)
+            if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('class')
             }
-
         })
-        // console.log(current)
         navLi.forEach(li => {
-            console.log(li.classList)
-            console.log(current)
-            li.classList.remove('active')
+            li.classList.remove('border')
             if(li.classList.contains(current)){
-                li.classList.add('active')
-                console.log("Print: contains!~")
+                li.classList.add('border')
             }
 
         })
 
     }
     window.addEventListener('scroll', makeBorderbox)
-
-
-
-
-
-
 
 
 
@@ -148,12 +138,12 @@ function Navbar() {
             <nav className={blur ? 'navbar active' : 'navbar'} >
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     <ul>
-                        <li
+                        {/* <li
                             // style={{ border: border }}
                             className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(home)} >HOME</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(about)} >ABOUT</li>
                         <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(project)} >PROJECTS</li>
-                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+                        <li className={blur ? 'li-768 active' : 'li-768'} onClick={() => scrollToSection(skills)} >CONTACT</li> */}
                         {clas}
                     </ul>
                 </div>

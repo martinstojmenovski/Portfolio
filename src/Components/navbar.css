@@ -137,15 +137,17 @@ li {
  }
  .min-768 ul{
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
  }
+
 
  .li-768.active{
   color: #1b1b1b;
   padding: 5px 10px;
   margin: 5px 10px;
  }
- li.active{
+ li.border{
   border: 2px solid;
  }
 
