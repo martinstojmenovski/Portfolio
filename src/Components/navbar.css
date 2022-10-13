@@ -3,14 +3,14 @@
   width: 100%;
   margin: auto;
   z-index: 998;
-  height: 10vh;
+  height: 15vh;
   transition: all 0.9s ease-in-out;
 }
 
 .navbar.active {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(3px);
-  height: 6vh; 
+  height: 10vh; 
 }
 .dropmenu{
   display: flex;
@@ -79,6 +79,7 @@
   margin: 10px;
   text-align: center;
   border: 2px solid transparent;
+  border-radius: 5px;
   transition: all 0.3s ease-in-out
 }
 li.border{
@@ -138,12 +139,11 @@ li.border{
   max-width: 55%;
   margin: auto;
   font-size: 12px;
-  
+  padding-top: 10px;
  }
  .min-768 ul{
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
  }
 
 

@@ -3,7 +3,6 @@ import Home from './Home'
 import About from './About'
 import Project from './Project'
 import Skills from './Skills'
-import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 
 function Navbar() {
@@ -14,8 +13,6 @@ function Navbar() {
     const project = useRef(null)
     const skills = useRef(null)
     const home = useRef(null)
-    // console.log(home.current)
-    // const navigate = [home, about, project, skills]
     //useState to blur navbar
     const [blur, setBlur] = useState(false)
 
@@ -25,18 +22,6 @@ function Navbar() {
     // useState to dropdown menu
     const [hamburger, setHamburger] = useState(true)
 
-
-    // const theEmployees = ['HOME', 'ABOUT', 'PROJECT', 'CONTACT']
-    
-    
-    // const clas = theEmployees.map((employee, index) => {
-        
-    //     return <li 
-    //     key={index}    
-    //     className={ classNames(blur ? 'li-768 active' : 'li-768', employee ) }
-    //     onClick={() => scrollToSection(navigate[index])}>{employee}</li>
-    // })
-
     // Function to set a border to the selected page
     const sections = document.querySelectorAll('section')
     const navLi = document.querySelectorAll('nav ul li')
@@ -44,21 +29,19 @@ function Navbar() {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop
-            const sectionHeight = section.clientHeight
+            // const sectionHeight = section.clientHeight
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('class')
             }
         })
         navLi.forEach(li => {
             li.classList.remove('border')
-            if(li.classList.contains(current)){
+            if (li.classList.contains(current)) {
                 li.classList.add('border')
             }
         })
     }
     window.addEventListener('scroll', makeBorderbox)
-
-
 
     // ProgresBar function
     const scrollProgress = () => {
@@ -117,12 +100,14 @@ function Navbar() {
         }
     }
 
-    const ulHolder = ( <ul>
-        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'HOME border' ) } onClick={() => scrollToSection(home)} >HOME</li>
-        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'ABOUT' ) } onClick={() => scrollToSection(about)} >ABOUT</li>
-        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'PROJECT' ) } onClick={() => scrollToSection(project)} >PROJECTS</li>
-        <li className={ classNames( blur ? 'li-768 active' : 'li-768', 'CONTACT' ) } onClick={() => scrollToSection(skills)} >CONTACT</li>
-    </ul>)
+    const ulHolder = (
+        <ul>
+            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
+            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>
+            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'PROJECT')} onClick={() => scrollToSection(project)} >PROJECTS</li>
+            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
+        </ul>
+    )
 
 
 
@@ -130,8 +115,8 @@ function Navbar() {
         <div>
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
-                <div id='min-768' className={blur ? 'min-768 active' : 'min-768'}>
-                   {ulHolder}
+                <div className={blur ? 'min-768 active' : 'min-768'}>
+                    {ulHolder}
                 </div>
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
 
@@ -148,7 +133,7 @@ function Navbar() {
                             <span className={blur ? 'bar active' : 'bar'}></span>
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
-                           {ulHolder}
+                            {ulHolder}
                         </div>
 
                     </div>

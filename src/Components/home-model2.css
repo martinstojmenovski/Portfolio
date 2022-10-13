@@ -24,14 +24,25 @@
     color: rgb(232, 232, 232);
     text-align: center;
   }
-  .background .text p{
-    font-weight: 500;
-    font-size: 20px;
-  }
   .background .text h1{
     font-weight: 900;
     font-size: 45px;
+    animation: fadeInRight 1s linear;
   }
+  .background .text p,
+  .background .text div{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .background .text div{
+    animation: fadeInRight 2s linear;
+  }
+ 
+  .background .text p{
+    animation: fadeInRight 3s linear;
+  }
+ 
+  
   @media screen and (max-width: 768px) {
     .background .text h1{
         font-size: 30px;
