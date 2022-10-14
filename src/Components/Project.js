@@ -7,7 +7,7 @@ function Project({ project, projectsText }) {
   // useState declared to change index of an array slider.
   const [currentIndex, setCurrentIndex] = useState(0)
   
-
+console.log(images)
   // function to change previous index of the slider.
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
@@ -40,8 +40,9 @@ function Project({ project, projectsText }) {
 
 
   return (
-    <section ref={project} className='PROJECT'>
+    <section ref={project} id='PROJECT' className='PROJECT'>
       <div id="project-page">
+        <h1>EXPLORE PREVIOUS WORK</h1>
       <div className="image-slider">
         <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
         <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
@@ -52,19 +53,9 @@ function Project({ project, projectsText }) {
       </div>
 
       <div className='projects'>
-        {images[0]}
-        {images[1]}
-        {images[2]}
-        {images[3]}
+        {images.map((image => image))}
       </div>
 
-      <div className="descriptions">
-        {/* <div className="project-header">Previous work</div> */}
-        {/* <div className="description-article">All the projects above are mainly created for educational purpose,
-          and are built from scratch exclusively by me or team projects where
-          I have participated. The idea is to show my previous experience as well as
-          my capabilities.</div> */}
-      </div>
       </div>
 
     </section>

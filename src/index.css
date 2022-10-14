@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Oswald', sans-serif; */
   font-family: 'Montserrat', sans-serif;
 }
-#homepage {
+#HOME {
   position: relative;
-  height: 140vh;
+  height: 85vh;
   width: 100%;
   background-color: #f2f2f2;
 }
@@ -17,9 +16,13 @@
   background-color: #f2f2f2;
 }
 #project-page {
+  position: relative;
+  top:12vh; 
+}
+#PROJECT{
   height: 120vh;
   width: 100%;
-  background-color: #292d33;
+  background-color: #f2f2f2;
 }
 
 .skills {

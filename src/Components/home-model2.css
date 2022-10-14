@@ -27,19 +27,19 @@
   .background .text h1{
     font-weight: 900;
     font-size: 45px;
-    animation: fadeInRight 1s linear;
+    animation: fadeInRight 1s ease-out;
   }
   .background .text p,
   .background .text div{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 20px;
   }
   .background .text div{
-    animation: fadeInRight 2s linear;
+    animation: fadeInRight 1.5s ease-in;
   }
  
   .background .text p{
-    animation: fadeInRight 3s linear;
+    animation: fadeInRight 3s ease-out;
   }
  
   

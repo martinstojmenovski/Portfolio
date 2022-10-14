@@ -103,8 +103,8 @@ function Navbar() {
     const ulHolder = (
         <ul>
             <li className={classNames(blur ? 'li-768 active' : 'li-768', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
-            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>
             <li className={classNames(blur ? 'li-768 active' : 'li-768', 'PROJECT')} onClick={() => scrollToSection(project)} >PROJECTS</li>
+            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>  
             <li className={classNames(blur ? 'li-768 active' : 'li-768', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
         </ul>
     )
@@ -140,8 +140,10 @@ function Navbar() {
                 </div>
             </nav>
             <Home home={home} />
+            {/* <div className='project'> */}
+                <Project project={project} />
+                {/* </div> */}
             <About about={about} />
-            <div className='project'><Project project={project} /></div>
             <Skills skills={skills} />
         </div>
     );
