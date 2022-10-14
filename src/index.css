@@ -6,9 +6,9 @@
 }
 #HOME {
   position: relative;
-  height: 85vh;
+  height: 75vh;
   width: 100%;
-  background-color: #f2f2f2;
+  background: rgb(247, 247, 247);
 }
 .about {
   height: 95vh;
@@ -22,7 +22,7 @@
 #PROJECT{
   height: 120vh;
   width: 100%;
-  background-color: #f2f2f2;
+  background: rgb(247, 247, 247);
 }
 
 .skills {

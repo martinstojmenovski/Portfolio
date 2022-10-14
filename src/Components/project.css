@@ -1,24 +1,17 @@
 
-.image-slider {
-  display: none;
-  background-color: #d2668d;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 2;
-}
+
 .projects {
   position: relative;
-  flex: 1;
-  background-color: #ebebeb;
-  z-index: 2;
+  max-width: 50%;
+  margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
 #project-page h1{
   text-align: center;
   color: rgb(236, 0, 0);
+  font-size: 28px;
 }
 
 /* projects container --------------------------- */
@@ -31,10 +24,11 @@
 .project3,
 .project4 {
   width: 300px;
-  height: 420px;
-  background: rgb(240, 240, 240);
+  height: 270px;
+  background: rgb(247, 247, 247);
+  border: 4px solid rgb(234, 234, 234);
   cursor: pointer;
-  padding: 30px;
+  padding: 0 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -46,32 +40,37 @@
 .project2 p,
 .project3 p,
 .project4 p {
+  font-size: 13px;
   line-height: 28px;
   font-style: italic;
 }
+
 
 .project1 span,
 .project2 span,
 .project3 span,
 .project4 span {
   text-decoration: underline;
+  font-size: 14px;
+  padding: 10px;
 }
 
 .container1,
 .container2,
 .container3,
 .container4 {
-  margin: auto 25px;
-  box-shadow: 0 10px 20px rgb(40, 40, 40);
+  margin: 15px;
+  /* box-shadow: 0 10px 20px rgb(40, 40, 40); */
+  /* border: 4px solid rgb(180, 180, 180); */
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
 }
 
 .container1 {
   background-image: url("./images/friends.png");
-  top: 13vh;
+  /* box-shadow: 0 10px 20px rgb(40, 40, 40); */
 }
 
 .container1:hover .project1 {
@@ -80,7 +79,6 @@
 
 .container2 {
   background-image: url("./images/ventilation.png");
-  top: 20vh;
 }
 
 .container2:hover .project2 {
@@ -89,7 +87,6 @@
 
 .container3 {
   background-image: url("./images/marvel.png");
-  top: 13vh;
 }
 
 .container3:hover .project3 {
@@ -98,7 +95,6 @@
 
 .container4 {
   background-image: url("./images/portfolio.png");
-  top: 20vh;
 }
 
 .container4:hover .project4 {
@@ -110,6 +106,14 @@
 
 
 /* image-slider display media-query max 768px  -----------------------------------------------------------*/
+.image-slider {
+  display: none;
+  background-color: #d2668d;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
 .left-arrow {
   position: absolute;
   top: 50%;
