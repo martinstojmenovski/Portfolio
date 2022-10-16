@@ -1,24 +1,23 @@
-
-
+#PROJECT{
+  background: rgb(247, 247, 247);
+}
 .projects {
-  position: relative;
-  max-width: 50%;
+  max-width: 80%;
+  padding: 50px 10px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#project-page h1{
+#PROJECT h1{
   text-align: center;
   color: rgb(236, 0, 0);
   font-size: 28px;
+  padding-top:140px;
+  
 }
 
 /* projects container --------------------------- */
-#project-page a{
-  text-decoration: none;
-  color: black;
-}
 .project1,
 .project2,
 .project3,
@@ -28,75 +27,63 @@
   background: rgb(247, 247, 247);
   border: 4px solid rgb(234, 234, 234);
   cursor: pointer;
-  padding: 0 15px;
+  padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  transition: opacity 0.4s ease-in-out;
+  justify-content: space-between;
+  transition: 400ms ease-in-out;
 }
-
-.project1 p,
-.project2 p,
-.project3 p,
-.project4 p {
-  font-size: 13px;
-  line-height: 28px;
-  font-style: italic;
-}
-
-
-.project1 span,
-.project2 span,
-.project3 span,
-.project4 span {
-  text-decoration: underline;
-  font-size: 14px;
-  padding: 10px;
-}
-
 .container1,
 .container2,
 .container3,
 .container4 {
   margin: 15px;
-  /* box-shadow: 0 10px 20px rgb(40, 40, 40); */
-  /* border: 4px solid rgb(180, 180, 180); */
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 45%;
   background-size: cover;
-  /* position: relative; */
+  transition: 500ms ease-in-out;
 }
 
-.container1 {
+#PROJECT a{
+  text-decoration: none;
+  color: black;
+}
+#PROJECT P{
+  font-size: 15px;
+  line-height: 25px;
+}
+#PROJECT span{
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+
+.container1:hover{
   background-image: url("./images/friends.png");
-  /* box-shadow: 0 10px 20px rgb(40, 40, 40); */
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
 }
-
 .container1:hover .project1 {
   opacity: 0;
 }
-
-.container2 {
+.container2:hover {
   background-image: url("./images/ventilation.png");
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
 }
-
 .container2:hover .project2 {
   opacity: 0;
 }
-
-.container3 {
+.container3:hover {
   background-image: url("./images/marvel.png");
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
 }
-
 .container3:hover .project3 {
   opacity: 0;
 }
-
-.container4 {
+.container4:hover {
   background-image: url("./images/portfolio.png");
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
 }
-
 .container4:hover .project4 {
   opacity: 0;
 }
@@ -180,63 +167,12 @@
 
 
 
-@media screen and (max-width: 1450px) {
-  .project1,
-  .project2,
-  .project3,
-  .project4 {
-    width: 250px;
-    height: 350px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-
-  .container1,
-  .container2,
-  .container3,
-  .container4,
-  .project1,
-  .project2,
-  .project3,
-  .project4 {
-    width: 230px;
-    height: 330px;
-    margin: auto;
-  }
-
-}
-
+@media screen and (max-width: 1450px) {}
+@media screen and (max-width: 1200px) {}
 @media screen and (max-width: 1024px) {
-  #project-page {
-    height: 140vh;
-
-  }
-  .container1,
-  .container2,
-  .container3,
-  .container4,
-  .project1,
-  .project2,
-  .project3,
-  .project4 {
-    width: 330px;
-    height: 250px;
-    margin: auto;
-    top: 12vh;
-  }
-
   .projects {
-    position: relative;
-    flex: 1;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 20px;
+    max-width: 90%;
   }
-
-  
 }
 
 @media screen and (max-width: 768px) {

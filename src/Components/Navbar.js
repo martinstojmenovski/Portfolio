@@ -102,10 +102,10 @@ function Navbar() {
 
     const ulHolder = (
         <ul>
-            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
-            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'PROJECT')} onClick={() => scrollToSection(project)} >PROJECTS</li>
-            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>  
-            <li className={classNames(blur ? 'li-768 active' : 'li-768', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
+            <li className={classNames(blur ? 'active' : '', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
+            <li className={classNames(blur ? 'active' : '', 'PROJECT')} onClick={() => scrollToSection(project)} >PROJECTS</li>
+            <li className={classNames(blur ? 'active' : '', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>  
+            <li className={classNames(blur ? 'active' : '', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
         </ul>
     )
 
@@ -122,15 +122,16 @@ function Navbar() {
 
                     <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
 
-                    <div className='logo' onClick={closeHamburger}>
-                        <h3 className={blur ? 'brand active' : 'brand'} >Martin Stojmenovski</h3>
-                    </div>
+                   
+                        <h3 className={blur ? 'brand active' : 'brand'}  onClick={closeHamburger} >Martin Stojmenovski</h3>
+             
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
                         <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
+                            
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
                             {ulHolder}

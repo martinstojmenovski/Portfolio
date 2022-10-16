@@ -6,71 +6,13 @@
   height: 15vh;
   transition: all 0.9s ease-in-out;
 }
-
 .navbar.active {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(3px);
-  height: 10vh; 
-}
-.dropmenu{
-  display: flex;
-  justify-content: center;
-  transition: all 0.2s linear;
-}
-.dropmenu.active{
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100vh;
-  z-index: 4;
-  
-}
-.logo {
-  text-align: center;
-}
-.brand{
-  word-break: keep-all;
-  color: #ececec;
-  transition: all 0.3s ease-in-out;
-  padding: 20px;
-}
-.brand.active{
-  color: #1b1b1b;
-  padding: 10px 20px 20px 20px;
-}
-.hamburger{
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  z-index: 5; 
-}
-.hamburger.active{
-  background-color: rgba(0, 0, 0, 0.9);
-  align-items: flex-start;
-  animation: fadeInRight 0.7s linear;
-  
+  height: 60px; 
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(300px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-.sidebar {
-  height: 0;
-  overflow: hidden;
-}
-
-.sidebar.active {
-  height: 100vh;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.li-768 {
+.navbar li {
   list-style: none;
   cursor:pointer;
   color: #ececec;
@@ -82,47 +24,10 @@
   border-radius: 5px;
   transition: all 0.3s ease-in-out
 }
-li.border{
+.navbar li.border{
   border: 2px solid white;
  }
 
-
-.dropmenu.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.dropmenu.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-  background-color: #ffffff;
-}
-
-.dropmenu.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-  background-color: #ffffff;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  /* -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; */
-  background-color:#ececec;
-  cursor: pointer;
-}
-.bar.active{
-  background-color:#1b1b1b;
-   transition: all 0.3s ease-in-out;
-}
-
-.bars {
-  cursor: pointer;
-  padding: 20px;
-}
-.bars.active{
-  padding: 10px 20px 20px 20px;
-}
 .progress-bar {
   position: fixed;
   top: 7.8vh;
@@ -131,6 +36,8 @@ li.border{
   background: #1b1b1b;
   z-index: 3;
 }
+
+
 @media screen and (min-width: 768px) {
  .dropmenu{
   display: none;
@@ -147,7 +54,7 @@ li.border{
  }
 
 
- .li-768.active{
+ li.active{
   color: #1b1b1b;
   padding: 5px 10px;
   margin: 5px 10px;
@@ -164,6 +71,93 @@ li.border{
    .logo {
     flex: 1;
   }
+  .dropmenu{
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s linear;
+  }
+  .dropmenu.active{
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    z-index: 4;
+    
+  }
+  
+  .brand{
+    word-break: keep-all;
+    color: #ececec;
+    transition: all 0.3s ease-in-out;
+    padding: 20px 20px 20px 40px;
+  }
+  .brand.active{
+    color: #1b1b1b;
+    padding: 10px 20px 20px 40px;
+  }
+  .bars {
+    cursor: pointer;
+    padding: 20px 40px 20px 20px;
+  }
+  .bars.active{
+    padding: 10px 40px 20px 20px;
+  }
+  .hamburger{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    z-index: 5; 
+  }
+  .hamburger.active{
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: flex-start;
+    animation: fadeInRight 0.7s linear;
+    
+  }
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .sidebar {
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .sidebar.active {
+    height: 100vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dropmenu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .dropmenu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #ffffff;
+  }
+  .dropmenu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #ffffff;
+  }
+  
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  /* -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; */
+  background-color:#ececec;
+  cursor: pointer;
+}
+.bar.active{
+  background-color:#1b1b1b;
+   transition: all 0.3s ease-in-out;
+}
 }
 
 @media screen and (max-width: 480px) {

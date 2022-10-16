@@ -41,8 +41,12 @@ console.log(images)
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
-      <div id="project-page">
         <h1>EXPLORE PREVIOUS WORK</h1>
+        
+        <div className='projects'>
+        {images.map((image => image))}
+      </div>
+
       <div className="image-slider">
         <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
         <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
@@ -52,11 +56,7 @@ console.log(images)
         </div>
       </div>
 
-      <div className='projects'>
-        {images.map((image => image))}
-      </div>
 
-      </div>
 
     </section>
   );

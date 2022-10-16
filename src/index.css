@@ -3,27 +3,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-}
-#HOME {
-  position: relative;
-  height: 75vh;
-  width: 100%;
-  background: rgb(247, 247, 247);
+  
 }
 .about {
   height: 95vh;
   width: 100%;
   background-color: #f2f2f2;
 }
-#project-page {
-  position: relative;
-  top:12vh; 
-}
-#PROJECT{
-  height: 120vh;
-  width: 100%;
-  background: rgb(247, 247, 247);
-}
+
+
 
 .skills {
   width: 100%;
