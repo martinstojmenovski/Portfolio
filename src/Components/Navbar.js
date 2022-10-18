@@ -115,15 +115,16 @@ function Navbar() {
         <div>
 
             <nav className={blur ? 'navbar active' : 'navbar'} >
+
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
                 </div>
-                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
 
+
+                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
                     <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
 
-                   
-                        <h3 className={blur ? 'brand active' : 'brand'}  onClick={closeHamburger} >Martin Stojmenovski</h3>
+                        <h3 className={blur ? 'brand-blur active' : 'brand-blur'}  onClick={showHamburger} >Martin</h3>
              
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
@@ -131,12 +132,10 @@ function Navbar() {
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
-                            
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
                             {ulHolder}
                         </div>
-
                     </div>
                 </div>
             </nav>
