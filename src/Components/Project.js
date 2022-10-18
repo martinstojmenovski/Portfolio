@@ -6,8 +6,8 @@ import images from "./projectsText"
 function Project({ project, projectsText }) {
   // useState declared to change index of an array slider.
   const [currentIndex, setCurrentIndex] = useState(0)
-  
-console.log(images)
+
+  console.log(images)
   // function to change previous index of the slider.
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
@@ -41,19 +41,25 @@ console.log(images)
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
-        <h1>EXPLORE PREVIOUS WORK</h1>
-        
-        <div className='projects'>
+      <h1>EXPLORE PREVIOUS WORK</h1>
+
+      <div className='projects'>
         {images.map((image => image))}
       </div>
 
       <div className="image-slider">
+
         <div className="left-arrow" onClick={goToPrevious} ><span></span><span></span></div>
-        <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
-        {images[currentIndex]}
-        <div className="dot-container">
-          {dots}
+        <div>
+          {images[currentIndex]}
+          <div className="dot-container">
+            {dots}
+          </div>
         </div>
+        <div className="right-arrow" onClick={goToNext} ><span></span><span></span></div>
+
+
+
       </div>
 
 

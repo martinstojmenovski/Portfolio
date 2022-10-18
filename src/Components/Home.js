@@ -9,7 +9,7 @@ function Home({ home }) {
               <h1 style={{ whiteSpace: 'nowrap' }}>Martin Stojmenovski </h1>
               <div style={{ whiteSpace: 'nowrap' }}> Software Engineer</div>
               <br />
-              <p>Python and Javasript developer based in Denver.
+              <p>Python and Javasript problem-solver based in Denver.
                 Passionate about clean and robust code.
                 I love photography, architecture and coffee.
               </p>

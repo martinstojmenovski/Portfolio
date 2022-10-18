@@ -33,6 +33,7 @@
   flex-direction: column;
   justify-content: space-between;
   transition: 400ms ease-in-out;
+  /* margin: auto; */
 }
 .container1,
 .container2,
@@ -95,20 +96,24 @@
 /* image-slider display media-query max 768px  -----------------------------------------------------------*/
 .image-slider {
   display: none;
-  background-color: #d2668d;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 2;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px 0;
 }
 .left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 0; 
+  position: relative;
+  top: 130px;
   z-index: 1;
   cursor: pointer;
-  padding: 25px;
  
+}
+
+.right-arrow {
+  position: relative;
+  top: 130px;
+  z-index: 1;
+  cursor: pointer;
+
 }
 .left-arrow span,
 .right-arrow span{
@@ -116,29 +121,17 @@
   width: 30px;
   height: 4px;
   margin: 5px auto;
-  background-color: white;
+  background:  rgb(207, 207, 207)
 }
 .left-arrow span:nth-child(1) {
   transform: translateY(16px) rotate(55deg);
 }
-
 .left-arrow span:nth-child(2) {
   transform: translateY(-16px) rotate(-55deg);
 }
-
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: 1;
-  cursor: pointer;
-  padding: 25px;
-}
-
 .right-arrow span:nth-child(1) {
   transform: translateY(16px) rotate(-55deg);
 }
-
 .right-arrow span:nth-child(2) {
   transform: translateY(-16px) rotate(55deg);
 }
@@ -147,7 +140,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: -13vh;
 }
 
 .dots {
@@ -155,14 +147,14 @@
   cursor: pointer;
   height: 17px;
   width: 17px;
-  background: rgb(243, 243, 243);
+  background: rgb(232, 232, 232);
   border-radius: 100%;
   z-index: 4;
   transition: background-color 0.7s ease-out;
 }
 
 .dots.active {
-  background: rgb(194, 194, 194);
+  background:  rgb(207, 207, 207);
 }
 
 
@@ -177,63 +169,29 @@
 
 @media screen and (max-width: 768px) {
   .image-slider{
-    display: block;
+    display: flex;
   }
   .projects {
     display: none;
   }
-  .container1,
-  .container2,
-  .container3,
-  .container4,
+}
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 400px) {
   .project1,
   .project2,
   .project3,
   .project4 {
-    width: 440px;
-    height: 340px;
+    width: 240px;
+    height: 300px;
+    padding: 10px;
   }
-}
-@media screen and (max-width: 550px) {
   .container1,
   .container2,
   .container3,
-  .container4,
-  .project1,
-  .project2,
-  .project3,
-  .project4 {
-    width: 300px;
-    height: 450px;
+  .container4 {
+    margin: 5px;
   }
-}
-
-@media screen and (max-width: 413px) {
-.left-arrow {
-  left:0; 
-  padding: 25px 25px 25px 0;
-}
-.right-arrow {
-  right:0;
-  padding: 25px 0 25px 25px;
-}
-
-}
-@media screen and (max-width: 355px) {
-  .left-arrow {
-    left: 7%; 
-  }
-  .right-arrow {
-    right:7%;
-  }
-  .project1,
-.project2,
-.project3,
-.project4 {
-  padding: 30px 50px;
-}
-.left-arrow span,
-.right-arrow span{
-  background-color: #4e4e4e;
-}
 }
