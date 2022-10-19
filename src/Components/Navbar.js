@@ -30,7 +30,7 @@ function Navbar() {
         sections.forEach(section => {
             const sectionTop = section.offsetTop
             // const sectionHeight = section.clientHeight
-            if (window.scrollY >= sectionTop) {
+            if (window.scrollY + 300 >= sectionTop) {
                 current = section.getAttribute('class')
             }
         })
@@ -103,7 +103,7 @@ function Navbar() {
     const ulHolder = (
         <ul>
             <li className={classNames(blur ? 'active' : '', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
-            <li className={classNames(blur ? 'active' : '', 'PROJECT')} onClick={() => scrollToSection(project)} >PROJECTS</li>
+            <li className={classNames(blur ? 'active' : '', 'PROJECT')} onClick={() => scrollToSection(project)} >WORK</li>
             <li className={classNames(blur ? 'active' : '', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>  
             <li className={classNames(blur ? 'active' : '', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
         </ul>

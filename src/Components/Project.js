@@ -7,7 +7,7 @@ function Project({ project, projectsText }) {
   // useState declared to change index of an array slider.
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  console.log(images)
+
   // function to change previous index of the slider.
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
@@ -44,7 +44,7 @@ function Project({ project, projectsText }) {
       <h1>EXPLORE PREVIOUS WORK</h1>
 
       <div className='projects'>
-        {images.map((image => image))}
+        {images.map(((image, index) => <div key={index}>{image}</div>))}
       </div>
 
       <div className="image-slider">
