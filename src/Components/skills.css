@@ -29,7 +29,7 @@ main h1 {
 .pillar{
     height: 35px;
     width: 2px;
-    background-color: rgb(236, 0, 0);
+    background-color: rgb(180, 59, 59);
     position: relative;
     left: 40%;
 }
@@ -41,6 +41,39 @@ main h1 {
     top:5px;
     left: 20px;
 } */
+
+#header{
+    font-size: 30px;
+    text-align: center;
+    padding: 100px 0 10px 0;
+}
+#email{
+    font-size: 15px;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+#social-media{
+    text-align: center;
+    padding: 100px 0;
+    font-size: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 main a {
     text-decoration: none;
@@ -65,9 +98,9 @@ main a:hover::after {
     display: block;
     transition: 0.4s ease-in-out;
 }
-main p{
+/* main p{
     padding: 30px 0;
-}
+} */
 
 
 .last-words p {
@@ -77,19 +110,20 @@ main p{
 
 main ul li {
     list-style: none;
+    padding: 0 5px;
     /* margin: 20px 1px 0; */
-    padding: 10px;  
-    border-radius:10px ;
-    background-color: rgb(162, 162, 162);
-    color:rgb(236, 0, 0) ;
+    /* padding: 10px;   */
+    /* border-radius:10px ; */
+    /* background-color: rgb(162, 162, 162); */
+    /* color:rgb(236, 0, 0) ; */
    
 }
 
 main ul {
-
+    /* background-color: rgb(74, 74, 74); */
    display: flex;
-   justify-content: space-between;
-   margin: 90px auto;
+   justify-content: center;
+   /* margin: 90px auto; */
    /* border-top: 1px solid black; */
    padding-top: 10px;
 }
@@ -98,7 +132,7 @@ footer {
     position: relative;
     height: 10vh;
     width: 100%;
-    background-color: #283537;
+    background-color: rgb(239, 239, 239);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
