@@ -3,7 +3,7 @@
   width: 100%;
   margin: auto;
   z-index: 998;
-  height: 15vh;
+  height: 12vh;
   transition: all 0.7s ease-in-out;
  
 }
@@ -12,6 +12,15 @@
   backdrop-filter: blur(3px);
   height: 60px; 
   border-bottom:1.5px solid #bdbdbd;
+}
+.progress-bar {
+  position: fixed;
+  top:58.5px;
+  left: 0;
+  height: 2px;
+  background: #1b1b1b;
+  z-index: 3;
+
 }
 .dropmenu{
   display: none;
@@ -46,15 +55,7 @@
 .navbar li.border{
   border: 2px solid;
  }
-.progress-bar {
-  position: fixed;
-  top: 9.2vh;
-  left: 0;
-  height: 2px;
-  background: #1b1b1b;
-  z-index: 3;
 
-}
 
 
 
