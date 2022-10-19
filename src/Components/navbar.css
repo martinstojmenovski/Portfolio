@@ -5,11 +5,13 @@
   z-index: 998;
   height: 15vh;
   transition: all 0.7s ease-in-out;
+ 
 }
 .navbar.active {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(3px);
   height: 60px; 
+  border-bottom:1.5px solid #bdbdbd;
 }
 .dropmenu{
   display: none;
@@ -46,11 +48,12 @@
  }
 .progress-bar {
   position: fixed;
-  top: 7.8vh;
+  top: 9.2vh;
   left: 0;
-  height: 1.5px;
+  height: 2px;
   background: #1b1b1b;
   z-index: 3;
+
 }
 
 

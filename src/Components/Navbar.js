@@ -122,7 +122,8 @@ function Navbar() {
 
 
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
-                    <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+                    <div className='progress-bar'  style={{ width: `${progressBar}%` }}></div>
+                
 
                         <h3 className={blur ? 'brand-blur active' : 'brand-blur'}  onClick={showHamburger} >Martin</h3>
              

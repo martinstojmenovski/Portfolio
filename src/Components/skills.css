@@ -7,7 +7,7 @@ main {
 }
 
 main h1 {
-    text-align: center;
+    /* text-align: center; */
     color: rgb(236, 0, 0);
     font-size: 28px;
     padding:120px 0 20px 0 ;
@@ -66,7 +66,7 @@ main a:hover::after {
     transition: 0.4s ease-in-out;
 }
 main p{
-    padding: 30px;
+    padding: 30px 0;
 }
 
 
@@ -77,8 +77,11 @@ main p{
 
 main ul li {
     list-style: none;
-    margin: 20px 1px 0;
-    padding: 5px;  
+    /* margin: 20px 1px 0; */
+    padding: 10px;  
+    border-radius:10px ;
+    background-color: rgb(162, 162, 162);
+    color:rgb(236, 0, 0) ;
    
 }
 
@@ -87,7 +90,7 @@ main ul {
    display: flex;
    justify-content: space-between;
    margin: 90px auto;
-   border-top: 1px solid black;
+   /* border-top: 1px solid black; */
    padding-top: 10px;
 }
 
