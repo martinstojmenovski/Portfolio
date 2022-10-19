@@ -140,9 +140,7 @@ function Navbar() {
                 </div>
             </nav>
             <Home home={home} />
-            {/* <div className='project'> */}
-                <Project project={project} />
-                {/* </div> */}
+            <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
         </div>

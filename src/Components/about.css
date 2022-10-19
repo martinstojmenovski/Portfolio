@@ -1,178 +1,127 @@
-.about {
-    position: relative;
+#ABOUT{
+    background: #1b1b1b;
+}
+.about-page {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    width: 80ch;
+    display: flex;
+    align-content: center;
+    margin: auto;
 }
 
-.about h1 {
+.about-text {
     flex: 1;
-    font-size: 3rem;
-    position: relative;
-    top: 10vh;
-    text-align: left;
-    color: palevioletred;
+    color: rgb(247, 247, 247);
 }
 
-.about ul {
-    position: relative;
-    top: 33vh;
+.section-photo {
+    flex: 1;
+    margin: auto;
+}
+
+.professional-photo {
+    background-image: url('./images/professional\ photo.JPG');
+    width: 450px;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 40px auto;
+
+}
+
+#ABOUT h1 {
+    font-size: 40px;
     text-align: center;
-    padding: 0 80px 0 10px;
+    padding: 50px 20px 20px 20px;
+    margin: auto;
 }
 
-.about .aboutme {
-    padding: 60px 30px 30px 30px;
-    background-color: white;
-    position: relative;
-    width: 400px;
-    height: 400px;
-    top: 23vh;
+#ABOUT ul {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    right: 30px;
+    padding: 10px;
 }
-
-.about .dot {
-    display: flex;
-    align-items: flex-end;
-    margin: auto 0 0 auto;
-}
-
-.about p {
-    line-height: 35px;
-    font-size: 1rem;
-    font-style: italic;
-}
-
-.about ul li {
+#ABOUT ul li {
     list-style: none;
-    padding: 15px 0;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #292d33;
+    margin:10px 20px 0 0;
+    border-bottom: 1px solid rgb(247, 247, 247);
+    padding-bottom: 5px;
+    text-align: center;   
 }
-
-.ABOUT footer {
-    height: 30vh;
-    width: 100%;
-    background-color: #d2668d;
-}
-.container10{ 
-    display: none;
+#ABOUT p{
+    padding: 20px;
+    line-height: 25px;
+    margin: auto;
 }
 
 
-@media screen and (max-width: 1200px) {
-    .about ul {
-        top: 40vh;
-        right: 50%;
-        padding: 0 20px 0 10px;
-    }
-    
-    .about .aboutme {
-        padding: 50px 40px 40px 30px;
-        top: 25vh;
-    }
-    .about ul li {
-        font-size: 1.3rem;
-    }
-   
+@media screen and (max-width: 1400px) {
 }
 
 @media screen and (max-width: 1024px) {
-    .about ul {
-        top: 35vh;
-        right: 50%;
-        padding: 0 20px 0 10px;
+    .professional-photo {
+        width: 400px;
+        height: 400px;
     }
-    
-    .about .aboutme {
-        padding: 50px 40px 40px 30px;
-        width: 350px;
-        top: 25vh;
+    #ABOUT ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .about ul li {
-        font-size: 1.3rem;
+    #ABOUT p{
+        padding: 10px 10px 40px 20px ;
     }
-   
+}
+@media screen and (max-width: 840px) {
+    #ABOUT h1 {
+        font-size: 25px;
+    }
+    .about-page {
+        width: 100%;
+    }
+    .professional-photo {
+        margin: 30px 10px 30px 0;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
-    .about {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-    .container10{
-        display: block;
-        grid-column: 1 / span 4;
-        grid-row: 1 / 2;
-    }
-    .container20{
-        display: grid;
-        grid-column: 1 / 2;
-        grid-row: 2 / span 4; 
-    }
-    .aboutme{
-        grid-column: 2 / span 4;
-        grid-row: 2 / span 4;
-    } 
-
-    .about .hello {
-        display: none;
-    }
-    .container10 h1{
-        text-align: center;
-    }
-    .about ul {
-        top:0;
-        right: 0;
-        padding: 0 40px 0 10px;
-    }
-    
-    .about .aboutme {
-        padding: 40px 20px 20px 20px;
-        width: 320px;
-        top: -5vh;
-    }
-    .about ul li {
-        font-size: 1rem;
-        padding: 20px 0;
-    } 
-    .about p {
-        line-height: 30px;
-        font-size: 0.9rem;
+    .professional-photo {
+        margin: 40px auto;
     }
   
+    .about-page{
+        flex-direction: column-reverse;
+        width: 80%;
+    }
+    #ABOUT h1 {
+        padding: 0px 20px 20px 20px;
+    }
 }
 
-@media screen and (max-width: 480px) {
-    .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+@media screen and (max-width: 500px) {
+    .about-page{
+        width: 90%;
     }
-    .about .aboutme {
+}
+@media screen and (max-width: 440px) {
+    .about-page{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .about-page{
+        width: 100%;
+    }
+    .professional-photo {
         width: 320px;
-        height: 350px;
-        left: 0;
-        top:4vh;
-        margin:  0 auto;
-    }
-    .container10 h1{
-        top:2vh;
-        font-size: 2rem;
-    }
-    .about ul {
-        top:2vh;
-        padding: 0;
-    }
-    .about ul li {
-        font-size: 1rem;
-        padding: 6px 0;
+        height: 320px;
     }
 }
-
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 322px) {
+    .professional-photo {
+        width: 250px;
+        height: 250px;
+    }
+}
