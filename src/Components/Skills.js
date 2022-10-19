@@ -22,7 +22,7 @@ function Skills({ skills }) {
       </main>
 
       <footer>
-        <p style={{ color: "white" }}>©2020 Privacy policy</p>
+        <p style={{ color: "white", fontSize:'12px'}}>©2020 Privacy policy</p>
 
       </footer>
 

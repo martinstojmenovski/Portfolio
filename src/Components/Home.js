@@ -1,4 +1,4 @@
-// import './home.css'
+
 import './home-model2.css'
 function Home({ home }) {
   return (
