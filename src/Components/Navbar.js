@@ -87,16 +87,19 @@ function Navbar() {
     const showHamburger = (index) => {
         if (hamburger) {
             document.body.style.overflow = "hidden"
+            // document.body.style.marginRight = '17px'
             setHamburger(!hamburger)
         } else {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
+            // document.body.style.marginRight = ''
         }
     }
     const closeHamburger = () => {
         if (!hamburger) {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
+            // document.body.style.marginRight = ''
         }
     }
 
@@ -142,16 +145,16 @@ function Navbar() {
 
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
-                        <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
+                        <div className={blur ? 'bars1 active' : 'bars1'} onClick={showHamburger}>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                         </div>
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
-                          <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
-                            <span style={{backgroundColor:'white'}} className='bar active'></span>
-                            <span style={{backgroundColor:'white'}} className='bar active'></span>
-                            <span style={{backgroundColor:'white'}} className='bar active'></span>
+                          <div className={blur ? 'bars2 active' : 'bars2'} onClick={showHamburger}>
+                            <span  className='bar2'></span>
+                            <span  className='bar2'></span>
+                            <span className='bar2'></span>
                         </div>
                             {ulHolder}
                         </div>
