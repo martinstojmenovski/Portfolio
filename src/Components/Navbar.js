@@ -102,9 +102,10 @@ function Navbar() {
 
     const ulHolder = (
         <ul>
+            
             <li className={classNames(blur ? 'active' : '', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
             <li className={classNames(blur ? 'active' : '', 'PROJECT')} onClick={() => scrollToSection(project)} >WORK</li>
-            <li className={classNames(blur ? 'active' : '', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>  
+            <li className={classNames(blur ? 'active' : '', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>
             <li className={classNames(blur ? 'active' : '', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
         </ul>
     )
@@ -121,14 +122,14 @@ function Navbar() {
                 </div>
 
 
-                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} >
-                    <div className='progress-bar'  style={{ width: `${progressBar}%` }}></div>
-                
+                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} onClick={showHamburger} >
+                    <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
 
-                        <h3 className={blur ? 'brand-blur active' : 'brand-blur'}  onClick={showHamburger} >Martin</h3>
-             
 
-                    <div className={hamburger ? "hamburger" : "hamburger active"}  >
+                    {/* <h3 className={blur ? 'brand-blur active' : 'brand-blur'}  onClick={showHamburger} >Martin</h3> */}
+
+
+                    {/* <div className={hamburger ? "hamburger" : "hamburger active"}  >
                         <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
                             <span className={blur ? 'bar active' : 'bar'}></span>
                             <span className={blur ? 'bar active' : 'bar'}></span>
@@ -137,7 +138,26 @@ function Navbar() {
                         <div className={hamburger ? "sidebar" : "sidebar active"} >
                             {ulHolder}
                         </div>
+                    </div> */}
+
+
+                    <div className={hamburger ? "hamburger" : "hamburger active"}  >
+                        <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                        </div>
+                        <div className={hamburger ? "sidebar" : "sidebar active"} >
+                          <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
+                            <span style={{backgroundColor:'white'}} className='bar active'></span>
+                            <span style={{backgroundColor:'white'}} className='bar active'></span>
+                            <span style={{backgroundColor:'white'}} className='bar active'></span>
+                        </div>
+                            {ulHolder}
+                        </div>
                     </div>
+
+
                 </div>
             </nav>
             <Home home={home} />

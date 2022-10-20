@@ -1,5 +1,4 @@
 import './about.css'
-let photoOfMe = require('./images/professional\ photo.JPG')
 function About({ about }) {
 
   return (

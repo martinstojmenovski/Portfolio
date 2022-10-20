@@ -1,18 +1,18 @@
 #CONTACT{
-    background: rgb(247, 247, 247);
+    /* background: rgb(247, 247, 247); */
 }
 main {
     width: 60%;
     margin: auto;  
 }
 
-main h1 {
-    /* text-align: center; */
+/* main h1 {
+    text-align: center;
     color: rgb(236, 0, 0);
     font-size: 28px;
-    padding:120px 0 20px 0 ;
-}
-.dot{
+    padding:0px 0 20px 0 ;
+} */
+/* .dot{
     height: 12px;
     width: 12px;
     background-color: rgb(236, 0, 0);
@@ -23,16 +23,16 @@ main h1 {
     transition: all 700ms ease-in-out;
     box-shadow: 0 0px 10px rgb(236, 0, 0);
     
-}
+} */
 
 
-.pillar{
+/* .pillar{
     height: 35px;
     width: 2px;
     background-color: rgb(180, 59, 59);
     position: relative;
     left: 40%;
-}
+} */
 /* .wire{
     height: 1px;
     width: 5000%;
@@ -45,7 +45,7 @@ main h1 {
 #header{
     font-size: 30px;
     text-align: center;
-    padding: 100px 0 10px 0;
+    padding: 50px 0 10px 0;
 }
 #email{
     font-size: 15px;
@@ -59,7 +59,7 @@ main h1 {
 
 #social-media{
     text-align: center;
-    padding: 100px 0;
+    padding: 120px 0 40px 0;
     font-size: 15px;
 
 }
@@ -102,11 +102,11 @@ main a:hover::after {
     padding: 30px 0;
 } */
 
-
+/* 
 .last-words p {
     line-height: 40px;
     font-style: italic;
-}
+} */
 
 main ul li {
     list-style: none;
