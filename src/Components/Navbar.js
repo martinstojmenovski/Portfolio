@@ -125,24 +125,9 @@ function Navbar() {
                 </div>
 
 
-                <div className={hamburger ? 'dropmenu' : 'dropmenu active'} onClick={showHamburger} >
+                <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
                     <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
-
-
-                    {/* <h3 className={blur ? 'brand-blur active' : 'brand-blur'}  onClick={showHamburger} >Martin</h3> */}
-
-
-                    {/* <div className={hamburger ? "hamburger" : "hamburger active"}  >
-                        <div className={blur ? 'bars active' : 'bars'} onClick={showHamburger}>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                        </div>
-                        <div className={hamburger ? "sidebar" : "sidebar active"} >
-                            {ulHolder}
-                        </div>
-                    </div> */}
-
+                    <div className={hamburger ? 'rest' : 'rest active'} onClick={closeHamburger}></div>
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
                         <div className={blur ? 'bars1 active' : 'bars1'} onClick={showHamburger}>

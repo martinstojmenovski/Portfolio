@@ -73,7 +73,7 @@
   }
   .background .text {
     max-width: 100%;
-    margin: auto 10%;
+    margin: auto 70px;
   }
 }
 
@@ -86,6 +86,7 @@
   } 
   .background .text {
     top: 25%;
+    margin: auto 20px;
   }
 }
 @media screen and (max-width: 320px) {
