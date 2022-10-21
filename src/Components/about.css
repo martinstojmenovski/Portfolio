@@ -107,11 +107,16 @@
     .about-page{
         width: 90%;
     }
+    .professional-photo {
+        width: 380px;
+        height: 380px;
+    }
 }
 @media screen and (max-width: 440px) {
     .about-page{
         width: 100%;
     }
+  
 }
 @media screen and (max-width: 400px) {
     .about-page{

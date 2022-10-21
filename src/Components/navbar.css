@@ -109,7 +109,7 @@
     opacity: 0;
     transform: translateX(-300px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    z-index: 5;
+   
   }
 
   .sidebar.active {
