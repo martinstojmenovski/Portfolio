@@ -3,16 +3,25 @@
   width: 100%;
   margin: auto;
   z-index: 4;
-  height: 80px;
-  transition: all 400ms ease-in-out;
-
+  /* height: 80px; */
+  
+  height: 60px;
+  border-bottom: 1.5px solid #bdbdbd;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  
 }
 
 .navbar.active {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(3px);
-  height: 60px;
-  border-bottom: 1.5px solid #bdbdbd;
+  /* background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px); */
+  /* height: 60px; */
+  /* border-bottom: 1.5px solid #bdbdbd; */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .progress-bar {
@@ -167,7 +176,7 @@
     transition: all 400ms ease-in-out;
     cursor: pointer;
     padding: 20px;
-    position: relative;
+    position: absolute;
     left: 50px;
   }
 

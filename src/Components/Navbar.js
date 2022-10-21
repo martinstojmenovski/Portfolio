@@ -84,7 +84,7 @@ function Navbar() {
 
 
     // dropdown menu function - overflow hidden to stop page from scrolling
-    const showHamburger = (index) => {
+    const showHamburger = () => {
         if (hamburger) {
             document.body.style.overflow = "hidden"
             // document.body.style.marginRight = '17px'
@@ -148,7 +148,7 @@ function Navbar() {
 
                 </div>
             </nav>
-            <Home home={home} />
+            <Home  showHamburger={showHamburger} home={home} hamburger={hamburger} />
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />

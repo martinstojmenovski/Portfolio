@@ -1,10 +1,17 @@
 
 import './home-model2.css'
-function Home({ home }) {
+
+function Home({ home}) {
+
   return (
     <section ref={home} id='HOME' className="HOME">
         <div className='background'>
           <div className='overlay'>
+          {/* <div className='bars1' >
+                            <span className='bar'></span>
+                            <span className='bar'></span>
+                            <span className='bar'></span>
+                        </div> */}
             <div className='text'>
               <h1 style={{ whiteSpace: 'nowrap' }}>Martin Stojmenovski </h1>
               <div style={{ whiteSpace: 'nowrap' }}> Software Engineer</div>
