@@ -30,7 +30,7 @@ function Navbar() {
         sections.forEach(section => {
             const sectionTop = section.offsetTop
             // const sectionHeight = section.clientHeight
-            if (window.scrollY + 300 >= sectionTop) {
+            if (window.scrollY + 450 >= sectionTop) {
                 current = section.getAttribute('class')
             }
         })
@@ -84,11 +84,14 @@ function Navbar() {
 
 
     // dropdown menu function - overflow hidden to stop page from scrolling
-    const showHamburger = () => {
+    const showHamburger = (index) => {
+        
         if (hamburger) {
             document.body.style.overflow = "hidden"
             // document.body.style.marginRight = '17px'
             setHamburger(!hamburger)
+        
+        
         } else {
             setHamburger(!hamburger)
             document.body.style.overflow = ""
@@ -102,6 +105,30 @@ function Navbar() {
             // document.body.style.marginRight = ''
         }
     }
+
+
+
+
+    // const nav = document.getElementById('navbar');
+    // const showHomeHamburger = (index) => {
+    //     console.log(nav.className = 'navbar active')
+    //     if (hamburger) {
+    //         nav.className = 'navbar active'
+    //         document.body.style.overflow = "hidden"
+            
+    
+            
+
+    //         // document.body.style.marginRight = '17px'
+    //         setHamburger(!hamburger)
+        
+    //     } else {
+    //         setHamburger(!hamburger)
+    //         document.body.style.overflow = ""
+    //         // document.body.style.marginRight = ''
+    //     }
+    // }
+    
 
     const ulHolder = (
         <ul>
@@ -118,7 +145,7 @@ function Navbar() {
     return (
         <div>
 
-            <nav className={blur ? 'navbar active' : 'navbar'} >
+            <nav id='navbar' className={blur ? 'navbar active' : 'navbar'} >
 
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
@@ -148,7 +175,7 @@ function Navbar() {
 
                 </div>
             </nav>
-            <Home  showHamburger={showHamburger} home={home} hamburger={hamburger} />
+            <Home  home={home}  />
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />

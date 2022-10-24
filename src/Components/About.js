@@ -2,11 +2,12 @@ import './about.css'
 function About({ about }) {
 
   return (
-    <section ref={about} className='ABOUT' id='ABOUT' >
-      <div className='about-page'>
-      <div className="about-text">
+    <div style={{paddingTop:'80px'}} ref={about}>
+    <section  className='ABOUT' id='ABOUT' >
+      <div    className='about-page'>
+      <div  className="about-text">
         <h1>HELLO, I AM MARTIN</h1>
-        <ul>
+        <ul >
           <li>Premium Desigh</li>
           <li>Amazing Photo</li>
           <li>Creative Ideas</li>
@@ -26,6 +27,7 @@ function About({ about }) {
       </div>
       </div>
     </section>
+    </div>
   );
 }
 

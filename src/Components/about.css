@@ -5,11 +5,14 @@
     border-radius: 5px;
 }
 .about-page {
+    
     display: flex;
     width: 80ch;
     display: flex;
     align-content: center;
     margin: auto;
+   
+    
 }
 
 .about-text {

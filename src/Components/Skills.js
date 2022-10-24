@@ -10,7 +10,7 @@ function Skills({ skills }) {
             new businesses, startups, coffee.</p> */}
             <p id="header">Interested in working together?</p>
             <div id="email">
-            <p style={{paddingRight:'7px'}}>Email me </p> <a style={{color:' rgb(180, 59, 59)'}} href="mailto:martinstojmenovskim@gmail.com">martinstojmenovskim@gmail.com</a> 
+            <p style={{paddingRight:'7px'}}>Email me </p> <a style={{color:' rgb(209, 21, 21)'}} href="mailto:martinstojmenovskim@gmail.com">martinstojmenovskim@gmail.com</a> 
             </div>
             <div id="social-media">Find me on 
             <ul>

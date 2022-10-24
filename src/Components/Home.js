@@ -1,13 +1,13 @@
 
 import './home-model2.css'
 
-function Home({ home}) {
+function Home({ home, showHomeHamburger }) {
 
   return (
     <section ref={home} id='HOME' className="HOME">
         <div className='background'>
           <div className='overlay'>
-          {/* <div className='bars1' >
+          {/* <div className='bars1' onClick={showHomeHamburger}>
                             <span className='bar'></span>
                             <span className='bar'></span>
                             <span className='bar'></span>
