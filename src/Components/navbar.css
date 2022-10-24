@@ -4,23 +4,23 @@
   margin: auto;
   z-index: 4;
 
-  height: 60px;
+  height: 50px;
   /* border-bottom: 1.5px solid #bdbdbd; */
   /* background-color: rgba(255, 255, 255, 0.8); */
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
 
   /* opacity: 0;  */
   /* transform: translateY(-100px); */
   /* transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; */
-  transition: all 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out;
  
   
   
 }
 
 .navbar.active {
-  background: rgba(255, 255, 255, 0.8);
-  /* backdrop-filter: blur(3px); */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
   /* height: 60px; */
   border-bottom: 1.5px solid #bdbdbd;
   /* opacity: 1; */
@@ -30,7 +30,7 @@
 
 .progress-bar {
   position: fixed;
-  top: 58.5px;
+  top: 48.5px;
   left: 0;
   height: 2px;
   background: #1b1b1b;
@@ -47,7 +47,7 @@
   max-width: 55%;
   margin: auto;
   font-size: 12px;
-  padding-top: 10px;
+  padding: 5px 0;
 }
 
 .min-768 ul {
@@ -186,7 +186,7 @@
   }
 
   .bars1.active {
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 10px 20px;
   }
 
   .navbar li.active {
