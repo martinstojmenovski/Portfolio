@@ -3,7 +3,7 @@ const project1 = (
     
       <div className="project1">
       <h5>FRIENDS</h5>
-      <p>User authentication application built into React and Django
+      <p>User authentication application built in React and Django
         allows you to create an account and login with user verification.</p>
         <a href="https://martinstojmenovski.github.io/Friends/" target="_blank"><span>MORE</span></a>
     </div>
@@ -47,6 +47,17 @@ const project4 = (
     </div>
   </div>
 )
+const project5 = (
+  <div className="container5">
+    
+      <div className="project5">
+      <h5>TODO</h5>
+      <p>Todo app created in React with Chakra library allows you to add your daily to do tasks,
+         the list items are saved on your local storage in the browser.</p>
+        <a href="https://martinstojmenovski.github.io/todo-app-chakra/" target="_blank"><span>MORE</span></a>
+    </div>
+  </div>
+)
 
-const images = [project1, project2, project3, project4]
+const images = [project1, project2, project3, project4, project5]
 export default images

@@ -47,12 +47,21 @@
   max-width: 55%;
   margin: auto;
   font-size: 12px;
-  padding: 5px 0;
+  /* padding: 5px 0; */
+  position: relative;
+  top:20px;
+  transition: transform 100ms ease-out;
+
+}
+.min-768.active{
+  /* top:0px; */
+  transform: translateY(-20px);
 }
 
 .min-768 ul {
   display: flex;
   justify-content: space-evenly;
+ 
 }
 
 .navbar li {
@@ -60,7 +69,8 @@
   cursor: pointer;
   color: #ececec;
   font-weight: 700;
-  padding: 10px;
+  /* padding: 10px; */
+  padding: 5px 10px;
   margin: 10px;
   text-align: center;
   border: 2px solid transparent;
@@ -71,8 +81,8 @@
 
 .navbar li.active {
   color: #1b1b1b;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  /* padding: 5px 10px;
+  margin: 5px 10px; */
 }
 
 .navbar li.border {
