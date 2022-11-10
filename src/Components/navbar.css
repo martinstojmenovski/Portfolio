@@ -3,8 +3,8 @@
   width: 100%;
   margin: auto;
   z-index: 4;
-
-  height: 50px;
+  /* top: 40px; */
+  /* height: 50px; */
   /* border-bottom: 1.5px solid #bdbdbd; */
   /* background-color: rgba(255, 255, 255, 0.8); */
   /* backdrop-filter: blur(3px); */
@@ -12,17 +12,33 @@
   /* opacity: 0;  */
   /* transform: translateY(-100px); */
   /* transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; */
-  transition: background-color 400ms ease-in-out;
+  transition: all 200ms ease-in-out;
  
   
   
 }
-
+.navbar-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 44.2px;
+  width: 100%;
+  transform: translateY(-100px);
+  transition: transform 200ms ease-in-out;
+  z-index: 3;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+ 
+}
+.navbar-background.active{
+  transform: translateY(0);
+}
 .navbar.active {
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(3px);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); */
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  /* backdrop-filter: blur(3px); */
   /* height: 60px; */
-  border-bottom: 1.5px solid #bdbdbd;
+  /* border-bottom: 1.5px solid #bdbdbd; */
   /* opacity: 1; */
   /* transform: translateY(0); */
 
@@ -47,15 +63,16 @@
   max-width: 55%;
   margin: auto;
   font-size: 12px;
+  z-index: 5;
   /* padding: 5px 0; */
-  position: relative;
-  top:20px;
-  transition: transform 100ms ease-out;
+  /* position: relative; */
+  /* top:40px; */
+  /* transition: transform 700ms ease-out; */
 
 }
 .min-768.active{
   /* top:0px; */
-  transform: translateY(-20px);
+  /* transform: translateY(-40px); */
 }
 
 .min-768 ul {
@@ -69,20 +86,20 @@
   cursor: pointer;
   color: #ececec;
   font-weight: 700;
-  /* padding: 10px; */
-  padding: 5px 10px;
-  margin: 10px;
+  padding: 10px;
+  /* padding: 5px 10px; */
+  margin: 20px 10px 10px 10px;
   text-align: center;
   border: 2px solid transparent;
   border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  transition: margin 150ms ease-in-out, padding 200ms ease-in-out;
   max-width: 100%;
 }
 
 .navbar li.active {
   color: #1b1b1b;
-  /* padding: 5px 10px;
-  margin: 5px 10px; */
+  padding: 5px 10px;
+  margin: 5px 10px 10px 10px;
 }
 
 .navbar li.border {

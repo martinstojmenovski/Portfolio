@@ -72,10 +72,11 @@ function Navbar() {
     }
 
     // blur navigation menu when scroll
+    const nav = document.getElementById('navbar');
     const blurNavbar = () => {
         // console.log(window.scrollY)
-        if (window.scrollY >= 1) {
-            setBlur(true)
+        if (window.scrollY >= 30) {
+            setBlur(true)  
         } else {
             setBlur(false)
         }
@@ -146,7 +147,7 @@ function Navbar() {
         <div>
 
             <nav id='navbar' className={blur ? 'navbar active' : 'navbar'} >
-
+                <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div>
                 <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
                 </div>
