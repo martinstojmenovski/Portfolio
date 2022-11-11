@@ -3,19 +3,6 @@
   width: 100%;
   margin: auto;
   z-index: 4;
-  /* top: 40px; */
-  /* height: 50px; */
-  /* border-bottom: 1.5px solid #bdbdbd; */
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* backdrop-filter: blur(3px); */
-
-  /* opacity: 0;  */
-  /* transform: translateY(-100px); */
-  /* transition: opacity 300ms ease-in-out, transform 300ms ease-in-out; */
-  /* transition: all 200ms ease-in-out; */
- 
-  
-  
 }
 .navbar-background{
   position: absolute;
@@ -28,7 +15,6 @@
   transition: transform 200ms ease-in-out;
   z-index: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
- 
 }
 .navbar-background.active{
   transform: translateY(0);
@@ -37,26 +23,6 @@
   max-width: 55%;
   margin: auto;
   font-size: 12px;
-  
-  /* padding: 5px 0; */
-  /* position: relative; */
-  /* top:40px; */
-  /* transition: transform 700ms ease-out; */
-
-}
-.min-768.active{
-  /* top:0px; */
-  /* transform: translateY(-40px); */
-}
-.navbar.active {
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); */
-  /* background-color: rgba(255, 255, 255, 0.9); */
-  /* backdrop-filter: blur(3px); */
-  /* height: 60px; */
-  /* border-bottom: 1.5px solid #bdbdbd; */
-  /* opacity: 1; */
-  /* transform: translateY(0); */
-
 }
 
 .progress-bar {
@@ -72,13 +38,9 @@
   display: none;
 }
 
-
-
 .min-768 ul {
   display: flex;
   justify-content: space-evenly;
-  
- 
 }
 
 .navbar li {
@@ -87,7 +49,6 @@
   color: #ececec;
   font-weight: 700;
   padding: 10px;
-  /* padding: 5px 10px; */
   margin: 20px 10px 10px 10px;
   text-align: center;
   border: 2px solid transparent;
@@ -106,10 +67,6 @@
 .navbar li.border {
   border: 2px solid;
 }
-
-
-
-
 @media screen and (max-width: 768px) {
   .min-768 {
     display: none;
@@ -225,10 +182,6 @@
   
 
 }
-
-
-
-
 @media screen and (max-width: 480px) {
   .bars1 {
     left: 0;
