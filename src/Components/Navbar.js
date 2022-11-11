@@ -147,10 +147,12 @@ function Navbar() {
         <div>
 
             <nav id='navbar' className={blur ? 'navbar active' : 'navbar'} >
-                <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div>
-                <div className={blur ? 'min-768 active' : 'min-768'}>
+            <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
+                    <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div>
                 </div>
+                
+               
 
 
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
