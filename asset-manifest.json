@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-portfolio-site/static/css/main.209f1164.css",
+    "main.css": "/react-portfolio-site/static/css/main.37a76e53.css",
     "main.js": "/react-portfolio-site/static/js/main.00784cc5.js",
     "static/js/787.749b4a44.chunk.js": "/react-portfolio-site/static/js/787.749b4a44.chunk.js",
     "static/media/denver-colorado.jpg": "/react-portfolio-site/static/media/denver-colorado.f85281aa24cc428d72ff.jpg",
@@ -10,12 +10,12 @@
     "static/media/todo-app.png": "/react-portfolio-site/static/media/todo-app.cc09ce655b6b230dee2b.png",
     "static/media/friends.png": "/react-portfolio-site/static/media/friends.4086fbb18bc04018f591.png",
     "index.html": "/react-portfolio-site/index.html",
-    "main.209f1164.css.map": "/react-portfolio-site/static/css/main.209f1164.css.map",
+    "main.37a76e53.css.map": "/react-portfolio-site/static/css/main.37a76e53.css.map",
     "main.00784cc5.js.map": "/react-portfolio-site/static/js/main.00784cc5.js.map",
     "787.749b4a44.chunk.js.map": "/react-portfolio-site/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.209f1164.css",
+    "static/css/main.37a76e53.css",
     "static/js/main.00784cc5.js"
   ]
 }
