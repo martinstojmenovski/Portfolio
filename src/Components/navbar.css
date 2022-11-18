@@ -25,15 +25,7 @@
   font-size: 12px;
 }
 
-.progress-bar {
-  position: fixed;
-  top: 48.5px;
-  left: 0;
-  height: 2px;
-  background: #1b1b1b;
-  z-index: 3;
-  transition: width 30ms linear;
-}
+
 .dropmenu {
   display: none;
 }
@@ -71,7 +63,16 @@
   .min-768 {
     display: none;
   }
-
+  .progress-bar {
+    position: fixed;
+    /* top: 48.5px; */
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: #1b1b1b;
+    z-index: 3;
+    transition: width 30ms linear;
+  }
 
   .dropmenu {
     display: flex;  
@@ -154,24 +155,28 @@
     height: 3px;
     margin: 5px auto;
     background-color: #ececec;
-    transition: all 300ms ease-in-out;
+    border-radius: 15px;
   }
 
   .bar.active {
-    background-color: #1b1b1b;
+    /* background-color: #1b1b1b; */
 
   }
 
   .bars1 {
-    transition: all 400ms ease-in-out;
+    transition: all 200ms ease-in-out;
     cursor: pointer;
-    padding: 20px;
+    padding: 15px 18px;
     position: absolute;
     left: 50px;
+    border-radius: 15px;
+    margin: 20px 0 0 10px;
   }
 
   .bars1.active {
-    padding: 10px 20px 10px 20px;
+    /* transition: all 200ms ease-in-out; */
+    background-color:rgba(0, 0, 0, 0.6);
+    margin: 10px 0 0 10px;
   }
 
   .navbar li.active {
