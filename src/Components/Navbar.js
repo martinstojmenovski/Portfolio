@@ -13,7 +13,7 @@ function Navbar() {
     const project = useRef(null)
     const skills = useRef(null)
     const home = useRef(null)
-    //useState to blur navbar
+    //useState to blur navbar 
     const [blur, setBlur] = useState(false)
 
     //useState progressBar
