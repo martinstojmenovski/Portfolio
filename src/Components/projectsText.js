@@ -43,7 +43,8 @@ const project4 = (
       <h5>PORTFOLIO</h5>
       <p>The portfolio website is my first project created
         to represent myself online. Technologies used for this website: HTML, CSS and jQuery.</p>
-        <a href="https://martinstojmenovski.github.io/portfolio/index.html#aboutMe" target="_blank"><span>MORE</span></a>
+        <a href="https://martinstojmenovski.github.io/portfolio-site/" target="_blank"><span>MORE</span></a>
+        
     </div>
   </div>
 )
