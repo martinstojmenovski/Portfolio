@@ -72,9 +72,9 @@ function Navbar() {
     }
 
     // blur navigation menu when scroll
-    const nav = document.getElementById('navbar');
+    // const nav = document.getElementById('navbar'); ???????????????????
     const blurNavbar = () => {
-        // console.log(window.scrollY)
+        console.log(window.scrollY)
         if (window.scrollY >= 30) {
             setBlur(true)  
         } else {
@@ -107,30 +107,6 @@ function Navbar() {
         }
     }
 
-
-
-
-    // const nav = document.getElementById('navbar');
-    // const showHomeHamburger = (index) => {
-    //     console.log(nav.className = 'navbar active')
-    //     if (hamburger) {
-    //         nav.className = 'navbar active'
-    //         document.body.style.overflow = "hidden"
-            
-    
-            
-
-    //         // document.body.style.marginRight = '17px'
-    //         setHamburger(!hamburger)
-        
-    //     } else {
-    //         setHamburger(!hamburger)
-    //         document.body.style.overflow = ""
-    //         // document.body.style.marginRight = ''
-    //     }
-    // }
-    
-
     const ulHolder = (
         <ul>
             
@@ -145,7 +121,7 @@ function Navbar() {
 
     return (
         <div>
-
+            <div style={{height: "40px"}}></div>
             <nav id='navbar' className={blur ? 'navbar active' : 'navbar'} >
             <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
