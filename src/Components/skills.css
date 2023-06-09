@@ -1,5 +1,7 @@
 #CONTACT{
     /* background: rgb(247, 247, 247); */
+    position: relative;
+    top:60vh;
   
 }
 main {

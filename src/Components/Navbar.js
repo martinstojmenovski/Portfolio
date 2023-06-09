@@ -110,10 +110,14 @@ function Navbar() {
     const ulHolder = (
         <ul>
             
-            <li className={classNames(blur ? 'active' : '', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
+            {/* <li className={classNames(blur ? 'active' : '', 'HOME border')} onClick={() => scrollToSection(home)} >HOME</li>
             <li className={classNames(blur ? 'active' : '', 'PROJECT')} onClick={() => scrollToSection(project)} >WORK</li>
             <li className={classNames(blur ? 'active' : '', 'ABOUT')} onClick={() => scrollToSection(about)} >ABOUT</li>
-            <li className={classNames(blur ? 'active' : '', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li>
+            <li className={classNames(blur ? 'active' : '', 'CONTACT')} onClick={() => scrollToSection(skills)} >CONTACT</li> */}
+            <li className={'HOME border'} onClick={() => scrollToSection(home)} >HOME</li>
+            <li className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
+            <li className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
+            <li className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
         </ul>
     )
 
@@ -122,7 +126,10 @@ function Navbar() {
     return (
         <div>
             <div style={{height: "40px"}}></div>
-            <nav id='navbar' className={blur ? 'navbar active' : 'navbar'} >
+            <nav id='navbar' 
+             className={blur ? 'navbar active' : 'navbar'
+            }
+             >
             <div className={blur ? 'min-768 active' : 'min-768'}>
                     {ulHolder}
                     <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div>
@@ -132,7 +139,7 @@ function Navbar() {
 
 
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
-                    <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
+                    {/* <div className='progress-bar' style={{ width: `${progressBar}%` }}></div> */}
                     <div className={hamburger ? 'rest' : 'rest active'} onClick={closeHamburger}></div>
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
