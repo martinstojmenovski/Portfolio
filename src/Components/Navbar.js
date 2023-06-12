@@ -13,6 +13,7 @@ function Navbar() {
     const project = useRef(null)
     const skills = useRef(null)
     const home = useRef(null)
+
     //useState to blur navbar 
     const [blur, setBlur] = useState(false)
 
@@ -65,8 +66,6 @@ function Navbar() {
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-
-
         setHamburger(!hamburger)
         document.body.style.overflow = ""
     }
@@ -125,21 +124,28 @@ function Navbar() {
 
     return (
         <div>
-            <div style={{height: "40px"}}></div>
-            <nav id='navbar' 
-             className={blur ? 'navbar active' : 'navbar'
-            }
+            {/* <div   className={blur ? 'navbar active' : 'navbar'}  style={{height: "40px"}}></div> */}
+            <nav id='navbar' className={blur ? 'navbar active' : 'navbar' }
+            style={{
+                background: "rgba(0, 0, 0, 0)",
+                width: "100%",
+                position: "sticky",
+                overflow: "hidden",
+                top: "0",
+                margin: "auto",
+                zIndex: "4",
+                transition: "1s"
+            }}
              >
-            <div className={blur ? 'min-768 active' : 'min-768'}>
+            <div 
+            // className={blur ? 'min-768 active' : 'min-768'}
+            className='min-768'
+            >
                     {ulHolder}
-                    <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div>
+                    {/* <div className={blur ? 'navbar-background active' : 'navbar-background'} ></div> */}
                 </div>
-                
-               
-
-
                 <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
-                    {/* <div className='progress-bar' style={{ width: `${progressBar}%` }}></div> */}
+                    <div className='progress-bar' style={{ width: `${progressBar}%` }}></div>
                     <div className={hamburger ? 'rest' : 'rest active'} onClick={closeHamburger}></div>
 
                     <div className={hamburger ? "hamburger" : "hamburger active"}  >
