@@ -3,7 +3,6 @@ import About from './About'
 import Project from './Project'
 import Skills from './Skills'
 import Dashboard from './Dashboard'
-import Example from './Example'
 import { useEffect, useRef, useState } from 'react'
 import { Flex } from '@chakra-ui/react'
 import { useMediaQuery,   Menu,
@@ -14,7 +13,7 @@ IconButton} from '@chakra-ui/react'
     import { HamburgerIcon} from '@chakra-ui/icons'
 
 
-function Navigation() {
+export default function Navigation() {
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
@@ -23,8 +22,9 @@ function Navigation() {
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
+        console.log(elementRef)
         window.scrollTo({
-            top: elementRef.current.offsetTop,
+            top: elementRef.current.offsetTop - 100,
             behavior: 'smooth'
         })
     }
@@ -55,12 +55,15 @@ function Navigation() {
             if (window.scrollY + 450 >= sectionTop) {
                 current = section.getAttribute('class')
             }
+            
         })
+        
         navLi.forEach(li => {
             li.style.border = "2px solid transparent"
             if (li.classList.contains(current)) {
                 li.style.border = "2px solid"
             }
+            
         })
     }
     window.addEventListener('scroll', makeBorderbox)
@@ -86,7 +89,7 @@ function Navigation() {
                     <li style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</li>
                     <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
                     <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
-                    <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+                    <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONT-ACT</li>
                 </Flex>
     )
     const mobileMenu = (
@@ -137,10 +140,8 @@ function Navigation() {
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
-            <Example />
         </div>
 
     )
 }
 
-export default Navigation

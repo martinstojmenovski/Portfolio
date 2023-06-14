@@ -1,6 +1,6 @@
 #PROJECT{
- position: relative;
- /* top:-100px; */
+ /* position: relative; */
+ /* top:100px; */
   /* box-shadow: 20px 0 0 0 rgba(0,0,0, .7); */
 }
 .projects {
@@ -15,7 +15,7 @@
   text-align: center;
   color: rgb(236, 0, 0);
   font-size: 28px;
-  padding-top:40px;
+  
   
 }
 

@@ -8,11 +8,12 @@ export default function Dashboard({ dashboard }) {
         top: "-100px",
         // width: "100%",
         height: "80vh",
-        // backgroundImage: `url(${Background})` ,
+        backgroundImage: `url(${Background})` ,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "50% 40%",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
+        // marginBottom: "100px",
     }
     const overlay = {
         position: "absolute",
@@ -20,17 +21,17 @@ export default function Dashboard({ dashboard }) {
         left: "0",
         width: "100%",
         height: "100%",
-        background: "linear-gradient(to right, rgba(45, 0, 0, 1), rgba(227, 0, 0, 1) 100%)",
+        background: "linear-gradient(to right, rgba(45, 0, 0, 0.7), rgba(227, 0, 0, 0.8) 100%)",
         display: "flex",
         alignItems: "center",
     }
     return (
-        <div style={background}>
+        <section style={background}  ref={dashboard}  id='DASHBOARD' className='DASHBOARD'>
             <div style={overlay}>
             <Container position={"sticky"}
-              ref={dashboard} 
+             
              >
-                <Heading pl={"10px"} pt={"200px"} color={"#ececec"} >
+                <Heading pl={"10px"} pt={"100px"} color={"#ececec"} >
                     Martin Stojmenovski
                 </Heading>
                 <Heading mb={'30px'} pl={"10px"} as='h5' size='sm' color={"#ececec"}>
@@ -48,7 +49,7 @@ export default function Dashboard({ dashboard }) {
                 </Text>
             </Container>
             </div>
-            </div>
+            </section>
 
         
     )

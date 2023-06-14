@@ -2,7 +2,7 @@ import './about.css'
 function About({ about }) {
 
   return (
-    <div style={{paddingTop:'80px'}} ref={about}>
+    <div  ref={about}>
     <section  className='ABOUT' id='ABOUT' >
       <div    className='about-page'>
       <div  className="about-text">
