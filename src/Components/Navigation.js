@@ -19,7 +19,7 @@ function Navigation() {
     const about = useRef(null)
     const project = useRef(null)
     const skills = useRef(null)
-    const home = useRef(null)
+    const dashboard = useRef(null)
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
@@ -35,7 +35,7 @@ function Navigation() {
     // black background navigation menu when scroll
     const blackNavbar = () => {
         if (window.scrollY >= 30) {
-            setBlack("#1b1b1b")
+            setBlack("linear-gradient(to right, rgba(45, 0, 0, 1), rgba(227, 0, 0, 1) 100%)")
         } else {
             setBlack("transparent")
         }
@@ -83,7 +83,7 @@ function Navigation() {
                     height="60px"
                     alignItems="center"
                 >
-                    <li style={{ ...styleList, border: "2px solid" }} className={'HOME'} onClick={() => scrollToSection(home)} >HOME</li>
+                    <li style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</li>
                     <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
                     <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
                     <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
@@ -98,7 +98,7 @@ function Navigation() {
     variant='outline'
   />
   <MenuList>
-    <MenuItem style={{ ...styleList, border: "2px solid" }} className={'HOME'} onClick={() => scrollToSection(home)} >HOME</MenuItem>
+    <MenuItem style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
     <MenuItem style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
     <MenuItem style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
     <MenuItem style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
@@ -115,7 +115,7 @@ function Navigation() {
     return (
         <div>
             <nav style={{
-                background: black,
+                background: black ,
                 width: "100%",
                 position: "sticky",
                 top: "0",
@@ -133,7 +133,7 @@ function Navigation() {
 
 
             </nav>
-            <Dashboard home={home} />
+            <Dashboard dashboard={dashboard} />
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
