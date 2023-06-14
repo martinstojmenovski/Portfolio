@@ -1,8 +1,19 @@
-import Home from './Home'
+
 import About from './About'
 import Project from './Project'
 import Skills from './Skills'
+import Dashboard from './Dashboard'
+import Example from './Example'
 import { useEffect, useRef, useState } from 'react'
+import { Flex } from '@chakra-ui/react'
+import { useMediaQuery,   Menu,
+    MenuButton,
+    MenuList,
+    MenuItem, 
+IconButton} from '@chakra-ui/react'
+    import { HamburgerIcon} from '@chakra-ui/icons'
+
+
 function Navigation() {
     //useRef declaration for page navigation
     const about = useRef(null)
@@ -10,51 +21,49 @@ function Navigation() {
     const skills = useRef(null)
     const home = useRef(null)
 
-        //useState to blur navbar 
-        const [blur, setBlur] = useState("transparent")
-
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
-        // setHamburger(!hamburger)
-        // document.body.style.overflow = ""   
     }
 
-        // blur navigation menu when scroll
-    const blurNavbar = () => {
+    //useState to black navbar 
+    const [black, setBlack] = useState("transparent")
+
+    // black background navigation menu when scroll
+    const blackNavbar = () => {
         if (window.scrollY >= 30) {
-            setBlur("#1b1b1b")  
+            setBlack("#1b1b1b")
         } else {
-            setBlur("transparent")
+            setBlack("transparent")
         }
     }
-    window.addEventListener('scroll', blurNavbar)
+    window.addEventListener('scroll', blackNavbar)
 
 
 
-        // Function to set a border to the selected page
-       
-        const makeBorderbox = () => {
-            const sections = document.querySelectorAll('section')
-            const navLi = document.querySelectorAll('nav ul li') 
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop
-                if (window.scrollY + 450 >= sectionTop) {
-                    current = section.getAttribute('class')
-                }
-            })
-            navLi.forEach(li => {
-                li.style.border = "2px solid transparent"
-                if (li.classList.contains(current)) {
-                    li.style.border = "2px solid"
-                }
-            })
-        }
-        window.addEventListener('scroll', makeBorderbox)
+    // Function to set a border to the selected page
+
+    const makeBorderbox = () => {
+        const sections = document.querySelectorAll('section')
+        const navLi = document.querySelectorAll('nav ul li')
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop
+            if (window.scrollY + 450 >= sectionTop) {
+                current = section.getAttribute('class')
+            }
+        })
+        navLi.forEach(li => {
+            li.style.border = "2px solid transparent"
+            if (li.classList.contains(current)) {
+                li.style.border = "2px solid"
+            }
+        })
+    }
+    window.addEventListener('scroll', makeBorderbox)
 
 
     const styleList = {
@@ -65,14 +74,48 @@ function Navigation() {
         padding: "7px 10px",
         borderRadius: "5px",
     }
+    const desktopMenu = (
+<Flex as="ul"
+                    justifyContent="space-evenly"
+                    width="60%"
+                    margin="auto"
+                    textAlign="center"
+                    height="60px"
+                    alignItems="center"
+                >
+                    <li style={{ ...styleList, border: "2px solid" }} className={'HOME'} onClick={() => scrollToSection(home)} >HOME</li>
+                    <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
+                    <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
+                    <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+                </Flex>
+    )
+    const mobileMenu = (
+        <Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem style={{ ...styleList, border: "2px solid" }} className={'HOME'} onClick={() => scrollToSection(home)} >HOME</MenuItem>
+    <MenuItem style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
+    <MenuItem style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
+    <MenuItem style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
+  </MenuList>
+</Menu>
+    )
 
-const border = {}
+    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+
+
+
 
 
     return (
         <div>
             <nav style={{
-                background: blur,
+                background: black,
                 width: "100%",
                 position: "sticky",
                 top: "0",
@@ -81,26 +124,22 @@ const border = {}
                 transition: "1s"
             }}
             >
-                <ul style={{
-                    display: "flex",
-                   justifyContent: "space-evenly",
-                   width: "60%",
-                   margin: "auto",
-                   textAlign: "center",
-                   height: "60px",
-                   alignItems: "center",
-                }}>
-                    <li style={{...styleList, border: "2px solid"}} className={'HOME'} onClick={() => scrollToSection(home)} >HOME</li>
-                    <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
-                    <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
-                    <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
-                </ul>
+
+        
+        {isLargerThan480 ? desktopMenu : mobileMenu}
+        
+
+
+
+
             </nav>
-            <Home  home={home}  />
+            <Dashboard home={home} />
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
+            <Example />
         </div>
+
     )
 }
 
