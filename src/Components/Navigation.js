@@ -4,13 +4,15 @@ import Project from './Project'
 import Skills from './Skills'
 import Dashboard from './Dashboard'
 import { useEffect, useRef, useState } from 'react'
-import { Flex } from '@chakra-ui/react'
-import { useMediaQuery,   Menu,
+import { Flex, position } from '@chakra-ui/react'
+import {
+    useMediaQuery, Menu,
     MenuButton,
     MenuList,
-    MenuItem, 
-IconButton} from '@chakra-ui/react'
-    import { HamburgerIcon} from '@chakra-ui/icons'
+    MenuItem,
+    IconButton
+} from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
 
 export default function Navigation() {
@@ -34,8 +36,8 @@ export default function Navigation() {
 
     // black background navigation menu when scroll
     const blackNavbar = () => {
-        if (window.scrollY >= 30) {
-            setBlack("linear-gradient(to right, rgba(45, 0, 0, 1), rgba(227, 0, 0, 1) 100%)")
+        if (window.scrollY >= 150) {
+            setBlack("rgba(45, 0, 0, 1)")
         } else {
             setBlack("transparent")
         }
@@ -55,15 +57,15 @@ export default function Navigation() {
             if (window.scrollY + 450 >= sectionTop) {
                 current = section.getAttribute('class')
             }
-            
+
         })
-        
+
         navLi.forEach(li => {
             li.style.border = "2px solid transparent"
             if (li.classList.contains(current)) {
                 li.style.border = "2px solid"
             }
-            
+
         })
     }
     window.addEventListener('scroll', makeBorderbox)
@@ -78,36 +80,63 @@ export default function Navigation() {
         borderRadius: "5px",
     }
     const desktopMenu = (
-<Flex as="ul"
-                    justifyContent="space-evenly"
-                    width="60%"
-                    margin="auto"
-                    textAlign="center"
-                    height="60px"
-                    alignItems="center"
-                >
-                    <li style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</li>
-                    <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
-                    <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
-                    <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONT-ACT</li>
-                </Flex>
+        <nav style={{
+            position: "sticky",
+            top: "0",
+            zIndex: "1",
+            background: black,
+            transition: "background 1s linear",
+
+
+        }}
+        >
+        <Flex as="ul"
+            justifyContent="space-evenly"
+            width="60%"
+            margin="auto"
+            textAlign="center"
+            height="60px"
+            alignItems="center"
+          
+        >
+            <li style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</li>
+            <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
+            <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
+            <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
+        </Flex>
+        </nav>
+       
     )
+
     const mobileMenu = (
+        <nav style={{
+            position: "sticky",
+            top: "30px",
+            zIndex: "1",
+        }}
+        >
         <Menu>
-  <MenuButton
-    as={IconButton}
-    aria-label='Options'
-    icon={<HamburgerIcon />}
-    variant='outline'
-  />
-  <MenuList>
-    <MenuItem style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
-    <MenuItem style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
-    <MenuItem style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
-    <MenuItem style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
-  </MenuList>
-</Menu>
+            <MenuButton
+                as={IconButton}
+                aria-label='Options' 
+                icon={<HamburgerIcon />}
+                variant='outline'
+                style={{
+                    backgroundColor: "rgb(234, 234, 234)",
+                    borderRadius: "0 30% 30% 0",
+                }}
+            />
+            <MenuList as={"ul"}>
+                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b", border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
+                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
+                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
+                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
+            </MenuList>
+        </Menu>
+        </nav>
     )
+
+
 
     const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
@@ -117,25 +146,21 @@ export default function Navigation() {
 
     return (
         <div>
-            <nav style={{
-                background: black ,
-                width: "100%",
-                position: "sticky",
-                top: "0",
-                margin: "auto",
-                zIndex: "1",
-                transition: "1s"
-            }}
-            >
+            
+           
+                
+                
 
-        
-        {isLargerThan480 ? desktopMenu : mobileMenu}
-        
+             
+
+                {isLargerThan480 ? desktopMenu : mobileMenu}
 
 
 
+                
 
-            </nav>
+           
+            
             <Dashboard dashboard={dashboard} />
             <Project project={project} />
             <About about={about} />
