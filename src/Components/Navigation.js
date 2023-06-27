@@ -32,25 +32,37 @@ export default function Navigation() {
     }
 
     //useState to black navbar 
-    const [black, setBlack] = useState("transparent")
+    const [black, setBlack] = useState({
+        background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
+        boxShadow: "none",
+    })
 
     // black background navigation menu when scroll
-    const blackNavbar = () => {
-        if (window.scrollY >= 150) {
-            setBlack("rgba(45, 0, 0, 1)")
+    useEffect(() => {
+    const handleScroll = () => {
+        if (window.scrollY >= 50) {
+            setBlack({
+                background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
+                boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+            })
         } else {
-            setBlack("transparent")
+            setBlack({
+                background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
+                boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
+            })
         }
     }
-    window.addEventListener('scroll', blackNavbar)
-
-
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
     // Function to set a border to the selected page
 
     const makeBorderbox = () => {
         const sections = document.querySelectorAll('section')
-        const navLi = document.querySelectorAll('nav ul li')
+        const navLi = document.querySelectorAll('nav li')
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop
@@ -75,37 +87,39 @@ export default function Navigation() {
         listStyle: "none",
         cursor: "pointer",
         color: "#ececec",
-        fontWeight: "700",
+        backgroundColor: "transparent",
+        fontWeight: "500",
         padding: "7px 10px",
         borderRadius: "5px",
     }
     const desktopMenu = (
+
         <nav style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height:"70px",
+            padding:"0 40px",
             position: "sticky",
             top: "0",
-            zIndex: "1",
-            background: black,
-            transition: "background 1s linear",
-
-
+            zIndex: "2",
+            transition: "all 0.3s ease-in-out",
+            // ...black,
         }}
         >
-        <Flex as="ul"
-            justifyContent="space-evenly"
-            width="60%"
-            margin="auto"
-            textAlign="center"
-            height="60px"
-            alignItems="center"
-          
-        >
-            <li style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</li>
-            <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</li>
-            <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</li>
-            <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</li>
-        </Flex>
+            <div style={{color: "white"}}>
+                <li style={{ ...styleList, border: "2px solid", padding: "15px",borderRadius: "100px" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS.</li>
+            </div>
+            <ul
+                style={{display:"flex"}}
+            >
+                <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+                <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+                <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+            </ul>
         </nav>
-       
+
+
     )
 
     const mobileMenu = (
@@ -115,52 +129,34 @@ export default function Navigation() {
             zIndex: "1",
         }}
         >
-        <Menu>
-            <MenuButton
-                as={IconButton}
-                aria-label='Options' 
-                icon={<HamburgerIcon />}
-                variant='outline'
-                style={{
-                    backgroundColor: "rgb(234, 234, 234)",
-                    borderRadius: "0 30% 30% 0",
-                }}
-            />
-            <MenuList as={"ul"}>
-                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b", border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
-                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
-                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
-                <MenuItem as={"li"} style={{ ...styleList, color: "#1b1b1b" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
-            </MenuList>
-        </Menu>
+            <Menu>
+                <MenuButton
+                    as={IconButton}
+                    aria-label='Options'
+                    icon={<HamburgerIcon />}
+                    variant='outline'
+                    style={{
+                        backgroundColor: "rgb(234, 234, 234)",
+                        borderRadius: "0 30% 30% 0",
+                    }}
+                />
+                <MenuList as={"ul"} style={{ background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)" }}>
+                    <MenuItem as={"li"} style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
+                    <MenuItem as={"li"} style={{ ...styleList, }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
+                    <MenuItem as={"li"} style={{ ...styleList, }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
+                    <MenuItem as={"li"} style={{ ...styleList, }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
+                </MenuList>
+            </Menu>
         </nav>
     )
-
 
 
     const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
 
-
-
-
     return (
         <div>
-            
-           
-                
-                
-
-             
-
-                {isLargerThan480 ? desktopMenu : mobileMenu}
-
-
-
-                
-
-           
-            
+            {isLargerThan480 ? desktopMenu : mobileMenu}
             <Dashboard dashboard={dashboard} />
             <Project project={project} />
             <About about={about} />

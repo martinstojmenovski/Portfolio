@@ -5,7 +5,7 @@ import Background from "./images/denver-colorado.jpg";
 export default function Dashboard({ dashboard }) {
     const background = {
         position: "relative",
-        top: "-100px",
+        top: "-70px",
         height: "80vh",
         backgroundImage: `url(${Background})` ,
         backgroundRepeat: "no-repeat",
@@ -24,7 +24,7 @@ export default function Dashboard({ dashboard }) {
     return (
         <section style={background}  ref={dashboard}  id='DASHBOARD' className='DASHBOARD'>
             <div style={overlay}>
-            <Container  top={"0"} position={"sticky"}
+            <Container  top={"0"}
              
              >
                 <Heading pl={"10px"} pt={"150px"} color={"#ececec"} >
@@ -39,9 +39,7 @@ export default function Dashboard({ dashboard }) {
                     I strive to deliver efficient solutions to complex challenges.
                     In addition to my programming skills,
                     I have a deep appreciation for photography, architecture, and a good cup of coffee.
-                    Through my portfolio website,
-                    I aim to showcase my expertise in JavaScript and demonstrate my creative interests outside of coding.
-                    Explore my work and get a glimpse into my world of problem-solving and artistic inspiration.
+                
                 </Text>
             </Container>
             </div>
