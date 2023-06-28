@@ -4,6 +4,7 @@ import Project from './Project'
 import Skills from './Skills'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
+import { styleList} from './DropdownMenu'
 
 import { useEffect, useRef, useState } from 'react'
 import { Flex, position } from '@chakra-ui/react'
@@ -22,7 +23,7 @@ import { HamburgerIcon, ChevronDownIcon, } from '@chakra-ui/icons'
 
 
 
-export default function Navigation( ) {
+export default function Navigation(  ) {
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
@@ -31,7 +32,6 @@ export default function Navigation( ) {
 
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
-        console.log(elementRef)
         window.scrollTo({
             top: elementRef.current.offsetTop - 100,
             behavior: 'smooth'
@@ -90,13 +90,13 @@ export default function Navigation( ) {
     window.addEventListener('scroll', makeBorderbox)
 
 
-    const styleList = {
-        listStyle: "none",
-        cursor: "pointer",
-        color: "#ececec",
-        fontWeight: "500",
-        padding: "10px",
-    }
+    // const styleList = {
+    //     listStyle: "none",
+    //     cursor: "pointer",
+    //     color: "#ececec",
+    //     fontWeight: "500",
+    //     padding: "10px",
+    // }
     const styleLogo = {
         position: "relative",
         top: "10px",
@@ -122,11 +122,12 @@ export default function Navigation( ) {
         <div>
 
             <nav style={{
+                position: "fixed",
+                width:"100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "0 20px",
-                position: "sticky",
                 top: "0",
                 zIndex: "2",
             }}
@@ -134,7 +135,7 @@ export default function Navigation( ) {
                 <div style={{ color: "white" }}>
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
-                {isLargerThan480 ? desktopMenu : <DropdownMenu />}
+                {isLargerThan480 ? desktopMenu : <DropdownMenu scrollToSection={scrollToSection} project={project}  about={about} skills={skills} />}
             </nav>
             <Dashboard dashboard={dashboard} />
             <Project project={project} />
