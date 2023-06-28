@@ -33,7 +33,7 @@ export default function Navigation(  ) {
     //Page navigation function - overflow hidden to stop page from scrolling
     const scrollToSection = (elementRef) => {
         window.scrollTo({
-            top: elementRef.current.offsetTop - 100,
+            top: elementRef.current.offsetTop,
             behavior: 'smooth'
         })
     }
@@ -46,18 +46,18 @@ export default function Navigation(  ) {
 
     // black background navigation menu when scroll
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY >= 50) {
-                setBlack({
-                    background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
-                    boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-                })
-            } else {
-                setBlack({
-                    background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
-                    boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
-                })
-            }
+        const handleScroll = (elementRef) => {
+            // if (window.scrollY >= 50) {
+            //     setBlack({
+            //         background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
+            //         boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+            //     })
+            // } else {
+            //     setBlack({
+            //         background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
+            //         boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
+            //     })
+            // }
         }
         window.addEventListener('scroll', handleScroll)
         return () => {
@@ -70,14 +70,35 @@ export default function Navigation(  ) {
     const makeBorderbox = () => {
         const sections = document.querySelectorAll('section')
         const navLi = document.querySelectorAll('nav li')
+        const spans = document.querySelectorAll('nav button div span')
+        const ul = document.querySelectorAll('nav ul')
         let current = '';
-        sections.forEach(section => {
+
+        sections.forEach(section => { 
             const sectionTop = section.offsetTop
-            if (window.scrollY + 450 >= sectionTop) {
+            // console.log(sectionTop)
+            if (window.scrollY + 20>= sectionTop) {
                 current = section.getAttribute('class')
+            
+            }
+
+            if (section.classList.contains(current)) {
+                
+                    navLi.forEach( li => {
+                        ul[0].style.backgroundColor = "black"
+                        li.style.color = "white"
+                        spans.forEach(span => span.style.backgroundColor = "white") 
+                        if(current === "PROJECT" || current === "CONTACT"){
+                            li.style.color = "black"   
+                            spans.forEach(span => span.style.backgroundColor = "black")  
+                            ul[0].style.backgroundColor = "white"
+                        }
+                    })
+                
             }
 
         })
+      
 
         navLi.forEach(li => {
             li.style.borderBottom = "2px solid transparent"
@@ -89,21 +110,13 @@ export default function Navigation(  ) {
     }
     window.addEventListener('scroll', makeBorderbox)
 
-
-    // const styleList = {
-    //     listStyle: "none",
-    //     cursor: "pointer",
-    //     color: "#ececec",
-    //     fontWeight: "500",
-    //     padding: "10px",
-    // }
     const styleLogo = {
         position: "relative",
-        top: "10px",
         borderBottom: "2px solid",
         borderRadius: "50%",
         fontFamily: `Ephesis`,
         fontSize: "30px",
+        color: "white",
     }
     const desktopMenu = (
 
@@ -132,7 +145,7 @@ export default function Navigation(  ) {
                 zIndex: "2",
             }}
             >
-                <div style={{ color: "white" }}>
+                <div >
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
                 {isLargerThan480 ? desktopMenu : <DropdownMenu scrollToSection={scrollToSection} project={project}  about={about} skills={skills} />}

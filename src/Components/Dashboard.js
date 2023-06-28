@@ -1,11 +1,8 @@
 import { Container, Heading, Text, background } from "@chakra-ui/react";
 
-import Background from "./images/denver-colorado.jpg";
-
 export default function Dashboard({ dashboard }) {
     const background = {
         position: "relative",
-        top: "-70px",
         height: "80vh",
         background:"rgb(30, 30, 30)",
     }
@@ -23,7 +20,7 @@ export default function Dashboard({ dashboard }) {
             <Container width={['100%', '80%']} top={"0"}
              
              >
-                <Text pl={"10px"} pt={"150px"} color={"#ececec"}  fontSize={50}>
+                <Text pl={"10px"} pt={"100px"} color={"#ececec"}  fontSize={50}>
                     Hi,
                 </Text>
                 <Text ml={"30px"} color={"#ececec"} fontSize={{  base: '49px', md: '90px', lg: '100px', xl: '116px' }}  >

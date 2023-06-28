@@ -41,7 +41,7 @@ function Project({ project, projectsText }) {
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
-      <h1>EXPLORE PREVIOUS WORK</h1>
+      <h1 style={{paddingTop:"100px"}}>EXPLORE PREVIOUS WORK</h1>
 
       <div className='projects'>
         {images.map(((image, index) => <div key={index}>{image}</div>))}
