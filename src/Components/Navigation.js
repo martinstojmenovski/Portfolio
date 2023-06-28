@@ -10,9 +10,13 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    IconButton
+    IconButton,
+    Button,
+    CloseButton
+
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, ChevronDownIcon, } from '@chakra-ui/icons'
+
 
 
 export default function Navigation() {
@@ -39,23 +43,23 @@ export default function Navigation() {
 
     // black background navigation menu when scroll
     useEffect(() => {
-    const handleScroll = () => {
-        if (window.scrollY >= 50) {
-            setBlack({
-                background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
-                boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-            })
-        } else {
-            setBlack({
-                background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
-                boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
-            })
+        const handleScroll = () => {
+            if (window.scrollY >= 50) {
+                setBlack({
+                    background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
+                    boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                })
+            } else {
+                setBlack({
+                    background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
+                    boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
+                })
+            }
         }
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     // Function to set a border to the selected page
@@ -73,9 +77,9 @@ export default function Navigation() {
         })
 
         navLi.forEach(li => {
-            li.style.border = "2px solid transparent"
+            li.style.borderBottom = "2px solid transparent"
             if (li.classList.contains(current)) {
-                li.style.border = "2px solid"
+                li.style.borderBottom = "2px solid"
             }
 
         })
@@ -87,67 +91,89 @@ export default function Navigation() {
         listStyle: "none",
         cursor: "pointer",
         color: "#ececec",
-        backgroundColor: "transparent",
         fontWeight: "500",
-        padding: "7px 10px",
-        borderRadius: "5px",
+        padding: "10px",
+    }
+    const styleLogo = {
+        position: "relative",
+        top: "10px",
+        borderBottom: "2px solid",
+        borderRadius: "50%",
+        fontFamily: `Ephesis`,
+        fontSize: "30px",
     }
     const desktopMenu = (
 
-        <nav style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height:"70px",
-            padding:"0 40px",
-            position: "sticky",
-            top: "0",
-            zIndex: "2",
-            transition: "all 0.3s ease-in-out",
-            // ...black,
-        }}
-        >
-            <div style={{color: "white"}}>
-                <li style={{ ...styleList, border: "2px solid", padding: "15px",borderRadius: "100px" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS.</li>
-            </div>
-            <ul
-                style={{display:"flex"}}
-            >
-                <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-                <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-                <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
-            </ul>
-        </nav>
-
-
+        <ul style={{ display: "flex" }} >
+            <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+            <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+            <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+        </ul>
     )
 
     const mobileMenu = (
-        <nav style={{
-            position: "sticky",
-            top: "30px",
-            zIndex: "1",
-        }}
-        >
-            <Menu>
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Options'
-                    icon={<HamburgerIcon />}
-                    variant='outline'
-                    style={{
-                        backgroundColor: "rgb(234, 234, 234)",
-                        borderRadius: "0 30% 30% 0",
-                    }}
-                />
-                <MenuList as={"ul"} style={{ background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)" }}>
-                    <MenuItem as={"li"} style={{ ...styleList, border: "2px solid" }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)} >HOME</MenuItem>
-                    <MenuItem as={"li"} style={{ ...styleList, }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
-                    <MenuItem as={"li"} style={{ ...styleList, }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
-                    <MenuItem as={"li"} style={{ ...styleList, }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
-                </MenuList>
-            </Menu>
-        </nav>
+
+        // <Menu>
+        //     <MenuButton
+        //         as={IconButton}
+        //         aria-label='Options'
+        //         icon={<HamburgerIcon />}
+        //         variant='outline'
+        //         style={{
+        //             backgroundColor: "rgb(234, 234, 234)",
+        //             borderRadius: "0 30% 30% 0",
+        //         }}
+        //     />
+        //     <MenuList as={"ul"}>
+        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
+        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
+        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
+        //     </MenuList>
+        // </Menu>
+
+        <div>
+            {({ isOpen }) => (
+                <>
+                    <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />}>
+                        {isOpen ? <CloseButton /> : <HamburgerIcon />}
+                    </MenuButton>
+                    <ul style={{ display: "flex" }} >
+                        <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+                        <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+                        <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+                    </ul>
+                </>   
+            )}
+
+
+
+ <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
+                   
+                    <div className={hamburger ? 'rest' : 'rest active'} onClick={closeHamburger}></div>
+
+                    <div className={hamburger ? "hamburger" : "hamburger active"}  >
+                        <div className={blur ? 'bars1 active' : 'bars1'} onClick={showHamburger}>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                            <span className={blur ? 'bar active' : 'bar'}></span>
+                        </div>
+                        <div className={hamburger ? "sidebar" : "sidebar active"} >
+                          <div className={blur ? 'bars2 active' : 'bars2'} onClick={showHamburger}>
+                            <span  className='bar2'></span>
+                            <span  className='bar2'></span>
+                            <span className='bar2'></span>
+                        </div>
+                            {ulHolder}
+                        </div>
+                    </div>
+
+
+                </div>
+            
+        </div>
+      
+               
+
     )
 
 
@@ -156,7 +182,22 @@ export default function Navigation() {
 
     return (
         <div>
-            {isLargerThan480 ? desktopMenu : mobileMenu}
+
+            <nav style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "0 20px",
+                position: "sticky",
+                top: "0",
+                zIndex: "2",
+            }}
+            >
+                <div style={{ color: "white" }}>
+                    <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
+                </div>
+                {isLargerThan480 ? desktopMenu : mobileMenu}
+            </nav>
             <Dashboard dashboard={dashboard} />
             <Project project={project} />
             <About about={about} />
