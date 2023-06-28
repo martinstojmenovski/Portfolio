@@ -3,6 +3,8 @@ import About from './About'
 import Project from './Project'
 import Skills from './Skills'
 import Dashboard from './Dashboard'
+import DropdownMenu from './DropdownMenu'
+
 import { useEffect, useRef, useState } from 'react'
 import { Flex, position } from '@chakra-ui/react'
 import {
@@ -19,7 +21,8 @@ import { HamburgerIcon, ChevronDownIcon, } from '@chakra-ui/icons'
 
 
 
-export default function Navigation() {
+
+export default function Navigation( ) {
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
@@ -111,71 +114,6 @@ export default function Navigation() {
         </ul>
     )
 
-    const mobileMenu = (
-
-        // <Menu>
-        //     <MenuButton
-        //         as={IconButton}
-        //         aria-label='Options'
-        //         icon={<HamburgerIcon />}
-        //         variant='outline'
-        //         style={{
-        //             backgroundColor: "rgb(234, 234, 234)",
-        //             borderRadius: "0 30% 30% 0",
-        //         }}
-        //     />
-        //     <MenuList as={"ul"}>
-        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'PROJECT'} onClick={() => scrollToSection(project)} >WORK</MenuItem>
-        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'ABOUT'} onClick={() => scrollToSection(about)} >ABOUT</MenuItem>
-        //         <MenuItem as={"li"} style={{ ...styleList, }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >CONTACT</MenuItem>
-        //     </MenuList>
-        // </Menu>
-
-        <div>
-            {({ isOpen }) => (
-                <>
-                    <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />}>
-                        {isOpen ? <CloseButton /> : <HamburgerIcon />}
-                    </MenuButton>
-                    <ul style={{ display: "flex" }} >
-                        <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-                        <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-                        <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
-                    </ul>
-                </>   
-            )}
-
-
-
- <div className={hamburger ? 'dropmenu' : 'dropmenu active'}>
-                   
-                    <div className={hamburger ? 'rest' : 'rest active'} onClick={closeHamburger}></div>
-
-                    <div className={hamburger ? "hamburger" : "hamburger active"}  >
-                        <div className={blur ? 'bars1 active' : 'bars1'} onClick={showHamburger}>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                            <span className={blur ? 'bar active' : 'bar'}></span>
-                        </div>
-                        <div className={hamburger ? "sidebar" : "sidebar active"} >
-                          <div className={blur ? 'bars2 active' : 'bars2'} onClick={showHamburger}>
-                            <span  className='bar2'></span>
-                            <span  className='bar2'></span>
-                            <span className='bar2'></span>
-                        </div>
-                            {ulHolder}
-                        </div>
-                    </div>
-
-
-                </div>
-            
-        </div>
-      
-               
-
-    )
-
 
     const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
@@ -196,7 +134,7 @@ export default function Navigation() {
                 <div style={{ color: "white" }}>
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
-                {isLargerThan480 ? desktopMenu : mobileMenu}
+                {isLargerThan480 ? desktopMenu : <DropdownMenu />}
             </nav>
             <Dashboard dashboard={dashboard} />
             <Project project={project} />
