@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 function DropdownMenu({ scrollToSection, about, skills, project }) {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
- 
+  
+
+
     const barStyle = {
         display: "block",
         width: "35px",
@@ -13,7 +15,7 @@ function DropdownMenu({ scrollToSection, about, skills, project }) {
         backgroundColor: "#ececec",
         transition: "transform 150ms ease-in-out"
     }
-    const hamburger = (
+    const hamburgerStyle = (
         <div>
             <span style={barStyle}></span>
             <span style={barStyle}></span>
@@ -41,7 +43,7 @@ function DropdownMenu({ scrollToSection, about, skills, project }) {
             <button
                 onClick={() => setNavbarOpen((prev) => !prev)}
             >
-                {navbarOpen ? x : hamburger}
+                {navbarOpen ? x : hamburgerStyle}
             </button>
             <ul style={ {...showHamburger,  transform: navbarOpen ? "translateY(0)" : "translateX(300px)", opacity: navbarOpen ? "1" : "0" } } >
                 <li style={styleList} className={'PROJECT'}  onClick={() => {scrollToSection(project); setNavbarOpen((prev) => !prev) } } >Work</li>

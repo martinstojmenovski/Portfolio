@@ -7,18 +7,8 @@ import DropdownMenu from './DropdownMenu'
 import { styleList} from './DropdownMenu'
 
 import { useEffect, useRef, useState } from 'react'
-import { Flex, position } from '@chakra-ui/react'
-import {
-    useMediaQuery, Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    IconButton,
-    Button,
-    CloseButton
 
-} from '@chakra-ui/react'
-import { HamburgerIcon, ChevronDownIcon, } from '@chakra-ui/icons'
+import { useMediaQuery,} from '@chakra-ui/react'
 
 
 
@@ -38,32 +28,25 @@ export default function Navigation(  ) {
         })
     }
 
-    //useState to black navbar 
-    const [black, setBlack] = useState({
-        background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
-        boxShadow: "none",
-    })
+   //useState to black navbar 
+   const [hamburger, setHamburger] = useState(true)
+   const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
-    // black background navigation menu when scroll
-    useEffect(() => {
-        const handleScroll = (elementRef) => {
-            // if (window.scrollY >= 50) {
-            //     setBlack({
-            //         background: "linear-gradient(to right, rgba(45, 0, 0, 0.9), rgba(227, 0, 0, 0.9) 100%)",
-            //         boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-            //     })
-            // } else {
-            //     setBlack({
-            //         background: "linear-gradient(to right, rgba(45, 0, 0, 0.0), rgba(227, 0, 0, 0.0) 100%)",
-            //         boxShadow: "0 2px 10px 0 rgba(0,0,0, .0)",
-            //     })
-            // }
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+   // black background navigation menu when scroll
+   useEffect(() => {
+       const handleScroll = (elementRef) => {
+  
+           if (window.scrollY >= 50) {
+            setHamburger(false)
+           } else {
+            setHamburger(true)
+           }
+       }
+       window.addEventListener('scroll', handleScroll)
+       return () => {
+           window.removeEventListener('scroll', handleScroll);
+       };
+   }, []);
 
     // Function to set a border to the selected page
 
@@ -76,7 +59,6 @@ export default function Navigation(  ) {
 
         sections.forEach(section => { 
             const sectionTop = section.offsetTop
-            // console.log(sectionTop)
             if (window.scrollY + 20>= sectionTop) {
                 current = section.getAttribute('class')
             
@@ -85,13 +67,11 @@ export default function Navigation(  ) {
             if (section.classList.contains(current)) {
                 
                     navLi.forEach( li => {
-                        ul[0].style.backgroundColor = "black"
                         li.style.color = "white"
                         spans.forEach(span => span.style.backgroundColor = "white") 
                         if(current === "PROJECT" || current === "CONTACT"){
                             li.style.color = "black"   
                             spans.forEach(span => span.style.backgroundColor = "black")  
-                            ul[0].style.backgroundColor = "white"
                         }
                     })
                 
@@ -128,7 +108,7 @@ export default function Navigation(  ) {
     )
 
 
-    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+  
 
 
     return (
@@ -141,14 +121,13 @@ export default function Navigation(  ) {
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "0 20px",
-                top: "0",
                 zIndex: "2",
             }}
             >
                 <div >
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
-                {isLargerThan480 ? desktopMenu : <DropdownMenu scrollToSection={scrollToSection} project={project}  about={about} skills={skills} />}
+                {hamburger  ? desktopMenu : <DropdownMenu scrollToSection={scrollToSection} project={project}  about={about} skills={skills} />}
             </nav>
             <Dashboard dashboard={dashboard} />
             <Project project={project} />

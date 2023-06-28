@@ -17,10 +17,10 @@ export default function Dashboard({ dashboard }) {
     return (
         <section style={{...background, fontFamily:`Poiret One', cursive`}}  ref={dashboard}  id='DASHBOARD' className='DASHBOARD'>
             
-            <Container width={['100%', '80%']} top={"0"}
+            <Container width={['100%', '80%']} 
              
              >
-                <Text pl={"10px"} pt={"100px"} color={"#ececec"}  fontSize={50}>
+                <Text pl={"10px"} pt={[180, 200, 100]} color={"#ececec"}  fontSize={50}>
                     Hi,
                 </Text>
                 <Text ml={"30px"} color={"#ececec"} fontSize={{  base: '49px', md: '90px', lg: '100px', xl: '116px' }}  >
