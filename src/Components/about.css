@@ -15,14 +15,20 @@
 
 .professional-photo {
     background-image: url('./images/professional\ photo.JPG');
-    width: 450px;
-    height: 450px;
+    width: 50%;
+    line-height: 0;
+    position: relative;
     background-repeat: no-repeat;
     background-position: 50% 70%;
     background-size: cover;
     border-radius: 100%;
     padding: 40px 0;
     margin: auto;
+}
+.professional-photo::after {
+    content: "";
+    display: block;
+    padding-bottom: 90%;
 }
 
 #ABOUT .about-text h1 {
@@ -53,6 +59,11 @@
         padding: 100px 10% ;
     }
 }
+/* @media screen and (max-width: 1024px) {
+    #ABOUT{
+        padding: 100px 0 ;
+    }
+} */
 
 @media screen and (max-width: 840px) {
     #ABOUT{
@@ -63,10 +74,10 @@
     }
 }
 @media screen and (max-width: 768px) {
-    .professional-photo {
+    /* .professional-photo {
         width: 400px;
         height: 400px;
-    }
+    } */
  
 }
 
@@ -74,10 +85,10 @@
     #ABOUT{
         padding: 100px 0 ;
     }
-    .professional-photo {
+    /* .professional-photo {
         width: 350px;
         height: 350px;
-    }
+    } */
 }
 
 @media screen and (max-width: 400px) {
@@ -86,14 +97,14 @@
     justify-content: center;
 
 }
-    .professional-photo {
+    /* .professional-photo {
         width: 310px;
         height: 310px;
-    }
+    } */
 }
 @media screen and (max-width: 322px) {
-    .professional-photo {
+    /* .professional-photo {
         width: 250px;
         height: 250px;
-    }
+    } */
 }
