@@ -50,11 +50,9 @@
 }
 
 .background .text div {
-  /* animation: fadeInRight 1.5s ease-in; */
-
   animation: fadeInRight 1400ms ease-out;
- 
 }
+
 @keyframes fadeInTop {
   from {
     opacity: 0;

@@ -4,16 +4,17 @@ import Project from './Project'
 import Skills from './Skills'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
-import { styleList} from './DropdownMenu'
+import { styleList, barStyle } from './DropdownMenu'
+import styled, { keyframes } from 'styled-components'  
 
 import { useEffect, useRef, useState } from 'react'
 
-import { useMediaQuery,} from '@chakra-ui/react'
+import { useMediaQuery, } from '@chakra-ui/react'
 
 
 
 
-export default function Navigation(  ) {
+export default function Navigation() {
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
@@ -28,25 +29,25 @@ export default function Navigation(  ) {
         })
     }
 
-   //useState to black navbar 
-   const [hamburger, setHamburger] = useState(true)
-   const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+    //useState to black navbar 
+    const [hamburger, setHamburger] = useState(true)
+    //    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
-   // black background navigation menu when scroll
-   useEffect(() => {
-       const handleScroll = (elementRef) => {
-  
-           if (window.scrollY >= 50) {
-            setHamburger(false)
-           } else {
-            setHamburger(true)
-           }
-       }
-       window.addEventListener('scroll', handleScroll)
-       return () => {
-           window.removeEventListener('scroll', handleScroll);
-       };
-   }, []);
+    // black background navigation menu when scroll
+    useEffect(() => {
+        const handleScroll = () => {
+
+            if (window.scrollY >= 50) {
+                setHamburger(false)
+            } else {
+                setHamburger(true)
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     // Function to set a border to the selected page
 
@@ -57,28 +58,28 @@ export default function Navigation(  ) {
         const ul = document.querySelectorAll('nav ul')
         let current = '';
 
-        sections.forEach(section => { 
+        sections.forEach(section => {
             const sectionTop = section.offsetTop
-            if (window.scrollY + 20>= sectionTop) {
+            if (window.scrollY + 20 >= sectionTop) {
                 current = section.getAttribute('class')
-            
+
             }
 
             if (section.classList.contains(current)) {
-                
-                    navLi.forEach( li => {
-                        li.style.color = "white"
-                        spans.forEach(span => span.style.backgroundColor = "white") 
-                        if(current === "PROJECT" || current === "CONTACT"){
-                            li.style.color = "black"   
-                            spans.forEach(span => span.style.backgroundColor = "black")  
-                        }
-                    })
-                
+
+                navLi.forEach(li => {
+                    li.style.color = "white"
+                    spans.forEach(span => span.style.backgroundColor = "white")
+                    if (current === "PROJECT" || current === "CONTACT") {
+                        li.style.color = "black"
+                        spans.forEach(span => span.style.backgroundColor = "black")
+                    }
+                })
+
             }
 
         })
-      
+
 
         navLi.forEach(li => {
             li.style.borderBottom = "2px solid transparent"
@@ -98,17 +99,91 @@ export default function Navigation(  ) {
         fontSize: "30px",
         color: "white",
     }
+    const fadeInTop =
+        keyframes`
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+    `
+    const fadeOutBottom =
+        keyframes`
+        from {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+    `
+
+    const AnimatedLiWork = styled.li`
+    animation: ${fadeInTop} 150ms linear
+`;
+
+const AnimatedLiAbout = styled.li`
+animation: ${fadeInTop} 250ms linear
+` ;
+const AnimatedLiContact = styled.li`
+animation: ${fadeInTop} 350ms linear;
+`;
     const desktopMenu = (
 
-        <ul style={{ display: "flex" }} >
-            <li style={styleList} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-            <li style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-            <li style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+        <ul style={{ display: "flex", position:"absolute", top:"0", right:"0", zIndex:"69" }} >
+            <AnimatedLiWork style={{...styleList}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</AnimatedLiWork>
+            <AnimatedLiAbout style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</AnimatedLiAbout>
+            <AnimatedLiContact style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</AnimatedLiContact>
+        </ul>
+    )
+    const AnimatedLiWork2 = styled.li`
+    animation: ${fadeOutBottom} 350ms linear
+`;
+
+const AnimatedLiAbout2 = styled.li`
+animation: ${fadeOutBottom} 250ms linear
+` ;
+const AnimatedLiContact2 = styled.li`
+animation: ${fadeOutBottom} 150ms linear;
+`;
+    const desktopMenuReverse = (
+
+        <ul style={{ display: "flex", position:"absolute", top:"0", right:"0"   }} >
+            <AnimatedLiWork2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Work</AnimatedLiWork2>
+            <AnimatedLiAbout2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >About</AnimatedLiAbout2>
+            <AnimatedLiContact2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Contact</AnimatedLiContact2>
         </ul>
     )
 
+    const fadeOutRight =
+    keyframes`
+    0% {
+        opacity: 1;
+            transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+`
 
-  
+    const AnimatedHamburger = styled.div`
+    animation: ${fadeOutRight} 100ms linear
+`;
+
+
+    const dropdownMenuReverse = (
+        <AnimatedHamburger style={{opacity: "0", transform: "translateX(30px)"}} >
+        <span style={barStyle}></span>
+        <span style={barStyle}></span>
+    </AnimatedHamburger>
+
+    )
+   
 
 
     return (
@@ -116,7 +191,7 @@ export default function Navigation(  ) {
 
             <nav style={{
                 position: "fixed",
-                width:"100%",
+                width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -127,7 +202,11 @@ export default function Navigation(  ) {
                 <div >
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
-                {hamburger  ? desktopMenu : <DropdownMenu scrollToSection={scrollToSection} project={project}  about={about} skills={skills} />}
+                <div>
+                {hamburger ? desktopMenu : desktopMenuReverse}
+                {hamburger ?  dropdownMenuReverse :  <DropdownMenu /> }
+                </div>
+                
             </nav>
             <Dashboard dashboard={dashboard} />
             <Project project={project} />

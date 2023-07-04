@@ -1,10 +1,12 @@
 import './about.css'
+import professionalPhoto from './images/professional\ photo.JPG'
 function About({ about }) {
 
   return (
-
-    <section className='ABOUT' id='ABOUT' ref={about} >
-      <div className="about-text">
+    <div  ref={about}>
+    <section  className='ABOUT' id='ABOUT' >
+      <div    className='about-page'>
+      <div  className="about-text">
         <h1>HELLO, I AM MARTIN</h1>
         <ul >
           <li>Premium Desigh</li>
@@ -17,11 +19,17 @@ function About({ about }) {
           I bring my passion for humor and travel into each project, work environment.
           A strong communication and time management skills
           cultivated through a background in customer service.</p>
-      </div>
-      <div className='professional-photo'>
+     
+          </div>
+      {/* <div className='section-photo'> */}
+        <div  className='professional-photo'>
+        
+        </div>
+      
+      {/* </div> */}
       </div>
     </section>
-
+    </div>
   );
 }
 
