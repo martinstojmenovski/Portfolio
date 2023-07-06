@@ -1,42 +1,10 @@
 
 import { useEffect, useRef, useState } from 'react'
-import styled, { keyframes } from 'styled-components'  
+import styled, { keyframes } from 'styled-components'
 
 function DropdownMenu({ scrollToSection, about, skills, project }) {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-
-
-
-    
-  
-const fadeInLeft =
-        keyframes`
-        0% {
-            opacity: 0;
-            transform: translateX(30px);
-            
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-    `
-    const AnimatedHamburger = styled.div`
-    animation: ${fadeInLeft} 550ms linear
-    ` ;
-    const hamburger = (
-        <AnimatedHamburger style={{zIndex:"66"}}>
-            <span style={barStyle}></span>
-            <span style={barStyle}></span>
-        </AnimatedHamburger>
-    )
-    const x = (
-        <div>
-            <span style={{ ...barStyle, transform: "translateY(4px) rotate(45deg)" }}></span>
-            <span style={{ ...barStyle, transform: "translateY(-4px) rotate(-45deg)" }}></span>
-        </div>
-    )
 
     const showHamburgerStyle = {
         position: "absolute",
@@ -48,14 +16,18 @@ const fadeInLeft =
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
-    
-       
+
+
     return (
         <div>
             <button
-                onClick={() => setNavbarOpen((prev) => !prev)}
+                onClick={() =>  setNavbarOpen((prev) => !prev)}
             >
-                {navbarOpen ? x : hamburger}
+          
+                <div >
+                    <span style={{...barStyle, transform: navbarOpen ?  "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)"}} ></span>
+                    <span style={{...barStyle, transform:  navbarOpen ?  "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)"}} ></span>
+                </div>
             </button>
             <ul style={{ ...showHamburgerStyle, transform: navbarOpen ? "translateY(0)" : "translateX(300px)", opacity: navbarOpen ? "1" : "0" }} >
                 <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>

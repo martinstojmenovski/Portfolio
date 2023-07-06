@@ -37,10 +37,23 @@ export default function Navigation() {
     useEffect(() => {
         const handleScroll = () => {
 
-            if (window.scrollY >= 50) {
+            if (window.scrollY > 50) {
                 setHamburger(false)
+            document.getElementsByClassName('PROJECT')[0].style.opacity = "0" 
+            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)" 
+            document.getElementsByClassName('ABOUT')[0].style.opacity = "0" 
+            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(-40px)" 
+            document.getElementsByClassName('CONTACT')[0].style.opacity = "0" 
+            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)" 
+
             } else {
                 setHamburger(true)
+                document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
+                document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)" 
+                document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
+                document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)" 
+                document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
+                document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)" 
             }
         }
         window.addEventListener('scroll', handleScroll)
@@ -62,11 +75,8 @@ export default function Navigation() {
             const sectionTop = section.offsetTop
             if (window.scrollY + 20 >= sectionTop) {
                 current = section.getAttribute('class')
-
             }
-
             if (section.classList.contains(current)) {
-
                 navLi.forEach(li => {
                     li.style.color = "white"
                     spans.forEach(span => span.style.backgroundColor = "white")
@@ -75,18 +85,13 @@ export default function Navigation() {
                         spans.forEach(span => span.style.backgroundColor = "black")
                     }
                 })
-
             }
-
         })
-
-
         navLi.forEach(li => {
             li.style.borderBottom = "2px solid transparent"
             if (li.classList.contains(current)) {
                 li.style.borderBottom = "2px solid"
             }
-
         })
     }
     window.addEventListener('scroll', makeBorderbox)
@@ -99,90 +104,99 @@ export default function Navigation() {
         fontSize: "30px",
         color: "white",
     }
-    const fadeInTop =
-        keyframes`
-        0% {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-    `
-    const fadeOutBottom =
-        keyframes`
-        from {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-    `
+//     const fadeInTop = keyframes`
+//         0% {
+//             opacity: 0;
+//             transform: translateY(-30px);
+//           }
+//           100% {
+//             opacity: 1;
+//             transform: translateY(0);
+//           }
+//     `
+//     const fadeOutBottom = keyframes`
+//         from {
+//             opacity: 1;
+//             transform: translateY(0);
+//           }
+//           to {
+//             opacity: 0;
+//             transform: translateY(-30px);
+//           }
+//     `
 
-    const AnimatedLiWork = styled.li`
-    animation: ${fadeInTop} 150ms linear
-`;
+//     const AnimatedLiWork = styled.li`
+//     animation: ${fadeInTop} 150ms linear
+// `;
 
-const AnimatedLiAbout = styled.li`
-animation: ${fadeInTop} 250ms linear
-` ;
-const AnimatedLiContact = styled.li`
-animation: ${fadeInTop} 350ms linear;
-`;
-    const desktopMenu = (
+// const AnimatedLiAbout = styled.li`
+// animation: ${fadeInTop} 250ms linear
+// ` ;
+// const AnimatedLiContact = styled.li`
+// animation: ${fadeInTop} 350ms linear;
+// `;
+    // const desktopMenu = (
+
+    //     <ul style={{ display: "flex", position:"absolute", top:"0", right:"0", zIndex:"69" }} >
+    //         <AnimatedLiWork style={{...styleList}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</AnimatedLiWork>
+    //         <AnimatedLiAbout style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</AnimatedLiAbout>
+    //         <AnimatedLiContact style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</AnimatedLiContact>
+    //     </ul>
+    // )
+
+      const desktopMenu = (
 
         <ul style={{ display: "flex", position:"absolute", top:"0", right:"0", zIndex:"69" }} >
-            <AnimatedLiWork style={{...styleList}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</AnimatedLiWork>
-            <AnimatedLiAbout style={styleList} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</AnimatedLiAbout>
-            <AnimatedLiContact style={styleList} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</AnimatedLiContact>
-        </ul>
-    )
-    const AnimatedLiWork2 = styled.li`
-    animation: ${fadeOutBottom} 350ms linear
-`;
-
-const AnimatedLiAbout2 = styled.li`
-animation: ${fadeOutBottom} 250ms linear
-` ;
-const AnimatedLiContact2 = styled.li`
-animation: ${fadeOutBottom} 150ms linear;
-`;
-    const desktopMenuReverse = (
-
-        <ul style={{ display: "flex", position:"absolute", top:"0", right:"0"   }} >
-            <AnimatedLiWork2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Work</AnimatedLiWork2>
-            <AnimatedLiAbout2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >About</AnimatedLiAbout2>
-            <AnimatedLiContact2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Contact</AnimatedLiContact2>
+            <li style={{...styleList, transition: "all 100ms linear"}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+            <li style={{...styleList, transition: "all 200ms linear"}} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+            <li style={{...styleList, transition: "all 300ms linear"}} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
         </ul>
     )
 
-    const fadeOutRight =
-    keyframes`
-    0% {
-        opacity: 1;
-            transform: translateX(0);
-      }
-      100% {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-`
 
-    const AnimatedHamburger = styled.div`
-    animation: ${fadeOutRight} 100ms linear
-`;
+//     const AnimatedLiWork2 = styled.li`
+//     animation: ${fadeOutBottom} 350ms linear
+// `;
+
+// const AnimatedLiAbout2 = styled.li`
+// animation: ${fadeOutBottom} 250ms linear
+// ` ;
+// const AnimatedLiContact2 = styled.li`
+// animation: ${fadeOutBottom} 150ms linear;
+// `;
+//     const desktopMenuReverse = (
+
+//         <ul style={{ display: "flex", position:"absolute", top:"0", right:"0"   }} >
+//             <AnimatedLiWork2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Work</AnimatedLiWork2>
+//             <AnimatedLiAbout2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >About</AnimatedLiAbout2>
+//             <AnimatedLiContact2 style={{...styleList, opacity: "0",  transform: "translateY(-30px)"}} >Contact</AnimatedLiContact2>
+//         </ul>
+//     )
+
+//     const fadeOutRight =
+//     keyframes`
+//     0% {
+//         opacity: 1;
+//             transform: translateX(0);
+//       }
+//       100% {
+//         opacity: 0;
+//         transform: translateX(30px);
+//       }
+// `
+
+//     const AnimatedHamburger = styled.div`
+//     animation: ${fadeOutRight} 100ms linear
+// `;
 
 
-    const dropdownMenuReverse = (
-        <AnimatedHamburger style={{opacity: "0", transform: "translateX(30px)"}} >
-        <span style={barStyle}></span>
-        <span style={barStyle}></span>
-    </AnimatedHamburger>
+//     const dropdownMenuReverse = (
+//         <AnimatedHamburger style={{opacity: "0", transform: "translateX(30px)"}} >
+//         <span style={barStyle}></span>
+//         <span style={barStyle}></span>
+//     </AnimatedHamburger>
 
-    )
+    // )
    
 
 
@@ -203,8 +217,10 @@ animation: ${fadeOutBottom} 150ms linear;
                     <li style={{ ...styleList, ...styleLogo }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS<span style={{ color: "orange" }}>.</span></li>
                 </div>
                 <div>
-                {hamburger ? desktopMenu : desktopMenuReverse}
-                {hamburger ?  dropdownMenuReverse :  <DropdownMenu /> }
+                {/* {hamburger ?  dropdownMenuReverse :  <DropdownMenu /> }
+                {hamburger ? desktopMenu : desktopMenuReverse} */}
+                {/* {desktopMenu} */}
+                <DropdownMenu  about={about}project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
                 </div>
                 
             </nav>
