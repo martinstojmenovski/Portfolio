@@ -31,6 +31,7 @@ export default function Navigation() {
 
     //useState to black navbar 
     const [hamburger, setHamburger] = useState(true)
+  
     //    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
     // black background navigation menu when scroll
@@ -44,6 +45,7 @@ export default function Navigation() {
             document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)" 
             document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(60px)"
             document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms" 
             if (window.scrollY > 50) {
             document.getElementsByClassName('PROJECT')[0].style.opacity = "0" 
             document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)" 
@@ -53,6 +55,8 @@ export default function Navigation() {
             document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)" 
             document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
             document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1" 
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms" 
+            
             }
         }
         window.addEventListener('scroll', handleScroll)
@@ -111,9 +115,9 @@ export default function Navigation() {
             display: "flex"
 
              }} >
-            <li style={{...styleList, transition: "all 100ms linear"}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-            <li style={{...styleList, transition: "all 200ms linear"}} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-            <li style={{...styleList, transition: "all 300ms linear"}} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+            <li style={{...styleList, transition: "transform 200ms linear, opacity 200ms linear"}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+            <li style={{...styleList,  transition: "transform 200ms linear, opacity 200ms linear", transitionDelay:"200ms",}} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+            <li style={{...styleList,  transition: "transform 200ms linear, opacity 200ms linear",transitionDelay:"350ms"}} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
         </ul>
     )
 
@@ -126,7 +130,7 @@ export default function Navigation() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "0 20px",
+                padding: "0 3%",
                 zIndex: "2",
             }}
             >
@@ -138,7 +142,7 @@ export default function Navigation() {
                 {hamburger ? desktopMenu : desktopMenuReverse} */}
                 {desktopMenu}
                 
-                <DropdownMenu  about={about}project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
+                <DropdownMenu  about={about}project={project} skills={skills} dashboard={dashboard}  scrollToSection={scrollToSection} />
                 </div>
             </nav>
            

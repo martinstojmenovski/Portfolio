@@ -3,9 +3,9 @@ import { transition } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react'
 
 
-function DropdownMenu({ scrollToSection, about, skills, project }) {
+function DropdownMenu({ scrollToSection, about, skills, project, openBar }) {
+   
     const [navbarOpen, setNavbarOpen] = useState(false);
-
 
     const showListStyle = {
         position: "absolute",
@@ -17,10 +17,16 @@ function DropdownMenu({ scrollToSection, about, skills, project }) {
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
+    const closeHamburger = () =>{
+        if(window.scrollY > 50){
+            setNavbarOpen(false)
+        }
+    }
+window.addEventListener('scroll', closeHamburger)
 
 
     return (
-        <div className='hamburgerButton' style={{ position: "absolute", top:"20px", right:"20px", transition: "opacity 200ms linear, transform 200ms linear", transform: "translatex(60px)", opacity: "0"}} >
+        <div className='hamburgerButton' style={{ position: "absolute", top:"20px", right:"3%",  transform: "translatex(60px)", opacity: "0", transition: "opacity 200ms linear, transform 200ms linear",}} >
             <button  
                 onClick={() =>  setNavbarOpen((prev) => !prev)}
             >
@@ -31,7 +37,7 @@ function DropdownMenu({ scrollToSection, about, skills, project }) {
                 </div>
             </button>
             <ul style={{ ...showListStyle, transform: navbarOpen ? "translateY(0)" : "translateX(300px)", opacity: navbarOpen ? "1" : "0" }} >
-                <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
+                <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project);  setNavbarOpen((prev) => !prev)}} >Work</li>
                 <li style={styleList} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
                 <li style={styleList} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
             </ul>
@@ -56,4 +62,4 @@ const barStyle = {
     backgroundColor: "#ececec",
     transition: "transform 150ms ease-in-out"
 }
-export { styleList, barStyle }
+export { styleList, barStyle, }
