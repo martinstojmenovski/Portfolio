@@ -13,26 +13,33 @@ export default function Dashboard({ dashboard }) {
         backgroundAttachment: "fixed",
     }
     return (
-        <section style={{...background, fontFamily:`Poiret One', cursive`}}  ref={dashboard}  id='DASHBOARD' className='DASHBOARD'>
+        <section style={{ ...background, fontFamily: `Poiret One', cursive` }} ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
-            <Container w={['100%', '100%', '100%', '100%', '100%']}
-             style={{position:"relative", top:"20%", fontFamily:'Montserrat Alternates, sans-serif'}}
-             >
-                <Text pl={"10px"} 
-                // pt={[180, 200, 150]}
-         
-                 color={"white"}  fontWeight={400} fontSize={50}> 
+            <Container
+            p={0}
+                // const breakpoints = {
+                //     sm: '30em', // 480px
+                //     md: '48em', // 768px
+                //     lg: '62em', // 992px
+                //     xl: '80em', // 1280px
+                //     '2xl': '96em', // 1536px
+                //   }
+                maxW={["95%", '90%', '85%', '80%', '75%']}
+                style={{ position: "absolute", top: "45%", left:"50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
+            >
+                <Text
+                    color={"white"} fontWeight={400} fontSize={40}>
                     Hi,
                 </Text>
-                <Text   style={{fontFamily:'Montserrat Alternates, sans-serif'}} ml={"30px"} color={"white"} fontSize={{  base: '40px', md: '70px', lg: '100px', xl: '96px' }} fontWeight={400}   >
+
+                <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif' }} ml={"25px"} color={"white"} fontWeight={400} lineHeight={"120%"}
+                    fontSize={["40px", '60px', '85px', '100px', '115px']}
+                >
                     I create unique digital experiences.
-
-
                 </Text>
             </Container>
+        </section>
 
-            </section>
 
-        
     )
 }
