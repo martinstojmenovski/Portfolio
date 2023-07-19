@@ -1,35 +1,36 @@
 import { Container, Heading, Text, background } from "@chakra-ui/react";
-
+import Background from '../Components/images/pexels-burst-373965.jpg'
+// import "./dashboard.css"
 export default function Dashboard({ dashboard }) {
     const background = {
         position: "relative",
-        height: "80vh",
-        background:"rgb(30, 30, 30)",
-    }
-    const overlay = {
-        position: "absolute",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        background: "linear-gradient(to right, rgba(45, 0, 0, 0.7), rgba(227, 0, 0, 0.8) 100%)",
+        height: "100vh",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.4)), url(${Background})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "50% 50%",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
     }
     return (
         <section style={{...background, fontFamily:`Poiret One', cursive`}}  ref={dashboard}  id='DASHBOARD' className='DASHBOARD'>
-            
-            <Container width={['100%', '80%']} 
-             
+
+            <Container w={['100%', '100%', '100%', '100%', '100%']}
+             style={{position:"relative", top:"20%", fontFamily:'Montserrat Alternates, sans-serif'}}
              >
-                <Text pl={"10px"} pt={[180, 200, 100]} color={"#ececec"}  fontSize={50}>
+                <Text pl={"10px"} 
+                // pt={[180, 200, 150]}
+         
+                 color={"white"}  fontWeight={400} fontSize={50}> 
                     Hi,
                 </Text>
-                <Text ml={"30px"} color={"#ececec"} fontSize={{  base: '49px', md: '90px', lg: '100px', xl: '116px' }}  >
+                <Text   style={{fontFamily:'Montserrat Alternates, sans-serif'}} ml={"30px"} color={"white"} fontSize={{  base: '40px', md: '70px', lg: '100px', xl: '96px' }} fontWeight={400}   >
                     I create unique digital experiences.
-                   
-                
+
+
                 </Text>
             </Container>
-            
+
             </section>
 
         

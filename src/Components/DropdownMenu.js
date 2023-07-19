@@ -17,16 +17,16 @@ function DropdownMenu({ scrollToSection, about, skills, project, openBar }) {
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
-    const closeHamburger = () =>{
+   function closeHamburger  () {
         if(window.scrollY > 50){
-            setNavbarOpen(false)
+          setNavbarOpen(false)
         }
     }
-window.addEventListener('scroll', closeHamburger)
+window.addEventListener('scroll',  closeHamburger)
 
 
     return (
-        <div className='hamburgerButton' style={{ position: "absolute", top:"20px", right:"3%",  transform: "translatex(60px)", opacity: "0", transition: "opacity 200ms linear, transform 200ms linear",}} >
+        <div className='hamburgerButton' style={{ position: "absolute", top:"35px", right:"3%",  transform: "translatex(60px)", opacity: "0", transition: "opacity 200ms linear, transform 200ms linear",}} >
             <button  
                 onClick={() =>  setNavbarOpen((prev) => !prev)}
             >
@@ -56,9 +56,9 @@ const styleList = {
 }
 const barStyle = {
     display: "block",
-    width: "35px",
-    height: "3px",
-    margin: "5px auto",
+    width: "45px",
+    height: "2px",
+    margin: "7px auto",
     backgroundColor: "#ececec",
     transition: "transform 150ms ease-in-out"
 }
