@@ -1,7 +1,9 @@
 import { Container, Heading, Text, background } from "@chakra-ui/react";
 import Background from '../Components/images/pexels-burst-373965.jpg'
+import { styleList, barStyle } from './DropdownMenu'
 // import "./dashboard.css"
-export default function Dashboard({ dashboard }) {
+export default function Dashboard({ project, dashboard, scrollToSection, }) {
+    console.log(project)
     const background = {
         position: "relative",
         height: "100vh",
@@ -12,11 +14,20 @@ export default function Dashboard({ dashboard }) {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
     }
+    const styleArrow = {
+        display: "block",
+        width: "60px",
+        height: "4px",
+        backgroundColor: "orange",
+        position: "absolute",
+        right: "50%",
+
+    }
     return (
         <section style={{ ...background, fontFamily: `Poiret One', cursive` }} ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
             <Container
-            p={0}
+                p={0}
                 // const breakpoints = {
                 //     sm: '30em', // 480px
                 //     md: '48em', // 768px
@@ -24,8 +35,8 @@ export default function Dashboard({ dashboard }) {
                 //     xl: '80em', // 1280px
                 //     '2xl': '96em', // 1536px
                 //   }
-                maxW={["95%", '90%', '85%', '80%', '75%']}
-                style={{ position: "absolute", top: "45%", left:"50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
+                maxW={["90%", '90%', '85%', '80%', '75%']}
+                style={{ position: "absolute", top: "45%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
             >
                 <Text
                     color={"white"} fontWeight={400} fontSize={40}>
@@ -38,6 +49,32 @@ export default function Dashboard({ dashboard }) {
                     I create unique digital experiences.
                 </Text>
             </Container>
+            <div style={{
+                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "40px", right:"50%",
+                right: "50%",
+            }} onClick={() => scrollToSection(project)}>
+                <span style={{
+                    ...styleArrow,
+                    transform: " translatex(50%)  translatex(-20px) rotate(-45deg)"
+                }}></span>
+                <span style={{
+                    display: "block",
+                    ...styleArrow,
+                    transform: " translatex(50%)  translatex(20px) rotate(45deg)"
+                }}> </span>
+                <span style={{
+                    ...styleArrow,
+                    transform: " translatex(50%) translatex(-20px) rotate(-45deg)",
+                    bottom: "20px"
+                }}></span>
+                <span style={{
+                    display: "block",
+                    ...styleArrow,
+                    transform: " translatex(50%)  translatex(20px) rotate(45deg)",
+                    bottom: "20px"
+                }}> </span>
+
+            </div>
         </section>
 
 

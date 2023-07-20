@@ -1,43 +1,108 @@
 
 import { transition } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery, } from '@chakra-ui/react'
 
 
-function DropdownMenu({ scrollToSection, about, skills, project, openBar }) {
-   
+function DropdownMenu({ scrollToSection, about, skills, project,  }) {
+
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
     const showListStyle = {
         position: "absolute",
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
         right: "0",
-        // top: "70px",
-        // backgroundColor: "rgba(0, 0, 0, 0.8)",
-        // padding: " 20px",
-        // boxShadow: "0 10px 20px 0 rgba(0, 0, 0, 0.8)",
+        top: "0",
+        height: "100vh",
+        width: "350px",
+        backgroundColor: "black",
+        // padding: " 155px",
+        boxShadow: "0 10px 20px 0 rgba(0, 0, 0, 0.8)",
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
-   function closeHamburger  () {
-        if(window.scrollY > 50){
-          setNavbarOpen(false)
+
+    // Function to set a border to the selected page
+    const spans = document.querySelectorAll('nav button div span')
+    const makeBorderbox = () => {
+        const sections = document.querySelectorAll('section')
+        const navLi = document.querySelectorAll('nav li')
+        
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop
+            if (window.scrollY + 20 >= sectionTop) {
+                current = section.getAttribute('class')
+            }
+            if (section.classList.contains(current)) {
+                
+                if (current === "PROJECT" || current === "CONTACT") {
+                    document.getElementsByClassName('DASHBOARD')[0].style.color = "black"
+                    spans.forEach(span => span.style.backgroundColor = "black")
+                       
+                }else{
+                    document.getElementsByClassName('DASHBOARD')[0].style.color = 'white'  
+                    spans.forEach(span => span.style.backgroundColor = "orange")
+                }
+            }
+        })
+        navLi.forEach(li => {
+            li.style.borderBottom = "2px solid transparent"
+            if (li.classList.contains(current)) {
+                li.style.borderBottom = "2px solid"
+            }
+        })
+    }
+    window.addEventListener('scroll', makeBorderbox)
+
+    function closeHamburger() {
+        if (window.scrollY > 50) {
+            setNavbarOpen(false)
         }
     }
-window.addEventListener('scroll',  closeHamburger)
+    window.addEventListener('scroll', closeHamburger)
 
-
+    // spans.forEach(span => span.style.backgroundColor = "white")
+    
     return (
-        <div className='hamburgerButton' style={{ position: "absolute", top:"35px", right:"3%",  transform: "translatex(60px)", opacity: "0", transition: "opacity 200ms linear, transform 200ms linear",}} >
-            <button  
-                onClick={() =>  setNavbarOpen((prev) => !prev)}
+        <div className='hamburgerButton' style={{
+            position: "absolute",
+            top: "0", right: "0",
+         
+            transform: !isLargerThan480 ? "translatex(0)" : "translatex(60px)", 
+            opacity: !isLargerThan480 ? "1" : "0",
+             transition: "opacity 200ms linear, transform 200ms linear",
+        }} >
+            <button
+                onClick={() => {
+                    setNavbarOpen((prev) => !prev)
+                    if(navbarOpen === false){
+                        spans.forEach(span => span.style.backgroundColor = "orange")
+                    }else{
+                        if(document.getElementsByClassName('DASHBOARD')[0].style.color === "black"){
+                            spans.forEach(span => span.style.backgroundColor = "black")
+                        } 
+                    }
+                }}
             >
-          
-                <div >
-                    <span style={{...barStyle, transform: navbarOpen ?  "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)"}} ></span>
-                    <span style={{...barStyle, transform:  navbarOpen ?  "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)"}} ></span>
+
+                <div style={{
+                    position: "relative", top: "10px", right: "20px", zIndex: "1", padding: "20px",
+                }}>
+                    <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
+                    <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
                 </div>
             </button>
-            <ul style={{ ...showListStyle, transform: navbarOpen ? "translateY(0)" : "translateX(300px)", opacity: navbarOpen ? "1" : "0" }} >
-                <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project);  setNavbarOpen((prev) => !prev)}} >Work</li>
+            <ul style={{
+                ...showListStyle,
+                 opacity: navbarOpen ? "1" : "0"
+            }}>
+                <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
                 <li style={styleList} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
                 <li style={styleList} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
             </ul>
@@ -57,9 +122,9 @@ const styleList = {
 const barStyle = {
     display: "block",
     width: "45px",
-    height: "2px",
+    height: "2.5px",
     margin: "7px auto",
-    backgroundColor: "#ececec",
+    backgroundColor: "orange",
     transition: "transform 150ms ease-in-out"
 }
 export { styleList, barStyle, }

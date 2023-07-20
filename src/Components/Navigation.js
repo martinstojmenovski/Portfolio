@@ -23,68 +23,35 @@ export default function Navigation() {
             behavior: 'smooth'
         })
     }
-  
-    //    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+
+    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
     // black background navigation menu when scroll
-        const handleScroll = () => {
-            
-            if (window.scrollY >= 50) {
-            document.getElementsByClassName('PROJECT')[0].style.opacity = "0" 
-            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)" 
-            document.getElementsByClassName('ABOUT')[0].style.opacity = "0" 
-            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(-40px)" 
-            document.getElementsByClassName('CONTACT')[0].style.opacity = "0" 
-            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)" 
+    const handleScroll = () => {
+        if (window.scrollY >= 50) {
+            document.getElementsByClassName('PROJECT')[0].style.opacity = "0"
+            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)"
+            document.getElementsByClassName('ABOUT')[0].style.opacity = "0"
+            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(-40px)"
+            document.getElementsByClassName('CONTACT')[0].style.opacity = "0"
+            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)"
             document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
-            document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1" 
-            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms" 
-
-            }else{
-                document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
-                document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)" 
-                document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
-                document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)" 
-                document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
-                document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)" 
-                document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(60px)"
-                document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
-                document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms" 
-            }
+            document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1"
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
+        } else {
+            document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
+            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)"
+            document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
+            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)"
+            document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
+            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)"
+            document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
+            document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"
         }
-        window.addEventListener('scroll', handleScroll)
-
-    // Function to set a border to the selected page
-    const makeBorderbox = () => {
-        const sections = document.querySelectorAll('section')
-        const navLi = document.querySelectorAll('nav li')
-        const spans = document.querySelectorAll('nav button div span')
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop
-            if (window.scrollY + 20 >= sectionTop) {
-                current = section.getAttribute('class')
-            }
-            if (section.classList.contains(current)) {
-                navLi.forEach(li => {
-                    li.style.color = "white"
-                    spans.forEach(span => span.style.backgroundColor = "white")
-                    if (current === "PROJECT" || current === "CONTACT") {
-                        li.style.color = "black"
-                        spans.forEach(span => span.style.backgroundColor = "black")
-                    }
-                })
-            }
-        })
-        navLi.forEach(li => {
-            li.style.borderBottom = "2px solid transparent"
-            if (li.classList.contains(current)) {
-                li.style.borderBottom = "2px solid"
-            }
-        })
     }
-    window.addEventListener('scroll', makeBorderbox)
+    window.addEventListener('scroll', handleScroll)
+
 
     const styleLogo = {
         position: "relative",
@@ -95,39 +62,38 @@ export default function Navigation() {
         color: "white",
     }
 
-      const desktopMenu = (
+    const desktopMenu = (
         <ul style={{ display: "flex" }} >
-            <li style={{...styleList, transition: "transform 200ms linear, opacity 200ms linear"}} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-            <li style={{...styleList,  transition: "transform 200ms linear, opacity 200ms linear", transitionDelay:"200ms",}} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-            <li style={{...styleList,  transition: "transform 200ms linear, opacity 200ms linear",transitionDelay:"350ms"}} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+            <li style={{ ...styleList, transition: "transform 200ms linear, opacity 200ms linear" }} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
+            <li style={{ ...styleList, transition: "transform 200ms linear, opacity 200ms linear", transitionDelay: "200ms", }} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+            <li style={{ ...styleList, transition: "transform 200ms linear, opacity 200ms linear", transitionDelay: "350ms" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
         </ul>
     )
 
     return (
         <div>
-
             <nav style={{
                 position: "fixed",
                 width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "20px 3%",
+                padding: "10px 3%",
                 zIndex: "2",
-               
+
             }}
             >
-                <div style={{display:"flex"}} >
-                    <li style={{ ...styleList, ...styleLogo,  }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS&nbsp;
-                    <span style={{ backgroundColor: "orange", height:"8px", width:"8px", borderRadius:"50%",  display: "inline-block"}}>  </span></li>
+                <div style={{ display: "flex" }} >
+                    <li style={{ ...styleList, ...styleLogo, }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS&nbsp;
+                        <span style={{ backgroundColor: "orange", height: "5px", width: "5px", borderRadius: "50%", display: "inline-block" }}>  </span></li>
                 </div>
-             <div>
-                {desktopMenu}
-                <DropdownMenu  about={about}project={project} skills={skills} dashboard={dashboard}  scrollToSection={scrollToSection} />
+                <div>
+                    { isLargerThan480? desktopMenu : <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} /> }
+                    <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
                 </div>
             </nav>
-           
-            <Dashboard dashboard={dashboard} />
+
+            <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
