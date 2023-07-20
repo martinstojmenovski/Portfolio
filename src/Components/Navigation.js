@@ -78,7 +78,7 @@ export default function Navigation() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "10px 3%",
+                padding: "10px 20px",
                 zIndex: "2",
 
             }}

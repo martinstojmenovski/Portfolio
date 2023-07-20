@@ -50,7 +50,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 </Text>
             </Container>
             <div style={{
-                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "40px", right:"50%",
+                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "50px", right:"50%",
                 right: "50%",
             }} onClick={() => scrollToSection(project)}>
                 <span style={{

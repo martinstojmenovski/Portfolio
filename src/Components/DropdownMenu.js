@@ -18,7 +18,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         right: "0",
         top: "0",
         height: "100vh",
-        width: "350px",
+        width: "600%",
         backgroundColor: "black",
         // padding: " 155px",
         boxShadow: "0 10px 20px 0 rgba(0, 0, 0, 0.8)",
@@ -73,7 +73,6 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         <div className='hamburgerButton' style={{
             position: "absolute",
             top: "0", right: "0",
-         
             transform: !isLargerThan480 ? "translatex(0)" : "translatex(60px)", 
             opacity: !isLargerThan480 ? "1" : "0",
              transition: "opacity 200ms linear, transform 200ms linear",
@@ -92,7 +91,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             >
 
                 <div style={{
-                    position: "relative", top: "10px", right: "20px", zIndex: "1", padding: "20px",
+                    position: "relative", top: "10px", right: "10px", zIndex: "1", padding: "20px",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
@@ -100,11 +99,12 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             </button>
             <ul style={{
                 ...showListStyle,
-                 opacity: navbarOpen ? "1" : "0"
+                 opacity: navbarOpen ? "1" : "0",
+                transform: navbarOpen ? "translateX(0)" : "translateX(350px)",
             }}>
-                <li style={styleList} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
-                <li style={styleList} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
-                <li style={styleList} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
+                <li style={{...styleList, paddingTop:"30px"}} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
+                <li style={{...styleList, paddingTop:"30px"}} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
+                <li style={{...styleList, paddingTop:"30px"}} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
             </ul>
         </div>
 
