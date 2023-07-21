@@ -1,14 +1,13 @@
 
-import { transition } from '@chakra-ui/react';
-import { useEffect, useRef, useState } from 'react'
-// import { useMediaQuery, } from '@chakra-ui/react'
+import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 
 function DropdownMenu({ scrollToSection, about, skills, project,  }) {
+
     const isDesktopOrLaptop = useMediaQuery({  query: '(min-width: 480px)' })
+
     const [navbarOpen, setNavbarOpen] = useState(false);
-    // const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
     const showListStyle = {
         position: "absolute",
@@ -66,8 +65,6 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         }
     }
     window.addEventListener('scroll', closeHamburger)
-
-    // spans.forEach(span => span.style.backgroundColor = "white")
     
     return (
         <div className='hamburgerButton' style={{

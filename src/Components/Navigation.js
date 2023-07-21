@@ -24,16 +24,15 @@ export default function Navigation() {
     }
 
     // const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
-    const isDesktopOrLaptop = useMediaQuery({  query: '(min-width: 480px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
 
     // black background navigation menu when scroll
-   
- 
     
-        const handleScroll = () => {
-           if(isDesktopOrLaptop){
+    const handleScroll = () => {
+   
+        if (isDesktopOrLaptop) {
+            // window.location.reload()
             if (window.scrollY >= 50) {
-               
                 document.getElementsByClassName('PROJECT')[0].style.opacity = "0"
                 document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)"
                 document.getElementsByClassName('ABOUT')[0].style.opacity = "0"
@@ -43,29 +42,25 @@ export default function Navigation() {
                 document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
                 document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1"
                 document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
-             } else {
-                
-                    document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
-                    document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)"
-                    document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
-                    document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)"
-                    document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
-                    document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)"
-                    document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
-                    document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
-                    document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"
-                
+            } else {
+                document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
+                document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)"
+                document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
+                document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)"
+                document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
+                document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)"
+                document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
+                document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
+                document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"
             }
-           }
-           
-            
         }
-        window.addEventListener('scroll', handleScroll)  
-   
-    
-    
+    }
+    window.addEventListener('scroll', handleScroll)
 
-      
+
+
+
+
     const styleLogo = {
         position: "relative",
         borderBottom: "2px solid",
@@ -101,8 +96,8 @@ export default function Navigation() {
                         <span style={{ backgroundColor: "orange", height: "5px", width: "5px", borderRadius: "50%", display: "inline-block" }}>  </span></li>
                 </div>
                 <div>
-                {isDesktopOrLaptop &&  desktopMenu }
-                    
+                    {isDesktopOrLaptop && desktopMenu}
+
                     <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
                 </div>
             </nav>
