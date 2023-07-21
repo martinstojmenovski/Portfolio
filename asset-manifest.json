@@ -1,21 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.815d303b.css",
-    "main.js": "/portfolio/static/js/main.6bc6c22d.js",
+    "main.css": "/portfolio/static/css/main.8854eb35.css",
+    "main.js": "/portfolio/static/js/main.5f96bc92.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/denver-colorado.jpg": "/portfolio/static/media/denver-colorado.f85281aa24cc428d72ff.jpg",
+    "static/media/pexels-burst-373965.jpg": "/portfolio/static/media/pexels-burst-373965.ee427491fabf0f28982a.jpg",
     "static/media/professional photo.JPG": "/portfolio/static/media/professional photo.1af42a040ab3b5fd1511.JPG",
-    "static/media/portfolio.png": "/portfolio/static/media/portfolio.ca250eedf63be767e9cf.png",
-    "static/media/marvel.png": "/portfolio/static/media/marvel.45dc6ac84bf30b1ecd72.png",
-    "static/media/todo-app.png": "/portfolio/static/media/todo-app.cc09ce655b6b230dee2b.png",
-    "static/media/friends.png": "/portfolio/static/media/friends.4086fbb18bc04018f591.png",
     "index.html": "/portfolio/index.html",
-    "main.815d303b.css.map": "/portfolio/static/css/main.815d303b.css.map",
-    "main.6bc6c22d.js.map": "/portfolio/static/js/main.6bc6c22d.js.map",
+    "main.8854eb35.css.map": "/portfolio/static/css/main.8854eb35.css.map",
+    "main.5f96bc92.js.map": "/portfolio/static/js/main.5f96bc92.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.815d303b.css",
-    "static/js/main.6bc6c22d.js"
+    "static/css/main.8854eb35.css",
+    "static/js/main.5f96bc92.js"
   ]
 }
