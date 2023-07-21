@@ -3,32 +3,32 @@ import professionalPhoto from './images/professional\ photo.JPG'
 function About({ about }) {
 
   return (
-    <div  ref={about}>
-    <section  className='ABOUT' id='ABOUT' >
-      <div    className='about-page'>
-      <div  className="about-text">
-        <h1>HELLO, I AM MARTIN</h1>
-        <ul >
-          <li>Premium Desigh</li>
-          <li>Amazing Photo</li>
-          <li>Creative Ideas</li>
-          <li>Unique Strategy</li>
-        </ul>
-        <p>Collaborative, creative and flexible Software Developer.
-          Create and design applications to solve real-world problems.
-          I bring my passion for humor and travel into each project, work environment.
-          A strong communication and time management skills
-          cultivated through a background in customer service.</p>
-     
+    <div ref={about}>
+      <section className='ABOUT' id='ABOUT' >
+        <div className='about-page'>
+          <div className="about-text">
+            <h1>HELLO, I AM MARTIN</h1>
+            <ul >
+              <li>Premium Desigh</li>
+              <li>Amazing Photo</li>
+              <li>Creative Ideas</li>
+              <li>Unique Strategy</li>
+            </ul>
+            <p>Experienced and adaptable Software Engineer with a passion for innovative solutions. My unique blend
+              of creativity, humor, and love for travel infuse each project with a fresh perspective. Alongside my
+              technical expertise, I possess strong communication and time management skills honed through a
+              customer service background.
+            </p>
+
           </div>
-      {/* <div className='section-photo'> */}
-        <div  className='professional-photo'>
-        
+          {/* <div className='section-photo'> */}
+          <div className='professional-photo'>
+
+          </div>
+
+          {/* </div> */}
         </div>
-      
-      {/* </div> */}
-      </div>
-    </section>
+      </section>
     </div>
   );
 }

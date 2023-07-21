@@ -1,13 +1,14 @@
 
 import { transition } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react'
-import { useMediaQuery, } from '@chakra-ui/react'
+// import { useMediaQuery, } from '@chakra-ui/react'
+import { useMediaQuery } from 'react-responsive'
 
 
 function DropdownMenu({ scrollToSection, about, skills, project,  }) {
-
+    const isDesktopOrLaptop = useMediaQuery({  query: '(min-width: 480px)' })
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+    // const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
     const showListStyle = {
         position: "absolute",
@@ -15,13 +16,12 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        right: "0",
+        left: "0",
         top: "0",
         height: "100vh",
-        width: "600%",
-        backgroundColor: "black",
-        // padding: " 155px",
-        boxShadow: "0 10px 20px 0 rgba(0, 0, 0, 0.8)",
+        width: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.85)",
+        // boxShadow: "0 10px 100px 0 rgba(0, 0, 0, 0.8)",
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
@@ -72,10 +72,11 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
     return (
         <div className='hamburgerButton' style={{
             position: "absolute",
-            top: "0", right: "0",
-            transform: !isLargerThan480 ? "translatex(0)" : "translatex(60px)", 
-            opacity: !isLargerThan480 ? "1" : "0",
-             transition: "opacity 200ms linear, transform 200ms linear",
+            top: "0", right: "0", 
+            opacity: !isDesktopOrLaptop ? "1" :"0",
+            transform: !isDesktopOrLaptop ? "translatex(0)" : "translatex(60px)", 
+            transition: "opacity 200ms linear, transform 200ms linear",
+            width: "100%" ,
         }} >
             <button
                 onClick={() => {
@@ -91,7 +92,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             >
 
                 <div style={{
-                    position: "relative", top: "10px", right: "10px", zIndex: "1", padding: "20px",
+                    position: "absolute", top: "10px", right: "10px", zIndex: "1", padding: "20px",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
@@ -100,7 +101,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             <ul style={{
                 ...showListStyle,
                  opacity: navbarOpen ? "1" : "0",
-                transform: navbarOpen ? "translateX(0)" : "translateX(350px)",
+                transform: navbarOpen ? "translateX(0)" : "translateX(100%)",
             }}>
                 <li style={{...styleList, paddingTop:"30px"}} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
                 <li style={{...styleList, paddingTop:"30px"}} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>

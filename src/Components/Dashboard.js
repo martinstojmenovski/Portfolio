@@ -39,11 +39,12 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 style={{ position: "absolute", top: "45%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
             >
                 <Text
-                    color={"white"} fontWeight={400} fontSize={40}>
+                    textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} color={"white"} fontWeight={400} fontSize={40}>
+                        
                     Hi,
                 </Text>
-
-                <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif' }} ml={"25px"} color={"white"} fontWeight={400} lineHeight={"120%"}
+                
+                <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif', textShadow: "3px 4px 7px rgba(81,67,21,0.8)"}} ml={"25px"} color={"white"} fontWeight={400} lineHeight={"120%"}
                     fontSize={["40px", '60px', '85px', '100px', '115px']}
                 >
                     I create unique digital experiences.
@@ -55,8 +56,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
             }} onClick={() => scrollToSection(project)}>
                 <span style={{
                     ...styleArrow,
-                    transform: " translatex(50%)  translatex(-20px) rotate(-45deg)"
-                }}></span>
+                    transform: " translatex(50%)  translatex(-20px) rotate(-45deg)" }}></span>
                 <span style={{
                     display: "block",
                     ...styleArrow,
