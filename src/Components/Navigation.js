@@ -23,37 +23,44 @@ export default function Navigation() {
         })
     }
 
-    // const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+    // ProgresBar function
+    const [progressBar, setProgresBar] = useState(0)
+    const scrollProgress = () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        // console.log(scrolled)
+        setProgresBar(scrolled)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', scrollProgress)
+
+        return () => window.removeEventListener('scroll', scrollProgress)
+    }, [])
 
     // black background navigation menu when scroll
-    
     const handleScroll = () => {
-   
-        if (isDesktopOrLaptop) {
-            // window.location.reload()
-            if (window.scrollY >= 50) {
-                document.getElementsByClassName('PROJECT')[0].style.opacity = "0"
-                document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)"
-                document.getElementsByClassName('ABOUT')[0].style.opacity = "0"
-                document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(-40px)"
-                document.getElementsByClassName('CONTACT')[0].style.opacity = "0"
-                document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)"
-                document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
-                document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1"
-                document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
-            } else {
-                document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
-                document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)"
-                document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
-                document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)"
-                document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
-                document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)"
-                document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
-                document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
-                document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"
-            }
+        if (window.scrollY >= 50 && isDesktopOrLaptop) {
+
+            document.getElementsByClassName('PROJECT')[0].style.opacity = "0"
+            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(-40px)"
+            document.getElementsByClassName('ABOUT')[0].style.opacity = "0"
+            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(-40px)"
+            document.getElementsByClassName('CONTACT')[0].style.opacity = "0"
+            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(-40px)"
+
+        } else {
+
+            document.getElementsByClassName('PROJECT')[0].style.opacity = "1"
+            document.getElementsByClassName('PROJECT')[0].style.transform = "translateY(0)"
+            document.getElementsByClassName('ABOUT')[0].style.opacity = "1"
+            document.getElementsByClassName('ABOUT')[0].style.transform = "translateY(0)"
+            document.getElementsByClassName('CONTACT')[0].style.opacity = "1"
+            document.getElementsByClassName('CONTACT')[0].style.transform = "translateY(0)"
+
         }
+
     }
     window.addEventListener('scroll', handleScroll)
 
@@ -80,17 +87,25 @@ export default function Navigation() {
 
     return (
         <div>
+            <div className='progress-bar' style={{ position:"fixed", top:"66px",
+    // /* top: 48.5px; */
+    left: "0",
+    height: "2px",
+    background: "#ecebeb",
+    // z-index: 3;
+    transition: "width 30ms linear", width: `${progressBar}%` }}></div>
             <nav style={{
                 position: "fixed",
                 width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "10px 20px",
+                padding: "0 10px",
                 zIndex: "2",
-
+                transition: "backdrop-filter 300ms linear"
             }}
             >
+                
                 <div style={{ display: "flex" }} >
                     <li style={{ ...styleList, ...styleLogo, }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS&nbsp;
                         <span style={{ backgroundColor: "orange", height: "5px", width: "5px", borderRadius: "50%", display: "inline-block" }}>  </span></li>

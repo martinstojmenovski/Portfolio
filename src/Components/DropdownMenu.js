@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import {  useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 
@@ -59,6 +59,33 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
     }
     window.addEventListener('scroll', makeBorderbox)
 
+
+    const [ hamburgerOpacity, setHamburgerOpacity ] = useState(  "0"  )
+    const [ hamburgerTransform, setHamburgerTransform ] = useState(  "translateX(60px)"  )
+
+
+
+    const handleScroll = () => {
+        if (window.scrollY >= 50) {
+            document.querySelectorAll('nav')[0].style.backdropFilter = "blur(4px)"
+            // document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
+            // document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1"
+            setHamburgerOpacity( "1" )
+            setHamburgerTransform("translatex(0)")
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
+        
+        } else {
+            // document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
+            // document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
+            setHamburgerOpacity( "0" )
+            setHamburgerTransform("translatex(60px)")
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms" 
+            document.querySelectorAll('nav')[0].style.backdropFilter = "blur(0)"
+             
+        }
+}
+window.addEventListener('scroll',  handleScroll)
+
     function closeHamburger() {
         if (window.scrollY > 50) {
             setNavbarOpen(false)
@@ -70,8 +97,9 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         <div className='hamburgerButton' style={{
             position: "absolute",
             top: "0", right: "0", 
-            opacity: !isDesktopOrLaptop ? "1" :"0",
-            transform: !isDesktopOrLaptop ? "translatex(0)" : "translatex(60px)", 
+            opacity:  isDesktopOrLaptop ? hamburgerOpacity :  "1",
+            
+            transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
             transition: "opacity 200ms linear, transform 200ms linear",
             width: "100%" ,
         }} >
@@ -89,7 +117,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             >
 
                 <div style={{
-                    position: "absolute", top: "10px", right: "10px", zIndex: "1", padding: "20px",
+                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "20px",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
