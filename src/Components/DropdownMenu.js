@@ -24,7 +24,13 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
 
     }
-
+    const styleList = {
+        listStyle: "none",
+        cursor: "pointer",
+        color: "#ececec",
+        fontWeight: "500",
+        padding: "10px",
+    }
     // Function to set a border to the selected page
     const spans = document.querySelectorAll('nav button div span')
     const makeBorderbox = () => {
@@ -42,63 +48,57 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
                 
                 if (current === "PROJECT" || current === "CONTACT") {
                     document.getElementsByClassName('DASHBOARD')[0].style.color = "black"
+                    document.querySelectorAll('nav li span')[0].style.backgroundColor = "black"
                     spans.forEach(span => span.style.backgroundColor = "black")
                        
                 }else{
+                    document.querySelectorAll('nav li span')[0].style.backgroundColor = "orange"
                     document.getElementsByClassName('DASHBOARD')[0].style.color = 'white'  
                     spans.forEach(span => span.style.backgroundColor = "orange")
                 }
             }
         })
-        navLi.forEach(li => {
-            li.style.borderBottom = "2px solid transparent"
-            if (li.classList.contains(current)) {
-                li.style.borderBottom = "2px solid"
-            }
-        })
+        // Make border box
+        // navLi.forEach(li => {
+        //     li.style.borderBottom = "2px solid transparent"
+        //     if (li.classList.contains(current)) {
+        //         li.style.borderBottom = "2px solid"
+        //     }
+        // })
     }
     window.addEventListener('scroll', makeBorderbox)
 
 
+
+
+
+
+
     const [ hamburgerOpacity, setHamburgerOpacity ] = useState(  "0"  )
     const [ hamburgerTransform, setHamburgerTransform ] = useState(  "translateX(60px)"  )
-
-
-
     const handleScroll = () => {
-        if (window.scrollY >= 50) {
-            document.querySelectorAll('nav')[0].style.backdropFilter = "blur(4px)"
-            // document.getElementsByClassName('hamburgerButton')[0].style.transform = "translatex(0)"
-            // document.getElementsByClassName('hamburgerButton')[0].style.opacity = "1"
+        if (window.scrollY) {
+            setNavbarOpen(false)
             setHamburgerOpacity( "1" )
             setHamburgerTransform("translatex(0)")
             document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
         
         } else {
-            // document.getElementsByClassName('hamburgerButton')[0].style.transform = "translateX(60px)"
-            // document.getElementsByClassName('hamburgerButton')[0].style.opacity = "0"
+
             setHamburgerOpacity( "0" )
             setHamburgerTransform("translatex(60px)")
-            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms" 
-            document.querySelectorAll('nav')[0].style.backdropFilter = "blur(0)"
-             
+            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"     
         }
 }
 window.addEventListener('scroll',  handleScroll)
 
-    function closeHamburger() {
-        if (window.scrollY > 50) {
-            setNavbarOpen(false)
-        }
-    }
-    window.addEventListener('scroll', closeHamburger)
-    
+
     return (
         <div className='hamburgerButton' style={{
             position: "absolute",
             top: "0", right: "0", 
             opacity:  isDesktopOrLaptop ? hamburgerOpacity :  "1",
-            
+            zIndex: "1",
             transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
             transition: "opacity 200ms linear, transform 200ms linear",
             width: "100%" ,
@@ -138,13 +138,6 @@ window.addEventListener('scroll',  handleScroll)
 }
 
 export default DropdownMenu;
-const styleList = {
-    listStyle: "none",
-    cursor: "pointer",
-    color: "#ececec",
-    fontWeight: "500",
-    padding: "10px",
-}
 const barStyle = {
     display: "block",
     width: "45px",
@@ -153,4 +146,6 @@ const barStyle = {
     backgroundColor: "orange",
     transition: "transform 150ms ease-in-out"
 }
-export { styleList, barStyle, }
+
+export { barStyle, }
+
