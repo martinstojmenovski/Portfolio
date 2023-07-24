@@ -103,7 +103,7 @@ export default function Navigation() {
     transition: "width 30ms linear", width: `${progressBar}%` }}></div> */}
     
 
-        
+           
             <nav style={{
                 position: "fixed",
                 width: "100%",
@@ -112,14 +112,14 @@ export default function Navigation() {
                 alignItems: "center",
                 padding: "0 10px",
                 zIndex: "2",
-                content:"",
-                backdropFilter: `${blurNav} !important`,
-                WebkitBackdropFilter:`${blurNav} !important`,
+                backdropFilter: `${blurNav}`,
+                WebkitBackdropFilter:`${blurNav}`,
                 // background:" hsla(0,0%,100%,.3)",
                 transition: "backdrop-filter 300ms ease-in-out",
                 // backgroundColor: 'rgba(136,136,136,0.5)',     
             }}
             >
+               
                 
                 <div style={{ display: "flex" }} >
                     <li style={{ ...styleLogo, }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS&nbsp;
