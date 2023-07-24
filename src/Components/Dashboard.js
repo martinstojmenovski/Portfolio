@@ -6,11 +6,11 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
     const background = {
         position: "relative",
         height: "100vh",
+        // background:"rgba(31, 31, 30, 1)",
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.4)), url(${Background})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        // WebkitBackgroundPosition:"50% 50%",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
     }

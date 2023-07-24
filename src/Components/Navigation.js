@@ -23,23 +23,25 @@ export default function Navigation() {
         })
     }
     const [blurNav, setBlurNav] = useState("blur(0)")
+    const [blackBackground, setblackBackground] = useState("0")
+    const [borderBottom, setBorderBottom] = useState("0")
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
     // ProgresBar function
-    // const [progressBar, setProgresBar] = useState(0)
-    // const scrollProgress = () => {
-    //     const winScroll = document.documentElement.scrollTop;
-    //     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    //     const scrolled = (winScroll / height) * 100;
-    //     // console.log(scrolled)
-    //     setProgresBar(scrolled)
-    // }
-    // useEffect(() => {
-    //     window.addEventListener('scroll', scrollProgress)
+    const [progressBar, setProgresBar] = useState(0)
+    const scrollProgress = () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 90;
+        // console.log(scrolled)
+        setProgresBar(scrolled)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', scrollProgress)
 
-    //     return () => window.removeEventListener('scroll', scrollProgress)
-    // }, [])
+        return () => window.removeEventListener('scroll', scrollProgress)
+    }, [])
 
 
 
@@ -51,12 +53,16 @@ export default function Navigation() {
             setLiOpacity("0")
 
         }else if( !isDesktopOrLaptop && window.scrollY ){
-            setBlurNav("blur(7px)")
+            setBlurNav("blur(4px)")
+            setblackBackground("4")
+            setBorderBottom("3")
         }
         else {
             setBlurNav("blur(0)")
+            setblackBackground("0")
             setLiTranslateY("translateY(0)")
             setLiOpacity("1")
+            setBorderBottom("0")
         }
 
     }
@@ -95,12 +101,21 @@ export default function Navigation() {
 
     return (
         <div>
-            {/* <div className='progress-bar' style={{ position:"fixed", top:"66px",
-    left: "0",
+            <div  style={{ position:"fixed", top:"65px",
+    left: "5%",
     height: "2px",
     background: "#ecebeb",
     zIndex: 1,
-    transition: "width 30ms linear", width: `${progressBar}%` }}></div> */}
+    transition: "width 30ms linear", width: `${progressBar}%`,
+     }}></div>
+     <div  style={{ position:"fixed", top:"65px",
+    left: "5%",
+    height: "1px",
+    background: " rgba(239, 239, 240, 0.3)",
+    zIndex: 1,
+     width: `90%`,
+    //  margin:"auto 20px"
+     }}></div>
     
 
            
@@ -110,13 +125,22 @@ export default function Navigation() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "0 10px",
-                zIndex: "2",
+               
+                padding:"0 10px",
+                zIndex: "2",    
+                transition: "all 400ms linear",
                 backdropFilter: `${blurNav}`,
                 WebkitBackdropFilter:`${blurNav}`,
-                // background:" hsla(0,0%,100%,.3)",
-                transition: "backdrop-filter 300ms ease-in-out",
-                // backgroundColor: 'rgba(136,136,136,0.1)',     
+                
+
+
+               
+                // background: `rgba(0, 0, 0, 0.${blackBackground})`,
+                 // background: `rgba(0, 0, 0, 0.${blackBackground})`,
+                // background:"rgba(31, 31, 30, 1)",
+                // background:`rgba(255, 255, 255, 0.${borderBottom})`,
+                // borderBottom:`1px solid  rgba(239, 239, 240, 0.3)`,
+ 
             }}
             >
                
