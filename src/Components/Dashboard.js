@@ -1,7 +1,6 @@
 import { Container, Heading, Text, background } from "@chakra-ui/react";
 import Background from '../Components/images/pexels-burst-373965.jpg'
-import { styleList, barStyle } from './DropdownMenu'
-// import "./dashboard.css"
+
 export default function Dashboard({ project, dashboard, scrollToSection, }) {
     
     const background = {
