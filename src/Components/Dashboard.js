@@ -10,6 +10,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.4)), url(${Background})`,
         backgroundRepeat: "no-repeat",
+        
         backgroundPosition: "center",
         WebkitBackgroundPosition: "center",
 
@@ -41,7 +42,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 //     '2xl': '96em', // 1536px
                 //   }
                 maxW={["90%", '90%', '85%', '80%', '75%']}
-                style={{ position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
+                style={{ position: "absolute", top: "35%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
             >
                 <Text
                     textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} color={"white"} fontWeight={400} fontSize={40}>
@@ -56,7 +57,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 </Text>
             </Container>
             <div style={{
-                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "100px", right:"50%",
+                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "150px", right:"50%",
                 right: "50%",
             }} onClick={() => scrollToSection(project)}>
                 <span style={{

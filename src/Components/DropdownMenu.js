@@ -16,12 +16,13 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         justifyContent:'center',
         alignItems:'center',
         left: "0",
-        top: "0",
+        // top:"0",
+        bottom:"33px",
         height: "100vh",
         width: "100%",
         backgroundColor: "rgba(0, 0, 0, 0.85)",
-        // boxShadow: "0 10px 100px 0 rgba(0, 0, 0, 0.8)",
-        transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out"
+        transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out",
+        zIndex:"-1"
 
     }
     const styleList = {
@@ -125,8 +126,8 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
             </button>
             <ul style={{
                 ...showListStyle,
-                 opacity: navbarOpen ? "1" : "0",
-                transform: navbarOpen ? "translateX(0)" : "translateX(100%)",
+                //  opacity: navbarOpen ? "1" : "0",
+                transform: navbarOpen ? "translatey(100%)" : "translatey(0)",
             }}>
                 <li style={{...styleList, paddingTop:"30px"}} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
                 <li style={{...styleList, paddingTop:"30px"}} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>

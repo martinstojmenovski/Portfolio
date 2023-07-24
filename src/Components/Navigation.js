@@ -47,12 +47,12 @@ export default function Navigation() {
 
     // black background navigation menu when scroll
     const handleScroll = () => {
-       
+
         if (window.scrollY && isDesktopOrLaptop) {
             setLiTranslateY("translateY(-40px)")
             setLiOpacity("0")
 
-        }else if( !isDesktopOrLaptop && window.scrollY ){
+        } else if (!isDesktopOrLaptop && window.scrollY) {
             setBlurNav("blur(4px)")
             setblackBackground("4")
             setBorderBottom("3")
@@ -94,70 +94,80 @@ export default function Navigation() {
     const desktopMenu = (
         <ul style={{ display: "flex" }} >
             <li style={{ ...styleList, }} className={'PROJECT'} onClick={() => scrollToSection(project)} >Work</li>
-            <li style={{ ...styleList,  transitionDelay: "200ms", }} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
-            <li style={{ ...styleList,  transitionDelay: "350ms" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
+            <li style={{ ...styleList, transitionDelay: "200ms", }} className={'ABOUT'} onClick={() => scrollToSection(about)} >About</li>
+            <li style={{ ...styleList, transitionDelay: "350ms" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
         </ul>
     )
 
     return (
         <div>
-            <div  style={{ position:"fixed", top:"65px",
-    left: "5%",
-    height: "2px",
-    background: "#ecebeb",
-    zIndex: 1,
-    transition: "width 30ms linear", width: `${progressBar}%`,
-     }}></div>
-     <div  style={{ position:"fixed", top:"65px",
-    left: "5%",
-    height: "1px",
-    background: " rgba(239, 239, 240, 0.3)",
-    zIndex: 1,
-     width: `90%`,
-    //  margin:"auto 20px"
-     }}></div>
-    
+            {!isDesktopOrLaptop && <div style={{
+                position: "fixed", top: "65px",
+                left: "5%",
+                height: "2px",
+                background: "#ecebeb",
+                zIndex: 1,
+                transition: "width 30ms linear", width: `${progressBar}%`,
+            }}></div>}
 
-           
+            {!isDesktopOrLaptop && <div style={{
+                position: "fixed", top: "65px",
+                left: "5%",
+                height: "1px",
+                background: " rgba(239, 239, 240, 0.3)",
+                zIndex: 1,
+                width: `90%`,
+            }}></div>}
+
+
+
             <nav style={{
                 position: "fixed",
                 width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-               
-                padding:"0 10px",
-                zIndex: "2",    
+
+                padding: "0 10px",
+                zIndex: "2",
                 transition: "all 400ms linear",
                 backdropFilter: `${blurNav}`,
-                WebkitBackdropFilter:`${blurNav}`,
-                
+                WebkitBackdropFilter: `${blurNav}`,
 
 
-               
+
+
                 // background: `rgba(0, 0, 0, 0.${blackBackground})`,
-                 // background: `rgba(0, 0, 0, 0.${blackBackground})`,
+                // background: `rgba(0, 0, 0, 0.${blackBackground})`,
                 // background:"rgba(31, 31, 30, 1)",
                 // background:`rgba(255, 255, 255, 0.${borderBottom})`,
                 // borderBottom:`1px solid  rgba(239, 239, 240, 0.3)`,
- 
+
             }}
             >
-               
-                
+
+
                 <div style={{ display: "flex" }} >
-                    <li style={{ ...styleLogo, }} className={'DASHBOARD'} onClick={() => scrollToSection(dashboard)}>MS&nbsp;
-                        <span style={{ backgroundColor: "orange", height: "5px", width: "5px", borderRadius: "50%", display: "inline-block" }}>  </span></li>
+                    <li style={{ ...styleLogo, }}
+                        className={'DASHBOARD'}
+                        onClick={() => scrollToSection(dashboard)}
+                    >MS&nbsp;
+                        <span style={{
+                            backgroundColor: "orange",
+                            height: "5px", width: "5px",
+                            borderRadius: "50%",
+                            display: "inline-block"
+                        }}>  </span></li>
                 </div>
                 <div>
                     {isDesktopOrLaptop && desktopMenu}
 
                     <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
-                
+
                 </div>
             </nav>
-         
-            
+
+
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
             <Project project={project} />
             <About about={about} />
