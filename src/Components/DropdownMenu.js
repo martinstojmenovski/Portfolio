@@ -36,9 +36,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
     const makeBorderbox = () => {
         const sections = document.querySelectorAll('section')
         const navLi = document.querySelectorAll('nav li')
-        
         let current = '';
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop
             if (window.scrollY + 20 >= sectionTop) {
@@ -65,6 +63,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         //         li.style.borderBottom = "2px solid"
         //     }
         // })
+
     }
     window.addEventListener('scroll', makeBorderbox)
 
@@ -89,8 +88,9 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             setHamburgerTransform("translatex(60px)")
             document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"     
         }
+        
 }
-window.addEventListener('scroll',  handleScroll)
+window.addEventListener('scroll',  handleScroll,  makeBorderbox)
 
 
     return (

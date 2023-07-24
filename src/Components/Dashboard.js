@@ -35,7 +35,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 //     '2xl': '96em', // 1536px
                 //   }
                 maxW={["90%", '90%', '85%', '80%', '75%']}
-                style={{ position: "absolute", top: "45%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
+                style={{ position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: 'Montserrat Alternates, sans-serif' }}
             >
                 <Text
                     textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} color={"white"} fontWeight={400} fontSize={40}>

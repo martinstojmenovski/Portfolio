@@ -109,9 +109,8 @@ export default function Navigation() {
                 alignItems: "center",
                 padding: "0 10px",
                 zIndex: "2",
-                background:"rgba(0,0,0,0.0)",
+                backgroundColor:"rgba(0,0,0,0.0)",
                 backdropFilter: blurNav,
-                wbkitBackdropFilter: blurNav,
                 transition: "backdrop-filter 300ms ease-in-out"
             }}
             >
