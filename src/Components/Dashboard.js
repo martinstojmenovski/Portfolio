@@ -9,8 +9,8 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.4)), url(${Background})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "50% 50%",
-        WebkitBackgroundPosition:"50% 50%",
+        backgroundPosition: "center",
+        // WebkitBackgroundPosition:"50% 50%",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
     }

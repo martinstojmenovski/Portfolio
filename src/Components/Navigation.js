@@ -116,7 +116,7 @@ export default function Navigation() {
                 WebkitBackdropFilter:`${blurNav}`,
                 // background:" hsla(0,0%,100%,.3)",
                 transition: "backdrop-filter 300ms ease-in-out",
-                // backgroundColor: 'rgba(136,136,136,0.5)',     
+                // backgroundColor: 'rgba(136,136,136,0.1)',     
             }}
             >
                
