@@ -51,7 +51,7 @@ export default function Navigation() {
             setLiOpacity("0")
 
         }else if( !isDesktopOrLaptop && window.scrollY ){
-            setBlurNav("blur(4px)")
+            setBlurNav("blur(7px)")
         }
         else {
             setBlurNav("blur(0)")
@@ -110,6 +110,7 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "2",
                 backdropFilter: blurNav,
+                wbkitBackdropFilter: blurNav,
                 transition: "backdrop-filter 300ms linear"
             }}
             >
