@@ -11,8 +11,10 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         rgba(0, 0, 0, 0.4)), url(${Background})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
+        WebkitBackgroundPosition: "center",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
+        WebkitBackgroundAttachment: "fixed",
     }
     const styleArrow = {
         display: "block",
