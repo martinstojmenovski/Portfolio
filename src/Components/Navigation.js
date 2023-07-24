@@ -101,6 +101,9 @@ export default function Navigation() {
     background: "#ecebeb",
     zIndex: 1,
     transition: "width 30ms linear", width: `${progressBar}%` }}></div> */}
+    
+
+        
             <nav style={{
                 position: "fixed",
                 width: "100%",
@@ -109,9 +112,12 @@ export default function Navigation() {
                 alignItems: "center",
                 padding: "0 10px",
                 zIndex: "2",
-                backgroundColor:"rgba(0,0,0,0.0)",
-                backdropFilter: blurNav,
-                transition: "backdrop-filter 300ms ease-in-out"
+                content:"",
+                backdropFilter: `${blurNav} !important`,
+                WebkitBackdropFilter:`${blurNav} !important`,
+                // background:" hsla(0,0%,100%,.3)",
+                transition: "backdrop-filter 300ms ease-in-out",
+                // backgroundColor: 'rgba(136,136,136,0.5)',     
             }}
             >
                 
@@ -123,9 +129,11 @@ export default function Navigation() {
                     {isDesktopOrLaptop && desktopMenu}
 
                     <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
+                
                 </div>
             </nav>
-
+         
+            
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
             <Project project={project} />
             <About about={about} />
