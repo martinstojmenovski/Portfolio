@@ -12,7 +12,10 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         WebkitBackgroundPosition: "center",
+
         backgroundSize: "cover",
+        WebkitBackgroundSize: "cover",
+
         backgroundAttachment: "fixed",
         WebkitBackgroundAttachment: "fixed",
     }
