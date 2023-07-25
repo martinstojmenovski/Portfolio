@@ -35,8 +35,8 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundSize: "cover",
         WebkitBackgroundSize: "cover",
 
-        backgroundAttachment: "fixed",
-        WebkitBackgroundAttachment: "fixed ",
+        backgroundAttachment: "scroll",
+        WebkitBackgroundAttachment: "scroll ",
     }
     const styleArrow = {
         display: "block",
