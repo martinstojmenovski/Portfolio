@@ -27,7 +27,6 @@
   width: 320px;
   height: 370px;
   border: 4px solid rgb(234, 234, 234);
-  /* cursor: pointer; */
   padding: 30px;
   text-align: center;
   display: flex;
@@ -144,19 +143,19 @@
 
 @media screen and (max-width: 768px) {
   .image-slider{
-    display: flex;
+    /* display: flex; */
     
   }
   .projects {
-    display: none;
+    /* display: none; */
   }
   .project1,
   .project2,
   .project3,
   .project4,
   .project5 {
-    width: 400px;
-    height: 400px;
+    /* width: 400px;
+    height: 400px; */
   }
 }
 
@@ -167,8 +166,8 @@
   .project3,
   .project4,
   .project5  {
-    width: 100%;
-    height: 400px;
+    /* width: 100%;
+    height: 400px; */
    /* padding: 30px 60px 60px 60px; */
   }
   .container1,
@@ -176,6 +175,6 @@
   .container3,
   .container4,
   .container5 {
-    margin: 5px 5px 20px 5px;
+    /* margin: 5px 5px 20px 5px; */
   }
 }

@@ -5,6 +5,7 @@ import Skills from './Skills'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
 
+
 import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
@@ -169,6 +170,7 @@ export default function Navigation() {
 
 
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
+           
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
