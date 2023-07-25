@@ -1,8 +1,10 @@
 import { Container, Heading, Text, background } from "@chakra-ui/react";
 import Background from '../Components/images/pexels-burst-373965.jpg'
+import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
+import { useMediaQuery } from 'react-responsive'
 
 export default function Dashboard({ project, dashboard, scrollToSection, }) {
-    
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
     const background = {
         position: "relative",
         height: "100vh",
@@ -17,8 +19,24 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundSize: "cover",
         WebkitBackgroundSize: "cover",
 
-        backgroundAttachment: "fixed !important",
-        WebkitBackgroundAttachment: "fixed !important",
+        backgroundAttachment: "fixed",
+        WebkitBackgroundAttachment: "fixed ",
+    }
+    const backgroundMobile = {
+        position: "relative",
+        height: "100vh",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.4)), url(${BackgroundMobile})`,
+        backgroundRepeat: "no-repeat",
+        
+        backgroundPosition: "center",
+        WebkitBackgroundPosition: "center",
+
+        backgroundSize: "cover",
+        WebkitBackgroundSize: "cover",
+
+        backgroundAttachment: "fixed",
+        WebkitBackgroundAttachment: "fixed ",
     }
     const styleArrow = {
         display: "block",
@@ -30,7 +48,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
 
     }
     return (
-        <section style={{ ...background, fontFamily: `Poiret One', cursive` }} ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
+        <section style={{ ...(!isDesktopOrLaptop ? backgroundMobile : background), fontFamily: `Poiret One', cursive` }} ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
             <Container
                 p={0}
