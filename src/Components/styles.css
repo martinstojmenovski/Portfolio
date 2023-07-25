@@ -29,7 +29,7 @@
   background-size: cover;
 }
 
-.swiper-slide img {
+.swiper-slide div {
   display: block;
   width: 100%;
 }

@@ -31,7 +31,13 @@ function SwiperJsWork() {
                 className="mySwiper"
             >
                 {slides.map((slide, index) => (
-                    <SwiperSlide key={index}></SwiperSlide>
+                    <SwiperSlide style={{border: "2px solid gray" , display:"flex", flexDirection:"column", alignItems:"center", backgroundColor:"white"}} key={index}>
+                  
+                        <h5>{slide.name}</h5>
+                    <p style={{textAlign:"center", padding:"30px 10px"}} >{slide.content}</p>
+                      <a  href={slide.link} target="_blank"><span>MORE</span></a>
+                      
+                      </SwiperSlide>
                 ))}
                 {/* <SwiperSlide >
                     <div className="container1">
