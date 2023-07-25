@@ -131,8 +131,8 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "2",
                 transition: "all 400ms linear",
-                backdropFilter: `${blurNav}`,
-                WebkitBackdropFilter: `${blurNav}`,
+                backdropFilter: isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
+                WebkitBackdropFilter:  isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
 
 
 

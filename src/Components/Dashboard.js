@@ -17,8 +17,8 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundSize: "cover",
         WebkitBackgroundSize: "cover",
 
-        backgroundAttachment: "fixed",
-        WebkitBackgroundAttachment: "fixed",
+        backgroundAttachment: "fixed !important",
+        WebkitBackgroundAttachment: "fixed !important",
     }
     const styleArrow = {
         display: "block",
@@ -57,7 +57,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                 </Text>
             </Container>
             <div style={{
-                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "150px", right:"50%",
+                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", bottom: "20%", right:"50%",
                 right: "50%",
             }} onClick={() => scrollToSection(project)}>
                 <span style={{
