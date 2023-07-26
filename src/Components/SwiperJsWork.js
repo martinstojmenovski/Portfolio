@@ -35,7 +35,7 @@ function SwiperJsWork() {
                          display:"flex",
                           flexDirection:"column",
                           alignItems:"center",
-                          justifyContent:"space-around"
+                          justifyContent:"space-around",
                           }} key={index}>
                   
                         <h5>{slide.name}</h5>
