@@ -20,7 +20,9 @@ function Project({ project, projectsText }) {
 
       {isDesktopOrLaptop ? <div className='projects'>
         {images.map(((image, index) => <div key={index}>{image}</div>))}
-      </div> : <SwiperJsWork  /> } 
+      </div> :  <SwiperJsWork  /> } 
+      
+      
 
      
 

@@ -9,7 +9,7 @@ function About({ about }) {
           <div className="about-text">
             <h1>HELLO, I AM MARTIN</h1>
             <ul >
-              <li>Premium Desigh</li>
+              <li>Premium Design</li>
               <li>Amazing Photo</li>
               <li>Creative Ideas</li>
               <li>Unique Strategy</li>
