@@ -72,6 +72,7 @@ export default function Navigation() {
 
 
     const styleList = {
+        fontSize:"18px",
         listStyle: "none",
         cursor: "pointer",
         color: "#ececec",
@@ -89,7 +90,7 @@ export default function Navigation() {
         padding: "10px",
         borderRadius: "50%",
         fontFamily: `Ephesis`,
-        fontSize: "30px",
+        fontSize: "25px",
     }
 
     const desktopMenu = (

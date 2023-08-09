@@ -1,5 +1,4 @@
 import './about.css'
-import professionalPhoto from './images/professional\ photo.JPG'
 function About({ about }) {
 
   return (
@@ -21,12 +20,9 @@ function About({ about }) {
             </p>
 
           </div>
-          {/* <div className='section-photo'> */}
           <div className='professional-photo'>
 
           </div>
-
-          {/* </div> */}
         </div>
       </section>
     </div>
