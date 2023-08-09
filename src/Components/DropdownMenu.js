@@ -15,13 +15,12 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        left: "0",
-        // top:"0",
-        bottom:"33px",
-        height: "100vh",
-        width: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.85)",
-        transition: "opacity 150ms ease-in-out, transform 150ms ease-in-out",
+        top: "66px", 
+        left: "5%",
+        height: navbarOpen ? "80vh": "0px",
+        width: "90%",
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        transition:"height 200ms linear",
         zIndex:"-1"
 
     }
@@ -30,7 +29,12 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         cursor: "pointer",
         color: "#ececec",
         fontWeight: "500",
-        padding: "10px",
+        padding: "30px 10px 10px 10px",
+        opacity: navbarOpen ? "1": "0",
+        transition:"opacity 100ms linear, transform 200ms linear",
+        transitionDelay:"100ms"
+    
+
     }
     // Function to set a border to the selected page
     const spans = document.querySelectorAll('nav button div span')
@@ -93,7 +97,6 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
 }
 window.addEventListener('scroll',  handleScroll,  makeBorderbox)
 
-
     return (
         <div className='hamburgerButton' style={{
             position: "absolute",
@@ -116,6 +119,10 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
                     }
                 }}
             >
+                
+                  
+
+               
 
                 <div style={{
                     position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "20px",
@@ -124,15 +131,18 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
                 </div>
             </button>
+           
             <ul style={{
                 ...showListStyle,
                 //  opacity: navbarOpen ? "1" : "0",
-                transform: navbarOpen ? "translatey(100%)" : "translatey(0)",
+                // transform: navbarOpen ? "translatey(100%)" : "translatey(0)",
+            
             }}>
-                <li style={{...styleList, paddingTop:"30px"}} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
-                <li style={{...styleList, paddingTop:"30px"}} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
-                <li style={{...styleList, paddingTop:"30px"}} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
+                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
+                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
+                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
             </ul>
+  
         </div>
 
     );
@@ -147,6 +157,5 @@ const barStyle = {
     backgroundColor: "orange",
     transition: "transform 150ms ease-in-out"
 }
-
 export { barStyle, }
 

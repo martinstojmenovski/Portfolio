@@ -129,22 +129,11 @@ export default function Navigation() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-
                 padding: "0 10px",
                 zIndex: "2",
                 transition: "all 400ms linear",
                 backdropFilter: isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
                 WebkitBackdropFilter:  isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
-
-
-
-
-                // background: `rgba(0, 0, 0, 0.${blackBackground})`,
-                // background: `rgba(0, 0, 0, 0.${blackBackground})`,
-                // background:"rgba(31, 31, 30, 1)",
-                // background:`rgba(255, 255, 255, 0.${borderBottom})`,
-                // borderBottom:`1px solid  rgba(239, 239, 240, 0.3)`,
-
             }}
             >
 
