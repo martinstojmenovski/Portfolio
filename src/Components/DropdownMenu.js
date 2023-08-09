@@ -15,7 +15,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        top: "66px", 
+        top: "60px", 
         left: "5%",
         height: navbarOpen ? "80vh": "0px",
         width: "90%",

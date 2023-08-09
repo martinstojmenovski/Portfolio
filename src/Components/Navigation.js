@@ -24,8 +24,6 @@ export default function Navigation() {
         })
     }
     const [blurNav, setBlurNav] = useState("blur(0)")
-    const [blackBackground, setblackBackground] = useState("0")
-    const [borderBottom, setBorderBottom] = useState("0")
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
@@ -48,24 +46,17 @@ export default function Navigation() {
 
     // black background navigation menu when scroll
     const handleScroll = () => {
-
         if (window.scrollY && isDesktopOrLaptop) {
             setLiTranslateY("translateY(-40px)")
             setLiOpacity("0")
-
         } else if (!isDesktopOrLaptop && window.scrollY) {
             setBlurNav("blur(4px)")
-            setblackBackground("4")
-            setBorderBottom("3")
         }
         else {
             setBlurNav("blur(0)")
-            setblackBackground("0")
             setLiTranslateY("translateY(0)")
             setLiOpacity("1")
-            setBorderBottom("0")
         }
-
     }
     window.addEventListener('scroll', handleScroll)
 

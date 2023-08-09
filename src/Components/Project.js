@@ -1,6 +1,5 @@
-
+import slides from "./projectContent"
 import "./project.css"
-import images from "./projectsText"
 import SwiperJsWork from './SwiperJsWork'
 import { useMediaQuery } from 'react-responsive'
 
@@ -10,11 +9,38 @@ function Project({ project }) {
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
-      <h1 style={{paddingTop:"80px"}}>EXPLORE PREVIOUS WORK</h1>
+      <h1 style={{ paddingTop: "80px" }}>EXPLORE PREVIOUS WORK</h1>
 
-      {isDesktopOrLaptop ? <div className='projects'>
-        {images.map(((image, index) => <div key={index}>{image}</div>))}
-      </div> :  <SwiperJsWork  /> } 
+      {isDesktopOrLaptop ?
+
+        <div style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          maxWidth: "80%",
+          margin:"auto",
+
+        }}>{slides.map((slide, index) => (
+          
+          <div style={{
+            width: "320px",
+            height: "370px",
+            border: "4px solid rgb(234, 234, 234)",
+            display:"flex",
+            flexDirection:"column",
+            alignItems:"center",
+            justifyContent:"space-around",
+            padding: "10px",
+            margin:"20px"
+              }}>
+            <h5>{slide.name}</h5>
+            <p>{slide.content}</p>
+            <a href={slide.link} target="_blank"><span>MORE</span></a>
+          </div>
+        ))}
+
+        </div>
+        : <SwiperJsWork />}
 
     </section>
   );
