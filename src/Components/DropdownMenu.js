@@ -125,7 +125,7 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
                
 
                 <div style={{
-                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "20px",
+                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "15px",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>

@@ -104,7 +104,7 @@ export default function Navigation() {
     return (
         <div>
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "65px",
+                position: "fixed", top: "58px",
                 left: "5%",
                 height: "2px",
                 background: "#ecebeb",
@@ -113,7 +113,7 @@ export default function Navigation() {
             }}></div>}
 
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "65px",
+                position: "fixed", top: "58px",
                 left: "5%",
                 height: "1px",
                 background: " rgba(239, 239, 240, 0.3)",
