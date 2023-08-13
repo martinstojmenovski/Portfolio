@@ -1,5 +1,4 @@
 import slides from "./projectContent"
-import "./project.css"
 import SwiperJsWork from './SwiperJsWork'
 import { useMediaQuery } from 'react-responsive'
 
@@ -11,7 +10,7 @@ function Project({ project }) {
     <section ref={project} id='PROJECT' className='PROJECT'>
       <h1 style={{ paddingTop: "80px" }}>EXPLORE PREVIOUS WORK</h1>
 
-      {isDesktopOrLaptop ?
+      {isDesktopOrLaptop &&
 
         <div style={{
           display: "flex",
@@ -22,7 +21,7 @@ function Project({ project }) {
 
         }}>{slides.map((slide, index) => (
           
-          <div style={{
+          <div key={index} style={{
             width: "320px",
             height: "370px",
             border: "4px solid rgb(234, 234, 234)",
@@ -39,8 +38,12 @@ function Project({ project }) {
           </div>
         ))}
 
-        </div>
-        : <SwiperJsWork />}
+        </div>}
+        {
+          !isDesktopOrLaptop && <SwiperJsWork />
+        }
+        
+        
 
     </section>
   );

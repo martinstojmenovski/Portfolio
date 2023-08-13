@@ -3,6 +3,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  /* background-color: #1e1e1e; */
+
+
+}
+.PROJECT{
+  position: relative;
+  top: 100vh;
+
+ 
+}
+.ABOUT{
+  position: relative;
+  top: 100vh;
+ 
+}
+.CONTACT{
+  position: relative;
+  top: 100vh;
 
 }
 /* ===== Scrollbar CSS ===== */

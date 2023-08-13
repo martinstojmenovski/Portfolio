@@ -6,6 +6,7 @@ import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
 
 
+
 import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
@@ -23,17 +24,18 @@ export default function Navigation() {
             behavior: 'smooth'
         })
     }
-    const [blurNav, setBlurNav] = useState("blur(0)")
+    const [blurNav, setBlurNav] = useState("transparent")
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+    
     // ProgresBar function
     const [progressBar, setProgresBar] = useState(0)
     const scrollProgress = () => {
         const winScroll = document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 90;
-        // console.log(scrolled)
+      
         setProgresBar(scrolled)
     }
     useEffect(() => {
@@ -49,11 +51,11 @@ export default function Navigation() {
         if (window.scrollY && isDesktopOrLaptop) {
             setLiTranslateY("translateY(-40px)")
             setLiOpacity("0")
-        } else if (!isDesktopOrLaptop && window.scrollY) {
-            setBlurNav("blur(4px)")
+        } else if (!isDesktopOrLaptop && window.scrollY  > 540) {
+            setBlurNav("#1e1e1e")
         }
         else {
-            setBlurNav("blur(0)")
+            setBlurNav("transparent")
             setLiTranslateY("translateY(0)")
             setLiOpacity("1")
         }
@@ -71,6 +73,8 @@ export default function Navigation() {
         transition: "transform 200ms linear, opacity 200ms linear",
         opacity: liOpacity,
         transform: liTranslateY,
+        position:"relative",
+        top:"0"
     }
 
     const styleLogo = {
@@ -82,6 +86,10 @@ export default function Navigation() {
         borderRadius: "50%",
         fontFamily: `Ephesis`,
         fontSize: "25px",
+        transition: "color 300ms linear",
+  
+ 
+        
     }
 
     const desktopMenu = (
@@ -123,8 +131,9 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "2",
                 transition: "all 400ms linear",
-                backdropFilter: isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
-                WebkitBackdropFilter:  isDesktopOrLaptop ? "blur(0)" :  `${blurNav}`,
+                background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
+             
+             
             }}
             >
 
@@ -151,7 +160,7 @@ export default function Navigation() {
 
 
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
-           
+      
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />

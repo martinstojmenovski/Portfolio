@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
 
-import './styles.css';
+
 
 // import required modules
 import { EffectCube, Pagination } from 'swiper/modules';
@@ -13,20 +12,24 @@ import { EffectCube, Pagination } from 'swiper/modules';
 import slides from "./projectContent"
 
 
-console.log(document.getElementsByClassName("swiper-pagination-bullet-active-main"))
-// .style.backgroundColor = "orange"
+
+
 function SwiperJsWork() {
 
     return (
 
         <div style={{height: "85vh"}} >
+                    
             <div style={{position: "relative", height: "100%"}}>
             <Swiper
-                   pagination={{
-                    dynamicBullets: true,
-                  }}
+                   pagination={{ dynamicBullets: true, }}
                   modules={[Pagination]}
                   className="mySwiper"
+                  style={{width:"100%",
+                  height: "70%",
+                  position: "absolute",
+                  left:"0",
+                  top: "5%",}}
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide style={{
@@ -36,6 +39,7 @@ function SwiperJsWork() {
                           flexDirection:"column",
                           alignItems:"center",
                           justifyContent:"space-around",
+                         
                           }} key={index}>
                   
                         <h5>{slide.name}</h5>

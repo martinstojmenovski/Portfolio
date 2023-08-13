@@ -32,7 +32,9 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         padding: "30px 10px 10px 10px",
         opacity: navbarOpen ? "1": "0",
         transition:"opacity 100ms linear, transform 200ms linear",
-        transitionDelay:"100ms"
+        transitionDelay:"100ms",
+        position:"relative",
+        top:"0"
     
 
     }
@@ -49,16 +51,16 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
             }
             if (section.classList.contains(current)) {
                 
-                if (current === "PROJECT" || current === "CONTACT") {
-                    document.getElementsByClassName('DASHBOARD')[0].style.color = "black"
-                    document.querySelectorAll('nav li span')[0].style.backgroundColor = "black"
-                    spans.forEach(span => span.style.backgroundColor = "black")
+                // if (current === "PROJECT" || current === "CONTACT") {
+                //     document.getElementsByClassName('DASHBOARD')[0].style.color = "black"
+                //     document.querySelectorAll('nav li span')[0].style.backgroundColor = "black"
+                //     spans.forEach(span => span.style.backgroundColor = "black")
                        
-                }else{
-                    document.querySelectorAll('nav li span')[0].style.backgroundColor = "orange"
-                    document.getElementsByClassName('DASHBOARD')[0].style.color = 'white'  
-                    spans.forEach(span => span.style.backgroundColor = "orange")
-                }
+                // }else{
+                //     document.querySelectorAll('nav li span')[0].style.backgroundColor = "orange"
+                //     document.getElementsByClassName('DASHBOARD')[0].style.color = 'white'  
+                //     spans.forEach(span => span.style.backgroundColor = "orange")
+                // }
             }
         })
         // Make border box
@@ -106,6 +108,8 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
             transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
             transition: "opacity 200ms linear, transform 200ms linear",
             width: "100%" ,
+            background:"transparent"
+            
         }} >
             <button
                 onClick={() => {
@@ -125,7 +129,7 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
                
 
                 <div style={{
-                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "15px",
+                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "15px", background:"transparent"
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
@@ -155,7 +159,7 @@ const barStyle = {
     height: "2.5px",
     margin: "7px auto",
     backgroundColor: "orange",
-    transition: "transform 150ms ease-in-out"
+    transition: "transform 150ms ease-in-out,  background 300ms linear "
 }
 export { barStyle, }
 

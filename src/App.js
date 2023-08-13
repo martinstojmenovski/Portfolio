@@ -7,7 +7,7 @@ import Navigation from './Components/Navigation'
 function App() {
  
   return (
-    <div className="App">
+    <div style={{background:" #1e1e1e"}}className="App">
       <Navigation />
    
     </div>
