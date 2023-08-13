@@ -4,14 +4,10 @@ import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
 import { useMediaQuery } from 'react-responsive'
 import { useState } from "react";
 
-export default function Dashboard({ project, dashboard, scrollToSection, }) {
+export default function Dashboard({ project, dashboard, scrollToSection, sectionOpacity }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
 
-    const [sectionOpacity, setSectionOpacity] = useState(1)
-    window.addEventListener('scroll', function () {
-
-        setSectionOpacity(1 - this.window.pageYOffset / 550 + "")
-    })
+   
     const background = {
         position: "relative",
         height: "100vh",
@@ -33,7 +29,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         width: "100vw",
         background: `linear-gradient(rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.4)), url(${BackgroundMobile})`,
-        opacity: sectionOpacity,
+        opacity: 1 - sectionOpacity,
         backgroundRepeat: "no-repeat",
         position: "fixed",
         backgroundPosition: "center",
@@ -46,7 +42,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
         backgroundColor: "orange",
         position: "absolute",
         right: "50%",
-        opacity: sectionOpacity,
+        opacity: 1 - sectionOpacity,
     }
 
 
@@ -70,13 +66,13 @@ export default function Dashboard({ project, dashboard, scrollToSection, }) {
                         position: "absolute", top: "40vh", left: "50%",
                         transform: "translate(-50%, -50%)",
                         fontFamily: 'Montserrat Alternates, sans-serif',
-                        opacity:sectionOpacity,
+                        opacity: 1 - sectionOpacity,
 
                     }}
                 >
-                    <Text textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} background={"transparent"} color={"white"} fontWeight={400} fontSize={40}>Hi,</Text>
+                    <Text textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} background={"transparent"}  fontWeight={400} fontSize={40}>Hi,</Text>
 
-                    <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif', textShadow: "3px 4px 7px rgba(81,67,21,0.8)" }} ml={"25px"} color={"white"} fontWeight={400} lineHeight={"120%"}
+                    <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif', textShadow: "3px 4px 7px rgba(81,67,21,0.8)" }} ml={"25px"}  fontWeight={400} lineHeight={"120%"}
                         fontSize={["40px", '45px', '55px', '70px', '95px']}
                     >
                         I create unique digital experiences.

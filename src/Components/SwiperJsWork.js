@@ -33,7 +33,7 @@ function SwiperJsWork() {
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide style={{
-                        border: "4px solid rgb(234, 234, 234)" ,
+                        border: "4px solid #666666" ,
                         color: "#6a6a6a",
                          display:"flex",
                           flexDirection:"column",

@@ -15,11 +15,11 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        top: "60px", 
+        top: "64px", 
         left: "5%",
         height: navbarOpen ? "80vh": "0px",
         width: "90%",
-        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        backgroundColor: "#1e1e1e",
         transition:"height 200ms linear",
         zIndex:"-1"
 

@@ -2,8 +2,8 @@ import './about.css'
 function About({ about }) {
 
   return (
-    <div ref={about}>
-      <section className='ABOUT' id='ABOUT' >
+    <div >
+      <section className='ABOUT' id='ABOUT' ref={about} >
         <div className='about-page'>
           <div className="about-text">
             <h1>HELLO, I AM MARTIN</h1>

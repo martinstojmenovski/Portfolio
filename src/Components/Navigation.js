@@ -68,7 +68,7 @@ export default function Navigation() {
         fontSize:"18px",
         listStyle: "none",
         cursor: "pointer",
-        color: "#ececec",
+   
         padding: "10px",
         transition: "transform 200ms linear, opacity 200ms linear",
         opacity: liOpacity,
@@ -81,7 +81,7 @@ export default function Navigation() {
         position: "relative",
         listStyle: "none",
         cursor: "pointer",
-        color: "#ececec",
+    
         padding: "10px",
         borderRadius: "50%",
         fontFamily: `Ephesis`,
@@ -99,24 +99,32 @@ export default function Navigation() {
             <li style={{ ...styleList, transitionDelay: "350ms" }} className={'CONTACT'} onClick={() => scrollToSection(skills)} >Contact</li>
         </ul>
     )
+    const [sectionOpacity, setSectionOpacity] = useState(0)
+    window.addEventListener('scroll', function () {
+
+        setSectionOpacity( this.window.pageYOffset / 350 + "")
+        
+       
+    })
+    console.log(sectionOpacity)
 
     return (
         <div>
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "58px",
+                position: "fixed", top: "50px",
                 left: "5%",
                 height: "2px",
                 background: "#ecebeb",
-                zIndex: 1,
+                zIndex: 22,
                 transition: "width 30ms linear", width: `${progressBar}%`,
             }}></div>}
 
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "58px",
+                position: "fixed", top: "50px",
                 left: "5%",
                 height: "1px",
                 background: " rgba(239, 239, 240, 0.3)",
-                zIndex: 1,
+                zIndex: 22,
                 width: `90%`,
             }}></div>}
 
@@ -130,8 +138,10 @@ export default function Navigation() {
                 alignItems: "center",
                 padding: "0 10px",
                 zIndex: "2",
-                transition: "all 400ms linear",
-                background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
+                transition: "background 100ms linear",
+                // background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
+                // opacity:sectionOpacity
+                backgroundColor:`rgba(30, 30, 30, ${sectionOpacity} )`
              
              
             }}
@@ -159,7 +169,7 @@ export default function Navigation() {
             </nav>
 
 
-            <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} />
+            <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} sectionOpacity={sectionOpacity} />
       
             <Project project={project} />
             <About about={about} />

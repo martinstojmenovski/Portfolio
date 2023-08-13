@@ -8,7 +8,7 @@ function Project({ project }) {
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
-      <h1 style={{ paddingTop: "80px" }}>EXPLORE PREVIOUS WORK</h1>
+      <h1 style={{ paddingTop: "80px", color:"orange", textAlign:"center" }}>EXPLORE PREVIOUS WORK</h1>
 
       {isDesktopOrLaptop &&
 
@@ -24,7 +24,7 @@ function Project({ project }) {
           <div key={index} style={{
             width: "320px",
             height: "370px",
-            border: "4px solid rgb(234, 234, 234)",
+            border: "4px solid #393939",
             display:"flex",
             flexDirection:"column",
             alignItems:"center",
