@@ -102,16 +102,16 @@ export default function Navigation() {
     const [sectionOpacity, setSectionOpacity] = useState(0)
     window.addEventListener('scroll', function () {
 
-        setSectionOpacity( this.window.pageYOffset / 350 + "")
+        setSectionOpacity(-3+ this.window.pageYOffset / 550 + "")
         
        
     })
-    console.log(sectionOpacity)
+    // console.log(sectionOpacity)
 
     return (
         <div>
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "50px",
+                position: "fixed", top: "56px",
                 left: "5%",
                 height: "2px",
                 background: "#ecebeb",
@@ -120,7 +120,7 @@ export default function Navigation() {
             }}></div>}
 
             {!isDesktopOrLaptop && <div style={{
-                position: "fixed", top: "50px",
+                position: "fixed", top: "56px",
                 left: "5%",
                 height: "1px",
                 background: " rgba(239, 239, 240, 0.3)",
@@ -140,8 +140,9 @@ export default function Navigation() {
                 zIndex: "2",
                 transition: "background 100ms linear",
                 // background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
-                // opacity:sectionOpacity
-                backgroundColor:`rgba(30, 30, 30, ${sectionOpacity} )`
+                // opacity:sectionOpacity,
+                // backgroundColor:`rgba(30, 30, 30, ${sectionOpacity} )`,
+                backgroundColor:isDesktopOrLaptop? "transparent ":`rgba(37, 37, 37, ${1.5 - sectionOpacity})`,
              
              
             }}
@@ -155,7 +156,7 @@ export default function Navigation() {
                     >MS&nbsp;
                         <span style={{
                             backgroundColor: "orange",
-                            height: "5px", width: "5px",
+                            height: "3.4px", width: "3.4px",
                             borderRadius: "50%",
                             display: "inline-block"
                         }}>  </span></li>

@@ -29,7 +29,9 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         width: "100vw",
         background: `linear-gradient(rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.4)), url(${BackgroundMobile})`,
-        opacity: 1 - sectionOpacity,
+        // background:"#1e1e1e",
+        opacity:  sectionOpacity,
+        // opacity:  "1",
         backgroundRepeat: "no-repeat",
         position: "fixed",
         backgroundPosition: "center",
@@ -42,7 +44,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         backgroundColor: "orange",
         position: "absolute",
         right: "50%",
-        opacity: 1 - sectionOpacity,
+        // opacity: 1 - sectionOpacity,
     }
 
 
@@ -57,7 +59,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
             <div style={{
                 ...backgroundMobile,
             }}>
-               
+               <div>Baanding, Reasearch, Development, UI design, UX design</div>
             </div>
             <Container
                     p={0}  
@@ -66,7 +68,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                         position: "absolute", top: "40vh", left: "50%",
                         transform: "translate(-50%, -50%)",
                         fontFamily: 'Montserrat Alternates, sans-serif',
-                        opacity: 1 - sectionOpacity,
+                        // opacity: 1 - sectionOpacity,
 
                     }}
                 >
@@ -79,7 +81,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     </Text>
                 </Container>
                 <div style={{
-                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", top: "17%", right:"50%",
+                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", top: "15%", right:"50%",
               
             }} onClick={() => scrollToSection(project)}>
                 <span style={{

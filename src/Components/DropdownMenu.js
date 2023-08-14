@@ -15,13 +15,16 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        top: "64px", 
+        top: "58px", 
         left: "5%",
+        
         height: navbarOpen ? "80vh": "0px",
+        overflow:navbarOpen ? "visible": "hidden",
         width: "90%",
         backgroundColor: "#1e1e1e",
         transition:"height 200ms linear",
-        zIndex:"-1"
+        // zIndex:"-1"
+        
 
     }
     const styleList = {

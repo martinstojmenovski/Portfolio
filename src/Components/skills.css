@@ -1,5 +1,5 @@
 #CONTACT{
-    /* background: rgb(247, 247, 247); */
+    background: transparent;
     position: relative;
     /* top:60vh; */
     /* padding-top: 50vh ; */
@@ -8,6 +8,7 @@
 main {
     width: 60%;
     margin: auto;  
+  
 }
 
 /* main h1 {
