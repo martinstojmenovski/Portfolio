@@ -5,32 +5,33 @@ import { useMediaQuery } from 'react-responsive'
 function Project({ project }) {
 
   const isDesktopOrLaptop = useMediaQuery({ query: '(min-width:  768px)' })
+  const isSmallerThan480 = useMediaQuery({ query: '(min-width:  480px)' })
 
   return (
     <section ref={project} id='PROJECT' className='PROJECT'>
       <h1 style={{ paddingTop: "80px", color:"orange", textAlign:"center" }}>EXPLORE PREVIOUS WORK</h1>
 
-      {isDesktopOrLaptop &&
+   
 
         <div style={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          maxWidth: "80%",
+          // maxWidth: "80%",
           margin:"auto",
 
         }}>{slides.map((slide, index) => (
           
           <div key={index} style={{
-            width: "320px",
-            height: "370px",
+            width: isDesktopOrLaptop ? "40%": "100%",
+            height: "200px",
             border: "4px solid #393939",
             display:"flex",
             flexDirection:"column",
             alignItems:"center",
             justifyContent:"space-around",
             padding: "10px",
-            margin:"20px"
+            margin:isSmallerThan480 ?  "30px 20px " : "10px 20px",
               }}>
             <h5>{slide.name}</h5>
             <p>{slide.content}</p>
@@ -38,10 +39,10 @@ function Project({ project }) {
           </div>
         ))}
 
-        </div>}
-        {
+        </div>
+        {/* {
           !isDesktopOrLaptop && <SwiperJsWork />
-        }
+        } */}
         
         
 

@@ -3,6 +3,7 @@ import Background from '../Components/images/pexels-burst-373965.jpg'
 import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
 import { useMediaQuery } from 'react-responsive'
 import { useState } from "react";
+import TheCircle from "./TheCircle";
 
 export default function Dashboard({ project, dashboard, scrollToSection, sectionOpacity }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
@@ -55,11 +56,11 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
        
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
-
+            <TheCircle />
             <div style={{
                 ...backgroundMobile,
             }}>
-               <div>Baanding, Reasearch, Development, UI design, UX design</div>
+               
             </div>
             <Container
                     p={0}  
@@ -72,16 +73,16 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
 
                     }}
                 >
-                    <Text textShadow={"3px 4px 7px rgba(81,67,21,0.8)"} background={"transparent"}  fontWeight={400} fontSize={40}>Hi,</Text>
+                    <Text  background={"transparent"}  fontWeight={400} fontSize={40}>Hi,</Text>
 
-                    <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif', textShadow: "3px 4px 7px rgba(81,67,21,0.8)" }} ml={"25px"}  fontWeight={400} lineHeight={"120%"}
+                    <Text style={{ fontFamily: 'Montserrat Alternates, sans-serif',  }} ml={"25px"}  fontWeight={400} lineHeight={"120%"}
                         fontSize={["40px", '45px', '55px', '70px', '95px']}
                     >
                         I create unique digital experiences.
                     </Text>
                 </Container>
                 <div style={{
-                cursor: "pointer", position: "absolute", padding:"50px", transform: " translatex(50%)", top: "15%", right:"50%",
+                cursor: "pointer", position: "relative", padding:"50px", transform: " translatex(50%)", top: "65vh", right:"50%",
               
             }} onClick={() => scrollToSection(project)}>
                 <span style={{
