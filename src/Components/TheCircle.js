@@ -1,41 +1,47 @@
+import jsxToString from "jsx-to-string";
+import "./theCircle.css"
+import ReactCurvedText from "react-curved-text";
 
 function TheCircle() {
-  let keyframes = 
-    `@-webkit-keyframes rotating {
-      from {
-          -webkit-transform: rotate(0deg);
-      }
-      to {
-          -webkit-transform: rotate(360deg);
-      }
-  }`
-  const styleMajor = {
-    backgroundColor: "#0f0",
-    width: "100px",
-    height: "100px",
-    borderRadius: "50px",
-    position: "relative",
-    webkitAnimation: `${keyframes} 1s linear infinite`,
-  }
+ 
 
-  const styleMinor ={
-    backgroundColor: "#0ff",
-    width: "50px",
-    height: "50px",
-    borderRadius:" 25px",
-    position: "absolute",
-    top: "0",
-    left: "25px",
-  }
 
-  
+
+
+  const currentJsx = (
+    <ReactCurvedText
+    width={300}
+    height={300}
+    cx={150}
+    cy={150}
+    rx={100}
+    ry={100}
+    startOffset={0}
+    reversed={true}
+    text='react-curved-text'
+    textProps={{"style": {"fontSize": 24}}}
+    textPathProps={null}
+    tspanProps={null}
+    ellipseProps={null}
+    svgProps={{"className": "rotating-curved-text"}}
+    />
+  );
+
+  let currentJsxString = jsxToString(currentJsx, {
+    displayName: "ReactCurvedText",
+    useFunctionCode: true
+  });
+  currentJsxString =
+    "import ReactCurvedText from 'react-curved-text';\n\n" + currentJsxString;
   return (
+    
+ <div className="exampleWrapperDiv">{currentJsx}</div>
+   
+     
 
-    <div class="major" style={styleMajor}>
-      <div class="minor">yes
-      </div>
-    </div>
-
+   
+   
+    
   );
 }
 
