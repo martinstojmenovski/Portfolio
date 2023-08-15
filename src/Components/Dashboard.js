@@ -52,7 +52,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
 
     return (
 
-        <section
+        <section 
        
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
@@ -82,7 +82,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     </Text>
                 </Container>
                 <div style={{
-                cursor: "pointer", position: "relative", padding:"50px", transform: " translatex(50%)", top: "65vh", right:"50%",
+                cursor: "pointer", position: "relative", padding:"50px", transform: " translatex(50%)", top: "-30vh", right:"50%",
               
             }} onClick={() => scrollToSection(project)}>
                 <span style={{

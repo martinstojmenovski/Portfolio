@@ -1,12 +1,12 @@
 
   .exampleWrapperDiv {
-    width: fit-content;
-    height: fit-content;
-    margin: auto;
-    position: absolute;
-    top:-320px;
-    right: -200px;
-    overflow: hidden;
+    /* width: fit-content; */
+    /* height: fit-content; */
+    /* margin: auto; */
+    position: relative;
+    top:-300px;
+    left: 0;
+    overflow: clip;
   }
   
  
