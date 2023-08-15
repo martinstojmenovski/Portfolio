@@ -1,20 +1,24 @@
 
   .exampleWrapperDiv {
-    /* border: 8px solid;
-    border-image: linear-gradient(45deg, turquoise, greenyellow) 1; */
     width: fit-content;
     height: fit-content;
     margin: auto;
+    position: absolute;
+    top:-320px;
+    right: -200px;
+    overflow: hidden;
   }
   
  
   
   
   .rotating-curved-text {
-    -webkit-animation: spin 4s linear infinite;
-    -moz-animation: spin 4s linear infinite;
-    animation: spin 4s linear infinite;
+    -webkit-animation: spin 12s linear infinite;
+    -moz-animation: spin 12s linear infinite;
+    animation: spin 12s linear infinite;
   }
+
+
   @-moz-keyframes spin {
     100% {
       -moz-transform: rotate(360deg);
