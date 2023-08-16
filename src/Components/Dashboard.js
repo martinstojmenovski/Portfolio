@@ -33,12 +33,14 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         rgba(0, 0, 0, 0.4)), url(${BackgroundMobile})`,
         // background:"#1e1e1e",
         opacity:  sectionOpacity,
-        // opacity:  "1",
+        // opacity:  "0",
         backgroundRepeat: "no-repeat",
         position: "fixed",
         // top:"0",
         backgroundPosition: "center",
         backgroundSize: "cover",
+        // zIndex:"-1"
+        
     }
     const styleArrow = {
         display: "block",
@@ -86,9 +88,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     fontSize: "2.3em",
                     marginLeft: "25px",
                     
-                    // position: "absolute", 
-                    // left: "50%",top:"50%",
-                    // transform: "translate(-50% -50%)",
+                 
                 }}
                 // ml={"25px"}
                 //  fontWeight={400} 

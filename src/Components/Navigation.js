@@ -142,7 +142,7 @@ export default function Navigation() {
                 // background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
                 // opacity:sectionOpacity,
                 // backgroundColor:`rgba(30, 30, 30, ${sectionOpacity} )`,
-                backgroundColor:isDesktopOrLaptop? "transparent ":`rgba(37, 37, 37, ${1.5 - sectionOpacity})`,
+                backgroundColor:isDesktopOrLaptop? "transparent ":`rgba(37, 37, 37, ${1.4 - sectionOpacity})`,
              
              
             }}
