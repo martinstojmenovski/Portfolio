@@ -34,7 +34,9 @@ function TheCircle() {
     "import ReactCurvedText from 'react-curved-text';\n\n" + currentJsxString;
   return (
 
-    <div className="exampleWrapperDiv">{currentJsx}</div>
+<div  className="exampleWrapperDiv">{currentJsx}</div>
+
+ 
 
 
 

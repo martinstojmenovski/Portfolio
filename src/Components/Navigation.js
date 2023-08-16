@@ -28,14 +28,14 @@ export default function Navigation() {
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
-
+    
     // ProgresBar function
     const [progressBar, setProgresBar] = useState(0)
     const scrollProgress = () => {
         const winScroll = document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 90;
-
+      
         setProgresBar(scrolled)
     }
     useEffect(() => {
@@ -51,7 +51,7 @@ export default function Navigation() {
         if (window.scrollY && isDesktopOrLaptop) {
             setLiTranslateY("translateY(-40px)")
             setLiOpacity("0")
-        } else if (!isDesktopOrLaptop && window.scrollY > 540) {
+        } else if (!isDesktopOrLaptop && window.scrollY  > 540) {
             setBlurNav("#1e1e1e")
         }
         else {
@@ -65,31 +65,31 @@ export default function Navigation() {
 
 
     const styleList = {
-        fontSize: "18px",
+        fontSize:"18px",
         listStyle: "none",
         cursor: "pointer",
-
+   
         padding: "10px",
         transition: "transform 200ms linear, opacity 200ms linear",
         opacity: liOpacity,
         transform: liTranslateY,
-        position: "relative",
-        top: "0"
+        position:"relative",
+        top:"0"
     }
 
     const styleLogo = {
         position: "relative",
         listStyle: "none",
         cursor: "pointer",
-
+    
         padding: "10px",
         borderRadius: "50%",
         fontFamily: `Ephesis`,
         fontSize: "25px",
         transition: "color 300ms linear",
-
-
-
+  
+ 
+        
     }
 
     const desktopMenu = (
@@ -102,11 +102,11 @@ export default function Navigation() {
     const [sectionOpacity, setSectionOpacity] = useState(0)
     window.addEventListener('scroll', function () {
 
-        setSectionOpacity(-4 + this.window.pageYOffset / 550 + "")
-
-
+        setSectionOpacity(-4+ this.window.pageYOffset / 550 + "")
+        
+       
     })
-    // console.log(sectionOpacity)
+    console.log(sectionOpacity) 
 
     return (
         <div>
@@ -142,9 +142,9 @@ export default function Navigation() {
                 // background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
                 // opacity:sectionOpacity,
                 // backgroundColor:`rgba(30, 30, 30, ${sectionOpacity} )`,
-                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(37, 37, 37, ${1.5 - sectionOpacity})`,
-
-
+                backgroundColor:isDesktopOrLaptop? "transparent ":`rgba(37, 37, 37, ${1.5 - sectionOpacity})`,
+             
+             
             }}
             >
 
@@ -171,7 +171,7 @@ export default function Navigation() {
 
 
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} sectionOpacity={sectionOpacity} />
-
+      
             <Project project={project} />
             <About about={about} />
             <Skills skills={skills} />
