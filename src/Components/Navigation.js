@@ -106,7 +106,7 @@ export default function Navigation() {
         
        
     })
-    console.log(sectionOpacity) 
+    
 
     return (
         <div>
@@ -132,12 +132,13 @@ export default function Navigation() {
 
             <nav style={{
                 position: "fixed",
+                overflow:"visible",
                 width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "0 10px",
-                zIndex: "2",
+                zIndex: "5",
                 transition: "background 100ms linear",
                 // background: isDesktopOrLaptop ? "transparent" :  `${blurNav}`,
                 // opacity:sectionOpacity,

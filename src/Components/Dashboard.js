@@ -4,6 +4,7 @@ import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
 import { useMediaQuery } from 'react-responsive'
 import { useState } from "react";
 import TheCircle from "./TheCircle";
+import "./theCircle.css"
 
 export default function Dashboard({ project, dashboard, scrollToSection, sectionOpacity }) {
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
@@ -56,15 +57,16 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
     return (
 
         <section 
-        style={{height:"100vh"}}
+        style={{height:"100vh", overflowX:"hidden"}}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
-            
+           
             <TheCircle />
             <div style={{
                 ...backgroundMobile,
             }}>
-
+                
             </div>
+           
             <div
                 // p={0}  
                 // maxW={["90%", '90%', '85%', '80%', '75%']}
@@ -100,7 +102,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 </h4>
             </div>
             <div style={{
-                cursor: "pointer", position: "relative",  padding: "50px", transform: " translatex(50%)", right: "50%",
+                cursor: "pointer", position: "relative",  padding: "50px", transform: " translatex(50%)", right: "50%", overflow:"hidden"
 
             }} onClick={() => scrollToSection(project)}>
                 <span style={{

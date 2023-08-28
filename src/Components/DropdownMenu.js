@@ -17,13 +17,16 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         alignItems:'center',
         top: "58px", 
         left: "5%",
-        
+       
         height: navbarOpen ? "80vh": "0px",
-        overflow:navbarOpen ? "visible": "hidden",
+        overflow: navbarOpen ? "visible": "hidden",
+       zIndex:"1111",
         width: "90%",
+       
         backgroundColor: "#1e1e1e",
         transition:"height 200ms linear",
-        // zIndex:"-1"
+        
+     
         
 
     }
@@ -37,7 +40,9 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         transition:"opacity 100ms linear, transform 200ms linear",
         transitionDelay:"100ms",
         position:"relative",
-        top:"0"
+        top:"0",
+    
+        // zIndex:"222"
     
 
     }
@@ -103,18 +108,24 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
 window.addEventListener('scroll',  handleScroll,  makeBorderbox)
 
     return (
+        
+      
         <div className='hamburgerButton' style={{
+            overflowX:"visible",
             position: "absolute",
             top: "0", right: "0", 
             opacity:  isDesktopOrLaptop ? hamburgerOpacity :  "1",
-            zIndex: "1",
+            zIndex: "222",
             transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
             transition: "opacity 200ms linear, transform 200ms linear",
             width: "100%" ,
-            background:"transparent"
+            height:"100%",
+            // background:"transparent",
+            
             
         }} >
             <button
+            
                 onClick={() => {
                     setNavbarOpen((prev) => !prev)
                     if(navbarOpen === false){
@@ -132,7 +143,8 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
                
 
                 <div style={{
-                    position: "absolute", top: "0", right: "10px", zIndex: "1", padding: "15px", background:"transparent"
+                    position: "absolute", top: "0", right: "10px",  padding: "15px", background:"transparent",
+                    // zIndex: "2",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
@@ -151,6 +163,8 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
             </ul>
   
         </div>
+       
+       
 
     );
 }
@@ -162,7 +176,8 @@ const barStyle = {
     height: "2.5px",
     margin: "7px auto",
     backgroundColor: "orange",
-    transition: "transform 150ms ease-in-out,  background 300ms linear "
+    transition: "transform 150ms ease-in-out,  background 300ms linear ",
+ 
 }
 export { barStyle, }
 

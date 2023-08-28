@@ -8,7 +8,7 @@ function App() {
  
   return (
     <div
-     style={{background:" #252525", height:"560vh"}}
+     style={{background:" #252525", height:"560vh", overflow:"hidden "}}
     className="App">
       <Navigation />
    

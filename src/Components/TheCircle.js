@@ -1,5 +1,5 @@
 import jsxToString from "jsx-to-string";
-import "./theCircle.css"
+
 import ReactCurvedText from "react-curved-text";
 
 
@@ -33,6 +33,8 @@ function TheCircle() {
   currentJsxString =
     "import ReactCurvedText from 'react-curved-text';\n\n" + currentJsxString;
   return (
+
+
 
 <div  className="exampleWrapperDiv">{currentJsx}</div>
 
