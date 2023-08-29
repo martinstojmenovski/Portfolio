@@ -81,12 +81,11 @@ export default function Navigation() {
         position: "relative",
         listStyle: "none",
         cursor: "pointer",
-
+        
         padding: "10px",
-        borderRadius: "50%",
+   
         fontFamily: `Ephesis`,
         fontSize: "25px",
-        transition: "color 300ms linear",
 
 
 
@@ -140,7 +139,7 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "5",
                 transition: "background 100ms linear",
-                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(37, 37, 37, ${1.4 - sectionOpacity})`,
+                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(30, 35, 41, ${1.4 - sectionOpacity})`,
             }}
             >
 
@@ -151,7 +150,7 @@ export default function Navigation() {
                         onClick={() => scrollToSection(dashboard)}
                     >MS&nbsp;
                         <span style={{
-                            backgroundColor: "orange",
+                            backgroundColor: "#FB8122",
                             height: "3.4px", width: "3.4px",
                             borderRadius: "50%",
                             display: "inline-block"

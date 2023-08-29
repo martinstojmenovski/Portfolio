@@ -19,7 +19,7 @@ function TheCircle() {
       reversed={false}
       text='Development  -  Research  -  UI Design  -  UX Design  -  Creative Ideas  -  Amazing Photo  -  '
       textProps={{ "style": { "fontSize": 26 } }}
-      textPathProps={{"fill": "#e4e4e45d"}}
+      textPathProps={{"fill": "#E1E2E2"}}
       tspanProps={null}
       ellipseProps={null}
       svgProps={{ "className": "rotating-curved-text" }}
