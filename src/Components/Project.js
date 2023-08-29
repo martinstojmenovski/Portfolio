@@ -8,7 +8,7 @@ function Project({ project }) {
   const isSmallerThan480 = useMediaQuery({ query: '(min-width:  480px)' })
 
   return (
-    <section ref={project} id='PROJECT' className='PROJECT'>
+    <section ref={project} id='PROJECT' className='PROJECT'  style={{ backgroundColor:"green" }}>
       <h1 style={{ paddingTop: "80px", color:"orange", textAlign:"center" }}>EXPLORE PREVIOUS WORK</h1>
 
    

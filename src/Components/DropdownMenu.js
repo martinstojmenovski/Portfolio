@@ -9,7 +9,7 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-    const showListStyle = {
+    const showUlStyle = {
         position: "absolute",
         display:'flex',
         flexDirection:'column',
@@ -17,18 +17,12 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         alignItems:'center',
         top: "58px", 
         left: "5%",
-       
         height: navbarOpen ? "80vh": "0px",
         overflow: navbarOpen ? "visible": "hidden",
        zIndex:"1111",
         width: "90%",
-       
         backgroundColor: "#1e1e1e",
         transition:"height 200ms linear",
-        
-     
-        
-
     }
     const styleList = {
         listStyle: "none",
@@ -119,10 +113,7 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
             transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
             transition: "opacity 200ms linear, transform 200ms linear",
             width: "100%" ,
-            height:"100%",
-            // background:"transparent",
-            
-            
+            height:"100%",   
         }} >
             <button
             
@@ -144,7 +135,6 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
 
                 <div style={{
                     position: "absolute", top: "0", right: "10px",  padding: "15px", background:"transparent",
-                    // zIndex: "2",
                 }}>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
                     <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
@@ -152,9 +142,7 @@ window.addEventListener('scroll',  handleScroll,  makeBorderbox)
             </button>
            
             <ul style={{
-                ...showListStyle,
-                //  opacity: navbarOpen ? "1" : "0",
-                // transform: navbarOpen ? "translatey(100%)" : "translatey(0)",
+                ...showUlStyle,
             
             }}>
                 <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>

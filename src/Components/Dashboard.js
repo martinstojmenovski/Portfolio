@@ -57,7 +57,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
     return (
 
         <section 
-        style={{height:"100vh", overflowX:"hidden"}}
+        style={{height:"100vh",overflow:"hidden"}}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
            
             <TheCircle />
@@ -71,7 +71,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 // p={0}  
                 // maxW={["90%", '90%', '85%', '80%', '75%']}
                 style={{
-                    padding:"170px 20px 20px"
+                    padding:"170px 20px 20px",
                     // textAlign:"center",
                     // position: "absolute", 
                     // left: "50%",top:"50%",
