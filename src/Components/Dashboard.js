@@ -52,12 +52,18 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         right: "50%",
     }
 
-
+    window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
 
     return (
 
         <section 
-        style={{height:"100vh",overflow:"hidden"}}
+        style={{height:"100vh",
+        height: `calc(var(--vh, 1vh) * 100)`,
+        overflow:"hidden"}}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
            
             <TheCircle />
@@ -87,7 +93,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 <h2 style={{ fontSize: "2.5em",}}> Hi,</h2>
 
                 <h4 style={{
-                    fontSize: "2.3em",
+                    fontSize: "2.3rem",
                     marginLeft: "25px",
                     
                  
