@@ -34,13 +34,10 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         rgba(0, 0, 0, 0.4)), url(${BackgroundMobile})`,
         // background:"#1e1e1e",
         opacity:  sectionOpacity,
-        // opacity:  "0",
         backgroundRepeat: "no-repeat",
         position: "fixed",
-        // top:"0",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        // zIndex:"-1"
         
     }
     const styleArrow = {
@@ -52,17 +49,19 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         right: "50%",
     }
 
-    window.addEventListener('resize', () => {
-        // We execute the same script as before
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      });
+    // window.addEventListener('resize', () => {
+    //     // We execute the same script as before
+    //     let vh = window.innerHeight * 0.01;
+    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    //   });
 
     return (
 
         <section 
-        style={{height:"100vh",
-        height: `calc(var(--vh, 1vh) * 100)`,
+        style={{
+            height: "100dvh",
+        //     height:"100vh",
+        // height: `calc(var(--vh, 1vh) * 100)`,
         overflow:"hidden"}}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
            

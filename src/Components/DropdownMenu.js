@@ -1,28 +1,51 @@
 
-import {  useState } from 'react'
+import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 
-function DropdownMenu({ scrollToSection, about, skills, project,  }) {
+function DropdownMenu({ scrollToSection, about, skills, project, }) {
 
-    const isDesktopOrLaptop = useMediaQuery({  query: '(min-width: 480px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
 
     const [navbarOpen, setNavbarOpen] = useState(false);
 
+
+
+
+
+
+
+    const [hamburgerOpacity, setHamburgerOpacity] = useState("0")
+    const [hamburgerTransform, setHamburgerTransform] = useState("translateX(60px)")
+    const [hamburgerDelay, setHamburgerDelay] = useState("0")
+    const handleScroll = () => {
+        if (window.scrollY) {
+            setNavbarOpen(false)
+            setHamburgerOpacity("1")
+            setHamburgerTransform("translatex(0)")
+            setHamburgerDelay("500ms")
+        } else {
+            setHamburgerOpacity("0")
+            setHamburgerTransform("translatex(60px)")
+            setHamburgerDelay("100ms")
+        }
+
+    }
+    window.addEventListener('scroll', handleScroll)
+
     const showUlStyle = {
         position: "absolute",
-        display:'flex',
-        flexDirection:'column',
-        justifyContent:'center',
-        alignItems:'center',
-        top: "58px", 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: "58px",
         left: "5%",
-        height: navbarOpen ? "80vh": "0px",
-        overflow: navbarOpen ? "visible": "hidden",
-       zIndex:"1111",
+        height: navbarOpen ? "80vh" : "0px",
+        overflow: navbarOpen ? "visible" : "hidden",
         width: "90%",
         backgroundColor: "#1e1e1e",
-        transition:"height 200ms linear",
+        transition: "height 200ms linear",
     }
     const styleList = {
         listStyle: "none",
@@ -30,129 +53,52 @@ function DropdownMenu({ scrollToSection, about, skills, project,  }) {
         color: "#ececec",
         fontWeight: "500",
         padding: "30px 10px 10px 10px",
-        opacity: navbarOpen ? "1": "0",
-        transition:"opacity 100ms linear, transform 200ms linear",
-        transitionDelay:"100ms",
-        position:"relative",
-        top:"0",
-    
-        // zIndex:"222"
-    
-
+        opacity: navbarOpen ? "1" : "0",
+        transition: "opacity 100ms linear, transform 200ms linear",
+        transitionDelay: "100ms",
+        position: "relative",
+        top: "0",
     }
-    // Function to set a border to the selected page
-    const spans = document.querySelectorAll('nav button div span')
-    const makeBorderbox = () => {
-        const sections = document.querySelectorAll('section')
-        const navLi = document.querySelectorAll('nav li')
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop
-            if (window.scrollY + 20 >= sectionTop) {
-                current = section.getAttribute('class')
-            }
-            if (section.classList.contains(current)) {
-                
-                // if (current === "PROJECT" || current === "CONTACT") {
-                //     document.getElementsByClassName('DASHBOARD')[0].style.color = "black"
-                //     document.querySelectorAll('nav li span')[0].style.backgroundColor = "black"
-                //     spans.forEach(span => span.style.backgroundColor = "black")
-                       
-                // }else{
-                //     document.querySelectorAll('nav li span')[0].style.backgroundColor = "orange"
-                //     document.getElementsByClassName('DASHBOARD')[0].style.color = 'white'  
-                //     spans.forEach(span => span.style.backgroundColor = "orange")
-                // }
-            }
-        })
-        // Make border box
-        // navLi.forEach(li => {
-        //     li.style.borderBottom = "2px solid transparent"
-        //     if (li.classList.contains(current)) {
-        //         li.style.borderBottom = "2px solid"
-        //     }
-        // })
-
-    }
-    window.addEventListener('scroll', makeBorderbox)
-
-
-
-
-
-
-
-    const [ hamburgerOpacity, setHamburgerOpacity ] = useState(  "0"  )
-    const [ hamburgerTransform, setHamburgerTransform ] = useState(  "translateX(60px)"  )
-    const handleScroll = () => {
-        if (window.scrollY) {
-            setNavbarOpen(false)
-            setHamburgerOpacity( "1" )
-            setHamburgerTransform("translatex(0)")
-            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "500ms"
-        
-        } else {
-
-            setHamburgerOpacity( "0" )
-            setHamburgerTransform("translatex(60px)")
-            document.getElementsByClassName('hamburgerButton')[0].style.transitionDelay = "100ms"     
-        }
-        
-}
-window.addEventListener('scroll',  handleScroll,  makeBorderbox)
-
     return (
-        
-      
-        <div className='hamburgerButton' style={{
-            overflowX:"visible",
-            position: "absolute",
-            top: "0", right: "0", 
-            opacity:  isDesktopOrLaptop ? hamburgerOpacity :  "1",
-            zIndex: "222",
-            transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)", 
-            transition: "opacity 200ms linear, transform 200ms linear",
-            width: "100%" ,
-            height:"100%",   
-        }} >
-            <button
-            
-                onClick={() => {
-                    setNavbarOpen((prev) => !prev)
-                    if(navbarOpen === false){
-                        spans.forEach(span => span.style.backgroundColor = "orange")
-                    }else{
-                        if(document.getElementsByClassName('DASHBOARD')[0].style.color === "black"){
-                            spans.forEach(span => span.style.backgroundColor = "black")
-                        } 
-                    }
-                }}
-            >
-                
-                  
 
-               
+
+        <div className='hamburgerButton'
+            style={{
+                overflowX: "visible",
+                position: "absolute",
+                top: "0", right: "0",
+                opacity: isDesktopOrLaptop ? hamburgerOpacity : "1",
+                transform: isDesktopOrLaptop ? hamburgerTransform : "translatex(0)",
+                transition: "opacity 200ms linear, transform 200ms linear",
+                width: "100%",
+                transitionDelay: hamburgerDelay,
+            }} >
+            <button onClick={() => { setNavbarOpen((prev) => !prev) }}>
+
+
+
+
 
                 <div style={{
-                    position: "absolute", top: "0", right: "10px",  padding: "15px", background:"transparent",
+                    position: "absolute", top: "0", right: "10px", padding: "15px", background: "transparent",
                 }}>
-                    <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
-                    <span style={{ ...barStyle,  transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
+                    <span style={{ ...barStyle, transform: navbarOpen ? "translateY(4px) rotate(45deg)" : "translateY(0) rotate(0)" }} ></span>
+                    <span style={{ ...barStyle, transform: navbarOpen ? "translateY(-4px) rotate(-45deg)" : "translateY(0) rotate(0)" }} ></span>
                 </div>
             </button>
-           
+
             <ul style={{
                 ...showUlStyle,
-            
+
             }}>
-                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
-                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
-                <li style={{...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)",  }} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
+                <li style={{ ...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)", }} className={'PROJECT'} onClick={() => { scrollToSection(project); setNavbarOpen((prev) => !prev) }} >Work</li>
+                <li style={{ ...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)", }} className={'ABOUT'} onClick={() => { scrollToSection(about); setNavbarOpen((prev) => !prev) }} >About</li>
+                <li style={{ ...styleList, transform: navbarOpen ? "translateY(0)" : "translateY(70px)", }} className={'CONTACT'} onClick={() => { scrollToSection(skills); setNavbarOpen((prev) => !prev) }} >Contact</li>
             </ul>
-  
+
         </div>
-       
-       
+
+
 
     );
 }
@@ -165,7 +111,7 @@ const barStyle = {
     margin: "7px auto",
     backgroundColor: "orange",
     transition: "transform 150ms ease-in-out,  background 300ms linear ",
- 
+
 }
 export { barStyle, }
 
