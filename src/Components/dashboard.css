@@ -1,0 +1,68 @@
+
+@keyframes blitz {
+     to {
+        opacity:1;
+        transform: translateX(0px);
+    }   
+}
+.hi{
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 200ms;
+    
+}
+.main-message{
+   
+    font-size: 2.5rem;
+} 
+
+.main-message span:nth-child(1) {
+    opacity: 0;
+    transform: translateX(-200px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 350ms;
+  }
+  .main-message span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 500ms;
+  }
+  .main-message span:nth-child(3) {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 650ms;
+  }
+  .main-message span:nth-child(4) {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 800ms;
+  }
+  .main-message span:nth-child(5) {
+    
+    opacity: 0;
+    transform: translateX(20px);
+    animation: blitz 1s ease forwards;
+    animation-delay: 950ms;
+  }
+
+
+
+@media  screen and (min-width: 798px) {
+    .main-message{
+        font-size: 3.5rem;
+    }
+}
+@media  screen and (min-width: 1024px) {
+    .main-message{
+        font-size: 4.5rem;
+    }
+}
+@media  screen and (min-width: 1200px) {
+    .main-message{
+        font-size: 6.5rem;
+    }
+}

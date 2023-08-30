@@ -7,7 +7,9 @@
     top:-330px;
     right: -180px;
     overflow: hidden;
-    opacity: 0.4;
+    opacity: 0.3;
+   
+    
 
   }
   
@@ -16,9 +18,16 @@
     -webkit-animation: spin 15s linear infinite;
     -moz-animation: spin 15s linear infinite;
     animation: spin 15s linear infinite;
+    
+  
+    
   }
 
-
+  @keyframes blitz {
+    to {
+       
+   }
+  }
   @-moz-keyframes spin {
     100% {
       -moz-transform: rotate(360deg);

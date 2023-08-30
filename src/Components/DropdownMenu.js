@@ -44,7 +44,7 @@ function DropdownMenu({ scrollToSection, about, skills, project, }) {
         height: navbarOpen ? "80vh" : "0px",
         overflow: navbarOpen ? "visible" : "hidden",
         width: "90%",
-        backgroundColor: "#1e1e1e",
+        backgroundColor: "#1D2228",
         transition: "height 200ms linear",
     }
     const styleList = {
