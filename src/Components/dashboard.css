@@ -22,32 +22,32 @@
 
 .main-message .I {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     animation: blitz 1s ease forwards;
     animation-delay: 350ms;
   }
   .main-message .create{
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     animation: blitz 1s ease forwards;
     animation-delay: 500ms;
   }
   .main-message .unique  {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     animation: blitz 1s ease forwards;
     animation-delay: 650ms;
   }
   .main-message .digital {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     animation: blitz 1s ease forwards;
     animation-delay: 800ms;
   }
   .main-message .experiences {
     
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     animation: blitz 1s ease forwards;
     animation-delay: 950ms;
   }

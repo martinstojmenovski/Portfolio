@@ -8,7 +8,8 @@
     right: -180px;
     overflow: hidden;
     opacity: 0.3;
-   
+    
+  
     
 
   }
@@ -17,15 +18,20 @@
     background: transparent;
     -webkit-animation: spin 15s linear infinite;
     -moz-animation: spin 15s linear infinite;
-    animation: spin 15s linear infinite;
+    animation: spin 15s linear infinite ;
     
   
     
   }
+  .circleAnimation{
+    opacity: 0;
+    animation: circleShow 3s ease forwards;
+    animation-delay: 2500ms;
+  }
 
-  @keyframes blitz {
+  @keyframes circleShow {
     to {
-       
+       opacity: 1;
    }
   }
   @-moz-keyframes spin {

@@ -3,8 +3,7 @@ import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
 import { useMediaQuery } from 'react-responsive'
 import TheCircle from "./TheCircle";
 import "./theCircle.css"
-import { Text } from '@chakra-ui/react';
-// import { css, keyframes } from '@emotion/react';
+
 import "./dashboard.css"
 
 

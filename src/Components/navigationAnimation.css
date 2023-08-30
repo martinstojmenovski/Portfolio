@@ -1,0 +1,12 @@
+@keyframes navFallDown {
+    to {
+       opacity:1;
+       transform: rotate(0);
+   }   
+}
+nav{
+    opacity: 0;
+    transform:  rotate(360deg);
+    animation: navFallDown 1s ease forwards;
+    animation-delay: 1200ms;
+}

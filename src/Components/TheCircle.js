@@ -1,4 +1,4 @@
-import jsxToString from "jsx-to-string";
+
 
 import ReactCurvedText from "react-curved-text";
 
@@ -26,17 +26,14 @@ function TheCircle() {
     />
   );
 
-  let currentJsxString = jsxToString(currentJsx, {
-    displayName: "ReactCurvedText",
-    useFunctionCode: true
-  });
-  currentJsxString =
-    "import ReactCurvedText from 'react-curved-text';\n\n" + currentJsxString;
+ 
   return (
 
 
-
+<div className="circleAnimation">
 <div  className="exampleWrapperDiv">{currentJsx}</div>
+</div>
+
 
  
 
