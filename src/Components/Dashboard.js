@@ -69,11 +69,11 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
               
                 <div className='hi' style={{fontSize:"2.5rem" }} > Hi,</div>
                 <div className='main-message'  style={{ marginLeft:"25px" }}  >
-                    <span>I </span>
-                    <span>create </span>
-                    <span>unique </span> 
-                    <span>digital </span> 
-                    <span>experiences. </span>
+                    <div className='I'>I &nbsp;</div>
+                    <div className='create' >create&nbsp;  </div>
+                    <div className='unique'>unique&nbsp; </div> 
+                    <div className='digital'>digital </div> 
+                    <div className='experiences'>experiences. </div>
                 </div>
             </div>
             <div style={{
