@@ -27,7 +27,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
     }
     const styleArrow = {
         display: "block",
-        width: "60px",
+        // width: "60px",
         height: "4px",
         backgroundColor: "#FB8122",
         position: "absolute",
@@ -75,7 +75,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     <div className='experiences'>experiences. </div>
                 </div>
             </div>
-            <div style={{
+            <div className='arrows' style={{
                 cursor: "pointer",
                 position: "absolute",
                 top: "75dvh",
@@ -85,23 +85,24 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 overflow: "hidden"
 
             }} onClick={() => scrollToSection(project)}>
-                <span style={{
-                    ...styleArrow, transform: " translatex(50%)  translatex(-20px) rotate(-45deg)"
+                <span className="firstLeft" style={{
+                    ...styleArrow, 
+                    // transform: " translatex(50%)  translatex(-20px) rotate(-45deg)", 
                 }}></span>
                 <span style={{
-                    display: "block",
+                   
                     ...styleArrow,
-                    transform: " translatex(50%)  translatex(20px) rotate(45deg)"
+                    // transform: " translatex(50%)  translatex(20px) rotate(45deg)"
                 }}> </span>
                 <span style={{
                     ...styleArrow,
-                    transform: " translatex(50%) translatex(-20px) rotate(-45deg)",
+                    // transform: " translatex(50%) translatex(-20px) rotate(-45deg)",
                     bottom: "20px"
                 }}></span>
                 <span style={{
                     display: "block",
                     ...styleArrow,
-                    transform: " translatex(50%)  translatex(20px) rotate(45deg)",
+                    // transform: " translatex(50%)  translatex(20px) rotate(45deg)",
                     bottom: "20px"
                 }}> </span>
 
