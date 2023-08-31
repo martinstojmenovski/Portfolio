@@ -3,7 +3,7 @@ import BackgroundMobile from '../Components/images/pexels-burst-mobile.jpg'
 import { useMediaQuery } from 'react-responsive'
 import TheCircle from "./TheCircle";
 import "./theCircle.css"
-
+import Arrows from './Arrows';
 import "./dashboard.css"
 
 
@@ -25,14 +25,14 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         backgroundSize: "cover",
 
     }
-    const styleArrow = {
-        display: "block",
-        // width: "60px",
-        height: "4px",
-        backgroundColor: "#FB8122",
-        position: "absolute",
-        right: "50%",
-    }
+    // const styleArrow = {
+    //     display: "block",
+    //     // width: "60px",
+    //     height: "4px",
+    //     backgroundColor: "#FB8122",
+    //     position: "absolute",
+    //     right: "50%",
+    // }
     
 
     return (
@@ -75,7 +75,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     <div className='experiences'>experiences. </div>
                 </div>
             </div>
-            <div className='arrows' style={{
+            {/* <div className='arrows' style={{
                 cursor: "pointer",
                 position: "absolute",
                 top: "75dvh",
@@ -106,8 +106,8 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     bottom: "20px"
                 }}> </span>
 
-            </div>
-
+            </div> */}
+            <Arrows project={project}  scrollToSection={scrollToSection} />
         </section>
 
 

@@ -51,7 +51,7 @@
     animation: blitz 1s ease forwards;
     animation-delay: 950ms;
   }
-  @keyframes firstLeft {
+  /* @keyframes firstLeft {
     
    0%{
     transform: translatex(50%)  translatex(0) rotate(-90deg);
@@ -156,10 +156,10 @@
     animation-delay: 2350ms;
     /* position: absolute;
     top: 55%; */
-    /* left: 50%; */
+    /* left: 50%; 
     transform: translatey(50%);
   
-  }
+  } */
 
 
 @media  screen and (min-width: 798px) {.main-message{font-size: 3.5rem;}}
