@@ -44,8 +44,8 @@ $arrow-line-width: 4px;
 }
 
 .arrow {
-  animation: rotateArrows 2s forwards;
-  animation-delay: 3s;
+  // animation: rotateArrows 2s forwards;
+  // animation-delay: 3s;
 
   @include arrow-transitions(0deg); 
   overflow: visible;
