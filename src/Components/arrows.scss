@@ -9,17 +9,17 @@ $arrow-line-width: 4px;
 }
 
 .loading {
-  opacity: 0;
+  visibility: hidden;
   animation: showLoading 1s forwards;
   -webkit-animation-delay: 3s;
   animation-delay: 3s;
 }
 @keyframes showLoading {
   from{
-    opacity: 0;
+    
   }
   to{
-    opacity: 1;
+    visibility: visible;
   }
 }
 // arrows
