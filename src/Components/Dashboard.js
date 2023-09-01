@@ -25,14 +25,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         backgroundSize: "cover",
 
     }
-    // const styleArrow = {
-    //     display: "block",
-    //     // width: "60px",
-    //     height: "4px",
-    //     backgroundColor: "#FB8122",
-    //     position: "absolute",
-    //     right: "50%",
-    // }
+
     
 
     return (
@@ -75,38 +68,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     <div className='experiences'>experiences. </div>
                 </div>
             </div>
-            {/* <div className='arrows' style={{
-                cursor: "pointer",
-                position: "absolute",
-                top: "75dvh",
-                padding: "45px",
-                transform: " translatex(50%)",
-                right: "50%",
-                overflow: "hidden"
-
-            }} onClick={() => scrollToSection(project)}>
-                <span className="firstLeft" style={{
-                    ...styleArrow, 
-                    // transform: " translatex(50%)  translatex(-20px) rotate(-45deg)", 
-                }}></span>
-                <span style={{
-                   
-                    ...styleArrow,
-                    // transform: " translatex(50%)  translatex(20px) rotate(45deg)"
-                }}> </span>
-                <span style={{
-                    ...styleArrow,
-                    // transform: " translatex(50%) translatex(-20px) rotate(-45deg)",
-                    bottom: "20px"
-                }}></span>
-                <span style={{
-                    display: "block",
-                    ...styleArrow,
-                    // transform: " translatex(50%)  translatex(20px) rotate(45deg)",
-                    bottom: "20px"
-                }}> </span>
-
-            </div> */}
+          
             <Arrows project={project}  scrollToSection={scrollToSection} />
         </section>
 

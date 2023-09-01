@@ -1,12 +1,20 @@
 @keyframes navFallDown {
     to {
        opacity:1;
-       transform: rotate(0);
+       transform: translatey(0);
    }   
 }
-nav{
+/* nav .DASHBOARD{
+    overflow: visible;
     opacity: 0;
-    transform:  rotate(360deg);
-    animation: navFallDown 1s ease forwards;
+    transform: translatey(-40px);
+    animation: navFallDown 200ms ease-in-out forwards;
     animation-delay: 1200ms;
-}
+} */
+
+/* nav ul {
+    opacity: 0;
+    transform: translatey(-40px);
+    animation: navFallDown 200ms ease-in-out forwards;
+    animation-delay: 1500ms;
+} */
