@@ -64,7 +64,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     <div className='I'>I &nbsp;</div>
                     <div className='create' >create&nbsp;  </div>
                     <div className='unique'>unique&nbsp; </div> 
-                    <div className='digital'>digital </div> 
+                    <div className='digital'>digital&nbsp; </div> 
                     <div className='experiences'>experiences. </div>
                 </div>
             </div>

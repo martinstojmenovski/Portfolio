@@ -113,17 +113,21 @@ export default function Navigation() {
                     position: "fixed", top: "55px",
                     left: "5%",
                     height: "2px",
-                    background: "#bbbbbb4",
-                    zIndex: 22,
-                    transition: "width 30ms linear", width: `${progressBar}%`,
+                     background: "#E1E2E2",
+                     opacity:"0.4",
+
+                    zIndex: "20",
+                    transition: "width 30ms linear",
+                     width: `${progressBar}%`,
                 }}></div>}
 
                 {!isDesktopOrLaptop && <div style={{
                     position: "fixed", top: "56px",
                     left: "5%",
                     height: "1px",
-                    background: " rgba(239, 239, 240, 0.2)",
-                    zIndex: 22,
+                    background: "#E1E2E2",
+                    opacity:"0.1",
+                    zIndex: "5",
                     width: `90%`,
                 }}></div>}
 
@@ -135,7 +139,7 @@ export default function Navigation() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "0 10px",
-                zIndex: "5",
+                zIndex: "2",
                 transition: "background 100ms linear",
                 backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(30, 35, 41, ${1.4 - sectionOpacity})`,
               
