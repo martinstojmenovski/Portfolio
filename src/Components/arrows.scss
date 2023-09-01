@@ -7,7 +7,16 @@ $arrow-line-width: 4px;
 @mixin arrow-transitions($rot: 0deg) {
   transform: translate(-50%, -50%) rotateZ($rot);
 }
-
+@keyframes showLoading {
+  to{
+    opacity: 1;
+  }
+}
+.loading {
+  opacity: 0;
+  animation: showLoading 1s forwards;
+  animation-delay: 3s;
+}
 // arrows
 .arrow-container {
   display: block;
@@ -36,7 +45,7 @@ $arrow-line-width: 4px;
 
 .arrow {
   animation: rotateArrows 2s forwards;
-  // animation-delay: 3s;
+  animation-delay: 3s;
 
   @include arrow-transitions(0deg); 
   overflow: visible;
@@ -84,14 +93,3 @@ $arrow-line-width: 4px;
   }
 }
 
-@keyframes showLoading {
-  to{
-    opacity: 1;
-  }
-}
-.loading {
-  animation: showLoading 1s forwards;
-  // animation-delay: 3s;
-  
-  opacity: 0;
-}
