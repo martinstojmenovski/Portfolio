@@ -8,11 +8,11 @@ $arrow-line-width: 4px;
   transform: translate(-50%, -50%) rotateZ($rot);
 }
 
-.loading {
-  opacity: 0;
-  animation: showLoading 1s forwards;
-  animation-delay: 3s;
-}
+// .loading {
+//   opacity: 0;
+//   animation: showLoading 1s forwards;
+//   animation-delay: 3s;
+// }
 @keyframes showLoading {
   to{
     opacity: 1;
@@ -46,7 +46,7 @@ $arrow-line-width: 4px;
 
 .arrow {
   animation: rotateArrows 2s forwards;
-  animation-delay: 3s;
+  // animation-delay: 3s;
 
   @include arrow-transitions(0deg); 
   overflow: visible;
