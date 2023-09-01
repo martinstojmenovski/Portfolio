@@ -11,6 +11,7 @@ $arrow-line-width: 4px;
 .loading {
   opacity: 0;
   animation: showLoading 1s forwards;
+  -webkit-animation-delay: 3s;
   animation-delay: 3s;
 }
 @keyframes showLoading {
@@ -49,6 +50,7 @@ $arrow-line-width: 4px;
 
 .arrow {
   animation: rotateArrows 2s forwards;
+  -webkit-animation-delay: 3s;
   animation-delay: 3s;
 
   @include arrow-transitions(0deg); 
