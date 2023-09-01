@@ -91,5 +91,7 @@ to{
 .loading {
   animation: showLoading 1s forwards;
   animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  
   opacity: 0;
 }
