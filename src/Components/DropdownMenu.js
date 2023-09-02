@@ -109,7 +109,7 @@ const barStyle = {
     width: "45px",
     height: "2.5px",
     margin: "7px auto",
-    backgroundColor: "#FB8122",
+    backgroundColor: "#E1E2E2",
     transition: "transform 150ms ease-in-out,  background 300ms linear ",
 
 }

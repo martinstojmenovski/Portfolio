@@ -11,8 +11,8 @@ $arrow-line-width: 4px;
 .loading {
   visibility: hidden;
   animation: showLoading 1s forwards;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
 }
 @keyframes showLoading {
   from{
@@ -50,8 +50,8 @@ $arrow-line-width: 4px;
 
 .arrow {
   animation: rotateArrows 2s forwards;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
 
   @include arrow-transitions(0deg); 
   overflow: visible;

@@ -8,12 +8,12 @@
     right: -180px;
     overflow: hidden;
     opacity: 0.3;
-    
-  
-    
-
   }
-  
+  @media screen and (min-width: 480px){
+    .exampleWrapperDiv {
+    top:45%;
+    }
+  }
   .rotating-curved-text {
     background: transparent;
     -webkit-animation: spin 15s linear infinite;
