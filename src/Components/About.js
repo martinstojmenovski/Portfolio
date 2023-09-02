@@ -20,9 +20,12 @@ function About({ about }) {
             </p>
 
           </div>
+          
           <div className='professional-photo'>
 
+          
           </div>
+          
         </div>
       </section>
     </div>

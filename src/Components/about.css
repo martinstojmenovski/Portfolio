@@ -17,16 +17,22 @@
     max-width: 50%;
 }
 .professional-photo {
-    background-image: url('./images/professional\ photo.JPG');
+    /* background-image: url('./images/ photoOfMe.JPG.JPG'); */
+    background-image:   url('./images/photoEdited\ copy.png');
+    /* background-color: rgba((29,34,40) 0.7); */
+    /* background-color: red; */
+    /* clip-path: ellipse(49% 25% at 51% 60%); */
     width: 50%;
     line-height: 0;
     position: relative;
     background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-    background-position: 50% 70%;
+    background-size: auto 90%;
+    /* border-radius: 50%; */
+    background-position: 50% 60%;
     margin: auto;
+    
 }
+
 .professional-photo::after {
     content: "";
     display: block;
@@ -65,8 +71,20 @@
     }
     .about-text {
         max-width: 100%;
+    
     }
+    
  } 
+ @media screen and (min-width: 1024px) {
+
+    .about-text {
+        padding-top: 20px;
+    }
+    .professional-photo {
+       /* padding-bottom: 20px; */
+       top:-30px
+    }
+ }
 
 
 
