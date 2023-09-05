@@ -1,4 +1,4 @@
-// import './arrows.css'
+
 import './arrows.scss'
 
 function Arrows({ project, scrollToSection }) {
