@@ -6,10 +6,10 @@ function Arrows({ project, scrollToSection }) {
 
   return (
     <div className='loading'>
-      <a onClick={() => scrollToSection(project)} class="arrow-container">
-        <div class="arrow"></div>
-        <div class="arrow"></div>
-        <div class="arrow"></div>
+      <a onClick={() => scrollToSection(project)} className="arrow-container">
+        <div className="arrow"></div>
+        <div className="arrow"></div>
+        <div className="arrow"></div>
       </a>
     </div>
   

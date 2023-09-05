@@ -8,6 +8,7 @@
     right: -180px;
     overflow: hidden;
     opacity: 0.3;
+   
   }
   @media screen and (min-width: 480px){
     .exampleWrapperDiv {
@@ -24,6 +25,7 @@
     
   }
   .circleAnimation{
+   
     opacity: 0;
     animation: circleShow 3s ease forwards;
     animation-delay: 2500ms;

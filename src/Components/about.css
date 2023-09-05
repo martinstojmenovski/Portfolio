@@ -1,8 +1,4 @@
 #ABOUT {
-    /* background: #1e1e1e; */
-    /* box-shadow: 0 2px 10px 0 rgba(31, 31, 30, 0.8); */
-    /* margin: 0 5px 0 3px; */
-    /* border-radius: 5px; */
     padding: 80px 0 150px 0;
 }
 
@@ -14,20 +10,19 @@
 }
 .about-text {
     color: rgb(247, 247, 247);
-    max-width: 50%;
+    max-width: 450px;
+    padding-top: 10px;
+    margin: auto;
+    
 }
 .professional-photo {
-    /* background-image: url('./images/ photoOfMe.JPG.JPG'); */
     background-image:   url('./images/photoEdited\ copy.png');
-    /* background-color: rgba((29,34,40) 0.7); */
-    /* background-color: red; */
-    /* clip-path: ellipse(49% 25% at 51% 60%); */
-    width: 50%;
+    width: 450px;
     line-height: 0;
     position: relative;
+    
     background-repeat: no-repeat;
     background-size: auto 90%;
-    /* border-radius: 50%; */
     background-position: 50% 60%;
     margin: auto;
     
@@ -41,7 +36,7 @@
 #ABOUT .about-text h1 {
     font-size: 40px;
     text-align: center;
-    margin: auto;  
+      
 }
 #ABOUT ul {
     display: flex;
@@ -58,7 +53,7 @@
 #ABOUT p {
     padding: 20px;
     line-height: 25px;
-    margin: auto;
+    margin-left: 10px;
 }
 @media screen and (max-width: 480px) {
     .professional-photo {
@@ -68,23 +63,9 @@
 @media screen and (max-width: 1024px) {
     .about-page {
         flex-direction: column-reverse;
-    }
-    .about-text {
-        max-width: 100%;
-    
-    }
-    
+    } 
  } 
- @media screen and (min-width: 1024px) {
 
-    .about-text {
-        padding-top: 20px;
-    }
-    .professional-photo {
-       /* padding-bottom: 20px; */
-       top:-30px
-    }
- }
 
 
 

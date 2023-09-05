@@ -34,7 +34,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
             style={{
                 position: "relative",
                 height: "100dvh",
-                overflow: "hidden"
+                overflow: "hidden",
             }}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
@@ -60,7 +60,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
             >
               
                 <div className='hi' style={{fontSize:"2.5rem" }} > Hi,</div>
-                <div className='main-message'  style={{ marginLeft:"25px" }}  >
+                <div className='main-message'  style={{ marginLeft:"25px", fontSize:isDesktopOrLaptop? "6.5vw" : "2.5rem",}}  >
                     <div className='I'>I &nbsp;</div>
                     <div className='create' >create&nbsp;  </div>
                     <div className='unique'>unique&nbsp; </div> 

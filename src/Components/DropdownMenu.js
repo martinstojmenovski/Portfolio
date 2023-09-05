@@ -73,7 +73,7 @@ function DropdownMenu({ scrollToSection, about, skills, project, }) {
                 width: "100%",
                 transitionDelay: hamburgerDelay,
             }} >
-            <button onClick={() => { setNavbarOpen((prev) => !prev) }}>
+            <button onClick={() =>  setNavbarOpen(prev => !prev) }>
 
 
 

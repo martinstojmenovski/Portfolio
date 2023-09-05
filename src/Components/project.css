@@ -1,0 +1,44 @@
+.image-style {
+
+  width: 90%;
+  height: 200px;
+  position: relative;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 60% 30%;
+  margin: 20px auto;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 0.4s linear;
+
+}
+
+.image-style.revealActive{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+ .active-image {
+  width: 100%;
+  top:40%;
+}
+
+
+
+
+.image-container{
+transition: all 1s linear;
+overflow: hidden;
+}
+.active-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1D2228;
+  z-index: 333;
+  transform: translateY(0px);
+  opacity: 1;
+}
