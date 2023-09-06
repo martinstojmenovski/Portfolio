@@ -55,7 +55,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     padding: "10px",
                     margin: "auto",
                     position: "relative",
-                    top: "43%",
+                    top: "50%",
                     left: "47%",
                     transform: "translate(-50%, -50%)",
                     maxWidth: isDesktopOrLaptop ? "90%" : "95%",
@@ -71,37 +71,17 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 <div className='main-message'
                     style={{
                         marginLeft: "25px",
-                        // fontSize:"2.5rem",
                         fontWeight: "bold",
-                        // transform: "scale(1, 2.5)",
                         scale:"1 2.3",
                         lineHeight: "0.8",
                         overflow: "visible"
-                       
-
                     }}  >
                        
                     <div  style={{ overflow: "visible"}}className='I'>I &nbsp;</div>
-                    <div style={{
-                   
-                        overflow: "visible"
-                        //  top:"20px"
-                         }} className='create' >create&nbsp;  </div>
-                    <div style={{
-                        position:"relative",
-                        overflow: "visible"
-                        //  top:"20px"
-                         }} className='unique'>unique&nbsp; </div>
-                    <div style={{
-                        position:"relative", 
-                        overflow: "visible"
-                        // top:"0"
-                        }} className='digital'>digital&nbsp; </div>
-                    <div style={{
-                        position:"relative",
-                        overflow: "visible"
-                        //  top:"0"
-                         }} className='experiences'>experiences. </div>
+                    <div style={{ overflow: "visible"}} className='create' >create&nbsp;  </div>
+                    <div style={{ overflow: "visible"}} className='unique'>unique&nbsp; </div>
+                    <div style={{overflow: "visible"}} className='digital'>digital&nbsp; </div>
+                    <div style={{overflow: "visible"}} className='experiences'>experiences. </div>
                 </div>
             </div>
 
