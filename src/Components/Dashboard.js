@@ -12,7 +12,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
     const backgroundMobile = {
         height: "100vh",
         width: "100vw",
-        background: `linear-gradient(rgba(29,34,40, 0.8), rgba(29,34,40, 0.8)), url(${sky})`,
+        background: `linear-gradient(rgba(29,34,40, 0.6), rgba(29,34,40, 0.6)), url(${sky})`,
         opacity: sectionOpacity,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

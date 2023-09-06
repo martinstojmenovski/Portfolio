@@ -48,7 +48,7 @@ function Project({ project }) {
 
 
   return (
-    <section ref={project} id='PROJECT' className='PROJECT' style={{ overflow: "hidden" }}>
+    <section ref={project} id='PROJECT' className='PROJECT' style={{ overflow: "hidden", }}>
       <h1 style={{
         padding: "90px 0 30px 0",
         color: "#FB8122",
