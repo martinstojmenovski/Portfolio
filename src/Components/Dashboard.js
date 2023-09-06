@@ -18,8 +18,8 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         height: "100vh",
         width: "100vw",
         background: `linear-gradient(rgba(29,34,40, 0.8), rgba(29,34,40, 0.8)), url(${sky})`,
-        // opacity: sectionOpacity,
-        opacity: "1", // needs update after styling 
+        opacity: sectionOpacity,
+        // opacity: "1", // needs update after styling 
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 50%",
@@ -30,7 +30,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
 
     }
 
-    // console.log(sectionOpacity)
+
 
     return (
 
