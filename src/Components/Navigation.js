@@ -25,7 +25,7 @@ export default function Navigation() {
             behavior: 'smooth'
         })
     }
-    
+
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
@@ -52,8 +52,8 @@ export default function Navigation() {
         if (window.scrollY && isDesktopOrLaptop) {
             setLiTranslateY("translateY(-40px)")
             setLiOpacity("0")
-        } 
-        else {  
+        }
+        else {
             setLiTranslateY("translateY(0)")
             setLiOpacity("1")
         }
@@ -66,7 +66,6 @@ export default function Navigation() {
         fontSize: "18px",
         listStyle: "none",
         cursor: "pointer",
-
         padding: "10px",
         transition: "transform 200ms linear, opacity 200ms linear",
         opacity: liOpacity,
@@ -79,14 +78,9 @@ export default function Navigation() {
         position: "relative",
         listStyle: "none",
         cursor: "pointer",
-
         padding: "10px",
-
         fontFamily: `Ephesis`,
         fontSize: "25px",
-
-
-
     }
 
     const desktopMenu = (
@@ -100,33 +94,29 @@ export default function Navigation() {
     window.addEventListener('scroll', function () {
         setSectionOpacity(-5 + this.window.pageYOffset / 550 + "")
     })
-
-
     return (
         <div>
 
+            {!isDesktopOrLaptop && <div style={{
+                position: "fixed", top: "55px",
+                left: "5%",
+                height: "2px",
+                background: "#E1E2E2",
+                opacity: "0.4",
+                zIndex: "20",
+                transition: "width 30ms linear",
+                width: `${progressBar}%`,
+            }}></div>}
 
-{!isDesktopOrLaptop && <div style={{
-                    position: "fixed", top: "55px",
-                    left: "5%",
-                    height: "2px",
-                     background: "#E1E2E2",
-                     opacity:"0.4",
-
-                    zIndex: "20",
-                    transition: "width 30ms linear",
-                     width: `${progressBar}%`,
-                }}></div>}
-
-                {!isDesktopOrLaptop && <div style={{
-                    position: "fixed", top: "56px",
-                    left: "5%",
-                    height: "1px",
-                    background: "#E1E2E2",
-                    opacity:"0.1",
-                    zIndex: "5",
-                    width: `90%`,
-                }}></div>}
+            {!isDesktopOrLaptop && <div style={{
+                position: "fixed", top: "56px",
+                left: "5%",
+                height: "1px",
+                background: "#E1E2E2",
+                opacity: "0.1",
+                zIndex: "5",
+                width: `90%`,
+            }}></div>}
 
             <nav style={{
                 position: "fixed",
@@ -139,10 +129,9 @@ export default function Navigation() {
                 zIndex: "2",
                 transition: "background 100ms linear",
                 backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(29,34,40, ${1.4 - sectionOpacity})`,
-                // backgroundColor: "transparent "
             }}
             >
-                
+
 
                 <div style={{ display: "flex" }} >
                     <li style={{ ...styleLogo, }}
