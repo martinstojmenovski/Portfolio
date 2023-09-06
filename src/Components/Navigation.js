@@ -141,8 +141,8 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "2",
                 transition: "background 100ms linear",
-                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(30, 35, 41, ${1.4 - sectionOpacity})`,
-              
+                // backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(29,34,40, ${1.4 - sectionOpacity})`,
+                backgroundColor: "transparent "
             }}
             >
                 

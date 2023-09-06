@@ -11,21 +11,21 @@ function Project({ project }) {
 
 
 
-  window.addEventListener("scroll", () => {reveal(); descriptions()})
+  window.addEventListener("scroll", () => { reveal(); descriptions() })
   function reveal() {
     let reveals = document.querySelectorAll(".image-style")
-    
+
     for (let i = 0; i < reveals.length; i++) {
       let windowheight = window.innerHeight;
       let revealtop = reveals[i].getBoundingClientRect().top;
-     
+
       let revealpoint = 100;
       if (revealtop < windowheight - revealpoint) {
         reveals[i].classList.add('active')
-       
+
       } else {
         reveals[i].classList.remove('active')
-       
+
       }
     }
   }
@@ -34,12 +34,12 @@ function Project({ project }) {
     for (let i = 0; i < descriptions.length; i++) {
       let windowheight = window.innerHeight;
       let descriptionstop = descriptions[i].getBoundingClientRect().top;
-      let revealpoint = 0;
+      let revealpoint = 70;
       if (descriptionstop < windowheight - revealpoint) {
-    
+
         descriptions[i].classList.add('active')
       } else {
-    
+
         descriptions[i].classList.remove('active')
       }
     }
@@ -60,47 +60,48 @@ function Project({ project }) {
 
       (
         <a href={slide.link} key={index} style={{
-  
-           display: "flex",
-            flexDirection: index % 2 === 0 ? "row" : "row-reverse", 
-            justifyContent: "center",
-             overflow: "visible", 
-             margin: isBigScreen ? "80px auto" : "50px auto" ,
-           
-             marginRight: isDesktopOrLaptop ? index % 2 === 0 ? "0" : "40%" : null, // Add margin-left for the second element
-             marginLeft: isDesktopOrLaptop ? index % 2 === 0 ? "40%" : "0" : null, // Add margin-right for the first element
-             
-             
-          
-             }}>
+
+          display: "flex",
+          flexDirection: index % 2 === 0 ? "row" : "row-reverse",
+          justifyContent: "center",
+          overflow: "visible",
+          // margin: isBigScreen ? "80px auto" : "50px auto",
+
+          marginRight: isDesktopOrLaptop ? index % 2 === 0 ? "0" : "40%" : null, // Add margin-left for the second element
+          marginLeft: isDesktopOrLaptop ? index % 2 === 0 ? "40%" : "0" : null, // Add margin-right for the first element
+
+
+
+        }}>
           <div className="descriptions"
             style={{
-              zIndex:"22",
+              zIndex: "1",
               padding: "8px",
               textAlign: index % 2 === 0 ? "right" : "left",
               // display:isDesktopOrLaptop? "block" : "none",
-              overflow:"visible",
-              width:"80%",
-              // marginLeft: isDesktopOrLaptop ? index % 2 === 0 ? "0" : "730px" : null, // Add margin-left for the second element
-              // marginRight: isDesktopOrLaptop ? index % 2 === 0 ? "700px" : "0" : null, // Add margin-right for the first element
-              
-            marginLeft: isDesktopOrLaptop ? index % 2 === 0 ? "0" : "80%" : null , // Add margin-left for the second element
-             marginRight: isDesktopOrLaptop ? index % 2 === 0 ? "75%" : "0" : null, // Add margin-right for the first element
-              
+              marginTop: "50px",
+              overflow: "visible",
+              width: "80%",
+              marginLeft: isDesktopOrLaptop ? index % 2 === 0 ? "0" : "80%" : null, // Add margin-left for the second element
+              marginRight: isDesktopOrLaptop ? index % 2 === 0 ? "75%" : "0" : null, // Add margin-right for the first element
+
             }}>
             <h3 style={{
-              transform: "scale(1, 3)", fontSize: "2.3rem", fontWeight: "bold", position: "relative",
+              transform: "scale(1, 3)",
+              fontSize: isDesktopOrLaptop ? "2.3rem" : "5vw",
+              fontWeight: "bold",
+              position: "relative",
               top: "30%",
-               
+
             }} >{slide.name} </h3>
             <p style={{
               position: "relative",
               top: "35%"
             }}>{slide.content}</p>
           </div>
-          <div 
+          <div
             className="image-style"
-            style={{backgroundImage: `linear-gradient(rgb(20,30,48, 0.7), rgb(36,59,85, 0.7)), url(${slide.picture})`}}
+            style={{ backgroundImage: `linear-gradient(rgb(20,30,48, 0.7), rgb(36,59,85, 0.7)), url(${slide.picture})` }}
           >
 
 

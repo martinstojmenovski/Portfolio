@@ -5,6 +5,10 @@ function About({ about }) {
     <div >
       <section className='ABOUT' id='ABOUT' ref={about} >
         <div className='about-page'>
+          <div className='professional-photo'>
+
+
+          </div>
           <div className="about-text">
             <h1>HELLO, I AM MARTIN</h1>
             <ul >
@@ -20,12 +24,9 @@ function About({ about }) {
             </p>
 
           </div>
-          
-          <div className='professional-photo'>
 
-          
-          </div>
-          
+
+
         </div>
       </section>
     </div>

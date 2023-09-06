@@ -10,8 +10,8 @@ function App() {
     <div
      style={{
       background:" #1D2228",
-      // background:" #e3e2df ",
-        overflow:"hidden ",}}
+        overflow:"hidden ",
+      }}
     className="App">
       <Navigation />
    
