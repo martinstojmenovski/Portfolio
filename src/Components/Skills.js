@@ -1,24 +1,40 @@
 import "./skills.css"
 // import './contact.scss'
 import './contactStyle.css'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 
 export default function ContactUs({ skills }) {
+const [succsessMessage, setSuccessMessage] = useState()
+
 
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_z66d3pe', 'template_75m1cfj', form.current, 'L4KiG_MtOqw6fwPNB')
       .then((result) => {
+        
+        if(result.status === 200){
+          setSuccessMessage('Email sent successfully!')
+          removeMessage()
+        }
         console.log(result.text);
       }, (error) => {
         console.log(error.text);
       });
   };
+  
+    
+  function removeMessage() {
+    setTimeout(function() {
+     setSuccessMessage("")
+    }, 4000); // 4000 milliseconds (4 seconds)
+  }
+  
+      
+
   return (
     <section ref={skills} className="CONTACT" id="CONTACT" style={{ overflow: "hidden", }}>
       <main>
@@ -26,12 +42,13 @@ export default function ContactUs({ skills }) {
 
         <p id="header">Interested in working together?</p>
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="from_name" class="feedback-input" placeholder="Name" />
-          <input type="email" name="from_email" class="feedback-input" placeholder="Email" />
-          <textarea type="text" name="message" placeholder="Message" class="feedback-input" ></textarea>
+          <input type="text" name="from_name" class="feedback-input" placeholder="Name" required/>
+          <input type="email" name="from_email" class="feedback-input" placeholder="Email" required/>
+          <textarea type="text" name="message" placeholder="Message" class="feedback-input" required></textarea>
           <input type="submit" value="SUBMIT" />
         </form>
-
+        <div className="success-popup">{succsessMessage}</div>
+        {/* <div className="success-popup">{message}</div> */}
 
         <div id="social-media">Find me on
           <ul>

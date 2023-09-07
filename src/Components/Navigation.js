@@ -4,7 +4,7 @@ import Project from './Project'
 // import Skills from './Contact'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
-import Contact from './Contact'
+import Skills from './Skills'
 import "./navigationAnimation.css"
 
 
@@ -96,7 +96,7 @@ export default function Navigation() {
     window.addEventListener('scroll', function () {
         setSectionOpacity(-6 + this.window.pageYOffset / 550 + "")
     })
-    console.log(sectionOpacity)
+
     return (
         <div>
 
@@ -158,7 +158,7 @@ export default function Navigation() {
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} sectionOpacity={sectionOpacity} />
             <Project project={project} />
             <About about={about} />
-            <Contact skills={skills} />
+            <Skills skills={skills} />
         </div>
 
     )
