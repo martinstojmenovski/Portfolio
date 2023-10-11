@@ -53,7 +53,7 @@ function Project({ project }) {
         padding: "90px 0 30px 0",
         color: "#FB8122",
         textAlign: "center",
-        fontSize: isSmallerThan480 ? "1.5rem" : "5vw", fontWeight: "500"
+        fontSize: isSmallerThan480 ? "2rem" : "5vw", fontWeight: "500"
       }}>EXPLORE PREVIOUS WORK</h1>
 
       {slides.map((slide, index) =>
@@ -93,11 +93,11 @@ function Project({ project }) {
               position: "relative",
               top: "30%",
 
-            }} >{slide.name} </h3>
+            }} >{isSmallerThan480 ? slide.name : null} </h3>
             <p style={{
               position: "relative",
               top: "35%"
-            }}>{slide.content}</p>
+            }}>{isSmallerThan480 ? slide.content : null}</p>
           </div>
           <div
             className="image-style"

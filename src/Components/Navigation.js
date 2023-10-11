@@ -94,9 +94,9 @@ export default function Navigation() {
     )
     const [sectionOpacity, setSectionOpacity] = useState(0)
     window.addEventListener('scroll', function () {
-        setSectionOpacity(-6 + this.window.pageYOffset / 550 + "")
+        setSectionOpacity(-5.5 + this.window.pageYOffset / 550 + "")
     })
-
+console.log(sectionOpacity)
     return (
         <div>
 
@@ -131,7 +131,7 @@ export default function Navigation() {
                 padding: "0 10px",
                 zIndex: "2",
                 transition: "background 100ms linear",
-                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(29,34,40, ${1.4 - sectionOpacity})`,
+                backgroundColor: isDesktopOrLaptop ? "transparent " : `rgba(29,34,40, ${1.1 - sectionOpacity})`,
             }}
             >
 

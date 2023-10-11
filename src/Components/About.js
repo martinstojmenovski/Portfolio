@@ -11,12 +11,12 @@ function About({ about }) {
           </div>
           <div className="about-text">
             <h1>HELLO, I AM MARTIN</h1>
-            <ul >
+            {/* <ul >
               <li>Premium Design</li>
               <li>Amazing Photo</li>
               <li>Creative Ideas</li>
               <li>Unique Strategy</li>
-            </ul>
+            </ul> */}
             <p>Experienced and adaptable Software Engineer with a passion for innovative solutions. My unique blend
               of creativity, humor, and love for travel infuse each project with a fresh perspective. Alongside my
               technical expertise, I possess strong communication and time management skills honed through a

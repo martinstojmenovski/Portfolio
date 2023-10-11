@@ -3,11 +3,12 @@ import "./skills.css"
 import './contactStyle.css'
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useMediaQuery } from 'react-responsive';
 
 
 export default function ContactUs({ skills }) {
 const [succsessMessage, setSuccessMessage] = useState()
-
+const isSmallerThan480 = useMediaQuery({ query: '(min-width:  480px)' });
 
   const form = useRef();
   const sendEmail = (e) => {
@@ -18,7 +19,9 @@ const [succsessMessage, setSuccessMessage] = useState()
         
         if(result.status === 200){
           setSuccessMessage('Email sent successfully!')
-          removeMessage()
+          setTimeout(function() {
+            setSuccessMessage("")
+           }, 4000);
         }
         console.log(result.text);
       }, (error) => {
@@ -27,11 +30,9 @@ const [succsessMessage, setSuccessMessage] = useState()
   };
   
     
-  function removeMessage() {
-    setTimeout(function() {
-     setSuccessMessage("")
-    }, 4000); // 4000 milliseconds (4 seconds)
-  }
+
+   
+  
   
       
 
@@ -40,15 +41,30 @@ const [succsessMessage, setSuccessMessage] = useState()
       <main>
 
 
-        <p id="header">Interested in working together?</p>
+        <p id="header" style={{fontSize: isSmallerThan480 ? "2rem" : "5vw"}}>Interested in working together?</p>
+
+
+
+
+
+
+
+        
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name="from_name" class="feedback-input" placeholder="Name" required/>
           <input type="email" name="from_email" class="feedback-input" placeholder="Email" required/>
           <textarea type="text" name="message" placeholder="Message" class="feedback-input" required></textarea>
           <input type="submit" value="SUBMIT" />
         </form>
+
         <div className="success-popup">{succsessMessage}</div>
-        {/* <div className="success-popup">{message}</div> */}
+
+
+
+
+
+
+
 
         <div id="social-media">Find me on
           <ul>

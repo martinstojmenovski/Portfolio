@@ -40,7 +40,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     padding: "10px",
                     margin: "auto",
                     position: "relative",
-                    top: "50%",
+                    top: "46%",
                     left: "47%",
                     transform: "translate(-50%, -50%)",
                     maxWidth: isDesktopOrLaptop ? "90%" : "95%",
