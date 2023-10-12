@@ -13,13 +13,13 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
         height: "100vh",
         width: "100vw",
         background: `linear-gradient(rgba(29,34,40, 0.6), rgba(29,34,40, 0.6)), url(${sky})`,
-        opacity: sectionOpacity,
+        opacity: sectionOpacity - 5.2,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "50% 50%",
         position: "fixed",
         backgroundPosition: "center",
     }
+   
 
     return (
         <section

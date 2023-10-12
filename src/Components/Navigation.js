@@ -94,9 +94,10 @@ export default function Navigation() {
     )
     const [sectionOpacity, setSectionOpacity] = useState(0)
     window.addEventListener('scroll', function () {
-        setSectionOpacity(-5.5 + this.window.pageYOffset / 550 + "")
+        setSectionOpacity( this.window.pageYOffset / 550 + "")
     })
-console.log(sectionOpacity)
+    // console.log(sectionOpacity)
+
     return (
         <div>
 
