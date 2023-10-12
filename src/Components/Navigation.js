@@ -1,7 +1,6 @@
 
 import About from './About'
 import Project from './Project'
-// import Skills from './Contact'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
 import Skills from './Skills'
