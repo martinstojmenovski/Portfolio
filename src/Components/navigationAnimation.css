@@ -4,17 +4,3 @@
        transform: translatey(0);
    }   
 }
-/* nav .DASHBOARD{
-    overflow: visible;
-    opacity: 0;
-    transform: translatey(-40px);
-    animation: navFallDown 200ms ease-in-out forwards;
-    animation-delay: 1200ms;
-} */
-
-/* nav ul {
-    opacity: 0;
-    transform: translatey(-40px);
-    animation: navFallDown 200ms ease-in-out forwards;
-    animation-delay: 1500ms;
-} */

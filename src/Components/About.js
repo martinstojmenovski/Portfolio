@@ -17,10 +17,14 @@ function About({ about }) {
               <li>Creative Ideas</li>
               <li>Unique Strategy</li>
             </ul> */}
-            <p>Experienced and adaptable Software Engineer with a passion for innovative solutions. My unique blend
-              of creativity, humor, and love for travel infuse each project with a fresh perspective. Alongside my
-              technical expertise, I possess strong communication and time management skills honed through a
-              customer service background.
+            <p>Welcome to my corner of the web! 
+              Passionate Software Engineer dedicated to crafting immersive and user-friendly digital experiences.
+               With a keen eye for design and a commitment to cutting-edge technologies, 
+               I bring ideas to life in the digital realm. 
+               Let's collaborate to elevate your online presence and create visually stunning, 
+               responsive websites that captivate your audience. 
+               Ready to transform your vision into a pixel-perfect reality? 
+               Let's connect and build something extraordinary together!
             </p>
 
           </div>
