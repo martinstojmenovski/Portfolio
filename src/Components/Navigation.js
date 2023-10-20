@@ -3,7 +3,7 @@ import About from './About'
 import Project from './Project'
 import Dashboard from './Dashboard'
 import DropdownMenu from './DropdownMenu'
-import Skills from './Skills'
+import Contact from './Contact'
 import "./navigationAnimation.css"
 
 
@@ -16,7 +16,7 @@ export default function Navigation() {
     //useRef declaration for page navigation
     const about = useRef(null)
     const project = useRef(null)
-    const skills = useRef(null)
+    const contact = useRef(null)
     const dashboard = useRef(null)
 
     //Page navigation function - overflow hidden to stop page from scrolling
@@ -29,7 +29,7 @@ export default function Navigation() {
 
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 768px)' })
 
     // ProgresBar function
     const [progressBar, setProgresBar] = useState(0)
@@ -88,7 +88,7 @@ export default function Navigation() {
         <ul style={{ display: "flex" }} >
             <li style={{ ...styleList, }} className={'PROJECTn'} onClick={() => scrollToSection(project)} >Work</li>
             <li style={{ ...styleList, transitionDelay: "200ms", }} className={'ABOUTn'} onClick={() => scrollToSection(about)} >About</li>
-            <li style={{ ...styleList, transitionDelay: "350ms" }} className={'CONTACTn'} onClick={() => scrollToSection(skills)} >Contact</li>
+            <li style={{ ...styleList, transitionDelay: "350ms" }} className={'CONTACTn'} onClick={() => scrollToSection(contact)} >Contact</li>
         </ul>
     )
     const [sectionOpacity, setSectionOpacity] = useState(0)
@@ -151,14 +151,14 @@ export default function Navigation() {
                 <div>
                     {isDesktopOrLaptop && desktopMenu}
 
-                    <DropdownMenu about={about} project={project} skills={skills} dashboard={dashboard} scrollToSection={scrollToSection} />
+                    <DropdownMenu about={about} project={project} skills={contact} dashboard={dashboard} scrollToSection={scrollToSection} />
 
                 </div>
             </nav>
             <Dashboard dashboard={dashboard} scrollToSection={scrollToSection} project={project} sectionOpacity={sectionOpacity} />
             <Project project={project} />
             <About about={about} />
-            <Skills skills={skills} />
+            <Contact contact={contact} />
         </div>
 
     )

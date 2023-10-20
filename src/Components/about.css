@@ -1,27 +1,24 @@
 #ABOUT {
     padding: 80px 0 450px 0;
+    width: 90%;
 }
 
 .about-page {
     
     display: flex;
-    width: 100%;
     margin: auto;
     flex-direction: column;
 }
 .about-text {
-    /* color: rgb(247, 247, 247); */
-    /* width: 400px; */
-    /* padding-top: 10px; */
     margin: auto;
     font-size: 1.3rem;
+    width: 100%
     
   
 }
 .professional-photo {
-    background-image:url('./images/alexander.png');
+    background-image:url('./images/alexander\ the\ great.png');
     width: 100%;
-    /* line-height: 0; */
     position: relative;
  
   
@@ -35,62 +32,44 @@
 .professional-photo::after {
     content: "";
     display: block;
-    padding-bottom: 150%;
+    padding-bottom: 170%;
 }
 #ABOUT .about-text h1 {
     font-size: 3rem;
     text-align: center;
       
 }
-#ABOUT ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;  
-}
-#ABOUT ul li {
-    list-style: none;
-    margin: 10px;
-    border-bottom: 1px solid rgb(247, 247, 247);
-    padding-bottom: 5px;
-    text-align: center;
-}
+
 #ABOUT p {
-    padding: 20px;
+    padding: 10px;
     line-height: 30px;
-    margin-left: 10px;
 }
-@media screen and (min-width: 480px) {
-    .professional-photo {
-        width: 450px;
-        
-    }
-    .about-text {
-        width: 450px;
-    }
- 
-}
+
 @media screen and (min-width: 768px) {
      .about-page {
         flex-direction: row;
     } 
     
     .about-text {
-        position: relative;
-        right: 30px;
-        margin: auto auto auto 0;
+        width: 50%;
     }
     .professional-photo {
-        left: 30px;
-        margin: auto 0 auto auto;
+        width: 50%;
  }  
 }
- @media screen and (min-width: 1300px) {
-    .professional-photo {
-        width: 550px;
-        
-    }
-  
- }
+@media screen and (min-width: 1024px) {
+    .about-page {
+       flex-direction: row;
+   } 
+   
+   .about-text {
+       width: 50%;
+   }
+   .professional-photo {
+       width: 60%;
+}  
+}
+
 
 
 

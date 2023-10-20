@@ -2,7 +2,7 @@ import './about.css'
 function About({ about }) {
 
   return (
-    <div >
+ 
       <section className='ABOUT' id='ABOUT' ref={about} >
         <div className='about-page'>
           <div className='professional-photo'>
@@ -11,12 +11,7 @@ function About({ about }) {
           </div>
           <div className="about-text">
             <h1>HELLO, I AM MARTIN</h1>
-            {/* <ul >
-              <li>Premium Design</li>
-              <li>Amazing Photo</li>
-              <li>Creative Ideas</li>
-              <li>Unique Strategy</li>
-            </ul> */}
+           
             <p>Welcome to my corner of the web! 
               Passionate Software Engineer dedicated to crafting immersive and user-friendly digital experiences.
                With a keen eye for design and a commitment to cutting-edge technologies, 
@@ -33,7 +28,7 @@ function About({ about }) {
 
         </div>
       </section>
-    </div>
+    
   );
 }
 

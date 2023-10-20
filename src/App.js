@@ -11,6 +11,7 @@ function App() {
      style={{
       background:" #1D2228",
         overflow:"hidden ",
+       
       }}
     className="App">
       <Navigation />

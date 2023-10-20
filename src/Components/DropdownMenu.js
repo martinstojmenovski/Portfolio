@@ -58,6 +58,7 @@ function DropdownMenu({ scrollToSection, about, skills, project, }) {
         transitionDelay: "100ms",
         position: "relative",
         top: "0",
+        margin:"0",
     }
     return (
 

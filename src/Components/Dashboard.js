@@ -7,7 +7,7 @@ import "./dashboard.css"
 
 export default function Dashboard({ project, dashboard, scrollToSection, sectionOpacity }) {
 
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 768px)' })
 
     const backgroundMobile = {
         height: "100vh",
@@ -41,7 +41,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     margin: "auto",
                     position: "relative",
                     top: "46%",
-                    left: "47%",
+                    left: "50%",
                     transform: "translate(-50%, -50%)",
                     maxWidth: isDesktopOrLaptop ? "90%" : "95%",
                     overflow: "visible"
@@ -53,7 +53,7 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                         overflow: "visible",
                         scale: "1 1.5",
                         position: "relative",
-                        top: "-16vh"
+                        top: "-12vh"
                     }} > Hi,</div>
                 <div className='main-message'
                     style={{
