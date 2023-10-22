@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 
 function DropdownMenu({ scrollToSection, about, skills, project, }) {
 
-    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 768px)' })
 
     const [navbarOpen, setNavbarOpen] = useState(false);
 

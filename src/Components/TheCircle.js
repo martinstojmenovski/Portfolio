@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive'
 
 function TheCircle() {
 
-  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 480px)' })
+  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 768px)' })
 
   const currentJsx = (
     <ReactCurvedText

@@ -30,6 +30,7 @@ export default function Navigation() {
     const [liOpacity, setLiOpacity] = useState("1")
     const [liTranslateY, setLiTranslateY] = useState("translateY(0)")
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 768px)' })
+    
 
     // ProgresBar function
     const [progressBar, setProgresBar] = useState(0)
