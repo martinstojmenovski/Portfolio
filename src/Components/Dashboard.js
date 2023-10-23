@@ -27,10 +27,6 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                 position: "relative",
                 height: "100dvh",
                 overflow: "visible",
-                //  maxWidth: isDesktopOrLaptop ? "1400px" : "90%",
-                margin:"auto",
-                // display:"flex",
-
             }}
             ref={dashboard} id='DASHBOARD' className='DASHBOARD'>
 
@@ -45,7 +41,6 @@ export default function Dashboard({ project, dashboard, scrollToSection, section
                     top: "45%",
                     transform: "translatey(-50%)",
                     maxWidth: isDesktopOrLaptop ? "70%" : "90%",
-                    
                     overflow: "visible",  
                 }}>
               

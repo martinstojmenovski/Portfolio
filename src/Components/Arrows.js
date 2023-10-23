@@ -12,9 +12,6 @@ function Arrows({ project, scrollToSection }) {
         <div className="arrow"></div>
       </a>
     </div>
-  
-  // <div class="arrow"></div>
-
   );
 }
 

@@ -45,7 +45,7 @@ main ul {
 form {
     max-width: 90%;
     margin: auto;
-  
+
   }
   
   .feedback-input {
@@ -70,9 +70,9 @@ form {
   }
   
   textarea {
-    height: 120px;
+    max-height: 300px; 
+    min-height: 120px; 
     line-height: 150%;
-    resize: vertical;
   }
   
   [type="submit"] {
